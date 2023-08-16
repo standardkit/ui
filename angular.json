@@ -27,7 +27,7 @@
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
-          "options": { "lintFilePatterns": ["projects/ng-standardkit/**/*.ts", "projects/ng-standardkit/**/*.html"] }
+          "options": { "lintFilePatterns": ["projects/ng-standardkit/**/*.ts"] }
         }
       }
     },
@@ -58,16 +58,8 @@
           "configurations": {
             "production": {
               "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
+                { "type": "initial", "maximumWarning": "500kb", "maximumError": "1mb" },
+                { "type": "anyComponentStyle", "maximumWarning": "2kb", "maximumError": "4kb" }
               ],
               "outputHashing": "all"
             },
@@ -85,20 +77,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "browserTarget": "example:build:production"
-            },
-            "development": {
-              "browserTarget": "example:build:development"
-            }
+            "production": { "browserTarget": "example:build:production" },
+            "development": { "browserTarget": "example:build:development" }
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "example:build"
-          }
+          "options": { "browserTarget": "example:build" }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -110,6 +96,10 @@
             "styles": ["projects/example/src/styles.scss"],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": { "lintFilePatterns": ["projects/example/**/*.ts"] }
         }
       }
     }
