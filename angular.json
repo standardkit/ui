@@ -11,16 +11,10 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/ng-standardkit/ng-package.json"
-          },
+          "options": { "project": "projects/ng-standardkit/ng-package.json" },
           "configurations": {
-            "production": {
-              "tsConfig": "projects/ng-standardkit/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/ng-standardkit/tsconfig.lib.json"
-            }
+            "production": { "tsConfig": "projects/ng-standardkit/tsconfig.lib.prod.json" },
+            "development": { "tsConfig": "projects/ng-standardkit/tsconfig.lib.json" }
           },
           "defaultConfiguration": "production"
         },
@@ -33,7 +27,7 @@
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
-          "options": { "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"] }
+          "options": { "lintFilePatterns": ["projects/ng-standardkit/**/*.ts", "projects/ng-standardkit/**/*.html"] }
         }
       }
     },
