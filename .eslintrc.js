@@ -3,8 +3,11 @@ module.exports = {
   parserOptions: { project: "tsconfig.json", tsconfigRootDir: __dirname, sourceType: "module" },
   plugins: ["@typescript-eslint", "import", "unused-imports", "simple-import-sort", "rxjs"],
   extends: [
-    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@angular-eslint/recommended",
+    "plugin:@angular-eslint/template/process-inline-templates",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:rxjs/recommended",
@@ -12,15 +15,6 @@ module.exports = {
   root: true,
   ignorePatterns: [".eslintrc.js"],
   rules: {
-    "@angular-eslint/directive-selector": ["error", { type: "attribute", prefix: "rga", style: "camelCase" }],
-    "@angular-eslint/component-selector": ["error", { type: "element", prefix: "rga", style: "kebab-case" }],
-    "@angular-eslint/component-class-suffix": [
-      "error",
-      { suffixes: ["Component", "Layout", "Modal", "Page", "Card", "Form", "Tab"] },
-    ],
-    "@angular-eslint/component-max-inline-declarations": ["error", { template: 1 }],
-
-    "@typescript-eslint/interface-name-prefix": "never",
     "@typescript-eslint/explicit-module-boundary-types": "error",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-function-return-type": ["error"],
@@ -28,6 +22,7 @@ module.exports = {
     "@typescript-eslint/no-use-before-define": "error",
     "@typescript-eslint/naming-convention": [
       "error",
+      { selector: "interface", format: ["PascalCase"] },
       { selector: "enumMember", format: ["PascalCase"] },
       { selector: "typeAlias", format: ["PascalCase"] },
       { selector: "variable", types: ["boolean"], format: ["PascalCase"] },

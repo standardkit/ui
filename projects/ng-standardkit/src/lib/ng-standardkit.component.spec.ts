@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NgStandardkitComponent } from './ng-standardkit.component';
 
 describe('NgStandardkitComponent', () => {
@@ -8,7 +7,7 @@ describe('NgStandardkitComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NgStandardkitComponent]
+      declarations: [NgStandardkitComponent],
     });
     fixture = TestBed.createComponent(NgStandardkitComponent);
     component = fixture.componentInstance;

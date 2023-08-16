@@ -1,16 +1,8 @@
 import { NgModule } from '@angular/core';
 import { NgStandardkitComponent } from './ng-standardkit.component';
 
-
-
 @NgModule({
-  declarations: [
-    NgStandardkitComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    NgStandardkitComponent
-  ]
+  declarations: [NgStandardkitComponent],
+  exports: [NgStandardkitComponent],
 })
-export class NgStandardkitModule { }
+export class NgStandardkitModule {}
