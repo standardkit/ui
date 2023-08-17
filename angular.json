@@ -3,31 +3,31 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-standardkit": {
+    "ui": {
       "projectType": "library",
-      "root": "projects/ng-standardkit",
-      "sourceRoot": "projects/ng-standardkit/src",
-      "prefix": "lib",
+      "root": "projects/ui",
+      "sourceRoot": "projects/ui/src",
+      "prefix": "sk",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": { "project": "projects/ng-standardkit/ng-package.json" },
+          "options": { "project": "projects/ui/ng-package.json" },
           "configurations": {
-            "production": { "tsConfig": "projects/ng-standardkit/tsconfig.lib.prod.json" },
-            "development": { "tsConfig": "projects/ng-standardkit/tsconfig.lib.json" }
+            "production": { "tsConfig": "projects/ui/tsconfig.lib.prod.json" },
+            "development": { "tsConfig": "projects/ui/tsconfig.lib.json" }
           },
           "defaultConfiguration": "production"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ng-standardkit/tsconfig.spec.json",
+            "tsConfig": "projects/ui/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
-          "options": { "lintFilePatterns": ["projects/ng-standardkit/**/*.ts"] }
+          "options": { "lintFilePatterns": ["projects/ui/**/*.ts"] }
         }
       }
     },
@@ -53,6 +53,7 @@
             "inlineStyleLanguage": "scss",
             "assets": ["projects/example/src/favicon.ico", "projects/example/src/assets"],
             "styles": ["projects/example/src/styles.scss"],
+            "stylePreprocessorOptions": { "includePaths": ["projects/ui/src/styles"] },
             "scripts": []
           },
           "configurations": {
@@ -94,6 +95,7 @@
             "inlineStyleLanguage": "scss",
             "assets": ["projects/example/src/favicon.ico", "projects/example/src/assets"],
             "styles": ["projects/example/src/styles.scss"],
+            "stylePreprocessorOptions": { "includePaths": ["projects/ui/src/styles"] },
             "scripts": []
           }
         },

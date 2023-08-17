@@ -1,0 +1,66 @@
+@use "sass:color";
+
+// Base colors
+$hotpink: #ff69b4;
+$water: #69b4ff;
+$ocean: #0082b1;
+$sun: #ffb469;
+$fire: #ff6969;
+$grass: #69ff69;
+$sand: #ffff69;
+$berry: #6969b4;
+$gem: #008376;
+$snow: #fdfdfd;
+$night: #020202;
+
+// TODO : Add navy style base color
+
+$hotpink-light: color.adjust($hotpink, $lightness: 50%);
+$water-light: color.adjust($water, $lightness: 50%);
+$sun-light: color.adjust($sun, $lightness: 50%);
+$fire-light: color.adjust($fire, $lightness: 50%);
+$grass-light: color.adjust($grass, $lightness: 50%);
+$sand-light: color.adjust($sand, $lightness: 50%);
+$berry-light: color.adjust($berry, $lightness: 50%);
+$berry-dark: color.adjust($berry, $lightness: -10%);
+$ocean-light: color.adjust($ocean, $lightness: 50%);
+$ocean-dark: color.adjust($ocean, $lightness: -10%);
+
+// Black, white & gray
+
+$white: $snow;
+$gray-10: #dedede;
+$gray-20: #bfbfbf;
+$gray-30: #a1a1a1;
+$gray-40: #858585;
+$gray-50: #696969;
+$gray-60: #4f4f4f;
+$gray-70: #363636;
+$gray-80: #1f1f1f;
+$black: $night;
+
+// All the customizable base colors
+$primary: var(--theme-color-primary, $hotpink);
+$primary-light: var(--theme-color-primary-light, $hotpink-light);
+$secondary: var(--theme-color-secondary, $sand);
+$secondary-light: var(--theme-color-secondary-light, $sand-light);
+$base: var(--theme-color-base, $ocean);
+$base-light: var(--theme-color-base-light, $ocean-light);
+$base-dark: var(--theme-color-base-dark, ocean-dark);
+$success: var(--theme-color-success, $grass);
+$success-light: var(--theme-color-success-light, $grass-light);
+$error: var(--theme-color-error, $fire);
+$error-light: var(--theme-color-error-light, $fire-light);
+$info: var(--theme-color-info, $water);
+$info-light: var(--theme-color-info-light, $water-light);
+$warning: var(--theme-color-warning, $sun);
+$warning-light: var(--theme-color-warning-light, $sun-light);
+$neutral: var(--theme-color-neutral, $gray-40);
+$neutral-light: var(--theme-color-neutral-light, $gray-10);
+$special: var(--theme-color-special, $berry);
+$special-light: var(--theme-color-special-light, $berry-light);
+$shadow-light: rgba($night, 0.04);
+$shadow: rgba($night, 0.08);
+$shadow-dark: rgba($night, 0.16);
+$scroll-background: transparent;
+$scroll-foreground: rgba($night, 0.25);

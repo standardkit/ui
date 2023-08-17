@@ -1,1 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@standardkit/ui/base";
+@use "@standardkit/ui/theme";
+@include theme.include-default-font;
+@include theme.use-default-font;

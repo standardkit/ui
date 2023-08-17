@@ -1,5 +1,5 @@
 {
-  "name": "ng-standardkit",
+  "name": "@standardkit/ui",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,8 +9,8 @@
     "test": "ng test",
     "test:ci": "ng test --watch=false --configuration development",
     "lint": "npm run lint:prettier && npm run lint:stylelint && ng lint",
-    "lint:prettier": "prettier '**/*.{js,html,css,scss,md,yml,yaml,json}' --allow-empty-input --write",
-    "lint:stylelint": "stylelint '**/*.{css,scss}' --allow-empty-input --fix",
+    "lint:prettier": "prettier '**/*.{js,html,css,scss,md,yml,yaml,json}' --write",
+    "lint:stylelint": "stylelint '**/*.{css,scss}' --fix",
     "lint:staged": "lint-staged",
     "release:patch": "npm version patch && npm run build && npm publish",
     "release:minor": "npm version minor && npm run build && npm publish",
@@ -27,6 +27,8 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@standardkit/core": "^0.1.1",
+    "normalize.css": "^8.0.1",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.1",
     "zone.js": "~0.13.1"

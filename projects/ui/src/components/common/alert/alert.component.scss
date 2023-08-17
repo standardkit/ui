@@ -1,0 +1,67 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.alert {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  border-radius: borders.$border-radius-s;
+  box-shadow: 2px 2px 5px 2px colors.$shadow;
+  background-color: colors.$error;
+  padding: 12px 16px;
+  line-height: fonts.$text-line-height-l;
+  color: colors.$white;
+  font-size: fonts.$text-size-l;
+  font-weight: 400;
+
+  &--no-shadow {
+    box-shadow: none;
+  }
+}
+
+.alert__icon {
+  line-height: 1;
+  user-select: none;
+}
+
+.alert--warning {
+  background-color: colors.$warning;
+}
+
+.alert--success {
+  background-color: colors.$success;
+}
+
+.alert--info {
+  background-color: colors.$info;
+}
+
+.alert--neutral {
+  background-color: colors.$neutral;
+}
+
+.alert--special {
+  background-color: colors.$special;
+}
+
+.alert--primary {
+  background-color: colors.$primary;
+}
+
+.alert--secondary {
+  background-color: colors.$secondary;
+}
+
+.alert--light {
+  background-color: colors.$white;
+  color: colors.$gray-70; // TODO : Use 'text-color' or getContrast from @standardkit/styles
+}
+
+.alert--dark {
+  background-color: colors.$gray-70;
+}
+
+.alert__body {
+  padding: 4px 0;
+}

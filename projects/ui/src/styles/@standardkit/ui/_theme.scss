@@ -1,0 +1,50 @@
+@use "sass:color";
+@use "fonts";
+
+@mixin colors($colors: ()) {
+
+  :root {
+    @each $key, $value in $colors {
+      --theme-color-#{$key}: #{$value};
+    }
+  }
+}
+
+@mixin use-fonts($fonts: ()) {
+
+  :root {
+    @each $key, $value in $fonts {
+      --theme-font-#{$key}: #{$value};
+    }
+  }
+
+  body {
+    font-family: var(--theme-font-text), sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--theme-font-title), serif;
+  }
+
+  h5,
+  h6 {
+    font-family: var(--theme-font-text), sans-serif;
+  }
+}
+
+@mixin use-default-font {
+  $default-fonts: (
+    title: inter,
+    text: inter,
+  );
+
+  @include use-fonts($default-fonts);
+}
+
+@mixin include-default-font {
+  /** Inter Google Fonts */
+  @import "https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap";
+}
