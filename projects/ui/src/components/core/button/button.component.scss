@@ -1,0 +1,236 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.button {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid colors.$primary;
+  border-radius: borders.$border-radius-m;
+  box-shadow: 1px 1px 2px 1px colors.$shadow-dark;
+  background-color: colors.$primary;
+  cursor: pointer;
+  padding: 12px 19px; // takes into account border size
+  text-transform: uppercase;
+  line-height: fonts.$text-line-height-m;
+  letter-spacing: 0.5px;
+  color: colors.$white;
+  font-family: fonts.$text-font;
+  font-size: fonts.$text-size-m;
+  font-weight: 600;
+  user-select: none;
+
+  &:disabled {
+    border: 1px solid colors.$gray-40;
+    background-color: colors.$gray-40;
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(110%);
+  }
+
+  &:active:not(:disabled) {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+  }
+
+  &--sharp-borders {
+    border-radius: 0;
+  }
+
+  &--full-width {
+    justify-content: center;
+    width: 100%;
+  }
+
+  &--compact {
+    padding: 8px 10px;
+  }
+}
+
+// TODO : Make this into a function of sorts with parameters looping through all the colors / styles
+
+.button--light {
+  border-color: colors.$white;
+  box-shadow: none;
+  background-color: colors.$white;
+  color: colors.$gray-80;
+
+  &:disabled {
+    border-color: colors.$gray-10;
+    background-color: colors.$gray-10;
+    color: colors.$gray-40;
+  }
+
+  &:focus {
+    outline-color: colors.$primary;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: colors.$gray-10;
+    background-color: colors.$gray-10;
+    filter: none;
+  }
+}
+
+.button--dark {
+  border-color: colors.$gray-70;
+  background-color: colors.$gray-70;
+
+  &:disabled {
+    border-color: colors.$gray-50;
+    background-color: colors.$gray-50;
+    color: colors.$gray-10;
+  }
+
+  &:focus {
+    outline-color: colors.$primary;
+  }
+
+  &:hover:not(:disabled) {
+    color: colors.$primary;
+    filter: none;
+  }
+}
+
+.button--error {
+  border-color: colors.$error;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  background-color: colors.$error;
+
+  &:focus {
+    outline: 1px solid colors.$error;
+  }
+
+  &:disabled {
+    border-color: colors.$gray-40;
+    background-color: colors.$gray-10;
+    color: colors.$gray-40;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(105%);
+  }
+}
+
+.button--success {
+  border-color: colors.$success;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  background-color: colors.$success;
+
+  &:disabled {
+    border-color: colors.$gray-40;
+    background-color: colors.$gray-10;
+    color: colors.$gray-40;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(105%);
+  }
+
+  &:focus:not(:active) {
+    outline: 1px solid colors.$success;
+  }
+}
+
+.button--warning {
+  border-color: colors.$warning;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  background-color: colors.$warning;
+
+  &:disabled {
+    border-color: colors.$gray-40;
+    background-color: colors.$gray-10;
+    color: colors.$gray-40;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(105%);
+  }
+
+  &:focus:not(:active) {
+    outline: 1px solid colors.$warning;
+  }
+}
+
+.button--special {
+  border-color: colors.$special;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  background-color: colors.$special;
+
+  &:disabled {
+    border-color: colors.$gray-40;
+    background-color: colors.$gray-10;
+    color: colors.$gray-40;
+  }
+
+  &:focus:not(:active) {
+    outline: 1px solid colors.$special;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(105%);
+  }
+}
+
+.button--secondary {
+  border-color: colors.$secondary;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  background-color: colors.$secondary;
+
+  &:disabled {
+    border-color: colors.$gray-40;
+    background-color: colors.$gray-10;
+    color: colors.$gray-40;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(105%);
+  }
+
+  &:focus:not(:active) {
+    outline: 1px solid colors.$secondary;
+  }
+}
+
+.button--info {
+  border-color: colors.$info;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  background-color: colors.$info;
+
+  &:disabled {
+    border-color: colors.$gray-40;
+    background-color: colors.$gray-10;
+    color: colors.$gray-40;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(105%);
+  }
+
+  &:focus:not(:active) {
+    outline: 1px solid colors.$info;
+  }
+}
+
+.button--neutral {
+  border-color: colors.$neutral;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  background-color: colors.$neutral;
+
+  &:disabled {
+    border-color: colors.$gray-40;
+    background-color: colors.$gray-10;
+    color: colors.$gray-40;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(105%);
+  }
+
+  &:focus:not(:active) {
+    outline: 1px solid colors.$neutral;
+  }
+}

@@ -1,0 +1,26 @@
+<button
+  [disabled]="disabled"
+  class="button"
+  [class.button--light]="type === 'light'"
+  [class.button--dark]="type === 'dark'"
+  [class.button--neutral]="type === 'neutral'"
+  [class.button--success]="type === 'success'"
+  [class.button--info]="type === 'info'"
+  [class.button--warning]="type === 'warning'"
+  [class.button--error]="type === 'error'"
+  [class.button--special]="type === 'special'"
+  [class.button--primary]="type === 'primary'"
+  [class.button--secondary]="type === 'secondary'"
+  [class.button--full-width]="fullWidth"
+  [class.button--compact]="compact"
+  [class.button--sharp-borders]="isSharp"
+  [type]="isSubmit ? 'submit' : 'button'"
+>
+  <span class="button__icon" *ngIf="icon && alignIcon === 'left'">
+    <sk-icon [icon]="icon"></sk-icon>
+  </span>
+  <ng-content></ng-content>
+  <span class="button__icon" *ngIf="icon && alignIcon === 'right'">
+    <sk-icon [icon]="icon"></sk-icon>
+  </span>
+</button>

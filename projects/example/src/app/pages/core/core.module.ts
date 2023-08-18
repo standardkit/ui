@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BarPage } from './bar';
+import { ButtonPage } from './button';
 import { IconPage } from './icon';
-import { SkBarModule, SkIconModule } from '@standardkit/ui';
+import { SkButtonModule, SkBarModule, SkIconModule } from '@standardkit/ui';
 
-const PAGES: any[] = [BarPage, IconPage];
+const PAGES: any[] = [BarPage, IconPage, ButtonPage];
 
 @NgModule({
-  imports: [SkBarModule, SkIconModule],
+  imports: [SkBarModule, SkIconModule, SkButtonModule],
   declarations: PAGES,
   exports: PAGES,
 })

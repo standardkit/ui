@@ -1,0 +1,50 @@
+Styles
+<sk-bar>
+  <sk-button>Click me</sk-button>
+  <sk-button type="info">Click me</sk-button>
+  <sk-button type="success">Click me</sk-button>
+  <sk-button type="warning">Click me</sk-button>
+  <sk-button type="error">Click me</sk-button>
+  <sk-button type="light">Click me</sk-button>
+  <sk-button type="dark">Click me</sk-button>
+  <sk-button type="special">Click me</sk-button>
+  <sk-button type="neutral">Click me</sk-button>
+  <sk-button type="secondary">Click me</sk-button>
+</sk-bar>
+<br />
+Icons
+<sk-bar>
+  <sk-button icon="skull">Icon default</sk-button>
+  <sk-button icon="skull" alignIcon="right">Icon right</sk-button>
+  <sk-button icon="skull" alignIcon="left">Icon right</sk-button>
+</sk-bar>
+<br />
+
+Disabled
+<sk-bar>
+  <sk-button [disabled]="true">Click me</sk-button>
+  <sk-button [disabled]="true" type="info">Click me</sk-button>
+  <sk-button [disabled]="true" type="success">Click me</sk-button>
+  <sk-button [disabled]="true" type="warning">Click me</sk-button>
+  <sk-button [disabled]="true" type="error">Click me</sk-button>
+  <sk-button [disabled]="true" type="light">Click me</sk-button>
+  <sk-button [disabled]="true" type="dark">Click me</sk-button>
+  <sk-button [disabled]="true" type="special">Click me</sk-button>
+  <sk-button [disabled]="true" type="neutral">Click me</sk-button>
+  <sk-button [disabled]="true" type="secondary">Click me</sk-button>
+</sk-bar>
+
+<br />
+Size
+<sk-bar [isVertical]="true">
+  <sk-button [compact]="true">I am compact</sk-button>
+  <sk-button [fullWidth]="true">Full width button</sk-button>
+  <sk-button [compact]="true" [fullWidth]="true">Full width compact button</sk-button>
+</sk-bar>
+<br />
+Shape
+<sk-bar>
+  <sk-button [isSharp]="true">I am edgy</sk-button>
+  <sk-button [isSharp]="true" type="light">I am edgy</sk-button>
+  <sk-button [isSharp]="true" type="light" [disabled]="true">I am edgy and disabled</sk-button>
+</sk-bar>

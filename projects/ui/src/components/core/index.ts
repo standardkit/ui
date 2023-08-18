@@ -1,5 +1,5 @@
 export * from './bar';
-// export * from './button';
+export * from './button';
 export * from './icon';
 // export * from './link';
 // export * from './price';
