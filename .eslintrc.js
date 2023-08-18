@@ -41,7 +41,7 @@ module.exports = {
 
     "max-len": ["error", { code: 120 }],
     "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
-    "no-empty-function": ["error", { allow: ["arrowFunctions"] }],
+    "no-empty-function": ["error", { allow: ["arrowFunctions", "constructors"] }],
     "no-multi-spaces": "error",
     "no-multiple-empty-lines": ["error", { max: 1 }],
     "no-trailing-spaces": "error",
