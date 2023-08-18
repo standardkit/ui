@@ -1,0 +1,35 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.accordion-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-top: 1px solid colors.$gray-30;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 12px 24px;
+  width: 100%;
+  text-align: left;
+  line-height: 20px;
+  color: colors.$primary;
+  font-size: fonts.$text-size-l;
+  user-select: none;
+}
+
+.accordion-item__icon {
+  color: colors.$black;
+  font-weight: bold;
+}
+
+.accordion-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px 24px 24px;
+
+  &--no-padding {
+    padding: 0 0 24px;
+  }
+}

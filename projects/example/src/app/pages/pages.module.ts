@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from './common';
 import { HomePage } from './home';
-import { SkAlertModule } from '@standardkit/ui';
 
 @NgModule({
-  imports: [SkAlertModule],
+  imports: [CommonModule],
   declarations: [HomePage],
   exports: [HomePage],
 })
