@@ -1,4 +1,6 @@
 @use "@standardkit/ui/base";
 @use "@standardkit/ui/theme";
+
+// Include StandardKit Fonts
 @include theme.include-default-font;
 @include theme.use-default-font;

@@ -27,6 +27,7 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@fortawesome/fontawesome-free": "^6.4.2",
     "@standardkit/core": "^0.1.2",
     "normalize.css": "^8.0.1",
     "rxjs": "~7.8.1",
