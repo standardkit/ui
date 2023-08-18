@@ -25,7 +25,7 @@ module.exports = {
       { selector: "interface", format: ["PascalCase"] },
       { selector: "enumMember", format: ["PascalCase"] },
       { selector: "typeAlias", format: ["PascalCase"] },
-      { selector: "variable", types: ["boolean"], format: ["PascalCase"] },
+      { selector: "variable", types: ["boolean"], format: ["camelCase"] },
       { selector: "variableLike", format: ["camelCase"] },
       {
         selector: "variable",
