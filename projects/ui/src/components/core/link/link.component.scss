@@ -1,0 +1,6 @@
+@use "@standardkit/ui/colors";
+
+.link {
+  text-decoration: none;
+  color: colors.$base; // TODO : Make configurable
+}

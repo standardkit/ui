@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutModule, PageLayout } from '../layout';
-import { HomePage, PagesModule, AccordionPage, AlertPage, BarPage, IconPage, ButtonPage } from '../pages';
+import { HomePage, PagesModule, AccordionPage, AlertPage, BarPage, IconPage, ButtonPage, LinkPage } from '../pages';
 
 const routes: Routes = [
   {
@@ -22,6 +22,7 @@ const routes: Routes = [
           { path: 'bar', component: BarPage },
           { path: 'button', component: ButtonPage },
           { path: 'icon', component: IconPage },
+          { path: 'link', component: LinkPage },
         ],
       },
     ],
