@@ -1,0 +1,31 @@
+.bar {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+
+  &--vertical {
+    flex-direction: column;
+  }
+
+  &--no-gap {
+    gap: 0;
+  }
+}
+
+.bar--align-center {
+  justify-content: center;
+}
+
+.bar--align-right {
+  justify-content: flex-end;
+}
+
+.bar--align-space-between {
+  justify-content: space-between;
+}
+
+// Needs ViewEncapsulation.None
+
+.bar--grow-children > * {
+  flex: 1;
+}

@@ -1,0 +1,11 @@
+<div
+  class="bar"
+  [class.bar--align-right]="align === 'right'"
+  [class.bar--align-center]="align === 'center'"
+  [class.bar--align-space-between]="align === 'space-between'"
+  [class.bar--grow-children]="growChildren"
+  [class.bar--no-gap]="noGap"
+  [class.bar--vertical]="isVertical"
+>
+  <ng-content></ng-content>
+</div>

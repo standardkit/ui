@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from './common';
+import { CoreModule } from './core';
 import { HomePage } from './home';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, CoreModule],
   declarations: [HomePage],
   exports: [HomePage],
 })

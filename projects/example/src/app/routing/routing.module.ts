@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutModule, PageLayout } from '../layout';
-import { HomePage, PagesModule, AccordionPage, AlertPage } from '../pages';
+import { HomePage, PagesModule, AccordionPage, AlertPage, BarPage } from '../pages';
 
 const routes: Routes = [
   {
@@ -16,6 +16,7 @@ const routes: Routes = [
           { path: 'alert', component: AlertPage },
         ],
       },
+      { path: 'core', children: [{ path: 'bar', component: BarPage }] },
     ],
   },
 ];
