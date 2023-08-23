@@ -1,0 +1,9 @@
+@use "@standardkit/ui/grid";
+
+:host(.row) {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 24px;
+  margin-bottom: 24px;
+  max-width: grid.$max-width;
+}

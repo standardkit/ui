@@ -1,0 +1,15 @@
+:host(.column) {
+  display: flex;
+  flex: 1 1 480px;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 100%;
+}
+
+:host(.column--wide) {
+  flex-basis: 640px;
+}
+
+:host(.column--narrow) {
+  flex-basis: 320px;
+}
