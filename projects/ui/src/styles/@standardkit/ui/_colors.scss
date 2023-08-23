@@ -7,7 +7,7 @@ $ocean: #0082b1;
 $sun: #ffb469;
 $fire: #ff6969;
 $grass: #69ff69;
-$sand: #ffff69;
+$sand: #ffce33;
 $berry: #6969b4;
 $gem: #008376;
 $snow: #fdfdfd;
@@ -15,16 +15,16 @@ $night: #020202;
 
 // TODO : Add navy style base color
 
-$hotpink-light: color.adjust($hotpink, $lightness: 50%);
-$water-light: color.adjust($water, $lightness: 50%);
-$sun-light: color.adjust($sun, $lightness: 50%);
+$hotpink-light: color.adjust($hotpink, $lightness: 26%);
+$water-light: color.adjust($water, $lightness: 25%);
+$sun-light: color.adjust($sun, $lightness: 25%);
 $sun-dark: color.adjust($sun, $lightness: -10%);
-$fire-light: color.adjust($fire, $lightness: 50%);
-$grass-light: color.adjust($grass, $lightness: 50%);
+$fire-light: color.adjust($fire, $lightness: 26%);
+$grass-light: color.adjust($grass, $lightness: 25%);
 $grass-dark: color.adjust($grass, $lightness: -35%);
-$sand-light: color.adjust($sand, $lightness: 50%);
-$sand-dark: color.adjust($sand, $lightness: -40%);
-$berry-light: color.adjust($berry, $lightness: 50%);
+$sand-light: color.adjust($sand, $lightness: 28%);
+$sand-dark: color.adjust($sand, $lightness: -22%);
+$berry-light: color.adjust($berry, $lightness: 35%);
 $berry-dark: color.adjust($berry, $lightness: -10%);
 $ocean-light: color.adjust($ocean, $lightness: 50%);
 $ocean-dark: color.adjust($ocean, $lightness: -10%);

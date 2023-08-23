@@ -12,6 +12,7 @@ import {
   LinkPage,
   TagPage,
   TogglePage,
+  PillPage,
 } from '../pages';
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
           { path: 'button', component: ButtonPage },
           { path: 'icon', component: IconPage },
           { path: 'link', component: LinkPage },
+          { path: 'pill', component: PillPage },
           { path: 'tag', component: TagPage },
           { path: 'toggle', component: TogglePage },
         ],

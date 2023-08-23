@@ -3,6 +3,7 @@ import { BarPage } from './bar';
 import { ButtonPage } from './button';
 import { IconPage } from './icon';
 import { LinkPage } from './link';
+import { PillPage } from './pill';
 import { TagPage } from './tag';
 import { TogglePage } from './toggle';
 import {
@@ -13,12 +14,13 @@ import {
   SkLinkModule,
   ToggleModule,
   TopBarModule,
+  PillModule,
 } from '@standardkit/ui';
 
-const PAGES: any[] = [BarPage, IconPage, ButtonPage, LinkPage, TagPage, TogglePage];
+const PAGES: any[] = [BarPage, ButtonPage, IconPage, LinkPage, PillPage, TagPage, TogglePage];
 
 @NgModule({
-  imports: [SkBarModule, SkIconModule, SkButtonModule, SkLinkModule, TagModule, ToggleModule, TopBarModule],
+  imports: [SkBarModule, SkIconModule, SkButtonModule, SkLinkModule, TagModule, ToggleModule, TopBarModule, PillModule],
   declarations: PAGES,
   exports: PAGES,
 })

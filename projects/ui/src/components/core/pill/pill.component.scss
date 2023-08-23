@@ -1,0 +1,104 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.pill {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+  align-items: center;
+  border-radius: borders.$border-radius-m;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  padding: 2px 8px;
+  width: fit-content;
+  height: 20px;
+  line-height: fonts.$text-line-height-m;
+  font-size: fonts.$text-size-m;
+  font-weight: 600;
+  user-select: none;
+
+  &--clickable {
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(97%);
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
+  }
+}
+
+.pill__label {
+  font-weight: 400;
+}
+
+.pill__content {
+  white-space: nowrap;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.pill--neutral {
+  background-color: colors.$neutral-light;
+  color: colors.$neutral;
+}
+
+.pill--success {
+  background-color: colors.$success-light;
+  color: colors.$success;
+}
+
+.pill--warning {
+  background-color: colors.$warning-light;
+  color: colors.$warning;
+}
+
+.pill--info {
+  background-color: colors.$info-light;
+  color: colors.$info;
+}
+
+.pill--error {
+  background-color: colors.$error-light;
+  color: colors.$error;
+}
+
+.pill--special {
+  background-color: colors.$special-light;
+  color: colors.$special;
+}
+
+.pill--primary {
+  background-color: colors.$primary-light;
+  color: colors.$primary;
+}
+
+.pill--secondary {
+  background-color: colors.$secondary-light;
+  color: colors.$secondary;
+}
+
+.pill--light {
+  background-color: colors.$white;
+  color: colors.$gray-70;
+}
+
+.pill--dark {
+  background-color: colors.$gray-70;
+  color: colors.$white;
+}
+
+.pill__icon {
+
+  &--left {
+    margin-left: -3px;
+  }
+
+  &--right {
+    margin-right: -3px;
+  }
+}

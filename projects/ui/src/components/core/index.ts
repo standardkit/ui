@@ -2,6 +2,6 @@ export * from './bar';
 export * from './button';
 export * from './icon';
 export * from './link';
-// export * from './status-tag';
+export * from './pill';
 export * from './tag';
 export * from './toggle';

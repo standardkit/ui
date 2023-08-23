@@ -1,0 +1,19 @@
+<span
+  class="pill"
+  [ngClass]="'pill--' + type"
+  [class.pill--clickable]="selectPill.observed"
+  [attr.tabindex]="selectPill.observed ? 0 : undefined"
+  (click)="onClick($event)"
+  (keydown.enter)="onClick($event)"
+>
+  <span *ngIf="icon && alignIcon === 'left'" class="pill__icon pill__icon--left">
+    <sk-icon [icon]="icon"></sk-icon>
+  </span>
+  <span *ngIf="label" class="pill__label">{{ label }}</span>
+  <span class="pill__content">
+    <ng-content></ng-content>
+  </span>
+  <span class="pill__icon pill__icon--right" *ngIf="icon && alignIcon === 'right'">
+    <sk-icon [icon]="icon"></sk-icon>
+  </span>
+</span>
