@@ -1,10 +1,14 @@
-<h1>tag page</h1>
+<sk-top-bar name="Tag"></sk-top-bar>
 
-<sk-bar>
-  <sk-tag>Some tag</sk-tag>
-  <sk-tag icon="skull">Tag with icon</sk-tag>
-  <sk-tag icon="skull" alignIcon="left">Tag with icon left</sk-tag>
-  <sk-tag (selectTag)="onSelectTag()">Tag with select</sk-tag>
-  <sk-tag icon="angle-right" (selectTag)="onSelectTag()">Tag with select and icon right</sk-tag>
-  <sk-tag icon="search" (selectTag)="onSelectTag()" alignIcon="left">Tag with select and icon left</sk-tag>
-</sk-bar>
+<sk-row>
+  <sk-column>
+    <sk-bar>
+      <sk-tag>Some tag</sk-tag>
+      <sk-tag icon="skull">Tag with icon</sk-tag>
+      <sk-tag icon="skull" alignIcon="left">Tag with icon left</sk-tag>
+      <sk-tag (selectTag)="onSelectTag()">Tag with select</sk-tag>
+      <sk-tag icon="angle-right" (selectTag)="onSelectTag()">Tag with select and icon right</sk-tag>
+      <sk-tag icon="search" (selectTag)="onSelectTag()" alignIcon="left">Tag with select and icon left</sk-tag>
+    </sk-bar>
+  </sk-column>
+</sk-row>

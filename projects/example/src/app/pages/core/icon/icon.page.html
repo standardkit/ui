@@ -1,1 +1,33 @@
-<sk-icon></sk-icon>
+<sk-top-bar name="Icon"></sk-top-bar>
+
+<sk-row>
+  <sk-column>
+    Some Icons
+    <sk-bar>
+      <sk-icon></sk-icon>
+      <sk-icon icon="home"></sk-icon>
+      <sk-icon icon="star"></sk-icon>
+    </sk-bar>
+
+    IconSet 'regular'
+    <sk-bar>
+      <sk-icon iconSet="regular" icon="user"></sk-icon>
+      <sk-icon iconSet="regular" icon="square-check"></sk-icon>
+      <sk-icon iconSet="regular" icon="star"></sk-icon>
+    </sk-bar>
+
+    Spinning
+    <sk-bar>
+      <sk-icon [isSpinning]="true"></sk-icon>
+      <sk-icon [isSpinning]="true" icon="spinner"></sk-icon>
+      <sk-icon [isSpinning]="true" icon="star"></sk-icon>
+    </sk-bar>
+
+    Reverse Spinning
+    <sk-bar>
+      <sk-icon [isReverse]="true" [isSpinning]="true"></sk-icon>
+      <sk-icon [isReverse]="true" [isSpinning]="true" icon="spinner"></sk-icon>
+      <sk-icon [isReverse]="true" [isSpinning]="true" icon="star"></sk-icon>
+    </sk-bar>
+  </sk-column>
+</sk-row>

@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SkIconModule } from '../icon';
-import { ToggleComponent } from './toggle.component';
+import { SkToggleComponent } from './toggle.component';
 
 @NgModule({
   imports: [CommonModule, SkIconModule],
-  declarations: [ToggleComponent],
-  exports: [ToggleComponent],
+  declarations: [SkToggleComponent],
+  exports: [SkToggleComponent],
 })
-export class ToggleModule {}
+export class SkToggleModule {}

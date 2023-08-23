@@ -1,27 +1,52 @@
-Left / default
-<sk-bar>
-  <p>Text 1</p>
-  <p>Text 2</p>
-  <p>Text 3</p>
-</sk-bar>
+<sk-top-bar name="Bar"></sk-top-bar>
 
-center
-<sk-bar align="center">
-  <p>Text 1</p>
-  <p>Text 2</p>
-  <p>Text 3</p>
-</sk-bar>
+<sk-row>
+  <sk-column>
+    <sk-bar [isVertical]="true">
+      <sk-bar [isVertical]="true">
+        <sk-tag>Left (default)</sk-tag>
+        <sk-bar>
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+        </sk-bar>
+      </sk-bar>
 
-right
-<sk-bar align="right">
-  <p>Text 1</p>
-  <p>Text 2</p>
-  <p>Text 3</p>
-</sk-bar>
+      <br />
 
-space-between
-<sk-bar align="space-between">
-  <p>Text 1</p>
-  <p>Text 2</p>
-  <p>Text 3</p>
-</sk-bar>
+      <sk-bar [isVertical]="true">
+        <sk-bar align="center"><sk-tag>Center</sk-tag></sk-bar>
+        <sk-bar align="center">
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+        </sk-bar>
+      </sk-bar>
+
+      <br />
+
+      <sk-bar [isVertical]="true">
+        <sk-bar align="right"><sk-tag>Right</sk-tag></sk-bar>
+        <sk-bar align="right">
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+        </sk-bar>
+      </sk-bar>
+
+      <br />
+
+      <sk-bar [isVertical]="true">
+        <sk-bar align="space-between">
+          <sk-tag>Space</sk-tag>
+          <sk-tag>between</sk-tag>
+        </sk-bar>
+        <sk-bar align="space-between">
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+          <sk-button type="neutral" icon="bars-staggered"></sk-button>
+        </sk-bar>
+      </sk-bar>
+    </sk-bar>
+  </sk-column>
+</sk-row>

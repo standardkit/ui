@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CheckboxInputPage } from './checkbox-input';
-import { CheckboxInputModule, SkButtonModule, TopBarModule } from '@standardkit/ui';
+import { SkCheckboxInputModule, SkButtonModule, SkTopBarModule } from '@standardkit/ui';
 
 const PAGES: any[] = [CheckboxInputPage];
 
 @NgModule({
-  imports: [TopBarModule, CheckboxInputModule, ReactiveFormsModule, SkButtonModule],
+  imports: [ReactiveFormsModule, SkTopBarModule, SkCheckboxInputModule, SkButtonModule],
   declarations: PAGES,
   exports: PAGES,
 })

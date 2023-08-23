@@ -1,23 +1,29 @@
 <sk-top-bar name="Pill"></sk-top-bar>
 
-<sk-bar [isVertical]="true">
-  <sk-bar>
-    <sk-pill type="success">Success</sk-pill>
-    <sk-pill type="warning" icon="triangle-exclamation">warning</sk-pill>
-    <sk-pill type="error">error</sk-pill>
-    <sk-pill type="info">Info</sk-pill>
-    <sk-pill type="neutral">Neutral</sk-pill>
-    <sk-pill type="special">Special</sk-pill>
-    <sk-pill type="light">Light</sk-pill>
-    <sk-pill type="dark">dark</sk-pill>
-    <sk-pill type="primary">Primary</sk-pill>
-    <sk-pill type="secondary">Secondary</sk-pill>
-  </sk-bar>
+<sk-row>
+  <sk-column>
+    Styles
+    <sk-bar>
+      <sk-pill type="success">Success</sk-pill>
+      <sk-pill type="warning" icon="triangle-exclamation">warning</sk-pill>
+      <sk-pill type="error">error</sk-pill>
+      <sk-pill type="info">Info</sk-pill>
+      <sk-pill type="neutral">Neutral</sk-pill>
+      <sk-pill type="special">Special</sk-pill>
+      <sk-pill type="light">Light</sk-pill>
+      <sk-pill type="dark">dark</sk-pill>
+      <sk-pill type="primary">Primary</sk-pill>
+      <sk-pill type="secondary">Secondary</sk-pill>
+    </sk-bar>
 
-  <sk-bar>
-    <sk-pill label="Label:">Pill with label</sk-pill>
-    <sk-pill icon="star">Pill with icon left</sk-pill>
-    <sk-pill icon="search" alignIcon="right">Pill with icon right</sk-pill>
-    <sk-pill icon="angle-right" alignIcon="right" (selectPill)="onSelectPill()">Selectable pill</sk-pill>
-  </sk-bar>
-</sk-bar>
+    Variants
+    <sk-bar>
+      <sk-pill label="Label:">Pill with label</sk-pill>
+      <sk-pill type="special" icon="star">Pill with icon left</sk-pill>
+      <sk-pill icon="search" type="info" alignIcon="right">Pill with icon right</sk-pill>
+      <sk-pill icon="angle-right" alignIcon="right" type="secondary" (selectPill)="onSelectPill()">
+        Selectable pill
+      </sk-pill>
+    </sk-bar>
+  </sk-column>
+</sk-row>

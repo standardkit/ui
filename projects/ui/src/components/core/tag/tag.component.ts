@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: 'tag.component.html',
   styleUrls: ['tag.component.scss'],
 })
-export class TagComponent {
+export class SkTagComponent {
   @Input() public icon?: string;
   // TODO : Add style input for different styles
   @Input() public alignIcon: 'left' | 'right' = 'right';

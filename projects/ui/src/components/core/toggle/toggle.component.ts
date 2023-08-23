@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: 'toggle.component.html',
   styleUrls: ['toggle.component.scss'],
 })
-export class ToggleComponent {
+export class SkToggleComponent {
   @Input() public isActive: boolean = false;
   @Input() public isPending: boolean = false;
   @Input() public isDisabled: boolean = false;

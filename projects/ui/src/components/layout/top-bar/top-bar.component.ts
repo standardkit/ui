@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: 'top-bar.component.html',
   styleUrls: ['top-bar.component.scss'],
 })
-export class TopBarComponent {
+export class SkTopBarComponent {
   @Input() public name?: string;
   @Input() public isFullWidth: boolean = false;
 }

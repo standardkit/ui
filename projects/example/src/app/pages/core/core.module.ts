@@ -7,20 +7,33 @@ import { PillPage } from './pill';
 import { TagPage } from './tag';
 import { TogglePage } from './toggle';
 import {
-  TagModule,
+  SkTagModule,
   SkButtonModule,
   SkBarModule,
   SkIconModule,
   SkLinkModule,
-  ToggleModule,
-  TopBarModule,
-  PillModule,
+  SkToggleModule,
+  SkTopBarModule,
+  SkPillModule,
+  SkRowModule,
+  SkColumnModule,
 } from '@standardkit/ui';
 
 const PAGES: any[] = [BarPage, ButtonPage, IconPage, LinkPage, PillPage, TagPage, TogglePage];
 
 @NgModule({
-  imports: [SkBarModule, SkIconModule, SkButtonModule, SkLinkModule, TagModule, ToggleModule, TopBarModule, PillModule],
+  imports: [
+    SkBarModule,
+    SkButtonModule,
+    SkColumnModule,
+    SkIconModule,
+    SkLinkModule,
+    SkPillModule,
+    SkRowModule,
+    SkTagModule,
+    SkToggleModule,
+    SkTopBarModule,
+  ],
   declarations: PAGES,
   exports: PAGES,
 })

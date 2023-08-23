@@ -1,10 +1,10 @@
 import { NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { TopBarComponent } from './top-bar.component';
+import { SkTopBarComponent } from './top-bar.component';
 
 @NgModule({
-  declarations: [TopBarComponent],
-  exports: [TopBarComponent],
   imports: [NgIf],
+  declarations: [SkTopBarComponent],
+  exports: [SkTopBarComponent],
 })
-export class TopBarModule {}
+export class SkTopBarModule {}

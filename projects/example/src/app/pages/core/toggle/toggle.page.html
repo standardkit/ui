@@ -2,6 +2,32 @@
   <sk-button (click)="isDisabled = !isDisabled">{{ isDisabled ? 'Enable' : 'Disable' }}</sk-button>
 </sk-top-bar>
 
-<sk-bar>
-  <sk-toggle [isActive]="isActive" [isDisabled]="isDisabled" [isPending]="isPending" (toggle)="onToggle()"></sk-toggle>
-</sk-bar>
+<sk-row>
+  <sk-column>
+    Working Toggle
+    <sk-toggle
+      [isActive]="isActive"
+      [isDisabled]="isDisabled"
+      [isPending]="isPending"
+      (toggle)="onToggle()"
+    ></sk-toggle>
+
+    Active
+    <sk-bar>
+      <sk-toggle [isActive]="false"></sk-toggle>
+      <sk-toggle [isActive]="true"></sk-toggle>
+    </sk-bar>
+
+    Disabled
+    <sk-bar>
+      <sk-toggle [isDisabled]="true" [isActive]="false"></sk-toggle>
+      <sk-toggle [isDisabled]="true" [isActive]="true"></sk-toggle>
+    </sk-bar>
+
+    Pending
+    <sk-bar>
+      <sk-toggle [isPending]="true" [isActive]="false"></sk-toggle>
+      <sk-toggle [isPending]="true" [isActive]="true"></sk-toggle>
+    </sk-bar>
+  </sk-column>
+</sk-row>

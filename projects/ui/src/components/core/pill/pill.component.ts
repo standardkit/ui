@@ -6,7 +6,7 @@ import { STYLE, StyleType } from '@standardkit/core';
   templateUrl: 'pill.component.html',
   styleUrls: ['pill.component.scss'],
 })
-export class PillComponent {
+export class SkPillComponent {
   @Input() public type: StyleType = STYLE.Primary;
   @Input() public label?: string;
   @Input() public icon?: string;

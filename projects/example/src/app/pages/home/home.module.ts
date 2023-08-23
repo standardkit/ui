@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { HomePage } from './home.page';
-import { SkBottomBarModule, SkButtonModule, TopBarModule } from '@standardkit/ui';
+import { SkBottomBarModule, SkButtonModule, SkTopBarModule } from '@standardkit/ui';
 
-@NgModule({ imports: [TopBarModule, SkButtonModule, SkBottomBarModule], declarations: [HomePage], exports: [HomePage] })
+@NgModule({
+  imports: [SkTopBarModule, SkButtonModule, SkBottomBarModule],
+  declarations: [HomePage],
+  exports: [HomePage],
+})
 export class HomeModule {}
