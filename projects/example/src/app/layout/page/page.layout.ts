@@ -12,6 +12,7 @@ export class PageLayout {
       children: [
         { name: 'Accordion', route: 'common/accordion' },
         { name: 'Alert', route: 'common/alert' },
+        { name: 'Card', route: 'common/card' },
       ],
     },
     {

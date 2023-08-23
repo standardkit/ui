@@ -38,6 +38,7 @@
 .top-bar__actions {
   display: flex;
   gap: 16px;
+  align-self: flex-end;
 }
 
 .top-bar__tabs {

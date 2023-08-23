@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class SkLinkComponent {
   @Input() public url: string = '';
-  // TODO : Make routerlink compatible or internal-link component
-  // TODO : Make open in same tab with something like a target input
+  @Input() public opensNewTab: boolean = false;
+  // TODO : Make routerlink compatible or internal-link component (RouterLinkWithHref)
 }

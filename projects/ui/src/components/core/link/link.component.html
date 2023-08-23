@@ -1,1 +1,1 @@
-<a class="link" [href]="url" target="_blank"><ng-content></ng-content></a>
+<a class="link" [href]="url" [attr.target]="opensNewTab ? '_blank' : undefined"><ng-content></ng-content></a>

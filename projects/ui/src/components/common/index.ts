@@ -2,7 +2,7 @@ export * from './accordion';
 export * from './accordion-item';
 export * from './alert';
 export * from './breadcrumbs';
-// export * from './card';
+export * from './card';
 // export * from './modal';
 // export * from './rich-text';
 // export * from './segment';

@@ -1,0 +1,51 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.card {
+  border-radius: borders.$border-radius-s;
+  box-shadow: 2px 2px 5px 2px colors.$shadow;
+  background-color: colors.$white;
+}
+
+.card__header {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  line-height: fonts.$title-line-height-s;
+  color: colors.$black;
+  font-size: fonts.$title-size-s;
+}
+
+.card__header-left,
+.card__header-right {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.card__title {
+  margin: 0;
+  line-height: fonts.$title-line-height-m;
+  white-space: pre-wrap;
+  font-size: fonts.$title-size-m;
+}
+
+.card__body {
+  padding: 12px 20px;
+}
+
+.card__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+
+  &:empty {
+    display: none;
+  }
+}

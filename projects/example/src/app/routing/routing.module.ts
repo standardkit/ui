@@ -13,6 +13,7 @@ import {
   TagPage,
   TogglePage,
   PillPage,
+  CardPage,
 } from '../pages';
 import { CheckboxInputPage } from '../pages/form';
 
@@ -27,6 +28,7 @@ const routes: Routes = [
         children: [
           { path: 'accordion', component: AccordionPage },
           { path: 'alert', component: AlertPage },
+          { path: 'card', component: CardPage },
         ],
       },
       {

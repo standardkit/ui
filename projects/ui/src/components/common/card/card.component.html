@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card__header" *ngIf="name">
+    <span class="card__header-left">
+      <h3 class="card__title">{{ name }}</h3>
+      <ng-content select="[slot=title]"></ng-content>
+    </span>
+    <span class="card__header-right">
+      <ng-content select="[slot=actions]"></ng-content>
+    </span>
+  </div>
+  <div class="card__body">
+    <ng-content></ng-content>
+  </div>
+  <div class="card__footer">
+    <ng-content select="[slot=footer]"></ng-content>
+  </div>
+</div>
