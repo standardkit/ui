@@ -1,0 +1,12 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+
+.segment-group {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2px 0;
+  border-radius: borders.$border-radius-m;
+  box-shadow: 2px 2px 5px 2px colors.$shadow;
+  background-color: colors.$gray-10;
+  width: fit-content;
+}

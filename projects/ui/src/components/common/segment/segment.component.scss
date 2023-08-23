@@ -1,0 +1,41 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+:host {
+  flex: 1 1 auto;
+}
+
+.segment {
+  border-right: 1px solid colors.$gray-10;
+  background-color: colors.$white;
+  cursor: pointer;
+  padding: 12px 32px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: fonts.$text-line-height-m;
+  color: colors.$gray-70;
+  font-size: fonts.$text-size-m;
+  font-weight: 600;
+  user-select: none;
+
+  &:hover:not(&--active) {
+    color: colors.$primary;
+  }
+
+  &--active {
+    background-color: colors.$primary;
+    color: colors.$white;
+  }
+
+  &--left {
+    border-top-left-radius: borders.$border-radius-m;
+    border-bottom-left-radius: borders.$border-radius-m;
+  }
+
+  &--right {
+    border-right: none;
+    border-top-right-radius: borders.$border-radius-m;
+    border-bottom-right-radius: borders.$border-radius-m;
+  }
+}

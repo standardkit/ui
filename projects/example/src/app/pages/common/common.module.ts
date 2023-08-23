@@ -5,6 +5,7 @@ import { AlertPage } from './alert';
 import { CardPage } from './card';
 import { ModalPage } from './modal';
 import { RichTextPage } from './rich-text';
+import { SegmentPage } from './segment';
 import {
   SkModalModule,
   SkRowModule,
@@ -21,9 +22,11 @@ import {
   SkButtonModule,
   SkLinkModule,
   SkRichTextModule,
+  SkSegmentGroupModule,
+  SkSegmentModule,
 } from '@standardkit/ui';
 
-const PAGES: any[] = [AccordionPage, AlertPage, CardPage, ModalPage, RichTextPage];
+const PAGES: any[] = [AccordionPage, AlertPage, CardPage, ModalPage, RichTextPage, SegmentPage];
 
 @NgModule({
   imports: [
@@ -44,6 +47,8 @@ const PAGES: any[] = [AccordionPage, AlertPage, CardPage, ModalPage, RichTextPag
     NgIf,
     NgTemplateOutlet,
     SkRichTextModule,
+    SkSegmentGroupModule,
+    SkSegmentModule,
   ],
   declarations: PAGES,
   exports: PAGES,

@@ -1,0 +1,11 @@
+<div
+  class="segment"
+  tabindex="0"
+  [class.segment--left]="position === 'start'"
+  [class.segment--right]="position === 'end'"
+  [class.segment--active]="isActive"
+  (click)="onSelectSegment()"
+  (keydown.enter)="onSelectSegment()"
+>
+  <ng-content></ng-content>
+</div>

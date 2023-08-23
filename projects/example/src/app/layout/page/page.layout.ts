@@ -15,6 +15,7 @@ export class PageLayout {
         { name: 'Card', route: 'common/card' },
         { name: 'Modal', route: 'common/modal' },
         { name: 'Rich Text', route: 'common/rich-text' },
+        { name: 'Segment', route: 'common/segment' },
       ],
     },
     {
