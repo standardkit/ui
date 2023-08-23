@@ -1,0 +1,23 @@
+<div class="modal__container">
+  <div
+    class="modal"
+    (click)="onInsideClick()"
+    [class.modal--width-s]="width === 's'"
+    [class.modal--width-l]="width === 'l'"
+  >
+    <div class="modal__header" [class.modal__header--scrolled]="isScrollable">
+      <h3 class="modal__name">
+        {{ name }}
+      </h3>
+      <span class="modal__close" (click)="onClose()">
+        <sk-icon icon="close"></sk-icon>
+      </span>
+    </div>
+    <div #body class="modal__body" [class.modal__body--overflow]="containsOverflow" (scroll)="onScroll()">
+      <ng-content></ng-content>
+    </div>
+    <div class="modal__footer" [class.modal__footer--scrolled]="isScrollable">
+      <ng-content select="[slot=footer]"></ng-content>
+    </div>
+  </div>
+</div>

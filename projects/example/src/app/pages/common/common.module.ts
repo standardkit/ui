@@ -1,8 +1,11 @@
+import { NgIf, NgTemplateOutlet } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AccordionPage } from './accordion';
 import { AlertPage } from './alert';
 import { CardPage } from './card';
+import { ModalPage } from './modal';
 import {
+  SkModalModule,
   SkRowModule,
   SkAccordionModule,
   SkAlertModule,
@@ -18,7 +21,7 @@ import {
   SkLinkModule,
 } from '@standardkit/ui';
 
-const PAGES: any[] = [AccordionPage, AlertPage, CardPage];
+const PAGES: any[] = [AccordionPage, AlertPage, CardPage, ModalPage];
 
 @NgModule({
   imports: [
@@ -35,6 +38,9 @@ const PAGES: any[] = [AccordionPage, AlertPage, CardPage];
     SkPillModule,
     SkButtonModule,
     SkLinkModule,
+    SkModalModule,
+    NgIf,
+    NgTemplateOutlet,
   ],
   declarations: PAGES,
   exports: PAGES,

@@ -1,0 +1,115 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+@use "sass:color";
+
+.modal__container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  background-color: rgba(colors.$black, 40%);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.modal {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  border-radius: borders.$border-radius-s;
+  box-shadow: 2px 2px 5px 2px colors.$shadow;
+  background-color: colors.$white;
+  width: 100%;
+  max-width: 640px;
+  max-height: 100%;
+  text-align: left;
+
+  &--width-s {
+    max-width: 480px;
+  }
+
+  &--width-l {
+    max-width: 960px;
+  }
+}
+
+.modal__header {
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &--scrolled {
+    box-shadow: 2px 2px 16px 8px colors.$shadow;
+  }
+}
+
+.modal__name {
+  flex-grow: 1;
+  margin: 0;
+  padding: 16px 20px;
+  line-height: fonts.$title-line-height-m;
+  font-size: fonts.$title-size-m;
+}
+
+.modal__close {
+  cursor: pointer;
+  padding: 16px 20px;
+  font-size: fonts.$title-size-m;
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  gap: 24px;
+  padding: 16px 20px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+
+  /* Foreground, Background */
+  scrollbar-color: colors.$scroll-foreground colors.$scroll-background;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Foreground */
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: colors.$scroll-foreground;
+  }
+
+  /* Background */
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 2px 2px 2px 2px colors.$shadow;
+    background: colors.$scroll-background;
+  }
+
+  &--overflow {
+    padding-bottom: 300px; // dropdown expanded section height
+  }
+}
+
+.modal__footer {
+  padding: 16px 20px;
+
+  &:empty {
+    display: none;
+  }
+
+  &--scrolled {
+    box-shadow: 2px 2px 16px 8px colors.$shadow;
+  }
+}

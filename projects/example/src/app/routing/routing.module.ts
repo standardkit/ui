@@ -14,6 +14,7 @@ import {
   TogglePage,
   PillPage,
   CardPage,
+  ModalPage,
 } from '../pages';
 import { CheckboxInputPage } from '../pages/form';
 
@@ -29,6 +30,7 @@ const routes: Routes = [
           { path: 'accordion', component: AccordionPage },
           { path: 'alert', component: AlertPage },
           { path: 'card', component: CardPage },
+          { path: 'modal', component: ModalPage },
         ],
       },
       {

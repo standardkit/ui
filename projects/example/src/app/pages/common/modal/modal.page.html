@@ -1,0 +1,28 @@
+<sk-top-bar name="Modal">
+  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
+  <sk-button type="info" (click)="onToggleModal()">Open Modal</sk-button>
+</sk-top-bar>
+
+<sk-modal *ngIf="isOpen" name="A modal" (closeModal)="onToggleModal()">
+  <ng-container *ngTemplateOutlet="loremIpsum"></ng-container>
+  <ng-container *ngTemplateOutlet="loremIpsum"></ng-container>
+  <ng-container *ngTemplateOutlet="loremIpsum"></ng-container>
+  <ng-container *ngTemplateOutlet="loremIpsum"></ng-container>
+
+  <sk-bar slot="footer" align="space-between">
+    <sk-button type="light" icon="refresh" alignIcon="left">Reset</sk-button>
+    <sk-bar>
+      <sk-button type="error" icon="close">Cancel</sk-button>
+      <sk-button type="success" icon="save">Save</sk-button>
+    </sk-bar>
+  </sk-bar>
+</sk-modal>
+
+<ng-template #loremIpsum>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</ng-template>
