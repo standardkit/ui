@@ -14,6 +14,7 @@ import {
   TogglePage,
   PillPage,
 } from '../pages';
+import { CheckboxInputPage } from '../pages/form';
 
 const routes: Routes = [
   {
@@ -40,6 +41,7 @@ const routes: Routes = [
           { path: 'toggle', component: TogglePage },
         ],
       },
+      { path: 'form', children: [{ path: 'checkbox-input', component: CheckboxInputPage }] },
     ],
   },
 ];

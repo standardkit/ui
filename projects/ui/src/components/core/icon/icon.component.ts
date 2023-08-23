@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SkIconComponent {
   @Input() public icon: string = 'icons';
+  @Input() public iconSet: 'regular' | 'classic' = 'classic';
   @Input() public isSpinning: boolean = false;
   @Input() public isReverse: boolean = false;
 }

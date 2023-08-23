@@ -28,5 +28,11 @@ export class PageLayout {
         { name: 'Toggle', route: 'core/toggle' },
       ],
     },
+    {
+      icon: 'list-check',
+      name: 'Form',
+      route: 'form',
+      children: [{ name: 'Checkbox Input', route: 'form/checkbox-input' }],
+    },
   ];
 }

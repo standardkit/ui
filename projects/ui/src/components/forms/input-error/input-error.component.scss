@@ -1,0 +1,9 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.input-error {
+  padding: 8px 8px 0;
+  line-height: fonts.$text-size-s;
+  color: colors.$error-dark;
+  font-size: fonts.$text-size-s;
+}

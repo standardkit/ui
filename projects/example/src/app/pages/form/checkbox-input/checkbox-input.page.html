@@ -1,0 +1,10 @@
+<sk-top-bar name="Checkbox Input">
+  <sk-button type="error" (click)="onToggleError()">Toggle error</sk-button>
+  <sk-button type="success" (click)="onToggleChecked()">Toggle checked</sk-button>
+  <sk-button type="neutral" (click)="onToggleDisabled()">Toggle Disabled</sk-button>
+</sk-top-bar>
+
+<sk-checkbox-input [formControl]="formControl">
+  I am a checkbox input
+  <span slot="error">Dit veld is verplicht</span>
+</sk-checkbox-input>

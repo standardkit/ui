@@ -1,0 +1,51 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+@use "@standardkit/ui/borders";
+
+.checkbox-input {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  gap: 12px;
+  cursor: pointer;
+  line-height: fonts.$text-line-height-l;
+  font-size: fonts.$text-size-l;
+  user-select: none;
+
+  &--error {
+
+    .checkbox-input__icon {
+      color: colors.$error-dark;
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    color: colors.$gray-50;
+
+    .checkbox-input__icon {
+      color: colors.$gray-50;
+    }
+  }
+}
+
+.checkbox-input__input {
+  appearance: none;
+  display: none;
+  visibility: hidden;
+}
+
+.checkbox-input__label {
+  display: flex;
+  flex-flow: row wrap;
+  flex-shrink: 1;
+  margin-bottom: 20px;
+}
+
+.checkbox-input--error .checkbox-input__label {
+  margin-bottom: 0;
+}
+
+.checkbox-input__error {
+  margin-left: -8px;
+  width: 100%;
+}
