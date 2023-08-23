@@ -17,6 +17,7 @@ import {
   SkPillModule,
   SkRowModule,
   SkColumnModule,
+  SkBreadcrumbsModule,
 } from '@standardkit/ui';
 
 const PAGES: any[] = [BarPage, ButtonPage, IconPage, LinkPage, PillPage, TagPage, TogglePage];
@@ -33,6 +34,7 @@ const PAGES: any[] = [BarPage, ButtonPage, IconPage, LinkPage, PillPage, TagPage
     SkTagModule,
     SkToggleModule,
     SkTopBarModule,
+    SkBreadcrumbsModule,
   ],
   declarations: PAGES,
   exports: PAGES,

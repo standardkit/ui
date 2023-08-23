@@ -1,51 +1,50 @@
-<sk-top-bar name="Bar"></sk-top-bar>
+<sk-top-bar name="Bar">
+  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
+</sk-top-bar>
 
 <sk-row>
   <sk-column>
-    <sk-bar [isVertical]="true">
-      <sk-bar [isVertical]="true">
-        <sk-tag>Left (default)</sk-tag>
-        <sk-bar>
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-        </sk-bar>
+    Left (default)
+    <sk-bar>
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+    </sk-bar>
+
+    Center
+    <sk-bar align="center">
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+    </sk-bar>
+
+    Right
+    <sk-bar align="right">
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+    </sk-bar>
+
+    Space-between
+    <sk-bar align="space-between">
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+      <sk-button type="neutral" icon="bars-staggered"></sk-button>
+    </sk-bar>
+
+    Nested Space-between
+    <sk-bar align="space-between">
+      <sk-bar>
+        <sk-button type="neutral" icon="bars-staggered"></sk-button>
       </sk-bar>
-
-      <br />
-
-      <sk-bar [isVertical]="true">
-        <sk-bar align="center"><sk-tag>Center</sk-tag></sk-bar>
-        <sk-bar align="center">
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-        </sk-bar>
+      <sk-bar>
+        <sk-button type="neutral" icon="bars-staggered"></sk-button>
+        <sk-button type="neutral" icon="bars-staggered"></sk-button>
       </sk-bar>
-
-      <br />
-
-      <sk-bar [isVertical]="true">
-        <sk-bar align="right"><sk-tag>Right</sk-tag></sk-bar>
-        <sk-bar align="right">
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-        </sk-bar>
-      </sk-bar>
-
-      <br />
-
-      <sk-bar [isVertical]="true">
-        <sk-bar align="space-between">
-          <sk-tag>Space</sk-tag>
-          <sk-tag>between</sk-tag>
-        </sk-bar>
-        <sk-bar align="space-between">
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-          <sk-button type="neutral" icon="bars-staggered"></sk-button>
-        </sk-bar>
+      <sk-bar>
+        <sk-button type="neutral" icon="bars-staggered"></sk-button>
+        <sk-button type="neutral" icon="bars-staggered"></sk-button>
+        <sk-button type="neutral" icon="bars-staggered"></sk-button>
       </sk-bar>
     </sk-bar>
   </sk-column>

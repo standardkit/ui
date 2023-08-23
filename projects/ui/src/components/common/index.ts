@@ -1,11 +1,8 @@
 export * from './accordion';
 export * from './accordion-item';
 export * from './alert';
-// export * from './avatar';
-// export * from './breadcrumbs';
+export * from './breadcrumbs';
 // export * from './card';
-// export * from './cost-overview';
-// export * from './course-card';
 // export * from './modal';
 // export * from './rich-text';
 // export * from './segment';

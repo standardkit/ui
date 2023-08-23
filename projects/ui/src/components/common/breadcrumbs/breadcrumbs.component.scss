@@ -1,0 +1,44 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.breadcrumbs {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 4px;
+  align-items: center;
+  color: colors.$gray-50;
+}
+
+.breadcrumbs__icon {
+  font-size: fonts.$text-size-s;
+}
+
+.breadcrumbs__item {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2px;
+  align-items: center;
+}
+
+.breadcrumbs__item:last-child {
+
+  .breadcrumbs__icon {
+    display: none;
+  }
+}
+
+.breadcrumbs__link {
+  text-decoration: none;
+  line-height: fonts.$text-line-height-m;
+  color: colors.$base;
+  font-size: fonts.$text-size-m;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.breadcrumbs__name {
+  line-height: fonts.$text-line-height-m;
+  font-size: fonts.$text-size-m;
+}

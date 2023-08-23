@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { HomePage } from './home.page';
-import { SkBottomBarModule, SkButtonModule, SkTopBarModule } from '@standardkit/ui';
+import { SkBottomBarModule, SkBreadcrumbsModule, SkButtonModule, SkTopBarModule } from '@standardkit/ui';
 
 @NgModule({
-  imports: [SkTopBarModule, SkButtonModule, SkBottomBarModule],
+  imports: [SkTopBarModule, SkButtonModule, SkBottomBarModule, SkBreadcrumbsModule],
   declarations: [HomePage],
   exports: [HomePage],
 })
