@@ -1,0 +1,31 @@
+<div class="navigation-item" [attr.title]="isCollapsed ? name : undefined">
+  <div
+    class="navigation-item__item"
+    tabindex="0"
+    [class.navigation-item__item--active]="isActive"
+    [class.navigation-item__item--expanded]="isExpanded"
+    [class.navigation-item__item--collapsed]="isCollapsed"
+    [class.navigation-item__item--parent]="!!children"
+    (click)="onSelectItem()"
+    (keydown.enter)="onSelectItem()"
+  >
+    <span class="navigation-item__item-icon" [class.navigation-item__item-icon--collapsed]="isCollapsed">
+      <sk-icon [icon]="icon"></sk-icon>
+    </span>
+
+    <span *ngIf="!isCollapsed" class="navigation-item__item-name">{{ name }}</span>
+
+    <span class="navigation-item__expand-icon" *ngIf="!!children && !isCollapsed">
+      <sk-icon *ngIf="!isExpanded" icon="angle-down"></sk-icon>
+      <sk-icon *ngIf="isExpanded" icon="angle-up"></sk-icon>
+    </span>
+  </div>
+
+  <div *ngIf="!!children && isExpanded && !isCollapsed" class="navigation-item__sub-items">
+    <sk-sub-navigation-item
+      *ngFor="let subItem of children"
+      [name]="subItem.name"
+      [route]="subItem.route"
+    ></sk-sub-navigation-item>
+  </div>
+</div>

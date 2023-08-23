@@ -1,0 +1,9 @@
+<div
+  class="sub-navigation-item"
+  [routerLink]="route"
+  routerLinkActive="sub-navigation-item--active"
+  #subNavigationItem
+  (keydown.enter)="subNavigationItem.click()"
+>
+  {{ name }}
+</div>

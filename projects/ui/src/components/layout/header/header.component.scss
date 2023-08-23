@@ -1,0 +1,22 @@
+@use "@standardkit/ui/colors";
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: colors.$base-dark;
+  padding: 12px 32px;
+  width: 100%;
+}
+
+.header__logo {
+  cursor: pointer;
+  height: 40px; // this + padding reflects in page negative margin
+  user-select: none;
+}
+
+.header__title {
+  margin: 0;
+  color: colors.$white;
+}

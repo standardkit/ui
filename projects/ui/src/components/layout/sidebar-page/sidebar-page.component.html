@@ -1,0 +1,18 @@
+<div class="sidebar-page">
+  <div class="sidebar-page__header">
+    <ng-content select="sk-header"></ng-content>
+  </div>
+
+  <main class="sidebar-page__body">
+    <ng-content select="sk-sidebar"></ng-content>
+
+    <div class="sidebar-page__content" [class.sidebar-page__content--bottom-bar]="hasBottomBar$ | async">
+      <div class="sidebar-page__scrollable-content" #scroll>
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!--TODO : Enable later-->
+<!--<sk-notification-bar></sk-notification-bar>-->

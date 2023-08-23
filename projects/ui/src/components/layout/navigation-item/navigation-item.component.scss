@@ -1,0 +1,53 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.navigation-item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.navigation-item__item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  border-radius: borders.$border-radius-m;
+  background-color: colors.$base;
+  cursor: pointer;
+  padding: 10px 12px;
+  line-height: 1;
+  color: colors.$white;
+  font-size: fonts.$text-size-l;
+  font-weight: 500;
+  user-select: none;
+
+  &--active,
+  &:hover {
+    background-color: colors.$base;
+    filter: brightness(125%);
+  }
+
+  &--active:hover {
+    color: colors.$gray-70;
+  }
+}
+
+.navigation-item__item-icon {
+
+  &--collapsed {
+    font-size: fonts.$title-size-l;
+  }
+}
+
+.navigation-item__item-name {
+  flex-grow: 1;
+}
+
+.navigation-item__sub-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+  padding-left: 48px;
+}

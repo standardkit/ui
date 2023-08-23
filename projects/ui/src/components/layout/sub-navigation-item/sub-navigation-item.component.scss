@@ -1,0 +1,15 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+
+.sub-navigation-item {
+  border-radius: borders.$border-radius-m;
+  cursor: pointer;
+  padding: 10px 12px;
+  user-select: none;
+
+  &--active,
+  &:hover {
+    background-color: colors.$base;
+    filter: brightness(125%);
+  }
+}

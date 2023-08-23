@@ -1,0 +1,39 @@
+@use "@standardkit/ui/colors";
+
+.sidebar-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebar-page__header {
+  position: sticky;
+}
+
+.sidebar-page__body {
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+  background-color: colors.$white;
+  height: calc(100% - 66px); // Takes into account the header size // TODO : This needs a better solution
+}
+
+.sidebar-page__content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-x: hidden;
+
+  &--bottom-bar {
+    padding-bottom: 100px;
+  }
+}
+
+.sidebar-page__scrollable-content {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 24px 32px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

@@ -2,8 +2,8 @@
   <button class="accordion-item__header" (click)="isOpen = !isOpen">
     {{ name }}
     <span class="accordion-item__icon">
-      <!--      <sk-icon icon="expand_more" *ngIf="!isOpen"></sk-icon>-->
-      <!--      <sk-icon icon="expand_less" *ngIf="isOpen"></sk-icon>-->
+      <sk-icon icon="angle-down" *ngIf="!isOpen"></sk-icon>
+      <sk-icon icon="angle-up" *ngIf="isOpen"></sk-icon>
     </span>
   </button>
   <div class="accordion-item__content" [class.accordion-item__content--no-padding]="hasNoPadding" *ngIf="isOpen">

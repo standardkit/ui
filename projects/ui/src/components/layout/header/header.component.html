@@ -1,0 +1,15 @@
+<header class="header">
+  <img
+    *ngIf="logo"
+    [alt]="brand + ' logo'"
+    [attr.ngSrc]="logo"
+    class="header__logo"
+    routerLink="/"
+    #img
+    (keydown.enter)="img.click()"
+  />
+  <h2 class="header__title" *ngIf="!logo">{{ brand }}</h2>
+  <div class="header__actions">
+    <ng-content></ng-content>
+  </div>
+</header>

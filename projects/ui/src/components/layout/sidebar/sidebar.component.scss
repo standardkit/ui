@@ -1,0 +1,93 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.sidebar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: colors.$base;
+  width: 300px;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: hidden;
+  color: colors.$white;
+
+  &--collapsed {
+    width: auto;
+  }
+}
+
+.sidebar__scroll {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 12px;
+  padding: 24px 14px 24px 24px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+
+  /* Foreground, Background */
+  scrollbar-color: colors.$scroll-foreground colors.$scroll-background;
+
+  &::-webkit-scrollbar {
+    width: 10px; /* Mostly for vertical scrollbars */
+    height: 10px; /* Mostly for horizontal scrollbars */
+  }
+
+  /* Foreground */
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: colors.$scroll-foreground;
+  }
+
+  /* Background */
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 2px 2px 2px 2px colors.$shadow;
+    background: colors.$scroll-background;
+  }
+
+  &--collapsed {
+    padding: 24px 7px 24px 15px; // Slightly offset to counter optical illusion
+  }
+}
+
+.sidebar__collapse {
+  border: none;
+  border-radius: borders.$border-radius-m;
+  box-shadow: 2px 2px 5px 2px colors.$shadow-dark;
+  background-color: colors.$gray-10;
+  cursor: pointer;
+  padding: 6px 10px;
+  height: 50px;
+  line-height: 1;
+  color: colors.$gray-70;
+
+  &:hover {
+    color: colors.$primary;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+  }
+}
+
+.sidebar__footer {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  box-shadow: 2px 2px 16px 8px colors.$shadow;
+  padding: 24px;
+
+  &--collapsed {
+    justify-content: center;
+    padding: 24px 17px 24px 15px; // Slightly offset to counter optical illusion
+  }
+}
