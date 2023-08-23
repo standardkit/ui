@@ -1,10 +1,14 @@
-<sk-top-bar name="Accordion"></sk-top-bar>
+<sk-top-bar name="Accordion">
+  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
+</sk-top-bar>
 
 <sk-row>
   <sk-column>
-    <sk-accordion>
-      <sk-accordion-item name="Item 1">I am inside item 1</sk-accordion-item>
-      <sk-accordion-item name="Item 2">I am inside item 2</sk-accordion-item>
-    </sk-accordion>
+    <sk-card name="Card with accordion">
+      <sk-accordion>
+        <sk-accordion-item name="Item 1">I am inside item 1</sk-accordion-item>
+        <sk-accordion-item name="Item 2">I am inside item 2</sk-accordion-item>
+      </sk-accordion>
+    </sk-card>
   </sk-column>
 </sk-row>

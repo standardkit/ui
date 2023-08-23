@@ -8,6 +8,8 @@ import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewC
 export class SkModalComponent {
   @HostListener('document:keydown.escape') public escape = (): void => this.closeModal.emit();
 
+  // TODO : Implement optional outside click
+
   @ViewChild('body') public body!: ElementRef;
 
   @Input() public name: string = '';
