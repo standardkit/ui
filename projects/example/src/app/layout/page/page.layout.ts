@@ -23,6 +23,7 @@ export class PageLayout {
         { name: 'Button', route: 'core/button' },
         { name: 'Icon', route: 'core/icon' },
         { name: 'Link', route: 'core/link' },
+        { name: 'Tag', route: 'core/tag' },
       ],
     },
   ];

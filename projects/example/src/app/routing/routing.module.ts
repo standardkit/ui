@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutModule, PageLayout } from '../layout';
 import { HomePage, PagesModule, AccordionPage, AlertPage, BarPage, IconPage, ButtonPage, LinkPage } from '../pages';
+import { TagPage } from '../pages/core/tag';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
           { path: 'button', component: ButtonPage },
           { path: 'icon', component: IconPage },
           { path: 'link', component: LinkPage },
+          { path: 'tag', component: TagPage },
         ],
       },
     ],
