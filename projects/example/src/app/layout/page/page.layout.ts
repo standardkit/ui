@@ -24,6 +24,7 @@ export class PageLayout {
         { name: 'Icon', route: 'core/icon' },
         { name: 'Link', route: 'core/link' },
         { name: 'Tag', route: 'core/tag' },
+        { name: 'Toggle', route: 'core/toggle' },
       ],
     },
   ];

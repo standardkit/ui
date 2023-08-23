@@ -1,0 +1,85 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.toggle {
+  display: flex;
+  position: relative;
+  border-radius: 14px;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  background: colors.$gray-40;
+  cursor: pointer;
+  padding: 3px;
+  width: 42px;
+  overflow: hidden;
+}
+
+.toggle--active {
+  justify-content: flex-end;
+  background-color: colors.$success;
+  color: colors.$success;
+}
+
+.toggle--pending {
+  background-color: colors.$gray-40;
+}
+
+.toggle--disabled {
+  background-color: colors.$gray-20;
+  cursor: not-allowed;
+  color: colors.$gray-30;
+}
+
+.toggle--pending.toggle--active {
+  background-color: colors.$success;
+  color: colors.$success;
+}
+
+.toggle__switch {
+  display: flex;
+  justify-content: center;
+  border-radius: 14px;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  background-color: colors.$white;
+  padding: 3px;
+  color: colors.$gray-50;
+  font-size: fonts.$text-size-s;
+
+  &--active {
+    color: colors.$success;
+  }
+
+  &--disabled {
+    background-color: colors.$gray-10;
+    color: colors.$gray-40;
+  }
+}
+
+.toggle--pending:not(.toggle--active) .toggle__switch {
+  animation: slide-left 0.1s ease-out;
+}
+
+.toggle--pending .toggle__switch--active {
+  animation: slide-right 0.1s ease-out;
+}
+
+@keyframes slide-left {
+
+  0% {
+    transform: translateX(16px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+
+  0% {
+    transform: translateX(-16px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

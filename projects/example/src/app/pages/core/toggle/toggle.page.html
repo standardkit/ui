@@ -1,0 +1,7 @@
+<sk-top-bar name="Toggle Component">
+  <sk-button (click)="isDisabled = !isDisabled">{{ isDisabled ? 'Enable' : 'Disable' }}</sk-button>
+</sk-top-bar>
+
+<sk-bar>
+  <sk-toggle [isActive]="isActive" [isDisabled]="isDisabled" [isPending]="isPending" (toggle)="onToggle()"></sk-toggle>
+</sk-bar>

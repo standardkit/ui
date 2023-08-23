@@ -1,8 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutModule, PageLayout } from '../layout';
-import { HomePage, PagesModule, AccordionPage, AlertPage, BarPage, IconPage, ButtonPage, LinkPage } from '../pages';
-import { TagPage } from '../pages/core/tag';
+import {
+  HomePage,
+  PagesModule,
+  AccordionPage,
+  AlertPage,
+  BarPage,
+  IconPage,
+  ButtonPage,
+  LinkPage,
+  TagPage,
+  TogglePage,
+} from '../pages';
 
 const routes: Routes = [
   {
@@ -25,6 +35,7 @@ const routes: Routes = [
           { path: 'icon', component: IconPage },
           { path: 'link', component: LinkPage },
           { path: 'tag', component: TagPage },
+          { path: 'toggle', component: TogglePage },
         ],
       },
     ],

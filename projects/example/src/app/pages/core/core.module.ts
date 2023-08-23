@@ -4,12 +4,21 @@ import { ButtonPage } from './button';
 import { IconPage } from './icon';
 import { LinkPage } from './link';
 import { TagPage } from './tag';
-import { TagModule, SkButtonModule, SkBarModule, SkIconModule, SkLinkModule } from '@standardkit/ui';
+import { TogglePage } from './toggle';
+import {
+  TagModule,
+  SkButtonModule,
+  SkBarModule,
+  SkIconModule,
+  SkLinkModule,
+  ToggleModule,
+  TopBarModule,
+} from '@standardkit/ui';
 
-const PAGES: any[] = [BarPage, IconPage, ButtonPage, LinkPage, TagPage];
+const PAGES: any[] = [BarPage, IconPage, ButtonPage, LinkPage, TagPage, TogglePage];
 
 @NgModule({
-  imports: [SkBarModule, SkIconModule, SkButtonModule, SkLinkModule, TagModule],
+  imports: [SkBarModule, SkIconModule, SkButtonModule, SkLinkModule, TagModule, ToggleModule, TopBarModule],
   declarations: PAGES,
   exports: PAGES,
 })
