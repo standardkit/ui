@@ -1,0 +1,56 @@
+@use "@standardkit/ui/animations";
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+:host {
+  flex-grow: 1;
+}
+
+.statistics-card {
+  @include animations.slide-up;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: borders.$border-radius-s;
+  box-shadow: 2px 2px 5px 2px colors.$shadow;
+  background-color: colors.$white;
+  padding: 24px;
+  height: 100%;
+}
+
+.statistics-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.statistics-card__icon {
+  border-radius: 100%;
+  background-color: colors.$info-light;
+  padding: 16px;
+  width: fit-content;
+  user-select: none;
+}
+
+.statistics-card__statistic {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.statistics-card__amount {
+  line-height: fonts.$title-line-height-xxl;
+  font-size: fonts.$title-size-xxl;
+  font-weight: 600;
+}
+
+.statistics-card__description {
+  text-rendering: optimizelegibility;
+  font-size: fonts.$title-size-s;
+  font-weight: 200;
+}

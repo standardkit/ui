@@ -1,0 +1,14 @@
+<div class="statistics-card">
+  <div class="statistics-card__body">
+    <div class="statistics-card__statistic">
+      <span class="statistics-card__amount">{{ statistic }}</span>
+      <span *ngIf="description" class="statistics-card__description">{{ description }}</span>
+    </div>
+    <span class="statistics-card__icon" *ngIf="icon">
+      <sk-icon [icon]="icon"></sk-icon>
+    </span>
+  </div>
+  <sk-button (click)="onClick()" type="info" [fullWidth]="true" icon="angle-right">
+    {{ buttonText }}
+  </sk-button>
+</div>

@@ -17,6 +17,7 @@ import {
   ModalPage,
   RichTextPage,
   SegmentPage,
+  StatisticsCardPage,
 } from '../pages';
 import { CheckboxInputPage } from '../pages/form';
 
@@ -35,6 +36,7 @@ const routes: Routes = [
           { path: 'modal', component: ModalPage },
           { path: 'rich-text', component: RichTextPage },
           { path: 'segment', component: SegmentPage },
+          { path: 'statistics-card', component: StatisticsCardPage },
         ],
       },
       {

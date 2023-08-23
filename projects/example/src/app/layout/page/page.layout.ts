@@ -16,6 +16,7 @@ export class PageLayout {
         { name: 'Modal', route: 'common/modal' },
         { name: 'Rich Text', route: 'common/rich-text' },
         { name: 'Segment', route: 'common/segment' },
+        { name: 'Statistics Card', route: 'common/statistics-card' },
       ],
     },
     {

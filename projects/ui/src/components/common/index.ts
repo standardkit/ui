@@ -7,7 +7,7 @@ export * from './modal';
 export * from './rich-text';
 export * from './segment';
 export * from './segment-group';
-// export * from './statistics-card';
+export * from './statistics-card';
 // export * from './stepper';
 // export * from './stepper-item';
 // export * from './summary-card';
