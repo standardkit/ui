@@ -20,7 +20,7 @@ import {
   SkPillModule,
   SkButtonModule,
   SkLinkModule,
-  RichTextModule,
+  SkRichTextModule,
 } from '@standardkit/ui';
 
 const PAGES: any[] = [AccordionPage, AlertPage, CardPage, ModalPage, RichTextPage];
@@ -43,7 +43,7 @@ const PAGES: any[] = [AccordionPage, AlertPage, CardPage, ModalPage, RichTextPag
     SkModalModule,
     NgIf,
     NgTemplateOutlet,
-    RichTextModule,
+    SkRichTextModule,
   ],
   declarations: PAGES,
   exports: PAGES,

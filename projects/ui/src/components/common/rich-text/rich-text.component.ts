@@ -6,4 +6,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['rich-text.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class RichTextComponent {}
+export class SkRichTextComponent {}

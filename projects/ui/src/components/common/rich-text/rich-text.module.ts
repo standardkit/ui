@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RichTextComponent } from './rich-text.component';
+import { SkRichTextComponent } from './rich-text.component';
 
 @NgModule({
-  declarations: [RichTextComponent],
-  exports: [RichTextComponent],
+  declarations: [SkRichTextComponent],
+  exports: [SkRichTextComponent],
 })
-export class RichTextModule {}
+export class SkRichTextModule {}
