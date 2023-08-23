@@ -1,0 +1,16 @@
+<div class="top-bar">
+  <div class="top-bar__container" [class.top-bar__container--full-width]="isFullWidth">
+    <div class="top-bar__title">
+      <ng-content select="sk-breadcrumbs"></ng-content>
+      <h1 class="top-bar__name" *ngIf="name">{{ name }}</h1>
+    </div>
+
+    <span class="top-bar__actions">
+      <ng-content></ng-content>
+      <ng-content select="[slot=actions]"></ng-content>
+    </span>
+  </div>
+  <div class="top-bar__tabs">
+    <ng-content select="sk-tab-group"></ng-content>
+  </div>
+</div>

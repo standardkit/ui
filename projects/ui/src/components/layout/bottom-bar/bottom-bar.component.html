@@ -1,0 +1,11 @@
+<div class="bottom-bar" [class.bottom-bar--collapsed]="isCollapsed$ | async">
+  <div class="bottom-bar__container">
+    <div class="bottom-bar__left">
+      <ng-content select="[slot=left]"></ng-content>
+    </div>
+    <div class="bottom-bar__right">
+      <ng-content></ng-content>
+      <ng-content select="[slot=right]"></ng-content>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+@use "@standardkit/ui/grid";
+
+.top-bar {
+  margin: -24px -32px 24px; // Negates the page__content paddings
+  box-shadow: 2px 2px 5px 2px colors.$shadow;
+  background-color: colors.$white;
+  padding: 24px 32px 0;
+  width: 100%;
+}
+
+.top-bar__container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  max-width: grid.$max-width;
+
+  &--full-width {
+    max-width: 100%;
+  }
+}
+
+.top-bar__title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.top-bar__name {
+  margin: 0;
+  line-height: fonts.$title-line-height-xl;
+  font-size: fonts.$title-size-xl;
+}
+
+.top-bar__actions {
+  display: flex;
+  gap: 16px;
+}
+
+.top-bar__tabs {
+
+  &:empty {
+    display: none;
+  }
+}

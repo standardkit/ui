@@ -84,10 +84,10 @@
   justify-content: flex-end;
   margin: 0;
   box-shadow: 2px 2px 16px 8px colors.$shadow;
-  padding: 24px;
+  padding: 21px;
 
   &--collapsed {
     justify-content: center;
-    padding: 24px 17px 24px 15px; // Slightly offset to counter optical illusion
+    padding: 21px 17px 21px 15px; // Slightly offset to counter optical illusion
   }
 }

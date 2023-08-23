@@ -1,4 +1,4 @@
-// export * from './bottom-bar';
+export * from './bottom-bar';
 // export * from './card-page';
 // export * from './column';
 export * from './header';
@@ -9,6 +9,6 @@ export * from './navigation-item';
 export * from './sidebar';
 export * from './sidebar-page';
 export * from './sub-navigation-item';
-// export * from './top-bar';
+export * from './top-bar';
 // export * from './user-menu';
 // export * from './viewer-page';
