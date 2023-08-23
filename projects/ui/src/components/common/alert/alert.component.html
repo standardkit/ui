@@ -13,13 +13,7 @@
   [class.alert--no-shadow]="hasNoShadow"
 >
   <span class="alert__icon">
-    <!--    TODO : Add all types of icon-->
-    <sk-icon *ngIf="type === 'error'" icon="error"></sk-icon>
-    <sk-icon *ngIf="type === 'success'" icon="check_circle"></sk-icon>
-    <sk-icon *ngIf="type === 'warning'" icon="error"></sk-icon>
-    <sk-icon *ngIf="type === 'info'" icon="info"></sk-icon>
-    <sk-icon *ngIf="type === 'neutral'" icon="help"></sk-icon>
-    <sk-icon *ngIf="type === 'special'" icon="stars"></sk-icon>
+    <ng-content select="[slot=icon]"></ng-content>
   </span>
   <span class="alert__body">
     <ng-content></ng-content>

@@ -4,12 +4,11 @@
 
 .alert {
   display: flex;
-  gap: 16px;
   align-items: center;
   border-radius: borders.$border-radius-s;
   box-shadow: 2px 2px 5px 2px colors.$shadow;
   background-color: colors.$error;
-  padding: 8px 16px;
+  padding: 10px 16px;
   line-height: fonts.$text-line-height-l;
   color: colors.$white;
   font-size: fonts.$text-size-l;
@@ -21,8 +20,13 @@
 }
 
 .alert__icon {
-  line-height: 1;
+  margin-left: -4px;
+  padding-right: 12px;
   user-select: none;
+
+  &:empty {
+    display: none;
+  }
 }
 
 .alert--warning {
@@ -55,13 +59,9 @@
 
 .alert--light {
   background-color: colors.$white;
-  color: colors.$gray-70; // TODO : Use 'text-color' or getContrast from @standardkit/styles
+  color: colors.$gray-70;
 }
 
 .alert--dark {
   background-color: colors.$gray-70;
-}
-
-.alert__body {
-  padding: 4px 0;
 }
