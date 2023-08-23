@@ -1,6 +1,11 @@
-<sk-top-bar name="Statistics Card">
-  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
-</sk-top-bar>
+<sk-row>
+  <sk-column>
+    <sk-jumbotron
+      name="Statistics Card"
+      description="Welcome to the dashboard. Many things to see, yet none of them important..."
+    ></sk-jumbotron>
+  </sk-column>
+</sk-row>
 
 <sk-row>
   <sk-column width="narrow">
@@ -10,7 +15,12 @@
     <sk-statistics-card statistic="4" description="Statistic Cards" buttonText="See them now"></sk-statistics-card>
   </sk-column>
   <sk-column width="narrow">
-    <sk-statistics-card statistic="4" description="Statistic Cards" buttonText="See them now"></sk-statistics-card>
+    <sk-statistics-card
+      statistic="25,-"
+      icon="euro-sign"
+      description="Revenue over the past year"
+      buttonText="See them now"
+    ></sk-statistics-card>
   </sk-column>
   <sk-column width="narrow">
     <sk-statistics-card statistic="4" description="Statistic Cards" buttonText="See them now"></sk-statistics-card>

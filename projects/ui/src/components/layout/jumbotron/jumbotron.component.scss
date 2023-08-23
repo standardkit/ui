@@ -1,0 +1,19 @@
+@use "@standardkit/ui/fonts";
+
+.jumbotron {
+  margin: 32px 0 48px;
+}
+
+.jumbotron__title {
+  margin: 0;
+  line-height: fonts.$title-line-height-xl;
+  font-size: fonts.$title-size-xl;
+  font-weight: 600;
+}
+
+.jumbotron__subtitle {
+  margin: 0;
+  line-height: fonts.$title-line-height-l;
+  font-size: fonts.$title-size-l;
+  font-weight: 300;
+}

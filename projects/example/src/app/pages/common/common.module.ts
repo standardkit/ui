@@ -26,6 +26,7 @@ import {
   SkSegmentGroupModule,
   SkSegmentModule,
   SkStatisticsCardModule,
+  SkJumbotronModule,
 } from '@standardkit/ui';
 
 const PAGES: any[] = [AccordionPage, AlertPage, CardPage, ModalPage, RichTextPage, SegmentPage, StatisticsCardPage];
@@ -52,6 +53,7 @@ const PAGES: any[] = [AccordionPage, AlertPage, CardPage, ModalPage, RichTextPag
     SkSegmentGroupModule,
     SkSegmentModule,
     SkStatisticsCardModule,
+    SkJumbotronModule,
   ],
   declarations: PAGES,
   exports: PAGES,

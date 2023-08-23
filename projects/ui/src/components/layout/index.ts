@@ -2,7 +2,7 @@ export * from './bottom-bar';
 // export * from './card-page';
 export * from './column';
 export * from './header';
-// export * from './jumbotron';
+export * from './jumbotron';
 export * from './navigation-item';
 // export * from './notification-bar';
 export * from './row';
