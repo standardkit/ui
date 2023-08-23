@@ -1,0 +1,46 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+// Needs ViewEncapsulation.None
+
+.rich-text {
+  line-height: 1.5;
+  color: colors.$black;
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  h3 {
+    margin-bottom: fonts.$text-size-m;
+    line-height: fonts.$title-line-height-m;
+    font-size: fonts.$title-size-m;
+    font-weight: 600;
+  }
+
+  h4,
+  h5 {
+    line-height: fonts.$title-line-height-s;
+    font-size: fonts.$title-size-s;
+  }
+
+  h5 {
+    font-weight: 300;
+  }
+
+  h6 {
+    line-height: fonts.$text-line-height-m;
+    font-size: fonts.$text-size-m;
+  }
+
+  li {
+    line-height: fonts.$title-line-height-m;
+  }
+
+  p {
+    margin: 0 0 16px;
+  }
+}

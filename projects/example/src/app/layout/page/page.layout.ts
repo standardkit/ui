@@ -14,6 +14,7 @@ export class PageLayout {
         { name: 'Alert', route: 'common/alert' },
         { name: 'Card', route: 'common/card' },
         { name: 'Modal', route: 'common/modal' },
+        { name: 'Rich Text', route: 'common/rich-text' },
       ],
     },
     {

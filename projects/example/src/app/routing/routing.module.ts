@@ -15,6 +15,7 @@ import {
   PillPage,
   CardPage,
   ModalPage,
+  RichTextPage,
 } from '../pages';
 import { CheckboxInputPage } from '../pages/form';
 
@@ -31,6 +32,7 @@ const routes: Routes = [
           { path: 'alert', component: AlertPage },
           { path: 'card', component: CardPage },
           { path: 'modal', component: ModalPage },
+          { path: 'rich-text', component: RichTextPage },
         ],
       },
       {

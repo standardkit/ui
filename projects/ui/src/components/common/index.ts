@@ -4,7 +4,7 @@ export * from './alert';
 export * from './breadcrumbs';
 export * from './card';
 export * from './modal';
-// export * from './rich-text';
+export * from './rich-text';
 // export * from './segment';
 // export * from './segment-group';
 // export * from './statistics-card';
