@@ -18,6 +18,7 @@ import {
   RichTextPage,
   SegmentPage,
   StatisticsCardPage,
+  StepperPage,
 } from '../pages';
 import { CheckboxInputPage } from '../pages/form';
 
@@ -37,6 +38,7 @@ const routes: Routes = [
           { path: 'rich-text', component: RichTextPage },
           { path: 'segment', component: SegmentPage },
           { path: 'statistics-card', component: StatisticsCardPage },
+          { path: 'stepper', component: StepperPage },
         ],
       },
       {

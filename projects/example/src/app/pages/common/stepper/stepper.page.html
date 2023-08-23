@@ -1,0 +1,14 @@
+<sk-top-bar name="Stepper">
+  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
+</sk-top-bar>
+
+<sk-row>
+  <sk-column>
+    <sk-stepper>
+      <sk-stepper-item name="Information" route="/common/stepper"></sk-stepper-item>
+      <sk-stepper-item name="Personal" route="/common/stepper"></sk-stepper-item>
+      <sk-stepper-item name="Payment" route="/common/stepper" [isActive]="true"></sk-stepper-item>
+      <sk-stepper-item name="Save & Exit"></sk-stepper-item>
+    </sk-stepper>
+  </sk-column>
+</sk-row>

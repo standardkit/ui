@@ -1,0 +1,96 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+:host {
+  flex-grow: 1;
+
+  &:last-child {
+    flex-grow: 0;
+  }
+}
+
+.stepper-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  user-select: none;
+
+  // This handles the line until the next stepper item
+
+  &::after {
+    flex-grow: 1;
+    margin-right: -12px;
+    margin-left: -8px;
+    background-color: colors.$gray-20;
+    height: 1px;
+    content: " ";
+  }
+
+  // No line after the last stepper item
+
+  &--last::after {
+    margin: 0 -8px 0 0;
+    background-color: transparent;
+    content: "";
+  }
+}
+
+.stepper-item__indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 8px;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  color: colors.$gray-10;
+  font-size: fonts.$text-size-m;
+}
+
+.stepper-item--active {
+  cursor: default;
+  color: colors.$black;
+
+  .stepper-item__indicator {
+    background-color: colors.$primary;
+    color: colors.$white;
+  }
+}
+
+.stepper-item--disabled {
+  cursor: not-allowed;
+  color: colors.$gray-40;
+
+  .stepper-item__indicator {
+    background-color: colors.$gray-20;
+  }
+}
+
+.stepper-item--clickable {
+  cursor: pointer;
+  color: colors.$gray-60;
+
+  .stepper-item__indicator {
+    background-color: colors.$gray-40;
+  }
+}
+
+.stepper-item--clickable:hover {
+  color: colors.$gray-70;
+
+  .stepper-item__indicator {
+    background-color: colors.$gray-50;
+  }
+}
+
+.stepper-item--clickable:active {
+
+  .stepper-item__indicator {
+    transform: translate(1px, 1px);
+  }
+
+  .stepper-item__name {
+    transform: translate(1px, 1px);
+  }
+}

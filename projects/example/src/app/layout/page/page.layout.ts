@@ -17,6 +17,7 @@ export class PageLayout {
         { name: 'Rich Text', route: 'common/rich-text' },
         { name: 'Segment', route: 'common/segment' },
         { name: 'Statistics Card', route: 'common/statistics-card' },
+        { name: 'Stepper', route: 'common/stepper' },
       ],
     },
     {

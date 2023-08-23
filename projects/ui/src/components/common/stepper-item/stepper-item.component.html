@@ -1,0 +1,18 @@
+<div
+  class="stepper-item"
+  [class.stepper-item--active]="isActive"
+  [class.stepper-item--clickable]="!isActive && !!route"
+  [class.stepper-item--disabled]="!isActive && !route"
+  [class.stepper-item--last]="isLast"
+  [routerLink]="route"
+  tabindex="0"
+  #item
+  (keydown.enter)="item.click()"
+>
+  <span class="stepper-item__indicator">
+    {{ index }}
+  </span>
+  <span class="stepper-item__name">
+    {{ name }}
+  </span>
+</div>
