@@ -15,7 +15,7 @@
   gap: 16px;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 24px;
+  padding-bottom: 16px;
   max-width: grid.$max-width;
 
   &--full-width {
@@ -26,13 +26,13 @@
 .top-bar__title {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .top-bar__name {
   margin: 0;
-  line-height: fonts.$title-line-height-xl;
-  font-size: fonts.$title-size-xl;
+  line-height: fonts.$title-line-height-l;
+  font-size: fonts.$title-size-l;
 }
 
 .top-bar__actions {
