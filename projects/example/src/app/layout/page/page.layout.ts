@@ -18,6 +18,7 @@ export class PageLayout {
         { name: 'Segment', route: 'common/segment' },
         { name: 'Statistics Card', route: 'common/statistics-card' },
         { name: 'Stepper', route: 'common/stepper' },
+        { name: 'Tab', route: 'common/tab' },
       ],
     },
     {

@@ -7,3 +7,4 @@ export * from './rich-text';
 export * from './segment';
 export * from './statistics-card';
 export * from './stepper';
+export * from './tab';

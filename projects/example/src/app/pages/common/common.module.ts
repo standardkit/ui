@@ -8,6 +8,7 @@ import { RichTextPage } from './rich-text';
 import { SegmentPage } from './segment';
 import { StatisticsCardPage } from './statistics-card';
 import { StepperPage } from './stepper';
+import { TabPage } from './tab';
 import {
   SkModalModule,
   SkRowModule,
@@ -29,6 +30,8 @@ import {
   SkStatisticsCardModule,
   SkJumbotronModule,
   SkStepperModule,
+  SkTabGroupModule,
+  SkTabModule,
 } from '@standardkit/ui';
 
 const PAGES: any[] = [
@@ -40,6 +43,7 @@ const PAGES: any[] = [
   SegmentPage,
   StatisticsCardPage,
   StepperPage,
+  TabPage,
 ];
 
 @NgModule({
@@ -66,6 +70,8 @@ const PAGES: any[] = [
     SkStatisticsCardModule,
     SkJumbotronModule,
     SkStepperModule,
+    SkTabGroupModule,
+    SkTabModule,
   ],
   declarations: PAGES,
   exports: PAGES,

@@ -1,0 +1,24 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.tab {
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  padding: 4px 24px 12px;
+  width: fit-content;
+  text-transform: uppercase;
+  line-height: fonts.$text-line-height-l;
+  white-space: nowrap;
+  color: colors.$gray-60;
+  font-size: fonts.$text-size-l;
+  user-select: none;
+
+  &:hover {
+    color: colors.$primary;
+  }
+
+  &--active {
+    border-color: colors.$primary;
+    color: colors.$gray-70;
+  }
+}

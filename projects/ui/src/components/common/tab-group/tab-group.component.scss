@@ -1,0 +1,43 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+:host {
+  position: relative;
+}
+
+.tab-group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow-x: auto;
+  text-align: center;
+  scroll-behavior: smooth;
+
+  &--scrolled:not(&--scrolled-min) {
+
+    &::before {
+      position: absolute;
+      transform: translate(0, -7px);
+      box-shadow: inset -3px 0 colors.$shadow;
+      background-color: transparent;
+      width: 3px;
+      height: 48px;
+      content: " ";
+    }
+  }
+
+  &--scrolled:not(&--scrolled-max) {
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(0, -7px);
+      box-shadow: inset -3px 0 colors.$shadow;
+      background-color: transparent;
+      width: 3px;
+      height: 48px;
+      content: " ";
+    }
+  }
+}

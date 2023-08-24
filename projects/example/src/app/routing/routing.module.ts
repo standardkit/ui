@@ -19,6 +19,7 @@ import {
   SegmentPage,
   StatisticsCardPage,
   StepperPage,
+  TabPage,
 } from '../pages';
 import { CheckboxInputPage } from '../pages/form';
 
@@ -39,6 +40,7 @@ const routes: Routes = [
           { path: 'segment', component: SegmentPage },
           { path: 'statistics-card', component: StatisticsCardPage },
           { path: 'stepper', component: StepperPage },
+          { path: 'tab', component: TabPage },
         ],
       },
       {
