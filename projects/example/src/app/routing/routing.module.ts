@@ -20,6 +20,7 @@ import {
   StatisticsCardPage,
   StepperPage,
   TabPage,
+  ListPage,
 } from '../pages';
 import { CheckboxInputPage } from '../pages/form';
 
@@ -35,6 +36,7 @@ const routes: Routes = [
           { path: 'accordion', component: AccordionPage },
           { path: 'alert', component: AlertPage },
           { path: 'card', component: CardPage },
+          { path: 'list', component: ListPage },
           { path: 'modal', component: ModalPage },
           { path: 'rich-text', component: RichTextPage },
           { path: 'segment', component: SegmentPage },

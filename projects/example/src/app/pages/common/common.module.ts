@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AccordionPage } from './accordion';
 import { AlertPage } from './alert';
 import { CardPage } from './card';
+import { ListPage } from './list';
 import { ModalPage } from './modal';
 import { RichTextPage } from './rich-text';
 import { SegmentPage } from './segment';
@@ -32,12 +33,14 @@ import {
   SkStepperModule,
   SkTabGroupModule,
   SkTabModule,
+  SkListModule,
 } from '@standardkit/ui';
 
 const PAGES: any[] = [
   AccordionPage,
   AlertPage,
   CardPage,
+  ListPage,
   ModalPage,
   RichTextPage,
   SegmentPage,
@@ -72,6 +75,7 @@ const PAGES: any[] = [
     SkStepperModule,
     SkTabGroupModule,
     SkTabModule,
+    SkListModule,
   ],
   declarations: PAGES,
   exports: PAGES,
