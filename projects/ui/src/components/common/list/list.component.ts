@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SkListItemInterface } from './list-item.interface';
+import { ListItemInterface } from './list-item.interface';
 
 @Component({
   selector: 'sk-list',
@@ -7,6 +7,6 @@ import { SkListItemInterface } from './list-item.interface';
   styleUrls: ['list.component.scss'],
 })
 export class SkListComponent {
-  @Input() public items: SkListItemInterface[] = [];
+  @Input() public items: ListItemInterface[] = [];
   @Input() public actionIcon: string = 'angle-right';
 }

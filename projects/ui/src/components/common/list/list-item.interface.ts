@@ -1,4 +1,4 @@
-export interface SkListItemInterface {
+export interface ListItemInterface {
   icon: string;
   name: string;
   actionIcon?: string;

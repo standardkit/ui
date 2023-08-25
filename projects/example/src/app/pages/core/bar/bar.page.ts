@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { SkBreadcrumbInterface } from '@standardkit/ui';
+import { BreadcrumbInterface } from '@standardkit/ui';
 
 @Component({ templateUrl: 'bar.page.html' })
 export class BarPage {
-  public breadcrumbs: SkBreadcrumbInterface[] = [{ name: 'Core' }, { name: 'Bar' }];
+  public breadcrumbs: BreadcrumbInterface[] = [{ name: 'Core' }, { name: 'Bar' }];
 }

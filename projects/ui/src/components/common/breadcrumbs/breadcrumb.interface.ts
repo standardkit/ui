@@ -1,4 +1,4 @@
-export interface SkBreadcrumbInterface {
+export interface BreadcrumbInterface {
   name: string;
   route?: string;
 }
