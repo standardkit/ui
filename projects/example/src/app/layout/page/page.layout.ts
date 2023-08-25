@@ -42,5 +42,11 @@ export class PageLayout {
       route: 'form',
       children: [{ name: 'Checkbox Input', route: 'form/checkbox-input' }],
     },
+    {
+      icon: 'list',
+      name: 'Table',
+      route: 'table',
+      children: [{ name: 'Pagination', route: 'table/pagination' }],
+    },
   ];
 }

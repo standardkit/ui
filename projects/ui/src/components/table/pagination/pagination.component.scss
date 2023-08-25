@@ -1,0 +1,74 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.pagination {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  width: 100%;
+  line-height: fonts.$text-line-height-s;
+  font-size: fonts.$text-size-s;
+}
+
+.pagination__limit {
+  color: colors.$gray-80;
+}
+
+.pagination__limit-select {
+  margin-right: 8px;
+  margin-left: 8px;
+  border: none;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  padding: 4px 8px;
+  line-height: fonts.$text-line-height-s;
+  color: colors.$gray-80;
+  font-size: fonts.$text-size-s;
+}
+
+.pagination__limit-summary {
+  color: colors.$gray-80;
+
+  &:not(:nth-child(1)) {
+    padding-left: 8px;
+  }
+}
+
+.pagination__button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.pagination__pages {
+  display: flex;
+  align-items: center;
+}
+
+.pagination__pages-prefix {
+  margin-right: 12px;
+  color: colors.$gray-80;
+}
+
+.pagination__pages-input {
+  box-sizing: border-box;
+  border: none;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  padding: 4px 12px;
+  width: 64px;
+  line-height: fonts.$text-line-height-s;
+  color: colors.$gray-80;
+  font-size: fonts.$text-size-s;
+}
+
+.pagination__pages-total {
+  margin: 0 1rem;
+  color: colors.$gray-80;
+}
