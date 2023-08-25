@@ -1,0 +1,13 @@
+<sk-top-bar name="Search">
+  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
+  <sk-button (click)="onToggleField()" type="info">Toggle Field</sk-button>
+  <sk-button (click)="onToggleDisabled()" type="error">Toggle Disabled</sk-button>
+</sk-top-bar>
+
+<sk-search
+  (search)="onSearch($event)"
+  [field]="isField ? 'city' : undefined"
+  dataName="Places"
+  [isDisabled]="isDisabled"
+  (clear)="onClear()"
+></sk-search>

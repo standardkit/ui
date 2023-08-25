@@ -1,0 +1,59 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.search {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.search__icon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: colors.$gray-50;
+  user-select: none;
+
+  &--clear {
+    top: 0;
+    right: 0;
+    left: unset;
+    cursor: pointer;
+    padding: 12px;
+
+    &:hover {
+      color: colors.$primary;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
+  }
+}
+
+.search__input-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.search__input {
+  flex-grow: 1;
+  border: none;
+  border-radius: borders.$border-radius-m;
+  box-shadow: 1px 1px 2px 1px colors.$shadow-dark;
+  padding: 0 48px;
+  line-height: fonts.$text-line-height-l;
+  color: colors.$black;
+  font-size: fonts.$text-size-l;
+
+  &::placeholder {
+    color: colors.$gray-50;
+    user-select: none;
+  }
+
+  &:focus {
+    outline: 2px solid colors.$primary;
+  }
+}

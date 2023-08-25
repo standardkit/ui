@@ -48,6 +48,7 @@ export class PageLayout {
       route: 'table',
       children: [
         { name: 'Pagination', route: 'table/pagination' },
+        { name: 'Search', route: 'table/search' },
         { name: 'Table', route: 'table/table' },
       ],
     },

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PaginationPage } from './pagination';
+import { SearchPage } from './search';
 import { TablePage } from './table';
 import {
   SkPaginationModule,
@@ -9,9 +10,10 @@ import {
   SkBreadcrumbsModule,
   SkTableModule,
   SkButtonModule,
+  SkSearchModule,
 } from '@standardkit/ui';
 
-const PAGES: any[] = [PaginationPage, TablePage];
+const PAGES: any[] = [PaginationPage, SearchPage, TablePage];
 
 @NgModule({
   imports: [
@@ -22,6 +24,7 @@ const PAGES: any[] = [PaginationPage, TablePage];
     SkBreadcrumbsModule,
     SkTableModule,
     SkButtonModule,
+    SkSearchModule,
   ],
   declarations: PAGES,
   exports: PAGES,
