@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IconSetType } from '@standardkit/core';
 
 @Component({
   selector: 'sk-icon',
@@ -6,8 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['icon.component.scss'],
 })
 export class SkIconComponent {
-  @Input() public icon: string = 'icons';
-  @Input() public iconSet: 'regular' | 'classic' = 'classic';
+  @Input() public icon?: string = 'icons';
+  @Input() public iconSet?: IconSetType = 'solid';
   @Input() public isSpinning: boolean = false;
   @Input() public isReverse: boolean = false;
 }

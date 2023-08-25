@@ -7,7 +7,7 @@ import { STYLE, StyleType } from '@standardkit/core';
   styleUrls: ['pill.component.scss'],
 })
 export class SkPillComponent {
-  @Input() public type: StyleType = STYLE.Primary;
+  @Input() public type?: StyleType = STYLE.Primary;
   @Input() public label?: string;
   @Input() public icon?: string;
   @Input() public alignIcon: 'left' | 'right' = 'left';

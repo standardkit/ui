@@ -17,10 +17,10 @@
   [type]="isSubmit ? 'submit' : 'button'"
 >
   <span class="button__icon" *ngIf="icon && alignIcon === 'left'">
-    <sk-icon [icon]="icon"></sk-icon>
+    <sk-icon [icon]="icon" [iconSet]="iconSet"></sk-icon>
   </span>
   <ng-content></ng-content>
   <span class="button__icon" *ngIf="icon && alignIcon === 'right'">
-    <sk-icon [icon]="icon"></sk-icon>
+    <sk-icon [icon]="icon" [iconSet]="iconSet"></sk-icon>
   </span>
 </button>
