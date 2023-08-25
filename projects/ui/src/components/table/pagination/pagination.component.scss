@@ -15,7 +15,7 @@
 }
 
 .pagination__limit {
-  color: colors.$gray-80;
+  color: colors.$gray-70;
 }
 
 .pagination__limit-select {
@@ -25,12 +25,12 @@
   box-shadow: 1px 1px 2px 1px colors.$shadow;
   padding: 4px 8px;
   line-height: fonts.$text-line-height-s;
-  color: colors.$gray-80;
+  color: colors.$gray-70;
   font-size: fonts.$text-size-s;
 }
 
 .pagination__limit-summary {
-  color: colors.$gray-80;
+  color: colors.$gray-70;
 
   &:not(:nth-child(1)) {
     padding-left: 8px;
@@ -54,7 +54,7 @@
 
 .pagination__pages-prefix {
   margin-right: 12px;
-  color: colors.$gray-80;
+  color: colors.$gray-70;
 }
 
 .pagination__pages-input {
@@ -64,11 +64,11 @@
   padding: 4px 12px;
   width: 64px;
   line-height: fonts.$text-line-height-s;
-  color: colors.$gray-80;
+  color: colors.$gray-70;
   font-size: fonts.$text-size-s;
 }
 
 .pagination__pages-total {
   margin: 0 1rem;
-  color: colors.$gray-80;
+  color: colors.$gray-70;
 }

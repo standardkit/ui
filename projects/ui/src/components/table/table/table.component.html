@@ -1,0 +1,111 @@
+<div class="table__container">
+  <table class="table" [class.table--striped]="isStriped">
+    <!--TODO : Add caption / aria description to table-->
+    <thead>
+      <tr>
+        <th *ngIf="canCheckRow" class="table__check-all" (click)="onCheckAll()">
+          <sk-icon *ngIf="!allChecked" iconSet="regular" icon="square"></sk-icon>
+          <sk-icon *ngIf="allChecked" iconSet="regular" icon="square-check"></sk-icon>
+        </th>
+        <ng-container *ngFor="let column of columns">
+          <th>
+            <span
+              class="table__column"
+              [class.table__column--sortable]="sortableColumns.includes(column.key)"
+              [class.table__column--active]="sortedColumn?.key === column.key"
+              [class.table__column--status]="!!column.status"
+              (click)="onSortColumn(column.key)"
+            >
+              {{ column.label }}
+              <span
+                class="table__sort-icon"
+                *ngIf="sortableColumns?.includes(column.key) || !!sortedColumn"
+                [class.table__sort-icon]="sortedColumn?.key === column.key && sortedColumn?.direction !== 'None'"
+              >
+                <sk-icon
+                  *ngIf="sortedColumn?.key === column.key && sortedColumn?.direction === 'ASC'"
+                  icon="arrow-down"
+                ></sk-icon>
+                <sk-icon
+                  *ngIf="sortedColumn?.key === column.key && sortedColumn?.direction === 'DESC'"
+                  icon="arrow-up"
+                ></sk-icon>
+                <sk-icon
+                  *ngIf="
+                    (sortableColumns?.includes(column.key) && sortedColumn?.key !== column.key) ||
+                    (sortableColumns?.includes(column.key) && sortedColumn?.direction === 'None')
+                  "
+                  icon="sort"
+                ></sk-icon>
+              </span>
+            </span>
+          </th>
+        </ng-container>
+        <th *ngIf="actions.length > 0">&nbsp;</th>
+        <th *ngIf="!!toggleAction">{{ toggleAction.label }}</th>
+      </tr>
+    </thead>
+    <tbody class="table__body">
+      <tr class="table__empty" *ngIf="rows?.length === 0">
+        <td colspan="100%">No {{ dataName?.toLowerCase() ?? "results" }} found...</td>
+      </tr>
+      <tr
+        class="table__row"
+        [class.table__row--clickable]="canSelectRow"
+        *ngFor="let row of rows; index as index"
+        (click)="onRowClick(row)"
+      >
+        <td
+          *ngIf="canCheckRow"
+          class="table__checkbox-cell"
+          [class.table__checkbox-cell--checked]="row.isChecked"
+          (click)="onCheckRow($event, row)"
+        >
+          <sk-icon *ngIf="!row.isChecked" iconSet="regular" icon="square"></sk-icon>
+          <sk-icon *ngIf="row.isChecked" iconSet="regular" icon="square-check"></sk-icon>
+        </td>
+        <td
+          *ngFor="let column of columns"
+          class="table__cell"
+          [class.table__cell--highlight]="column.highlight"
+          [class.table__cell--status]="!!column.status"
+          [class.table__cell--icon]="column.icon"
+        >
+          <sk-icon *ngIf="column.icon" [icon]="column.icon(row)"></sk-icon>
+          <sk-pill
+            *ngIf="!!column.status && column.status(row)"
+            [type]="column.status(row)"
+            [icon]="!!column.statusIcon ? column.statusIcon(row) : undefined"
+          >
+            <ng-container *ngIf="!column.format">{{ row[column.key] }}</ng-container>
+            <ng-container *ngIf="column.format">{{ column.format(row) }}</ng-container>
+          </sk-pill>
+          <ng-container *ngIf="!column.status && !column.format && !column.icon">{{ row[column.key] }}</ng-container>
+          <ng-container *ngIf="!column.status && column.format">{{ column.format(row) }}</ng-container>
+        </td>
+        <td class="table__action-cell" *ngIf="actions.length > 0">
+          <div class="table__action-cell-action">
+            <ng-container *ngFor="let action of actions">
+              <sk-button
+                *ngIf="!(action.isDisabled && action.isDisabled(row))"
+                [compact]="true"
+                [icon]="action.icon"
+                [iconSet]="action.iconSet"
+                [title]="action.label"
+                type="light"
+                (click)="onAction($event, action, row)"
+              ></sk-button>
+            </ng-container>
+          </div>
+        </td>
+        <td class="table__action-cell" *ngIf="!!toggleAction">
+          <sk-toggle
+            [isActive]="toggleAction.isActive(row)"
+            [isPending]="isPending(index)"
+            (toggle)="onToggle(row, index)"
+          ></sk-toggle>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

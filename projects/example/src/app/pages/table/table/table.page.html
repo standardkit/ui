@@ -1,0 +1,24 @@
+<sk-top-bar name="Table" [isFullWidth]="true">
+  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
+  <sk-button (click)="onToggleClickable()" type="primary">Toggle Selectable</sk-button>
+  <sk-button (click)="onToggleCheckable()" type="dark">Toggle Checkable</sk-button>
+  <sk-button (click)="onToggleStriped()" type="info">Toggle Striped</sk-button>
+  <sk-button (click)="onToggleEmpty()" type="neutral">Toggle Empty</sk-button>
+</sk-top-bar>
+
+<sk-table
+  dataName="Test Items"
+  [columns]="columns"
+  [rows]="isEmpty ? [] : rows"
+  [sortableColumns]="sortableColumns"
+  [sortedColumn]="sortedColumn"
+  [isStriped]="isStriped"
+  [canSelectRow]="canSelectRow"
+  [canCheckRow]="canCheckRow"
+  [actions]="actions"
+  [toggleAction]="toggleAction"
+  (selectRow)="onSelectRow($event)"
+  (sortColumn)="onSortColumn($event)"
+  [(checkedRows)]="checkedRows"
+  (checkedRowsChange)="onCheckedRowsChange()"
+></sk-table>

@@ -22,6 +22,7 @@ import {
   TabPage,
   ListPage,
   PaginationPage,
+  TablePage,
 } from '../pages';
 import { CheckboxInputPage } from '../pages/form';
 
@@ -59,7 +60,13 @@ const routes: Routes = [
         ],
       },
       { path: 'form', children: [{ path: 'checkbox-input', component: CheckboxInputPage }] },
-      { path: 'table', children: [{ path: 'pagination', component: PaginationPage }] },
+      {
+        path: 'table',
+        children: [
+          { path: 'pagination', component: PaginationPage },
+          { path: 'table', component: TablePage },
+        ],
+      },
     ],
   },
 ];

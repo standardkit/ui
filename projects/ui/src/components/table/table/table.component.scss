@@ -1,0 +1,160 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.table__container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.table__sort-icon {
+  color: colors.$gray-40;
+}
+
+.table__column {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  &--sortable {
+    cursor: pointer;
+
+    &:hover {
+      color: colors.$gray-70;
+
+      .table__sort-icon {
+        color: colors.$gray-50;
+      }
+    }
+  }
+
+  &--active {
+    color: colors.$gray-70;
+  }
+
+  &--status {
+    padding: 0 8px;
+  }
+}
+
+td,
+th {
+  padding: 14px 16px;
+  line-height: fonts.$text-line-height-m;
+  font-size: fonts.$text-size-m;
+}
+
+thead th {
+  text-align: left;
+  color: colors.$gray-50;
+  font-weight: 400;
+  user-select: none;
+}
+
+.table__check-all {
+  cursor: pointer;
+  width: 0;
+  line-height: 1;
+
+  &:hover {
+    color: colors.$gray-70;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}
+
+.table__empty {
+  width: 100%;
+  text-align: center;
+  color: colors.$gray-50;
+
+  td {
+    padding: 64px 16px;
+    line-height: fonts.$text-line-height-m;
+    font-size: fonts.$text-size-m;
+  }
+}
+
+.table__body tr td {
+  border: 1px solid colors.$gray-10;
+  border-right: none;
+  border-left: none;
+  border-collapse: collapse;
+}
+
+.table__body .table__row {
+  border-right: 1px solid colors.$gray-10;
+  border-left: 1px solid colors.$gray-10;
+  background-color: colors.$white;
+
+  &--clickable {
+    cursor: pointer;
+
+    &:hover {
+      background-color: colors.$primary-light;
+    }
+  }
+}
+
+.table--striped .table__body .table__row {
+
+  &:nth-child(2n) {
+    background-color: colors.$info-light;
+  }
+
+  &--clickable {
+
+    &:nth-child(2n) {
+
+      &:hover {
+        background-color: colors.$primary-light;
+      }
+    }
+  }
+}
+
+.table__cell--highlight {
+  font-weight: 600;
+}
+
+.table__cell--status {
+  width: 0;
+}
+
+.table__cell--icon {
+  width: 0; // Forces table cell to shrink
+  line-height: 1;
+}
+
+.table__checkbox-cell {
+  cursor: pointer;
+  width: 0;
+  line-height: 1;
+  color: colors.$gray-50;
+
+  &:hover {
+    color: colors.$gray-70;
+  }
+
+  &--checked {
+    color: colors.$gray-70;
+  }
+}
+
+.table__action-cell {
+  padding: 0 8px;
+  width: 0;
+}
+
+.table__action-cell-action {
+  display: flex;
+  flex-flow: row nowrap;
+}

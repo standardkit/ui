@@ -46,7 +46,10 @@ export class PageLayout {
       icon: 'list',
       name: 'Table',
       route: 'table',
-      children: [{ name: 'Pagination', route: 'table/pagination' }],
+      children: [
+        { name: 'Pagination', route: 'table/pagination' },
+        { name: 'Table', route: 'table/table' },
+      ],
     },
   ];
 }
