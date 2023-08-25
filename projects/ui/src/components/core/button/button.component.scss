@@ -48,13 +48,16 @@
   &--compact {
     padding: 8px 10px;
   }
+
+  &--no-shadow {
+    box-shadow: none;
+  }
 }
 
 // TODO : Make this into a function of sorts with parameters looping through all the colors / styles
 
 .button--light {
   border-color: colors.$white;
-  box-shadow: none;
   background-color: colors.$white;
   color: colors.$gray-80;
 
@@ -216,12 +219,13 @@
 }
 
 .button--neutral {
-  border-color: colors.$neutral;
-  box-shadow: 1px 1px 2px 1px colors.$shadow;
-  background-color: colors.$neutral;
+  border-color: colors.$gray-20;
+  box-shadow: 1px 1px 2px 1px colors.$shadow-dark;
+  background-color: colors.$gray-20;
+  color: colors.$gray-60;
 
   &:disabled {
-    border-color: colors.$gray-40;
+    border-color: colors.$gray-10;
     background-color: colors.$gray-10;
     color: colors.$gray-40;
   }
