@@ -40,7 +40,10 @@ export class PageLayout {
       icon: 'list-check',
       name: 'Form',
       route: 'form',
-      children: [{ name: 'Checkbox Input', route: 'form/checkbox-input' }],
+      children: [
+        { name: 'Checkbox Input', route: 'form/checkbox-input' },
+        { name: 'Form', route: 'form/form' },
+      ],
     },
     {
       icon: 'list',

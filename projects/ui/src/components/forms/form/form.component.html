@@ -1,0 +1,4 @@
+<form class="form" [formGroup]="formGroup" (submit)="onSubmit()" [autocomplete]="hasAutocomplete ? 'on' : 'off'">
+  <ng-content></ng-content>
+  <button class="form__hidden-submit" type="submit">Submit</button>
+</form>

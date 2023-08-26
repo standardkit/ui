@@ -1,0 +1,19 @@
+:host(.field) {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+:host(.field--narrow) {
+  flex-basis: 120px;
+}
+
+:host(.field--medium) {
+  flex-basis: 240px;
+}
+
+:host(.field--wide) {
+  flex-basis: 360px;
+}

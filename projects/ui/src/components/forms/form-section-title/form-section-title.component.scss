@@ -1,0 +1,33 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.form-section-title {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 8px 0 12px;
+}
+
+.form-section-title__pre,
+.form-section-title__post {
+  border: none;
+  background-color: colors.$gray-20;
+  height: 1px;
+}
+
+.form-section-title__pre {
+  width: 16px;
+}
+
+.form-section-title__body {
+  padding: 0 8px 0 6px;
+  line-height: fonts.$text-line-height-xl;
+  color: colors.$gray-70;
+  font-family: fonts.$title-font;
+  font-size: fonts.$text-size-xl;
+  font-weight: 400;
+}
+
+.form-section-title__post {
+  flex-grow: 1;
+}

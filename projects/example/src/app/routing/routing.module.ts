@@ -24,8 +24,9 @@ import {
   PaginationPage,
   TablePage,
   SearchPage,
+  FormPage,
+  CheckboxInputPage,
 } from '../pages';
-import { CheckboxInputPage } from '../pages/form';
 
 const routes: Routes = [
   {
@@ -60,7 +61,13 @@ const routes: Routes = [
           { path: 'toggle', component: TogglePage },
         ],
       },
-      { path: 'form', children: [{ path: 'checkbox-input', component: CheckboxInputPage }] },
+      {
+        path: 'form',
+        children: [
+          { path: 'checkbox-input', component: CheckboxInputPage },
+          { path: 'form', component: FormPage },
+        ],
+      },
       {
         path: 'table',
         children: [

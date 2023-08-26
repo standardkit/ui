@@ -1,0 +1,18 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.label {
+  padding: 2px 8px;
+  line-height: fonts.$text-line-height-l;
+  font-size: fonts.$text-size-l;
+  font-weight: 600;
+  user-select: none;
+}
+
+.label__optional {
+  margin-left: 6px;
+  line-height: fonts.$text-line-height-m;
+  color: colors.$gray-50;
+  font-size: fonts.$text-size-m;
+  font-weight: 400;
+}

@@ -1,0 +1,31 @@
+<sk-top-bar name="Form">
+  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
+</sk-top-bar>
+
+<sk-row>
+  <sk-column>
+    <sk-card name="Form Card">
+      <sk-form [formGroup]="form" (submitForm)="onSubmit()">
+        <sk-form-section-title>Personal Information</sk-form-section-title>
+        <sk-field-group>
+          <sk-field name="test-field-1">
+            <sk-label>Test field 1</sk-label>
+            <sk-input-description>Put in some text below, it's pretty simple</sk-input-description>
+            <sk-text-input formControlName="text"></sk-text-input>
+          </sk-field>
+
+          <sk-field name="test-field-2">
+            <sk-label>Second field</sk-label>
+            <sk-input-description>Put in some text below, it's pretty simple</sk-input-description>
+            <sk-text-input placeholder="Example placeholder" formControlName="textTwo"></sk-text-input>
+          </sk-field>
+        </sk-field-group>
+        <sk-field name="test-field-3">
+          <sk-label>Third field</sk-label>
+          <sk-input-description>We exited the field group</sk-input-description>
+          <sk-text-input formControlName="textTwo"></sk-text-input>
+        </sk-field>
+      </sk-form>
+    </sk-card>
+  </sk-column>
+</sk-row>
