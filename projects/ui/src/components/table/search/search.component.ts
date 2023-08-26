@@ -20,7 +20,7 @@ export class SkSearchComponent implements AfterViewInit {
   private wasSearched: boolean = false;
 
   public ngAfterViewInit(): void {
-    setTimeout(() => this.input.nativeElement.focus(), 500);
+    this.input.nativeElement.focus();
   }
 
   public onSearch(): void {
