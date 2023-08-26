@@ -11,4 +11,6 @@ export class SkIconComponent {
   @Input() public iconSet?: IconSetType = 'solid';
   @Input() public isSpinning: boolean = false;
   @Input() public isReverse: boolean = false;
+  @Input() public flipX: boolean = false;
+  @Input() public flipY: boolean = false;
 }

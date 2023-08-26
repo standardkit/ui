@@ -15,6 +15,7 @@ export class SkButtonComponent {
   @Input() public icon?: string;
   @Input() public iconSet?: IconSetType;
   @Input() public alignIcon: 'left' | 'right' = 'right';
+  @Input() public flipIcon: boolean = false;
   @Input() public isSubmit: boolean = false;
   @Input() public noShadow: boolean = false;
 }

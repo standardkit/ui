@@ -18,10 +18,10 @@
   [type]="isSubmit ? 'submit' : 'button'"
 >
   <span class="button__icon" *ngIf="icon && alignIcon === 'left'">
-    <sk-icon [icon]="icon" [attr.iconSet]="iconSet"></sk-icon>
+    <sk-icon [icon]="icon" [attr.iconSet]="iconSet" [flipX]="flipIcon"></sk-icon>
   </span>
   <ng-content></ng-content>
   <span class="button__icon" *ngIf="icon && alignIcon === 'right'">
-    <sk-icon [icon]="icon" [attr.iconSet]="iconSet"></sk-icon>
+    <sk-icon [icon]="icon" [attr.iconSet]="iconSet" [flipX]="flipIcon"></sk-icon>
   </span>
 </button>
