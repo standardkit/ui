@@ -37,7 +37,7 @@
 
 @mixin use-default-font {
   $default-fonts: (
-    title: roboto slab,
+    title: inter,
     text: inter,
   );
 
@@ -45,9 +45,6 @@
 }
 
 @mixin include-default-fonts {
-  /** Roboto Slab Google Fonts */
-  @import "https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800&display=swap";
-
   /** Inter Google Fonts */
   @import "https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap";
 }
