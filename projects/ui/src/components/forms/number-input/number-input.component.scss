@@ -1,0 +1,30 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+@use "@standardkit/ui/borders";
+
+.number-input {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: borders.$border-radius-m;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  background-color: colors.$gray-10;
+  padding: 14px 8px 14px 24px; // right side less padding for password managers
+  width: 100%;
+  line-height: fonts.$text-line-height-l;
+  font-size: fonts.$text-size-l;
+
+  &::placeholder {
+    color: colors.$gray-50;
+    user-select: none;
+  }
+
+  &:focus {
+    outline-color: colors.$primary;
+  }
+
+  &--error {
+    margin-bottom: 0;
+    outline: 2px solid colors.$error;
+  }
+}

@@ -10,6 +10,7 @@ export class FormPage {
     text: new FormControl(),
     text2: new FormControl(),
     text3: new FormControl(),
+    number: new FormControl(),
     radio: new FormControl(),
     radio2: new FormControl(),
     radio3: new FormControl(),
