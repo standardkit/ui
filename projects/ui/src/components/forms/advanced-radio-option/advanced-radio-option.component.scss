@@ -1,0 +1,141 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+:host {
+  flex: 1 1 auto;
+}
+
+.advanced-radio-option {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 2px solid transparent;
+  border-radius: borders.$border-radius-m;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  background-color: colors.$gray-10;
+  cursor: pointer;
+  padding: 10px 14px;
+  height: 100%;
+  user-select: none;
+
+  &--selected {
+    border-color: colors.$primary;
+
+    .advanced-radio-option__icon {
+      color: colors.$primary;
+    }
+  }
+
+  &--info {
+    background-color: colors.$info-light;
+    color: colors.$info;
+
+    &.advanced-radio-option--selected {
+      border-color: colors.$info;
+
+      .advanced-radio-option__icon {
+        color: colors.$info;
+      }
+    }
+  }
+
+  &--warning {
+    background-color: colors.$warning-light;
+    color: colors.$warning;
+
+    &.advanced-radio-option--selected {
+      border-color: colors.$warning;
+
+      .advanced-radio-option__icon {
+        color: colors.$warning;
+      }
+    }
+  }
+
+  &--success {
+    background-color: colors.$success-light;
+    color: colors.$success;
+
+    &.advanced-radio-option--selected {
+      border-color: colors.$success;
+
+      .advanced-radio-option__icon {
+        color: colors.$success;
+      }
+    }
+  }
+
+  &--error {
+    background-color: colors.$error-light;
+    color: colors.$error;
+
+    &.advanced-radio-option--selected {
+      border-color: colors.$error;
+
+      .advanced-radio-option__icon {
+        color: colors.$error;
+      }
+    }
+  }
+
+  &--special {
+    background-color: colors.$special-light;
+    color: colors.$special;
+
+    &.advanced-radio-option--selected {
+      border-color: colors.$special;
+
+      .advanced-radio-option__icon {
+        color: colors.$special;
+      }
+    }
+  }
+
+  &--neutral {
+    background-color: colors.$gray-20;
+    color: colors.$gray-60;
+
+    &.advanced-radio-option--selected {
+      border-color: colors.$gray-60;
+
+      .advanced-radio-option__icon {
+        color: colors.$gray-60;
+      }
+    }
+  }
+}
+
+.advanced-radio-option__input {
+  appearance: none;
+  display: none;
+  visibility: hidden;
+}
+
+.advanced-radio-option__header {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.advanced-radio-option__label {
+  margin: 0;
+  line-height: fonts.$title-line-height-s;
+  font-family: fonts.$text-font, sans-serif;
+  font-size: fonts.$title-size-s;
+  font-weight: 600;
+}
+
+.advanced-radio-option__body {
+  display: flex;
+  flex-flow: row wrap;
+  flex-shrink: 1;
+  line-height: fonts.$text-line-height-m;
+  font-size: fonts.$text-size-m;
+
+  &:empty {
+    display: none;
+  }
+}

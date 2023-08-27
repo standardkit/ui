@@ -1,0 +1,12 @@
+<div
+  class="radio-input"
+  [class.radio-input--advanced]="advancedOptions.length > 0"
+  [class.radio-input--error]="control.touched && control.invalid"
+  [class.radio-input--vertical]="isVertical"
+>
+  <ng-content></ng-content>
+</div>
+
+<sk-input-error *ngIf="control.touched && control.invalid">
+  <ng-content select="[slot=error]"></ng-content>
+</sk-input-error>

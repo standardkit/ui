@@ -1,5 +1,5 @@
 // Input & InputError & SelectSearch are internal components only, they should not be exposed
-// export * from './advanced-radio-option';
+export * from './advanced-radio-option';
 export * from './checkbox-input';
 // export * from './date-input';
 export * from './field';
@@ -16,8 +16,8 @@ export * from './label';
 // export * from './multi-select-input';
 // export * from './number-input';
 // export * from './password-input';
-// export * from './radio-input';
-// export * from './radio-option';
+export * from './radio-input';
+export * from './radio-option';
 // export * from './rich-text-input';
 // export * from './select-input';
 // export * from './select-option';

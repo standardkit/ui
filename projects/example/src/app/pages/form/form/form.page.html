@@ -17,15 +17,66 @@
           <sk-field name="test-field-2">
             <sk-label>Second field</sk-label>
             <sk-input-description>Put in some text below, it's pretty simple</sk-input-description>
-            <sk-text-input placeholder="Example placeholder" formControlName="textTwo"></sk-text-input>
+            <sk-text-input placeholder="Example placeholder" formControlName="text2"></sk-text-input>
           </sk-field>
         </sk-field-group>
         <sk-field name="test-field-3">
           <sk-label>Third field</sk-label>
           <sk-input-description>We exited the field group</sk-input-description>
-          <sk-text-input formControlName="textTwo"></sk-text-input>
+          <sk-text-input formControlName="text3"></sk-text-input>
+        </sk-field>
+        <sk-field name="radio">
+          <sk-label>Choose from radio</sk-label>
+          <sk-radio-input formControlName="radio">
+            <sk-radio-option value="abc123">Option 1</sk-radio-option>
+            <sk-radio-option value="def456">Option 2</sk-radio-option>
+            <sk-radio-option value="ghi789">Option 3</sk-radio-option>
+          </sk-radio-input>
+        </sk-field>
+        <sk-field name="radio2">
+          <sk-label>Choose from radio (vertical)</sk-label>
+          <sk-radio-input formControlName="radio2" [isVertical]="true">
+            <sk-radio-option value="abc123">Option 1</sk-radio-option>
+            <sk-radio-option value="def456">Option 2</sk-radio-option>
+            <sk-radio-option value="ghi789">Option 3</sk-radio-option>
+          </sk-radio-input>
+        </sk-field>
+        <sk-field name="radio3">
+          <sk-label>Choose from advanced radio</sk-label>
+          <sk-radio-input formControlName="radio3">
+            <sk-advanced-radio-option label="Option 1" value="abc123">Body of Option 1</sk-advanced-radio-option>
+            <sk-advanced-radio-option label="Option 2" value="def456" type="success"
+              >Lorem Ipsum Dolor bla bla bla bla
+            </sk-advanced-radio-option>
+            <sk-advanced-radio-option label="Option 3" value="ghi789" type="error">
+              Body of Option 1
+            </sk-advanced-radio-option>
+            <sk-advanced-radio-option label="Option 4" value="jkl123" type="warning">
+              Body of Option 1
+            </sk-advanced-radio-option>
+          </sk-radio-input>
+        </sk-field>
+
+        <sk-field name="radio4">
+          <sk-label>Choose from advanced radio (vertical)</sk-label>
+          <sk-radio-input formControlName="radio4" [isVertical]="true">
+            <sk-advanced-radio-option label="Option 1" value="abc123">Body of Option 1</sk-advanced-radio-option>
+            <sk-advanced-radio-option label="Option 2" value="def456" type="success"
+              >Lorem Ipsum Dolor bla bla bla bla
+            </sk-advanced-radio-option>
+            <sk-advanced-radio-option label="Option 3" value="ghi789" type="error">
+              Body of Option 1
+            </sk-advanced-radio-option>
+            <sk-advanced-radio-option label="Option 4" value="jkl123" type="warning">
+              Body of Option 1
+            </sk-advanced-radio-option>
+          </sk-radio-input>
         </sk-field>
       </sk-form>
     </sk-card>
   </sk-column>
 </sk-row>
+
+<sk-bottom-bar>
+  <sk-button (click)="onSubmit()">Submit Form</sk-button>
+</sk-bottom-bar>

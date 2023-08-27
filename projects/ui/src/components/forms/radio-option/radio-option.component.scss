@@ -1,0 +1,36 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.radio-option {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 6px 16px 6px 0;
+  user-select: none;
+
+  &--selected .radio-option__icon {
+    color: colors.$primary;
+  }
+}
+
+.radio-option__input {
+  appearance: none;
+  display: none;
+  visibility: hidden;
+}
+
+.radio-option__header {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.radio-option__label {
+  margin: 0;
+  line-height: fonts.$title-line-height-s;
+  font-family: fonts.$text-font;
+  font-size: fonts.$title-size-s;
+  font-weight: 400;
+}

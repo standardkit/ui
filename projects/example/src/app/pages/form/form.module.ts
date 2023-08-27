@@ -17,6 +17,10 @@ import {
   LabelModule,
   TextInputModule,
   InputDescriptionModule,
+  SkRadioInputModule,
+  SkRadioOptionModule,
+  SkAdvancedRadioOptionModule,
+  SkBottomBarModule,
 } from '@standardkit/ui';
 
 const PAGES: any[] = [CheckboxInputPage, FormPage];
@@ -38,6 +42,10 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     LabelModule,
     TextInputModule,
     InputDescriptionModule,
+    SkRadioInputModule,
+    SkRadioOptionModule,
+    SkAdvancedRadioOptionModule,
+    SkBottomBarModule,
   ],
   declarations: PAGES,
   exports: PAGES,

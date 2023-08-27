@@ -1,0 +1,23 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+
+.radio-input {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 4px 16px;
+  margin-bottom: 20px;
+
+  &--advanced {
+    gap: 16px;
+  }
+
+  &--error {
+    margin-bottom: 0;
+    border: 1px dashed colors.$error;
+    border-radius: borders.$border-radius-m;
+  }
+
+  &--vertical {
+    flex-flow: column nowrap;
+  }
+}

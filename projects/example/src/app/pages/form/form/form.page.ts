@@ -8,10 +8,15 @@ export class FormPage {
 
   public form: FormGroup = new FormGroup({
     text: new FormControl(),
-    textTwo: new FormControl(),
+    text2: new FormControl(),
+    text3: new FormControl(),
+    radio: new FormControl(),
+    radio2: new FormControl(),
+    radio3: new FormControl(),
+    radio4: new FormControl(),
   });
 
   public onSubmit(): void {
-    console.log('form submitted');
+    console.log('form submitted', this.form.value);
   }
 }
