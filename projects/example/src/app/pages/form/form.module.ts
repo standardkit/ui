@@ -22,6 +22,7 @@ import {
   SkAdvancedRadioOptionModule,
   SkBottomBarModule,
   SkNumberInputModule,
+  SkDateInputModule,
 } from '@standardkit/ui';
 
 const PAGES: any[] = [CheckboxInputPage, FormPage];
@@ -48,6 +49,7 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     SkTextInputModule,
     SkTopBarModule,
     SkNumberInputModule,
+    SkDateInputModule,
   ],
   declarations: PAGES,
   exports: PAGES,
