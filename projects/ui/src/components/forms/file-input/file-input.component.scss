@@ -1,0 +1,91 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+input[type="file"] {
+  display: none;
+}
+
+.file-input__upload {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 16px;
+  align-items: center;
+  border: 2px dotted colors.$primary;
+  border-radius: borders.$border-radius-m;
+  background-color: colors.$gray-10;
+  padding: 24px;
+  width: 100%;
+}
+
+.file-input {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+
+  &--error {
+    margin-bottom: 0;
+
+    .file-input__upload {
+      border-color: colors.$error;
+    }
+  }
+}
+
+.file-input__upload--drag-over {
+  border: 2px solid colors.$primary;
+}
+
+.file-input__description {
+  margin-bottom: 16px;
+  text-align: center;
+  line-height: fonts.$text-line-height-m;
+  color: colors.$gray-50;
+  font-size: fonts.$text-size-m;
+}
+
+.file-input__files {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.file-input__file {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 16px;
+  align-items: center;
+  border-radius: borders.$border-radius-m;
+  background-color: colors.$gray-10;
+  padding: 8px 12px;
+  font-size: fonts.$text-size-m;
+}
+
+.file-input__file-icon {
+  line-height: 1;
+  color: colors.$gray-70;
+  user-select: none;
+}
+
+.file-input__file-name {
+  flex-grow: 1;
+  line-height: fonts.$text-line-height-m;
+}
+
+.file-input__file-icon--delete {
+  cursor: pointer;
+  color: colors.$primary;
+  filter: drop-shadow(1px 1px 2px colors.$shadow);
+
+  &:hover {
+    filter: brightness(110%);
+  }
+
+  &:active {
+    filter: none;
+    transform: translate(1px, 1px);
+  }
+}

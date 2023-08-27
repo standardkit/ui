@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: 'input-error.component.html',
   styleUrls: ['input-error.component.scss'],
 })
-export class InputErrorComponent {}
+export class SkInputErrorComponent {}

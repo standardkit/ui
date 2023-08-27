@@ -13,6 +13,7 @@ export class FormPage {
     text4: new FormControl(),
     number: new FormControl(),
     date: new FormControl(),
+    files: new FormControl(),
     radio: new FormControl(),
     radio2: new FormControl(),
     radio3: new FormControl(),

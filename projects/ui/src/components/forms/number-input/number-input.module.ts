@@ -1,11 +1,11 @@
 import { NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { InputErrorModule } from '../input-error';
+import { SkInputErrorModule } from '../input-error';
 import { SkNumberInputComponent } from './number-input.component';
 
 @NgModule({
-  imports: [FormsModule, NgIf, InputErrorModule],
+  imports: [FormsModule, NgIf, SkInputErrorModule],
   declarations: [SkNumberInputComponent],
   exports: [SkNumberInputComponent],
 })

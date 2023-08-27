@@ -20,6 +20,7 @@
             <sk-text-input placeholder="Example placeholder" formControlName="text2"></sk-text-input>
           </sk-field>
         </sk-field-group>
+
         <sk-field name="test-field-3">
           <sk-label>Third field</sk-label>
           <sk-input-description>We exited the field group</sk-input-description>
@@ -42,6 +43,12 @@
             <sk-date-input formControlName="date"></sk-date-input>
           </sk-field>
         </sk-field-group>
+
+        <sk-field name="file">
+          <sk-label>File input</sk-label>
+          <sk-file-input formControlName="files"></sk-file-input>
+        </sk-field>
+
         <sk-field name="radio">
           <sk-label>Choose from radio</sk-label>
           <sk-radio-input formControlName="radio">
@@ -50,6 +57,7 @@
             <sk-radio-option value="ghi789">Option 3</sk-radio-option>
           </sk-radio-input>
         </sk-field>
+
         <sk-field name="radio2">
           <sk-label>Choose from radio (vertical)</sk-label>
           <sk-radio-input formControlName="radio2" [isVertical]="true">
@@ -58,6 +66,7 @@
             <sk-radio-option value="ghi789">Option 3</sk-radio-option>
           </sk-radio-input>
         </sk-field>
+
         <sk-field name="radio3">
           <sk-label>Choose from advanced radio</sk-label>
           <sk-radio-input formControlName="radio3">

@@ -1,10 +1,10 @@
 import { NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { InputErrorModule } from '../input-error';
+import { SkInputErrorModule } from '../input-error';
 import { SkRadioInputComponent } from './radio-input.component';
 
 @NgModule({
-  imports: [InputErrorModule, NgIf],
+  imports: [SkInputErrorModule, NgIf],
   declarations: [SkRadioInputComponent],
   exports: [SkRadioInputComponent],
 })

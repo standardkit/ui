@@ -1,0 +1,42 @@
+<input
+  type="file"
+  class="password-input"
+  [attr.multiple]="canSelectMultiple ? 'multiple' : undefined"
+  [id]="name"
+  [disabled]="isDisabled"
+  (change)="onValueChange($event)"
+  #input
+/>
+
+<div class="file-input" [class.file-input--error]="control.touched && control.invalid">
+  <div
+    class="file-input__upload"
+    [class.file-input__upload--drag-over]="hasDragOver"
+    (dragover)="onDragOver($event)"
+    (dragleave)="onDragLeave()"
+    (drop)="onDrop($event)"
+  >
+    <!--TODO : Make configurable-->
+    <span class="file-input__description">Drag & drop one or multiple files or browse...</span>
+
+    <sk-button icon="search" (click)="input.click()">Browse</sk-button>
+  </div>
+
+  <div class="file-input__files" *ngIf="value.length > 0">
+    <div class="file-input__file" *ngFor="let file of value; index as index">
+      <span class="file-input__file-icon">
+        <sk-icon icon="description"></sk-icon>
+      </span>
+      <span class="file-input__file-name">
+        {{ file.name }}
+      </span>
+      <span class="file-input__file-icon file-input__file-icon--delete" (click)="onDeleteFile(index)">
+        <sk-icon icon="trash"></sk-icon>
+      </span>
+    </div>
+  </div>
+</div>
+
+<sk-input-error *ngIf="control.touched && control.invalid">
+  <ng-content select="[slot=error]"></ng-content>
+</sk-input-error>

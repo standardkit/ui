@@ -4,7 +4,7 @@ export * from './checkbox-input';
 export * from './date-input';
 export * from './field';
 export * from './field-group';
-// export * from './file-input';
+export * from './file-input';
 export * from './form';
 export * from './form-section-title';
 // export * from './icon-input';
