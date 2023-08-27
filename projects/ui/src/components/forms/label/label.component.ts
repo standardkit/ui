@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: 'label.component.html',
   styleUrls: ['label.component.scss'],
 })
-export class LabelComponent {
+export class SkLabelComponent {
   @Input() public for: string = '';
   @Input() public isOptional: boolean = false;
 }

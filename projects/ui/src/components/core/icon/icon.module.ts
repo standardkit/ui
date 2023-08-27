@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { SkIconComponent } from './icon.component';
 
 @NgModule({
+  imports: [NgClass],
   declarations: [SkIconComponent],
   exports: [SkIconComponent],
-  imports: [NgClass],
 })
 export class SkIconModule {}

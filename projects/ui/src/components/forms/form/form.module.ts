@@ -3,8 +3,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SkFormComponent } from './form.component';
 
 @NgModule({
+  imports: [ReactiveFormsModule],
   declarations: [SkFormComponent],
   exports: [SkFormComponent],
-  imports: [ReactiveFormsModule],
 })
 export class SkFormModule {}

@@ -6,8 +6,8 @@ import { InputErrorModule } from '../input-error';
 import { SkCheckboxInputComponent } from './checkbox-input.component';
 
 @NgModule({
+  imports: [FormsModule, NgIf, InputErrorModule, SkIconModule, SkIconModule],
   declarations: [SkCheckboxInputComponent],
   exports: [SkCheckboxInputComponent],
-  imports: [FormsModule, NgIf, InputErrorModule, SkIconModule, SkIconModule],
 })
 export class SkCheckboxInputModule {}

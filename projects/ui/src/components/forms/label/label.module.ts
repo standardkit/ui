@@ -1,10 +1,10 @@
 import { NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { LabelComponent } from './label.component';
+import { SkLabelComponent } from './label.component';
 
 @NgModule({
-  declarations: [LabelComponent],
-  exports: [LabelComponent],
   imports: [NgIf],
+  declarations: [SkLabelComponent],
+  exports: [SkLabelComponent],
 })
-export class LabelModule {}
+export class SkLabelModule {}

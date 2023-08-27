@@ -26,7 +26,9 @@ const PAGES: any[] = [BarPage, ButtonPage, IconPage, LinkPage, PillPage, TagPage
 @NgModule({
   imports: [
     SkBarModule,
+    SkBreadcrumbsModule,
     SkButtonModule,
+    SkCardModule,
     SkColumnModule,
     SkIconModule,
     SkLinkModule,
@@ -35,8 +37,6 @@ const PAGES: any[] = [BarPage, ButtonPage, IconPage, LinkPage, PillPage, TagPage
     SkTagModule,
     SkToggleModule,
     SkTopBarModule,
-    SkBreadcrumbsModule,
-    SkCardModule,
   ],
   declarations: PAGES,
   exports: PAGES,

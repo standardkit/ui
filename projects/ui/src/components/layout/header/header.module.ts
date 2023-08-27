@@ -4,8 +4,8 @@ import { RouterLink } from '@angular/router';
 import { SkHeaderComponent } from './header.component';
 
 @NgModule({
+  imports: [RouterLink, NgOptimizedImage, NgIf],
   declarations: [SkHeaderComponent],
   exports: [SkHeaderComponent],
-  imports: [RouterLink, NgOptimizedImage, NgIf],
 })
 export class SkHeaderModule {}

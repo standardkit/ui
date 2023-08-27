@@ -4,8 +4,8 @@ import { SkIconModule } from '../icon';
 import { SkPillComponent } from './pill.component';
 
 @NgModule({
+  imports: [NgClass, NgIf, SkIconModule],
   declarations: [SkPillComponent],
   exports: [SkPillComponent],
-  imports: [NgClass, NgIf, SkIconModule],
 })
 export class SkPillModule {}

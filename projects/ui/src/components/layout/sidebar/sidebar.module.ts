@@ -6,8 +6,8 @@ import { SkNavigationItemModule } from '../navigation-item';
 import { SkSidebarComponent } from './sidebar.component';
 
 @NgModule({
+  imports: [NgForOf, SkIconModule, RouterLinkWithHref, RouterLinkActive, NgIf, SkNavigationItemModule],
   declarations: [SkSidebarComponent],
   exports: [SkSidebarComponent],
-  imports: [NgForOf, SkIconModule, RouterLinkWithHref, RouterLinkActive, NgIf, SkNavigationItemModule],
 })
 export class SkSidebarModule {}

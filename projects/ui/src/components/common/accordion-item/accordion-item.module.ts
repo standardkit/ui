@@ -4,8 +4,8 @@ import { SkIconModule } from '../../core';
 import { SkAccordionItemComponent } from './accordion-item.component';
 
 @NgModule({
+  imports: [NgIf, SkIconModule],
   declarations: [SkAccordionItemComponent],
   exports: [SkAccordionItemComponent],
-  imports: [NgIf, SkIconModule],
 })
 export class SkAccordionItemModule {}

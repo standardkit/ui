@@ -5,8 +5,8 @@ import { SkIconModule } from '../../core';
 import { SkBreadcrumbsComponent } from './breadcrumbs.component';
 
 @NgModule({
+  imports: [NgForOf, NgIf, RouterLinkWithHref, SkIconModule],
   declarations: [SkBreadcrumbsComponent],
   exports: [SkBreadcrumbsComponent],
-  imports: [NgForOf, NgIf, RouterLinkWithHref, SkIconModule],
 })
 export class SkBreadcrumbsModule {}

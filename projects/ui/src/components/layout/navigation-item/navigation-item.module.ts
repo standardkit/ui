@@ -6,8 +6,8 @@ import { SkSubNavigationItemModule } from '../sub-navigation-item';
 import { SkNavigationItemComponent } from './navigation-item.component';
 
 @NgModule({
+  imports: [SkIconModule, RouterLinkWithHref, RouterLinkActive, NgIf, SkSubNavigationItemModule, NgForOf, RouterLink],
   declarations: [SkNavigationItemComponent],
   exports: [SkNavigationItemComponent],
-  imports: [SkIconModule, RouterLinkWithHref, RouterLinkActive, NgIf, SkSubNavigationItemModule, NgForOf, RouterLink],
 })
 export class SkNavigationItemModule {}

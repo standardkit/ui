@@ -4,8 +4,8 @@ import { SkIconModule } from '../icon';
 import { SkTagComponent } from './tag.component';
 
 @NgModule({
+  imports: [SkIconModule, NgIf],
   declarations: [SkTagComponent],
   exports: [SkTagComponent],
-  imports: [SkIconModule, NgIf],
 })
 export class SkTagModule {}

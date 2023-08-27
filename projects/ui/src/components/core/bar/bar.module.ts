@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { SkBarComponent } from './bar.component';
 
 @NgModule({
+  imports: [NgIf],
   declarations: [SkBarComponent],
   exports: [SkBarComponent],
-  imports: [NgIf],
 })
 export class SkBarModule {}

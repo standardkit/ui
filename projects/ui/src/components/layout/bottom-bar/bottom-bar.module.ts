@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { SkBottomBarComponent } from './bottom-bar.component';
 
 @NgModule({
+  imports: [AsyncPipe],
   declarations: [SkBottomBarComponent],
   exports: [SkBottomBarComponent],
-  imports: [AsyncPipe],
 })
 export class SkBottomBarModule {}

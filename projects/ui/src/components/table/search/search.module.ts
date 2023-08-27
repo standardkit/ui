@@ -5,8 +5,8 @@ import { SkButtonModule, SkIconModule } from '../../core';
 import { SkSearchComponent } from './search.component';
 
 @NgModule({
+  imports: [SkButtonModule, SkIconModule, FormsModule, NgIf],
   declarations: [SkSearchComponent],
   exports: [SkSearchComponent],
-  imports: [SkButtonModule, SkIconModule, FormsModule, NgIf],
 })
 export class SkSearchModule {}

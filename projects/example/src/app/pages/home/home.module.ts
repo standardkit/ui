@@ -12,13 +12,13 @@ import {
 
 @NgModule({
   imports: [
-    SkTopBarModule,
-    SkButtonModule,
     SkBottomBarModule,
     SkBreadcrumbsModule,
+    SkButtonModule,
+    SkColumnModule,
     SkJumbotronModule,
     SkRowModule,
-    SkColumnModule,
+    SkTopBarModule,
   ],
   declarations: [HomePage],
   exports: [HomePage],

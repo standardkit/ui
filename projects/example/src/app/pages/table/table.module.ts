@@ -17,14 +17,14 @@ const PAGES: any[] = [PaginationPage, SearchPage, TablePage];
 
 @NgModule({
   imports: [
-    SkTopBarModule,
-    SkPaginationModule,
-    SkColumnModule,
-    SkRowModule,
     SkBreadcrumbsModule,
-    SkTableModule,
     SkButtonModule,
+    SkColumnModule,
+    SkPaginationModule,
+    SkRowModule,
     SkSearchModule,
+    SkTableModule,
+    SkTopBarModule,
   ],
   declarations: PAGES,
   exports: PAGES,

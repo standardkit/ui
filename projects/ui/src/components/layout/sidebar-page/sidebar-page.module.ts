@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { SkSidebarPageComponent } from './sidebar-page.component';
 
 @NgModule({
+  imports: [AsyncPipe, NgIf],
   declarations: [SkSidebarPageComponent],
   exports: [SkSidebarPageComponent],
-  imports: [AsyncPipe, NgIf],
 })
 export class SkSidebarPageModule {}

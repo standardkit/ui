@@ -8,7 +8,7 @@ import {
   QueryList,
 } from '@angular/core';
 import { InputComponent, InputInterface } from '../input';
-import { LabelComponent } from '../label';
+import { SkLabelComponent } from '../label';
 
 @Component({
   selector: 'sk-field[name]',
@@ -35,7 +35,7 @@ export class SkFieldComponent implements AfterContentInit {
 
   @ContentChildren(InputComponent) public inputs!: QueryList<InputInterface>;
 
-  @ContentChild(LabelComponent) public label?: LabelComponent;
+  @ContentChild(SkLabelComponent) public label?: SkLabelComponent;
 
   @Input() public name!: string;
   @Input() public width?: 'narrow' | 'medium' | 'wide';
