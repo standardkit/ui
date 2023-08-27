@@ -1,0 +1,10 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.input-description {
+  margin-top: -14px;
+  padding: 8px 8px 0;
+  line-height: fonts.$text-line-height-m;
+  color: colors.$gray-50;
+  font-size: fonts.$text-size-m;
+}
