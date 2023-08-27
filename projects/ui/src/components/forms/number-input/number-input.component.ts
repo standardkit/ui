@@ -6,9 +6,9 @@ import { InputComponent, InputInterface } from '../input';
   selector: 'sk-number-input',
   templateUrl: 'number-input.component.html',
   styleUrls: ['number-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => NumberInputComponent), multi: true }],
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkNumberInputComponent), multi: true }],
 })
-export class NumberInputComponent implements ControlValueAccessor, InputInterface {
+export class SkNumberInputComponent implements ControlValueAccessor, InputInterface {
   @Input() public placeholder: string = '';
 
   public value?: number | null;
