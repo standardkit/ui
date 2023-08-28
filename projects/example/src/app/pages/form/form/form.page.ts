@@ -12,6 +12,7 @@ export class FormPage {
     text3: new FormControl(),
     text4: new FormControl(),
     text5: new FormControl(),
+    password: new FormControl(),
     number: new FormControl(),
     date: new FormControl(),
     select: new FormControl(),

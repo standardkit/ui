@@ -28,6 +28,7 @@ import {
   SkSelectInputModule,
   SkSelectOptionModule,
   SkMultiSelectInputModule,
+  SkPasswordInputModule,
 } from '@standardkit/ui';
 
 const PAGES: any[] = [CheckboxInputPage, FormPage];
@@ -60,6 +61,7 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     SkSelectOptionModule,
     SkMultiSelectInputModule,
     NgForOf,
+    SkPasswordInputModule,
   ],
   declarations: PAGES,
   exports: PAGES,
