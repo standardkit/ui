@@ -6,5 +6,5 @@
     "styleIncludePaths": ["src/styles"]
   },
   "assets": ["src/styles"],
-  "allowedNonPeerDependencies": ["@standardkit/core"]
+  "allowedNonPeerDependencies": ["@standardkit/core", "fuse.js", "normalize.css"]
 }

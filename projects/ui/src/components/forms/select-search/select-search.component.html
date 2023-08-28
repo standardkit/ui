@@ -1,0 +1,16 @@
+<div class="select-search" (click)="onClick($event)">
+  <div class="select-search__search-icon">
+    <sk-icon icon="search"></sk-icon>
+  </div>
+  <input
+    #input
+    class="select-search__input"
+    type="text"
+    placeholder="Filter items..."
+    [ngModel]="query"
+    (ngModelChange)="onChange($event)"
+  />
+  <div class="select-search__clear-icon" *ngIf="query" (click)="onClear()">
+    <sk-icon icon="close"></sk-icon>
+  </div>
+</div>

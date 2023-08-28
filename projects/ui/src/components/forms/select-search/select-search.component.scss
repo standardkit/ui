@@ -1,0 +1,50 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.select-search {
+  position: relative;
+}
+
+.select-search__search-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 12px;
+  color: colors.$gray-50;
+  user-select: none;
+}
+
+.select-search__clear-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 12px;
+  user-select: none;
+
+  &:hover {
+    color: colors.$primary;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}
+
+.select-search__input {
+  box-sizing: border-box;
+  border: none;
+  padding: 12px 48px;
+  width: 100%;
+  line-height: fonts.$text-line-height-l;
+  font-size: fonts.$text-size-l;
+
+  &::placeholder {
+    color: colors.$gray-50;
+    user-select: none;
+  }
+
+  &:focus {
+    outline: 2px solid colors.$primary;
+  }
+}

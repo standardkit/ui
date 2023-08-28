@@ -1,0 +1,69 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.select-option {
+  box-sizing: border-box;
+  border-bottom: 1px solid colors.$gray-30;
+  background-color: colors.$gray-10;
+  cursor: pointer;
+  padding: 12px 24px;
+  width: 100%;
+  text-overflow: ellipsis;
+  line-height: fonts.$text-line-height-l;
+  font-size: fonts.$text-size-l;
+  user-select: none;
+
+  &:focus {
+    outline-color: colors.$primary;
+  }
+
+  &:hover:not(&--disabled, &--selected) {
+    background-color: colors.$gray-30;
+    color: colors.$black;
+  }
+
+  &--multi {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+  }
+
+  &--selected:not(&--multi) {
+    background-color: colors.$primary;
+    color: colors.$white;
+
+    &:hover {
+      filter: brightness(110%);
+    }
+  }
+
+  &--selected.select-option--multi:hover {
+    background-color: colors.$gray-30;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    color: colors.$gray-50;
+  }
+}
+
+.select-option__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-option__description {
+  line-height: fonts.$text-line-height-m;
+  color: colors.$gray-50;
+  font-size: fonts.$text-size-m;
+
+  &--selected {
+    color: colors.$gray-10;
+  }
+}
+
+.select-option__checkbox {
+  line-height: 1;
+  color: colors.$primary;
+}

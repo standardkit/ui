@@ -6,6 +6,8 @@
     "@angular/core": "^16.0.0"
   },
   "dependencies": {
+    "fuse.js": "^6.6.2",
+    "normalize.css": "^8.0.1",
     "tslib": "^2.3.0",
     "@standardkit/core": "^0.1.2"
   },

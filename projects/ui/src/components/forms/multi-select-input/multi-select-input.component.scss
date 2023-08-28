@@ -1,0 +1,123 @@
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+@use "@standardkit/ui/borders";
+
+.multi-select-input {
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: borders.$border-radius-m;
+  background-color: colors.$gray-10;
+  width: 100%;
+  line-height: fonts.$text-line-height-l;
+  font-size: fonts.$text-size-l;
+
+  &::placeholder {
+    color: colors.$gray-50;
+    user-select: none;
+  }
+
+  &--error {
+    margin-bottom: 0;
+
+    &:not(:focus-within) {
+      outline: 2px solid colors.$error;
+    }
+  }
+
+  &--collapsed:focus-within {
+    outline: 2px solid colors.$primary;
+  }
+}
+
+.multi-select-input__select {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  border-radius: borders.$border-radius-m;
+  box-shadow: 1px 1px 2px 1px colors.$shadow;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+
+  &:focus {
+    outline-color: colors.$primary;
+  }
+
+  &--expanded {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.multi-select-input__select-label {
+  display: flex;
+  flex-flow: row wrap;
+  flex-grow: 1;
+  gap: 8px;
+  padding: 8px 32px 8px 8px;
+}
+
+.multi-select-input__placeholder {
+  padding: 6px 16px; // compensated for 16x24
+  min-height: 22px;
+  letter-spacing: -0.5px;
+  color: colors.$gray-50;
+  user-select: none;
+}
+
+.multi-select-input__clear-icon {
+  position: absolute;
+  right: 42px;
+  padding: 14px 12px;
+  line-height: 1;
+  user-select: none;
+
+  &:hover {
+    color: colors.$primary;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}
+
+.multi-select-input__expand-icon {
+  user-select: none;
+  padding: 14px 16px;
+  line-height: 1;
+}
+
+.multi-select-input__options {
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  margin-bottom: 16px;
+  border-bottom-left-radius: borders.$border-radius-m;
+  border-bottom-right-radius: borders.$border-radius-m;
+  box-shadow: 2px 2px 5px 2px colors.$shadow;
+  width: 100%;
+  overflow: hidden;
+}
+
+.multi-select-input__options-body {
+  background-color: colors.$gray-10;
+  max-height: 228px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.multi-select-input__empty-body {
+  box-sizing: border-box;
+  padding: 24px;
+  width: 100%;
+  text-align: center;
+  color: colors.$gray-50;
+}
+
+.multi-select-input__options-footer {
+  box-shadow: 0 2px 16px 8px colors.$shadow;
+  background-color: colors.$white;
+}

@@ -5,8 +5,8 @@
 .tag {
   display: inline-flex;
   border-radius: borders.$border-radius-m;
-  background-color: colors.$gray-10;
-  line-height: 14px;
+  background-color: colors.$gray-20;
+  line-height: fonts.$text-line-height-m;
   color: colors.$gray-50;
   font-size: fonts.$text-size-m;
   font-weight: 600;
@@ -14,7 +14,7 @@
 }
 
 .tag__icon {
-  padding: 12px 10px;
+  padding: 8px 10px;
 
   &--left {
     margin-right: -10px;
@@ -41,5 +41,5 @@
 }
 
 .tag__content {
-  padding: 12px 16px;
+  padding: 8px 16px;
 }

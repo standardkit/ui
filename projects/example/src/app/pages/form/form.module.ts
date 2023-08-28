@@ -1,3 +1,4 @@
+import { NgForOf } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CheckboxInputPage } from './checkbox-input';
@@ -24,6 +25,9 @@ import {
   SkNumberInputModule,
   SkDateInputModule,
   SkFileInputModule,
+  SkSelectInputModule,
+  SkSelectOptionModule,
+  SkMultiSelectInputModule,
 } from '@standardkit/ui';
 
 const PAGES: any[] = [CheckboxInputPage, FormPage];
@@ -52,6 +56,10 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     SkNumberInputModule,
     SkDateInputModule,
     SkFileInputModule,
+    SkSelectInputModule,
+    SkSelectOptionModule,
+    SkMultiSelectInputModule,
+    NgForOf,
   ],
   declarations: PAGES,
   exports: PAGES,

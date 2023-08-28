@@ -1,0 +1,86 @@
+<div
+  class="multi-select-input"
+  [class.multi-select-input--error]="hasError && !showOptions"
+  [class.multi-select-input--collapsed]="!showOptions"
+  (click)="onTouched()"
+>
+  <div
+    class="multi-select-input__select"
+    [class.multi-select-input__select--error]="hasError"
+    [class.multi-select-input__select--expanded]="showOptions"
+    [class.multi-select-input__select--disabled]="isDisabled"
+    tabindex="0"
+    (click)="onToggleShowOptions()"
+    (keydown.enter)="onToggleShowOptions()"
+    #selectBox
+  >
+    <div class="multi-select-input__select-label">
+      <span class="multi-select-input__placeholder" *ngIf="value.length === 0">{{ placeholder }}</span>
+      <sk-tag
+        *ngFor="let selectedOption of selectedOptions"
+        icon="close"
+        (selectTag)="onClickTag($event, selectedOption)"
+      >
+        {{ selectedOption.label }}
+      </sk-tag>
+    </div>
+
+    <div class="multi-select-input__clear-icon" (click)="onClear($event)" *ngIf="!showOptions && value.length > 0">
+      <sk-icon icon="close"></sk-icon>
+    </div>
+
+    <div class="multi-select-input__expand-icon">
+      <sk-icon *ngIf="!showOptions" icon="angle-down"></sk-icon>
+      <sk-icon *ngIf="showOptions" icon="angle-up"></sk-icon>
+    </div>
+  </div>
+
+  <div class="multi-select-input__options" *ngIf="showOptions">
+    <div class="multi-select-input__options-search" *ngIf="contentOptions.length > 4">
+      <sk-select-search (search)="onSearch($event)" (clear)="onSearchClear()"></sk-select-search>
+    </div>
+    <div class="multi-select-input__options-body" #scrollBody>
+      <sk-select-option
+        *ngFor="let option of renderedOptions"
+        [value]="option.value"
+        [label]="option.label"
+        [description]="option.description"
+        [isMulti]="true"
+        [isSelected]="option.isSelected"
+        (selectOption)="onSelectOption(option)"
+        (deselectOption)="onDeselectOption(option)"
+      ></sk-select-option>
+
+      <div class="multi-select-input__empty-body" *ngIf="renderedOptions.length === 0">No results...</div>
+    </div>
+    <div class="multi-select-input__options-footer">
+      <sk-bar [growChildren]="true" [noGap]="true">
+        <sk-button
+          [isSharp]="true"
+          [fullWidth]="true"
+          type="light"
+          icon="rotate-right"
+          [flipIcon]="true"
+          (click)="onCancel()"
+        >
+          Undo
+        </sk-button>
+        <sk-button
+          [isSharp]="true"
+          [fullWidth]="true"
+          [disabled]="backupValue.length === 0"
+          type="light"
+          icon="close"
+          (click)="onReset()"
+        >
+          Clear
+        </sk-button>
+        <sk-button [isSharp]="true" [fullWidth]="true" (click)="onApply()" icon="check">Apply</sk-button>
+      </sk-bar>
+    </div>
+  </div>
+</div>
+
+<sk-input-error *ngIf="hasError && !showOptions">
+  <ng-content select="[slot=error]"></ng-content>
+</sk-input-error>
