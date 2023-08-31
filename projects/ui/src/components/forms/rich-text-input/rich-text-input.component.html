@@ -1,0 +1,16 @@
+<quill-editor
+  #editor
+  [readOnly]="isDisabled"
+  [modules]="modules"
+  [placeholder]="placeholder"
+  [formControl]="quillControl"
+  [class.quill-editor--error]="control.touched && control.invalid"
+  (keydown.enter)="onKeydownEnter($event)"
+  (onBlur)="onTouched()"
+></quill-editor>
+
+<div class="rich-text-input__error">
+  <sk-input-error *ngIf="control.touched && control.invalid">
+    <ng-content select="[slot=error]"></ng-content>
+  </sk-input-error>
+</div>

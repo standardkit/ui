@@ -1,27 +1,77 @@
-# NgStandardkit
+# StandardKit UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+## Install
 
-## Development server
+```bash
+npm install --save @standardkit/ui
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Extra Dependencies
 
-## Code scaffolding
+### Rich Text Editor
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+For the `<sk-rich-text-input>` component, you need to install `ngx-quill` along with `quill` and `@types/quill`. These
+are optional dependencies, only needed if you actually use the rich text input component.
 
-## Build
+```bash
+npm install --save ngx-quill quill
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+npm install --save-dev @types/quill
+```
+
+> :warning: Make sure to install version `1.x` of types if you install `1.x` of `quill`. Otherwise you'll get type
+> errors. At the point of writing quill `2.x` is still in `rc` but types have already been published.
+
+In addition, you need to import the `QuillModule` in your application.
+
+```typescript
+import { QuillModule } from "ngx-quill";
+
+@NgModule({
+  imports: [QuillModule.forRoot()],
+})
+export class AppModule {}
+```
+
+`ngx-quill` uses `quill` as a `commonjs` dependency. This needs to be enabled in your build options in `angular.json`.
+
+```json
+{
+  "projects": {
+    "example": {
+      "architect": {
+        "build": {
+          "options": {
+            "allowedCommonJsDependencies": ["quill"]
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+## Development Server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you
+change any of the source files.
+
+`ng serve` will run the `example` project.
+
+## Publish
+
+To build & publish, there are three commands:
+
+```bash
+npm run release:patch
+
+npm run release:minor
+
+npm run release:major
+```
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Unit tests are ran using `Jest`.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> To Be Implemented

@@ -30,7 +30,9 @@
     "@fortawesome/fontawesome-free": "^6.4.2",
     "@standardkit/core": "^0.1.4",
     "fuse.js": "^6.6.2",
+    "ngx-quill": "^22.0.0",
     "normalize.css": "^8.0.1",
+    "quill": "^1.3.7",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.1",
     "zone.js": "~0.13.1"
@@ -46,6 +48,7 @@
     "@angular/cli": "~16.2.0",
     "@angular/compiler-cli": "^16.2.0",
     "@types/jest": "^29.5.3",
+    "@types/quill": "^1.3.10",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "eslint": "^8.47.0",

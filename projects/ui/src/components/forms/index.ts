@@ -14,7 +14,7 @@ export * from './number-input';
 export * from './password-input';
 export * from './radio-input';
 export * from './radio-option';
-// export * from './rich-text-input';
+export * from './rich-text-input';
 export * from './select-input';
 export * from './select-option';
 export * from './text-input';

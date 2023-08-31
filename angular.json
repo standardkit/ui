@@ -45,6 +45,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": ["quill"],
             "outputPath": "dist/example",
             "index": "projects/example/src/index.html",
             "main": "projects/example/src/main.ts",
