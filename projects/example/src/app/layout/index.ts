@@ -1,2 +1,3 @@
+export * from './card-page';
 export * from './layout.module';
-export * from './page';
+export * from './sidebar-page';

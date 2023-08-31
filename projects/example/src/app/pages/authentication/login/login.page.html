@@ -1,0 +1,20 @@
+<sk-card name="Authentication">
+  <sk-form [formGroup]="form" (submitForm)="onSubmit()">
+    <sk-field name="username">
+      <sk-label>Username</sk-label>
+      <sk-text-input formControlName="username"></sk-text-input>
+    </sk-field>
+
+    <sk-field name="password">
+      <sk-label>Password</sk-label>
+      <sk-password-input formControlName="password"></sk-password-input>
+    </sk-field>
+
+    <sk-button [isSubmit]="true" [fullWidth]="true">Login</sk-button>
+  </sk-form>
+
+  <sk-bar slot="footer" align="center" [isVertical]="true">
+    <sk-link>Forgot your password</sk-link>
+    <sk-link>Forgot my email address</sk-link>
+  </sk-bar>
+</sk-card>

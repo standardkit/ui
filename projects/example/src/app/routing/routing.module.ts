@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutModule, PageLayout } from '../layout';
+import { CardPageLayout, LayoutModule, SidebarPageLayout } from '../layout';
 import {
   HomePage,
   PagesModule,
@@ -26,12 +26,14 @@ import {
   SearchPage,
   FormPage,
   CheckboxInputPage,
+  LoginPage,
 } from '../pages';
 
 const routes: Routes = [
+  { path: 'authentication', component: CardPageLayout, children: [{ path: 'login', component: LoginPage }] },
   {
     path: '',
-    component: PageLayout,
+    component: SidebarPageLayout,
     children: [
       { path: '', pathMatch: 'full', component: HomePage },
       {

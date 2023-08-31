@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { NavigationItemInterface } from '@standardkit/ui';
 
-@Component({ selector: 'example-page-layout', templateUrl: 'page.layout.html' })
-export class PageLayout {
+@Component({ selector: 'example-page-layout', templateUrl: 'sidebar-page.layout.html' })
+export class SidebarPageLayout {
   public navigationItems: NavigationItemInterface[] = [
     { icon: 'house', name: 'Homepage', route: '', isExact: true },
     {
@@ -56,4 +57,10 @@ export class PageLayout {
       ],
     },
   ];
+
+  constructor(private router: Router) {}
+
+  public onLogin(): void {
+    this.router.navigate(['authentication', 'login']).then((): void => {});
+  }
 }

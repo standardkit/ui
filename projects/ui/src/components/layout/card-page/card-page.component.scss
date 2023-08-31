@@ -1,0 +1,36 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.card-page {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  background-color: colors.$base; // TODO : Make configurable
+  width: 100vw;
+  height: 100vh;
+}
+
+.card-page__logo {
+  color: colors.$white;
+
+  img {
+    user-select: none;
+    max-width: 240px;
+  }
+}
+
+.card-page__title {
+  margin: 0;
+  line-height: 1;
+  color: colors.$gray-10;
+  font-size: fonts.$title-size-xxl;
+}
+
+.card-page__body {
+  margin-bottom: 64px;
+  width: 100%;
+  max-width: 480px;
+}

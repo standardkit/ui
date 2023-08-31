@@ -1,5 +1,5 @@
 export * from './bottom-bar';
-// export * from './card-page';
+export * from './card-page';
 export * from './column';
 export * from './header';
 export * from './jumbotron';

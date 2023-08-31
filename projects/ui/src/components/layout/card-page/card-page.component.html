@@ -1,0 +1,12 @@
+<div class="card-page">
+  <div class="card-page__logo" *ngIf="logo">
+    <img [src]="logo" [alt]="brand + ' logo'" />
+  </div>
+
+  <!--TODO : Make configurable to show alongside logo-->
+  <h1 class="card-page__title" *ngIf="!logo">{{ brand }}</h1>
+
+  <div class="card-page__body">
+    <ng-content></ng-content>
+  </div>
+</div>
