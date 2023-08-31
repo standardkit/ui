@@ -1,6 +1,6 @@
 <sk-sidebar-page>
   <sk-header brand="StandardKit">
-    <sk-button type="info" (click)="onLogin()" [compact]="true">Sign Out</sk-button>
+    <sk-user-menu username="John Doe" [items]="userMenuItems"></sk-user-menu>
   </sk-header>
 
   <sk-sidebar [navigationItems]="navigationItems"></sk-sidebar>

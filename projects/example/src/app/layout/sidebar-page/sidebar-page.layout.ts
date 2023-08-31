@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavigationItemInterface } from '@standardkit/ui';
+import { NavigationItemInterface, UserMenuItemInterface } from '@standardkit/ui';
 
 @Component({ selector: 'example-page-layout', templateUrl: 'sidebar-page.layout.html' })
 export class SidebarPageLayout {
@@ -58,9 +58,15 @@ export class SidebarPageLayout {
     },
   ];
 
+  public userMenuItems: UserMenuItemInterface[] = [
+    { name: 'Logout', icon: 'arrow-right-from-bracket', action: (): void => this.onLogout() },
+    { name: 'Logout', icon: 'arrow-right-from-bracket', action: (): void => this.onLogout() },
+    { name: 'Logout', icon: 'arrow-right-from-bracket', action: (): void => this.onLogout() },
+  ];
+
   constructor(private router: Router) {}
 
-  public onLogin(): void {
+  public onLogout(): void {
     this.router.navigate(['authentication', 'login']).then((): void => {});
   }
 }

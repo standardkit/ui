@@ -8,10 +8,19 @@ import {
   SkHeaderModule,
   SkSidebarModule,
   SkSidebarPageModule,
+  SkUserMenuModule,
 } from '@standardkit/ui';
 
 @NgModule({
-  imports: [RouterOutlet, SkSidebarPageModule, SkSidebarModule, SkHeaderModule, SkCardPageModule, SkButtonModule],
+  imports: [
+    RouterOutlet,
+    SkSidebarPageModule,
+    SkSidebarModule,
+    SkHeaderModule,
+    SkCardPageModule,
+    SkButtonModule,
+    SkUserMenuModule,
+  ],
   declarations: [SidebarPageLayout, CardPageLayout],
   exports: [SidebarPageLayout, CardPageLayout],
 })

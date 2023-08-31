@@ -1,0 +1,84 @@
+@use "@standardkit/ui/borders";
+@use "@standardkit/ui/colors";
+@use "@standardkit/ui/fonts";
+
+.user-menu {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  margin: 0;
+  height: 42px;
+}
+
+.user-menu__username {
+  line-height: fonts.$text-line-height-l;
+  color: colors.$white;
+  font-size: fonts.$text-size-l;
+  font-weight: 600;
+}
+
+.user-menu__avatar {
+  border: 3px solid colors.$gray-10;
+  border-radius: 36px;
+  box-shadow: 2px 2px 5px 2px colors.$shadow;
+  max-width: 36px;
+  max-height: 36px;
+  overflow: hidden;
+}
+
+.user-menu__avatar-image {
+  border-radius: 36px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+}
+
+.user-menu__avatar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: colors.$base-light;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  color: colors.$gray-60;
+  user-select: none;
+}
+
+.user-menu__icon {
+  color: colors.$white;
+}
+
+.user-menu__items {
+  display: flex;
+  position: absolute;
+  top: 48px;
+  right: 0;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid colors.$gray-20;
+  border-radius: borders.$border-radius-s;
+  box-shadow: 2px 2px 5px 2px colors.$shadow;
+  background-color: colors.$gray-10;
+}
+
+.user-menu__item {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid colors.$gray-30;
+  cursor: pointer;
+  padding: 12px 32px 12px 16px;
+  line-height: fonts.$text-line-height-m;
+  white-space: nowrap;
+  color: colors.$gray-70;
+  font-size: fonts.$text-size-m;
+
+  &:hover {
+    background-color: colors.$gray-20;
+    color: colors.$black;
+  }
+}
