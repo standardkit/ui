@@ -17,6 +17,7 @@ export class FormPage {
     textarea: new FormControl(),
     richText: new FormControl(),
     date: new FormControl(),
+    time: new FormControl(),
     select: new FormControl(),
     select2: new FormControl(),
     multiSelect: new FormControl(['Paris', 'Tokyo']),

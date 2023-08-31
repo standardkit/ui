@@ -1,21 +1,18 @@
-import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
+import { Component, forwardRef, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { InputComponent, InputInterface } from '../input';
 
 @Component({
-  selector: 'sk-textarea-input',
-  templateUrl: 'textarea-input.component.html',
-  styleUrls: ['textarea-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkTextareaInputComponent), multi: true }],
+  selector: 'sk-time-input',
+  templateUrl: 'time-input.component.html',
+  styleUrls: ['time-input.component.scss'],
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkTimeInputComponent), multi: true }],
 })
-export class SkTextareaInputComponent implements ControlValueAccessor, InputInterface {
-  @Input() public placeholder: string = '';
-  @Input() public numberOfRows: number = 3;
-
+export class SkTimeInputComponent implements ControlValueAccessor, InputInterface {
   public value?: string | null;
   public name?: string;
   public isDisabled: boolean = false;
-  public onChange!: (value: string) => void;
+  public onChange!: (value: string | null) => void;
   public onTouched!: () => void;
 
   constructor(@Optional() @Self() public control: NgControl) {
@@ -40,8 +37,7 @@ export class SkTextareaInputComponent implements ControlValueAccessor, InputInte
     this.value = value;
   }
 
-  public onValueChange(event: Event): void {
-    const value: string = (<HTMLTextAreaElement>event.target).value;
+  public onValueChange(value: string): void {
     this.writeValue(value);
     this.onChange(value);
   }
@@ -50,7 +46,9 @@ export class SkTextareaInputComponent implements ControlValueAccessor, InputInte
     this.name = name;
   }
 
-  public onKeydownEnter(event: Event): void {
-    event.stopPropagation();
+  public onClear(): void {
+    this.writeValue(null);
+    this.onChange(null);
+    this.onTouched();
   }
 }

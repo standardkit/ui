@@ -1,0 +1,19 @@
+<div class="time-input__container">
+  <input
+    class="time-input"
+    [class.time-input--error]="control.touched && control.invalid"
+    type="time"
+    [id]="name"
+    [ngModel]="value"
+    [disabled]="isDisabled"
+    (blur)="onTouched()"
+    (ngModelChange)="onValueChange($event)"
+  />
+  <div class="time-input__clear" (click)="onClear()" *ngIf="!!value">
+    <sk-icon icon="close"></sk-icon>
+  </div>
+</div>
+
+<sk-input-error *ngIf="control.touched && control.invalid">
+  <ng-content select="[slot=error]"></ng-content>
+</sk-input-error>

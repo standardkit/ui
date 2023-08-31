@@ -2,18 +2,16 @@
 @use "@standardkit/ui/fonts";
 @use "@standardkit/ui/borders";
 
-.date-input__container {
+.time-input__container {
   position: relative;
-  line-height: fonts.$text-line-height-l;
-  font-size: fonts.$text-size-l;
 }
 
-.date-input__clear {
+.time-input__clear {
   position: absolute;
   top: 0;
   right: 38px;
   cursor: pointer;
-  padding: 14px;
+  padding: 16px;
   user-select: none;
 
   &:hover {
@@ -25,15 +23,20 @@
   }
 }
 
-.date-input {
+.time-input {
   box-sizing: border-box;
   margin-bottom: 20px;
   border: none;
   border-radius: borders.$border-radius-m;
   box-shadow: 1px 1px 2px 1px colors.$shadow;
   background-color: colors.$gray-10;
-  padding: 15px 8px 15px 24px; // right side less padding for password managers, and for some reason 1px less padding
+  padding: 13px 8px 13px 24px; // right side less padding for password managers, and for some reason 1px less padding
   width: 100%;
+  line-height: fonts.$text-line-height-l;
+  font-family: fonts.$text-font, sans-serif;
+  font-size: fonts.$text-size-l;
+
+  // 'calendar' also works for time inputs
 
   &::-webkit-calendar-picker-indicator {
     cursor: pointer;
@@ -45,13 +48,13 @@
     user-select: none;
   }
 
+  &:focus {
+    outline-color: colors.$primary;
+  }
+
   &:disabled {
     cursor: not-allowed;
     color: colors.$gray-50;
-  }
-
-  &:focus {
-    outline-color: colors.$primary;
   }
 
   &--error {

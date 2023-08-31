@@ -19,4 +19,4 @@ export * from './select-input';
 export * from './select-option';
 export * from './text-input';
 export * from './textarea-input';
-// export * from './time-input';
+export * from './time-input';
