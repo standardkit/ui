@@ -46,7 +46,7 @@
       </tr>
     </thead>
     <tbody class="table__body">
-      <tr class="table__empty" *ngIf="rows?.length === 0">
+      <tr class="table__empty" *ngIf="rows?.length === 0 && !isLoading">
         <td colspan="100%">No {{ dataName?.toLowerCase() ?? "results" }} found...</td>
       </tr>
       <tr
@@ -58,11 +58,11 @@
         <td
           *ngIf="canCheckRow"
           class="table__checkbox-cell"
-          [class.table__checkbox-cell--checked]="row.isChecked"
+          [class.table__checkbox-cell--checked]="checkedRows.includes(row)"
           (click)="onCheckRow($event, row)"
         >
-          <sk-icon *ngIf="!row.isChecked" iconSet="regular" icon="square"></sk-icon>
-          <sk-icon *ngIf="row.isChecked" iconSet="regular" icon="square-check"></sk-icon>
+          <sk-icon *ngIf="!checkedRows.includes(row)" iconSet="regular" icon="square"></sk-icon>
+          <sk-icon *ngIf="checkedRows.includes(row)" iconSet="regular" icon="square-check"></sk-icon>
         </td>
         <td
           *ngFor="let column of columns"
@@ -90,7 +90,7 @@
                 *ngIf="!(action.isDisabled && action.isDisabled(row))"
                 [compact]="true"
                 [icon]="action.icon"
-                [iconSet]="action.iconSet"
+                [attr.iconSet]="action.iconSet"
                 [title]="action.label"
                 [noShadow]="true"
                 type="light"

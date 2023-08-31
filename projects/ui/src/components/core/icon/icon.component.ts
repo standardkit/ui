@@ -8,7 +8,7 @@ import { IconSetType } from '@standardkit/core';
 })
 export class SkIconComponent {
   @Input() public icon?: string = 'icons';
-  @Input() public iconSet?: IconSetType = 'solid';
+  @Input() public iconSet: IconSetType = 'solid';
   @Input() public isSpinning: boolean = false;
   @Input() public isReverse: boolean = false;
   @Input() public flipX: boolean = false;

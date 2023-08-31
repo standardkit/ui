@@ -51,6 +51,7 @@ export class SidebarPageLayout {
       name: 'Table',
       route: 'table',
       children: [
+        { name: 'Data Table', route: 'table/data-table' },
         { name: 'Pagination', route: 'table/pagination' },
         { name: 'Search', route: 'table/search' },
         { name: 'Table', route: 'table/table' },

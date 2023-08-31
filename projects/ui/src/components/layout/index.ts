@@ -10,4 +10,3 @@ export * from './sidebar-page';
 export * from './sub-navigation-item';
 export * from './top-bar';
 export * from './user-menu';
-// export * from './viewer-page';

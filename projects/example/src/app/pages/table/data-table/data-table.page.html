@@ -1,0 +1,13 @@
+<sk-top-bar name="Data Table">
+  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
+</sk-top-bar>
+
+<sk-data-table
+  [segments]="segments"
+  [columns]="columns"
+  dataName="Heroes"
+  searchKey="name"
+  [filters]="filterConfiguration"
+  (request)="onRequest($event)"
+  [response]="response"
+></sk-data-table>

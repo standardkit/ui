@@ -13,7 +13,7 @@ export class SkButtonComponent {
   @Input() public compact: boolean = false; // TODO : Introduce sizes
   @Input() public isSharp: boolean = false;
   @Input() public icon?: string;
-  @Input() public iconSet?: IconSetType;
+  @Input() public iconSet: IconSetType = 'solid';
   @Input() public alignIcon: 'left' | 'right' = 'right';
   @Input() public flipIcon: boolean = false;
   @Input() public isSubmit: boolean = false;

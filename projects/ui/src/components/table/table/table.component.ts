@@ -14,7 +14,7 @@ import { take } from 'rxjs';
   styleUrls: ['table.component.scss'],
 })
 export class SkTableComponent<T> {
-  @Input() public rows: (T & { isChecked?: boolean })[] = [];
+  @Input() public rows: T[] = [];
   @Input() public columns: ColumnInterface<T>[] = [];
   @Input() public sortableColumns: Extract<keyof T, string>[] = [];
   @Input() public sortedColumn?: SortInterface<T>;
@@ -25,6 +25,7 @@ export class SkTableComponent<T> {
   @Input() public canCheckRow: boolean = false;
   @Input() public actions: TableRowActionInterface<T>[] = [];
   @Input() public toggleAction?: TableToggleActionInterface<T>;
+  @Input() public isLoading: boolean = false;
 
   @Output() public sortColumn: EventEmitter<SortInterface<T>> = new EventEmitter();
   @Output() public selectRow: EventEmitter<T> = new EventEmitter();
@@ -69,24 +70,25 @@ export class SkTableComponent<T> {
 
   public onCheckAll(): void {
     this.allChecked = !this.allChecked;
-    this.rows.forEach((row: T & { isChecked?: boolean }): void => {
-      row.isChecked = this.allChecked;
-    });
-    const selectedRows: T[] = this.rows.filter((row: { isChecked?: boolean }) => !!row.isChecked);
-    this.checkedRowsChange.emit(selectedRows);
+    if (this.allChecked) {
+      this.checkedRows = this.allChecked ? this.rows : [];
+    }
+    this.checkedRowsChange.emit(this.checkedRows);
   }
 
-  public onCheckRow(event: Event, row: T & { isChecked?: boolean }): void {
+  public onCheckRow(event: Event, row: T): void {
     event.stopPropagation();
-    row.isChecked = !row.isChecked;
-    const selectedRows: T[] = this.rows.filter((row: { isChecked?: boolean }) => !!row.isChecked);
-    if (selectedRows.length === this.rows.length) {
-      this.allChecked = row.isChecked;
-    } else {
+    if (this.checkedRows.includes(row)) {
+      this.checkedRows = this.checkedRows.filter((checkedRow: T): boolean => checkedRow !== row);
       this.allChecked = false;
+    } else {
+      this.checkedRows.push(row);
+      if (this.checkedRows.length === this.rows.length) {
+        this.allChecked = true;
+      }
     }
 
-    this.checkedRowsChange.emit(selectedRows);
+    this.checkedRowsChange.emit(this.checkedRows);
   }
 
   public isPending(index: number): boolean {

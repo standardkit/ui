@@ -27,6 +27,7 @@ import {
   FormPage,
   CheckboxInputPage,
   LoginPage,
+  DataTablePage,
 } from '../pages';
 
 const routes: Routes = [
@@ -73,6 +74,7 @@ const routes: Routes = [
       {
         path: 'table',
         children: [
+          { path: 'data-table', component: DataTablePage },
           { path: 'pagination', component: PaginationPage },
           { path: 'search', component: SearchPage },
           { path: 'table', component: TablePage },

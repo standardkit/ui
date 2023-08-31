@@ -1,0 +1,29 @@
+.data-table {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0;
+
+  &--no-margin {
+    margin: 0;
+  }
+}
+
+.data-table__segments {
+  margin-bottom: 32px;
+}
+
+.data-table__header {
+  display: flex;
+  flex-flow: row wrap-reverse;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 32px;
+
+  &:empty {
+    margin: 0;
+  }
+}
+
+.data-table__search {
+  flex-grow: 1;
+}

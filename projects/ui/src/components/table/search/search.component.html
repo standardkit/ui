@@ -15,10 +15,10 @@
       [disabled]="isDisabled"
       type="text"
       [placeholder]="
-        field ? 'Search for ' + field.toLowerCase() + '...' : 'Search in ' + dataName.toLowerCase() + '...'
+        field ? 'Search for ' + field.toLowerCase() + '...' : 'Search in ' + dataName?.toLowerCase() + '...'
       "
       (keydown.enter)="onSearch()"
     />
   </div>
-  <sk-button icon="search" type="neutral" [disabled]="isDisabled" (click)="onSearch()">Search</sk-button>
+  <sk-button icon="search" type="light" [disabled]="isDisabled" (click)="onSearch()">Search</sk-button>
 </div>

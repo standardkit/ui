@@ -9,7 +9,7 @@ export class SkSearchComponent implements AfterViewInit {
   @ViewChild('input') public input!: ElementRef<HTMLInputElement>;
 
   @Input() public field?: string;
-  @Input() public dataName: string = '';
+  @Input() public dataName?: string = '';
   @Input() public isDisabled: boolean = false;
 
   @Output() public search: EventEmitter<string> = new EventEmitter();
