@@ -1,0 +1,16 @@
+<textarea
+  class="textarea-input"
+  [class.textarea-input--error]="control.touched && control.invalid"
+  [rows]="numberOfRows"
+  [id]="name"
+  [placeholder]="placeholder"
+  [disabled]="isDisabled"
+  (blur)="onTouched()"
+  (change)="onValueChange($event)"
+  (keydown.enter)="onKeydownEnter($event)"
+  >{{ value }}</textarea
+>
+
+<sk-input-error *ngIf="control.touched && control.invalid">
+  <ng-content select="[slot=error]"></ng-content>
+</sk-input-error>

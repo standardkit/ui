@@ -18,5 +18,5 @@ export * from './rich-text-input';
 export * from './select-input';
 export * from './select-option';
 export * from './text-input';
-// export * from './textarea-input';
+export * from './textarea-input';
 // export * from './time-input';

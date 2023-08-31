@@ -14,6 +14,7 @@ export class FormPage {
     text5: new FormControl(),
     password: new FormControl(),
     number: new FormControl(),
+    textarea: new FormControl(),
     richText: new FormControl(),
     date: new FormControl(),
     select: new FormControl(),
