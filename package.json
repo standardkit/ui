@@ -74,5 +74,6 @@
     "stylelint-selector-bem-pattern": "^3.0.1",
     "ts-jest": "^29.1.1",
     "typescript": "~5.1.6"
-  }
+  },
+  "version": "0.0.1"
 }
