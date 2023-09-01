@@ -1,6 +1,6 @@
 # StandardKit UI
 
-## Install
+## Installation
 
 ```bash
 npm install --save @standardkit/ui
@@ -19,8 +19,8 @@ npm install --save ngx-quill quill
 npm install --save-dev @types/quill
 ```
 
-> :warning: Make sure to install version `1.x` of types if you install `1.x` of `quill`. Otherwise you'll get type
-> errors. At the point of writing quill `2.x` is still in `rc` but types have already been published.
+> :warning: Make sure to install version `1.x` of `@types/quill` if you install `1.x` of `quill`. Otherwise you'll get
+> type errors. At the point of writing quill `2.x` is still in `rc` but types have already been published.
 
 In addition, you need to import the `QuillModule` in your application.
 
