@@ -1,6 +1,5 @@
 {
-  "name": "@standardkit/ui",
-  "version": "0.0.0",
+  "name": "standardkit-ui",
   "license": "Unlicense",
   "scripts": {
     "ng": "ng",
@@ -12,13 +11,13 @@
     "lint:prettier": "prettier '**/*.{js,html,css,scss,md,yml,yaml,json}' --write",
     "lint:stylelint": "stylelint '**/*.{css,scss}' --fix",
     "lint:staged": "lint-staged",
-    "version:patch": "cd projects/ui && npm version patch && cd ../.. && npm version patch",
-    "version:minor": "cd projects/ui && npm version minor && cd ../.. && npm version minor",
-    "version:major": "cd projects/ui && npm version major && cd ../.. && npm version major",
+    "version:patch": "cd projects/ui && npm version patch",
+    "version:minor": "cd projects/ui && npm version minor",
+    "version:major": "cd projects/ui && npm version major",
     "release:patch": "npm run version:patch && npm run build:ui && npm run publish:ui",
     "release:minor": "npm run version:minor && npm run build:ui && npm run publish:ui",
     "release:major": "npm run version:major && npm run build:ui && npm run publish:ui",
-    "publish:ui": "cd dist/ui && npm publish @standardkit/ui",
+    "publish:ui": "cd dist/ui && npm publish --access=public",
     "prepare": "husky install"
   },
   "private": true,

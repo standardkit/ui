@@ -1,8 +1,8 @@
 # @standardkit/ui
 
-## UI Components for Angular 16+
+StandardKit UI Components for Angular 16+
 
-For creating portals, dashboards and general purpose back-office systems
+Create portals, dashboards and other general purpose back-office systems
 
 ## Installation
 
