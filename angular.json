@@ -19,7 +19,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-devkit/build-angular:jest:run",
           "options": {
             "tsConfig": "projects/ui/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
@@ -86,22 +86,6 @@
             "development": { "browserTarget": "example:build:development" }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": { "browserTarget": "example:build" }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "projects/example/tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": ["projects/example/src/assets"],
-            "styles": ["projects/example/src/styles.scss"],
-            "stylePreprocessorOptions": { "includePaths": ["projects/ui/src/styles"] },
-            "scripts": []
-          }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
