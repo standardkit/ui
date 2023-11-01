@@ -5,7 +5,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:ui": "ng build ui",
+    "build": "ng build ui",
+    "build:demo-ui": "ng build demo-ui",
+    "test:ui": "ng test ui",
+    "test:demo-ui": "ng test demo-ui",
     "test": "ng test",
     "test:ci": "ng test",
     "lint": "npm run lint:prettier && npm run lint:stylelint && ng lint",

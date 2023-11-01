@@ -17,7 +17,7 @@
     "importHelpers": true,
     "paths": {
       "@standardkit/ui": ["projects/ui/src"],
-      "demo-ui": ["dist/demo-ui"]
+      "demo-ui": ["projects/demo-ui/src/lib"]
     },
     "target": "ES2022",
     "module": "ES2022",
