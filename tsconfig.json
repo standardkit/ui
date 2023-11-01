@@ -16,7 +16,8 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "@standardkit/ui": ["projects/ui/src"]
+      "@standardkit/ui": ["projects/ui/src"],
+      "demo-ui": ["dist/demo-ui"]
     },
     "target": "ES2022",
     "module": "ES2022",
