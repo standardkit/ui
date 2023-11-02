@@ -18,4 +18,12 @@ export class SkButtonComponent {
   @Input() public flipIcon: boolean = false;
   @Input() public isSubmit: boolean = false;
   @Input() public noShadow: boolean = false;
+
+  public func(): void {
+    if (this.type) {
+      console.log(this.type);
+    } else {
+      console.log('nothing');
+    }
+  }
 }
