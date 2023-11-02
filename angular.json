@@ -30,7 +30,10 @@
             "codeCoverage": true,
             "tsConfig": "projects/ui/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"],
-            "karmaConfig": "projects/ui/karma.conf.js"
+            "karmaConfig": "projects/ui/karma.conf.js",
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/ui/src/styles"]
+            }
           }
         },
         "lint": {
@@ -123,7 +126,7 @@
       "projectType": "library",
       "root": "projects/demo-ui",
       "sourceRoot": "projects/demo-ui/src",
-      "prefix": "lib",
+      "prefix": "demo",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
