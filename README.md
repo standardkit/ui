@@ -2,9 +2,56 @@
 
 ## Installation
 
+### NPM
+
+To install StandardKit UI Components through npm, use:
+
 ```bash
-npm install --save @standardkit/ui
+npm install --save @standardkit/ui @standardkit/core
 ```
+
+### Styles
+
+Go to `angular.json` and add the scss folder to your include paths like this:
+
+```json
+{
+  "projects": {
+    "example": {
+      "architect": {
+        "build": {
+          "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules/@standardkit/ui/src/styles"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Then, add the base styling and the theme variables.
+
+```scss
+@use "@standardkit/ui/base";
+@use "@standardkit/ui/theme";
+
+// Include StandardKit Fonts
+@include theme.include-default-fonts;
+@include theme.use-default-font;
+```
+
+### Icons
+
+Install font awesome icons:
+
+```bash
+npm install --save @fortawesome/fontawesome-free
+```
+
+Add then to your angular.json as well:
 
 ## Extra Dependencies
 

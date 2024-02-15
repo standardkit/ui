@@ -13,6 +13,8 @@ import {
   SkButtonModule,
   SkSearchModule,
   SkDataTableModule,
+  SkTabGroupModule,
+  SkTabModule,
 } from '@standardkit/ui';
 
 const PAGES: any[] = [DataTablePage, PaginationPage, SearchPage, TablePage];
@@ -28,6 +30,8 @@ const PAGES: any[] = [DataTablePage, PaginationPage, SearchPage, TablePage];
     SkTableModule,
     SkTopBarModule,
     SkDataTableModule,
+    SkTabGroupModule,
+    SkTabModule,
   ],
   declarations: PAGES,
   exports: PAGES,

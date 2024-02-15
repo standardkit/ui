@@ -49,7 +49,7 @@
   font-size: fonts.$text-size-l;
 
   &::placeholder {
-    color: colors.$gray-50;
+    color: colors.$gray-50; // TODO : Check this, maybe too dark
     user-select: none;
   }
 

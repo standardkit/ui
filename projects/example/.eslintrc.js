@@ -5,7 +5,7 @@ module.exports = {
   overrides: [
     {
       files: ["*.ts"],
-      parserOptions: { project: ["tsconfig.app.json", "tsconfig.spec.json"], tsconfigRootDir: __dirname },
+      parserOptions: { project: ["tsconfig.app.json"], tsconfigRootDir: __dirname },
       rules: {
         "@angular-eslint/directive-selector": ["error", { type: "attribute", prefix: "example", style: "camelCase" }],
         "@angular-eslint/component-selector": ["error", { type: "element", prefix: "example", style: "kebab-case" }],

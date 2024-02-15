@@ -5,7 +5,9 @@ import {
   DataResponse,
   FilterConfigurationInterface,
   SegmentConfigurationInterface,
+  TableToggleActionInterface,
 } from '@standardkit/core';
+import { Observable, of } from 'rxjs';
 import { FakeDataInterface } from './fake-data.interface';
 import { FakeDataService } from './fake-data.service';
 import { BreadcrumbInterface } from '@standardkit/ui';
@@ -24,9 +26,24 @@ export class DataTablePage {
   public segments: SegmentConfigurationInterface<FakeDataInterface> = {
     key: 'gender',
     segments: [
-      { label: 'Men', value: 'male' },
-      { label: 'Women', value: 'female' },
+      { label: 'On Mission', value: 'male' },
+      { label: 'Ready', value: 'female' },
     ],
+  };
+
+  public toggleAction: TableToggleActionInterface<FakeDataInterface> = {
+    label: 'On Mission',
+    activateLabel: 'On Mission',
+    inactivateLabel: 'Ready for Mission',
+    isActive: (row: FakeDataInterface): boolean => row.gender === 'male',
+    toggleActive: (row: FakeDataInterface): Observable<null> => {
+      row.gender = 'male';
+      return of(null);
+    },
+    toggleInactive: (row: FakeDataInterface): Observable<null> => {
+      row.gender = 'female';
+      return of(null);
+    },
   };
 
   constructor(private fakeDataService: FakeDataService) {}
