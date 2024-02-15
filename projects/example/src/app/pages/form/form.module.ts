@@ -29,7 +29,6 @@ import {
   SkSelectOptionModule,
   SkMultiSelectInputModule,
   SkPasswordInputModule,
-  SkRichTextInputModule,
   SkTextareaInputModule,
   SkTimeInputModule,
 } from '@standardkit/ui';
@@ -60,7 +59,6 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     SkPasswordInputModule,
     SkRadioInputModule,
     SkRadioOptionModule,
-    SkRichTextInputModule,
     SkRowModule,
     SkSelectInputModule,
     SkSelectOptionModule,
