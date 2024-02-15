@@ -12,7 +12,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
-import Fuse from 'fuse.js';
+import Fuse, { FuseResult } from 'fuse.js';
 import { InputComponent, InputInterface } from '../input';
 import { SkSelectOptionComponent } from '../select-option';
 
@@ -143,9 +143,7 @@ export class SkSelectInputComponent implements ControlValueAccessor, InputInterf
     if (query === '') {
       return this.onSearchClear();
     }
-    this.renderedOptions = this.fuse
-      .search(query)
-      .map((result: Fuse.FuseResult<SkSelectOptionComponent>) => result.item);
+    this.renderedOptions = this.fuse.search(query).map((result: FuseResult<SkSelectOptionComponent>) => result.item);
     this.scrollBody.nativeElement.scrollTop = 0;
   }
 

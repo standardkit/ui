@@ -12,7 +12,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
-import Fuse from 'fuse.js';
+import Fuse, { FuseResult } from 'fuse.js';
 import { InputComponent, InputInterface } from '../input';
 import { SkSelectOptionComponent } from '../select-option';
 import { SkSelectSearchComponent } from '../select-search';
@@ -136,7 +136,7 @@ export class SkMultiSelectInputComponent implements ControlValueAccessor, InputI
   }
 
   public onSelectOption(option: SkSelectOptionComponent): void {
-    const newValue = [...this.value, option.value];
+    const newValue: (string | number)[] = [...this.value, option.value];
     this.writeValue(newValue);
     this.skipClickDetection = true;
     option.isSelected = true;
@@ -144,7 +144,9 @@ export class SkMultiSelectInputComponent implements ControlValueAccessor, InputI
   }
 
   public onDeselectOption(selectedOption: SkSelectOptionComponent): void {
-    const newValue = this.value.filter((value: string | number) => value !== selectedOption.value);
+    const newValue: (string | number)[] = this.value.filter(
+      (value: string | number): boolean => value !== selectedOption.value,
+    );
     this.skipClickDetection = true;
     this.writeValue(newValue);
     if (!this.showOptions) {
@@ -183,9 +185,7 @@ export class SkMultiSelectInputComponent implements ControlValueAccessor, InputI
     if (query === '') {
       return this.onSearchClear();
     }
-    this.renderedOptions = this.fuse
-      .search(query)
-      .map((result: Fuse.FuseResult<SkSelectOptionComponent>) => result.item);
+    this.renderedOptions = this.fuse.search(query).map((result: FuseResult<SkSelectOptionComponent>) => result.item);
     this.scrollBody.nativeElement.scrollTop = 0;
   }
 
