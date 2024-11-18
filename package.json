@@ -1,5 +1,5 @@
 {
-  "name": "standardkit-ui",
+  "name": "@standardkit/ui",
   "version": "0.1.0",
   "license": "Unlicense",
   "scripts": {
