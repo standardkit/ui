@@ -7,12 +7,14 @@
 To install StandardKit UI Components through npm, use:
 
 ```bash
-npm install --save @standardkit/ui
+npm install @standardkit/ui
 ```
 
 ### Styles
 
 Go to `angular.json` and add the scss folder to your include paths like this:
+
+> Don't forget to add it for your tests as well!
 
 ```json
 {
