@@ -12,6 +12,7 @@ import { take } from 'rxjs';
   selector: 'sk-table',
   templateUrl: 'table.component.html',
   styleUrls: ['table.component.scss'],
+  standalone: false,
 })
 export class SkTableComponent<T> {
   @Input() public rows: T[] = [];
@@ -27,9 +28,9 @@ export class SkTableComponent<T> {
   @Input() public toggleAction?: TableToggleActionInterface<T>;
   @Input() public isLoading: boolean = false;
 
-  @Output() public sortColumn: EventEmitter<SortInterface<T>> = new EventEmitter();
-  @Output() public selectRow: EventEmitter<T> = new EventEmitter();
-  @Output() public checkedRowsChange: EventEmitter<T[]> = new EventEmitter();
+  @Output() public sortColumn: EventEmitter<SortInterface<T>> = new EventEmitter<SortInterface<T>>();
+  @Output() public selectRow: EventEmitter<T> = new EventEmitter<T>();
+  @Output() public checkedRowsChange: EventEmitter<T[]> = new EventEmitter<T[]>();
 
   public allChecked: boolean = false;
 

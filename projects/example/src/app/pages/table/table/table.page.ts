@@ -8,8 +8,8 @@ import {
   TableRowActionInterface,
   TableToggleActionInterface,
 } from '@standardkit/core';
-import { delay, Observable, of, tap } from 'rxjs';
 import { BreadcrumbInterface } from '@standardkit/ui';
+import { delay, Observable, of, tap } from 'rxjs';
 
 export interface TestInterface {
   age: number;
@@ -18,7 +18,10 @@ export interface TestInterface {
   active?: boolean;
 }
 
-@Component({ templateUrl: 'table.page.html' })
+@Component({
+  templateUrl: 'table.page.html',
+  standalone: false,
+})
 export class TablePage {
   public breadcrumbs: BreadcrumbInterface[] = [{ name: 'Table' }, { name: 'Pagination' }];
   public isStriped: boolean = false;
@@ -76,7 +79,9 @@ export class TablePage {
   };
 
   public actions: TableRowActionInterface<TestInterface>[] = [
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     { icon: 'edit', iconSet: 'regular', label: 'Update', action: (): void => {} },
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     { icon: 'trash-can', iconSet: 'regular', label: 'Favoriet maken', action: (): void => {} },
   ];
 

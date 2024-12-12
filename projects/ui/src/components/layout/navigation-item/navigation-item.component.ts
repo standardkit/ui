@@ -8,6 +8,7 @@ import { LayoutService } from '../layout.service';
   selector: 'sk-navigation-item[icon][name][route]',
   templateUrl: 'navigation-item.component.html',
   styleUrls: ['navigation-item.component.scss'],
+  standalone: false,
 })
 export class SkNavigationItemComponent implements OnInit, OnChanges {
   @Input() public icon!: string;

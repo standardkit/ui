@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 
-@Component({ templateUrl: 'toggle.page.html' })
+@Component({
+  templateUrl: 'toggle.page.html',
+  standalone: false,
+})
 export class TogglePage {
   public isActive: boolean = false;
   public isDisabled: boolean = false;

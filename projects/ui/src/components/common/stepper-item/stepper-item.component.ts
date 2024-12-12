@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'sk-stepper-item',
   templateUrl: 'stepper-item.component.html',
   styleUrls: ['stepper-item.component.scss'],
+  standalone: false,
 })
 export class SkStepperItemComponent {
   @Input() public name: string = '';

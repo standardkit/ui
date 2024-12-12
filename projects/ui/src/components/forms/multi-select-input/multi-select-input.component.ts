@@ -30,6 +30,7 @@ const FUSE_OPTIONS = {
   templateUrl: 'multi-select-input.component.html',
   styleUrls: ['multi-select-input.component.scss'],
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkMultiSelectInputComponent), multi: true }],
+  standalone: false,
 })
 export class SkMultiSelectInputComponent implements ControlValueAccessor, InputInterface, AfterContentInit {
   @ViewChild('selectBox') public select!: ElementRef<HTMLElement>;
@@ -39,10 +40,10 @@ export class SkMultiSelectInputComponent implements ControlValueAccessor, InputI
   @HostListener('document:click', ['$event']) public onOutsideClick = (event: Event): void => {
     if (
       event instanceof PointerEvent &&
-      (<HTMLElement>event.target).className === 'label' &&
+      (event.target as HTMLElement).className === 'label' &&
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      (<HTMLElement>event.target).attributes['for'].value === this.name
+      (event.target as HTMLElement).attributes['for'].value === this.name
     ) {
       this.select.nativeElement.focus();
     }

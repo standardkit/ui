@@ -5,5 +5,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   templateUrl: 'rich-text.component.html',
   styleUrls: ['rich-text.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  standalone: false,
 })
 export class SkRichTextComponent {}

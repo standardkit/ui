@@ -5,6 +5,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   templateUrl: 'bar.component.html',
   styleUrls: ['bar.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  standalone: false,
 })
 export class SkBarComponent {
   // TODO : Create enumType

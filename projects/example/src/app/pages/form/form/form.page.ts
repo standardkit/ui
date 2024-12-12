@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { BreadcrumbInterface } from '@standardkit/ui';
 
-@Component({ templateUrl: 'form.page.html' })
+@Component({
+  templateUrl: 'form.page.html',
+  standalone: false,
+})
 export class FormPage {
   public breadcrumbs: BreadcrumbInterface[] = [{ name: 'Form' }, { name: 'Form' }];
 

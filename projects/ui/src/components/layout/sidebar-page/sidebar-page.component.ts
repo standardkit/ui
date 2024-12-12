@@ -7,6 +7,7 @@ import { LayoutService } from '../layout.service';
   selector: 'sk-sidebar-page',
   templateUrl: 'sidebar-page.component.html',
   styleUrls: ['sidebar-page.component.scss'],
+  standalone: false,
 })
 export class SkSidebarPageComponent implements OnInit {
   @ViewChild('scroll') public scrollContainer!: ElementRef;

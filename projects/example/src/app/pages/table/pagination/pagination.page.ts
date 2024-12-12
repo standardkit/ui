@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { PaginationStateInterface } from '@standardkit/core';
 import { BreadcrumbInterface } from '@standardkit/ui';
 
-@Component({ templateUrl: 'pagination.page.html' })
+@Component({
+  templateUrl: 'pagination.page.html',
+  standalone: false,
+})
 export class PaginationPage {
   public state: PaginationStateInterface = {
     numberOfRows: 10,

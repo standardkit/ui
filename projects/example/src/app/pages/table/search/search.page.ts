@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { BreadcrumbInterface } from '@standardkit/ui';
 
-@Component({ templateUrl: 'search.page.html' })
+@Component({
+  templateUrl: 'search.page.html',
+  standalone: false,
+})
 export class SearchPage {
   public breadcrumbs: BreadcrumbInterface[] = [{ name: 'Table' }, { name: 'Search' }];
   public isField: boolean = false;

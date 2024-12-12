@@ -29,6 +29,7 @@ const FUSE_OPTIONS = {
   templateUrl: 'select-input.component.html',
   styleUrls: ['select-input.component.scss'],
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkSelectInputComponent), multi: true }],
+  standalone: false,
 })
 export class SkSelectInputComponent implements ControlValueAccessor, InputInterface, AfterContentInit {
   @ViewChild('selectBox') public select!: ElementRef<HTMLElement>;
@@ -37,10 +38,10 @@ export class SkSelectInputComponent implements ControlValueAccessor, InputInterf
   @HostListener('document:click', ['$event']) public onOutsideClick = (event: Event): void => {
     if (
       event instanceof PointerEvent &&
-      (<HTMLElement>event.target).className === 'label' &&
+      (event.target as HTMLElement).className === 'label' &&
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      (<HTMLElement>event.target).attributes['for'].value === this.name
+      (event.target as HTMLElement).attributes['for'].value === this.name
     ) {
       this.select.nativeElement.focus();
     }

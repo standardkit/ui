@@ -6,6 +6,7 @@ import { LayoutService } from '../layout.service';
   selector: 'sk-sidebar',
   templateUrl: 'sidebar.component.html',
   styleUrls: ['sidebar.component.scss'],
+  standalone: false,
 })
 export class SkSidebarComponent implements OnInit {
   @Input() public navigationItems: NavigationItemInterface[] = [];

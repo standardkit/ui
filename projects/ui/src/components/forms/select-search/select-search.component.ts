@@ -4,12 +4,13 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild }
   selector: 'sk-select-search',
   templateUrl: 'select-search.component.html',
   styleUrls: ['select-search.component.scss'],
+  standalone: false,
 })
 export class SkSelectSearchComponent implements AfterViewInit {
   @ViewChild('input') public input!: ElementRef<HTMLInputElement>;
 
-  @Output() public search: EventEmitter<string> = new EventEmitter();
-  @Output() public clear: EventEmitter<void> = new EventEmitter();
+  @Output() public search: EventEmitter<string> = new EventEmitter<string>();
+  @Output() public clear: EventEmitter<void> = new EventEmitter<void>();
 
   public query: string = '';
 

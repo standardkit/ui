@@ -17,6 +17,7 @@ import { SkTabComponent } from '../tab';
   selector: 'sk-tab-group',
   templateUrl: 'tab-group.component.html',
   styleUrls: ['tab-group.component.scss'],
+  standalone: false,
 })
 export class SkTabGroupComponent implements AfterContentInit, OnChanges {
   @HostListener('window:resize') public resize = (): void => this.onScroll();
@@ -25,7 +26,7 @@ export class SkTabGroupComponent implements AfterContentInit, OnChanges {
 
   @Input() public activeTab?: string;
 
-  @Output() public activeTabChange: EventEmitter<string> = new EventEmitter();
+  @Output() public activeTabChange: EventEmitter<string> = new EventEmitter<string>();
 
   public state: State = new State();
 

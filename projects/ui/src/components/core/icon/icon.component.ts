@@ -5,6 +5,7 @@ import { IconSetType } from '@standardkit/core';
   selector: 'sk-icon',
   templateUrl: 'icon.component.html',
   styleUrls: ['icon.component.scss'],
+  standalone: false,
 })
 export class SkIconComponent {
   @Input() public icon?: string = 'icons';

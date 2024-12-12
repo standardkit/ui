@@ -5,6 +5,7 @@ import { SkAccordionItemComponent } from '../accordion-item';
   selector: 'sk-accordion',
   templateUrl: 'accordion.component.html',
   styleUrls: ['accordion.component.scss'],
+  standalone: false,
 })
 export class SkAccordionComponent implements AfterContentInit, AfterContentChecked {
   @ContentChildren(SkAccordionItemComponent) public items!: QueryList<SkAccordionItemComponent>;

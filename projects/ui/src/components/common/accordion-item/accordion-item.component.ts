@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'sk-accordion-item[name]',
   templateUrl: 'accordion-item.component.html',
   styleUrls: ['accordion-item.component.scss'],
+  standalone: false,
 })
 export class SkAccordionItemComponent {
   @Input() public name!: string;

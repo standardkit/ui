@@ -13,6 +13,7 @@ import { FilterItemInterface } from './filter-item.interface';
   selector: 'sk-filter',
   templateUrl: 'filter.component.html',
   styleUrls: ['filter.component.scss'],
+  standalone: false,
 })
 export class SkFilterComponent<T> implements OnInit {
   @Input() public filterConfigurations: FilterConfigurationInterface<T>[] = [];
@@ -21,7 +22,7 @@ export class SkFilterComponent<T> implements OnInit {
   @Input() public dataName?: string = '';
   @Input() public isLoading: boolean = false;
 
-  @Output() public filter: EventEmitter<FilterInterface<T>[]> = new EventEmitter();
+  @Output() public filter: EventEmitter<FilterInterface<T>[]> = new EventEmitter<FilterInterface<T>[]>();
 
   public showModal: boolean = false;
   public form: FormGroup = new FormGroup({});
@@ -51,7 +52,7 @@ export class SkFilterComponent<T> implements OnInit {
   public onApplyFilters(): void {
     const filters: FilterInterface<T>[] = [];
 
-    this.filterItems.forEach((item: FilterItemInterface) => {
+    this.filterItems.forEach((item: FilterItemInterface): void => {
       const value = this.form.get(item.key)?.value;
 
       if (!!value && value?.length !== 0) {

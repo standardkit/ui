@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'sk-header',
   templateUrl: 'header.component.html',
   styleUrls: ['header.component.scss'],
+  standalone: false,
 })
 export class SkHeaderComponent {
   @Input() public logo?: string;

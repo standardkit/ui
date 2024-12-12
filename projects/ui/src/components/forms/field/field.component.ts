@@ -14,6 +14,7 @@ import { SkLabelComponent } from '../label';
   selector: 'sk-field[name]',
   templateUrl: 'field.component.html',
   styleUrls: ['field.component.scss'],
+  standalone: false,
 })
 export class SkFieldComponent implements AfterContentInit {
   @HostBinding('class') public class: string = 'field';

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 
-@Component({ templateUrl: 'tab.page.html' })
+@Component({
+  templateUrl: 'tab.page.html',
+  standalone: false,
+})
 export class TabPage {
   public activeTab: string = 'tab-1';
 

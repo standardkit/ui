@@ -5,6 +5,7 @@ import { SkSegmentComponent } from '../segment';
   selector: 'sk-segment-group',
   templateUrl: 'segment-group.component.html',
   styleUrls: ['segment-group.component.scss'],
+  standalone: false,
 })
 export class SkSegmentGroupComponent implements AfterViewInit {
   @ContentChildren(SkSegmentComponent) public segments!: QueryList<SkSegmentComponent>;

@@ -21,6 +21,7 @@ import {
   selector: 'sk-data-table',
   templateUrl: 'data-table.component.html',
   styleUrls: ['data-table.component.scss'],
+  standalone: false,
 })
 export class SkDataTableComponent<T> implements OnInit, OnChanges {
   @Input() public response?: DataResponse<T>;
@@ -37,8 +38,8 @@ export class SkDataTableComponent<T> implements OnInit, OnChanges {
   @Input() public isStriped: boolean = false;
   @Input() public hasNoMargin: boolean = false;
 
-  @Output() public request: EventEmitter<DataRequest<T>> = new EventEmitter();
-  @Output() public rowClick: EventEmitter<T> = new EventEmitter();
+  @Output() public request: EventEmitter<DataRequest<T>> = new EventEmitter<DataRequest<T>>();
+  @Output() public rowClick: EventEmitter<T> = new EventEmitter<T>();
 
   public searchField?: string;
   private _request: DataRequest<T> = { pagination: { offset: 0, limit: 10 } };

@@ -7,6 +7,7 @@ import { InputComponent, InputInterface } from '../input';
   templateUrl: 'date-input.component.html',
   styleUrls: ['date-input.component.scss'],
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkDateInputComponent), multi: true }],
+  standalone: false,
 })
 export class SkDateInputComponent implements ControlValueAccessor, InputInterface {
   public value?: Date | null;

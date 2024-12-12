@@ -8,6 +8,7 @@ import { InputComponent, InputInterface } from '../input';
   templateUrl: 'file-input.component.html',
   styleUrls: ['file-input.component.scss'],
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkFileInputComponent), multi: true }],
+  standalone: false,
 })
 export class SkFileInputComponent implements ControlValueAccessor, InputInterface {
   @Input() public placeholder: string = '';
@@ -80,8 +81,8 @@ export class SkFileInputComponent implements ControlValueAccessor, InputInterfac
   }
 
   public onValueChange(event: Event): void {
-    const element = <HTMLInputElement>event.target; // Casting because we always have an input element
-    const fileList = <FileList>element.files; // Casting because we always have a input[type=file]
+    const element = event.target as HTMLInputElement; // Casting because we always have an input element
+    const fileList = element.files as FileList; // Casting because we always have a input[type=file]
     const files = Array.from(fileList);
     this.addFiles(files);
   }
@@ -96,8 +97,8 @@ export class SkFileInputComponent implements ControlValueAccessor, InputInterfac
     event.preventDefault();
     event.stopImmediatePropagation();
 
-    const dataTransfer: DataTransfer = <DataTransfer>event.dataTransfer;
-    const fileList: FileList = <FileList>dataTransfer.files;
+    const dataTransfer: DataTransfer = event.dataTransfer as DataTransfer;
+    const fileList: FileList = dataTransfer.files as FileList;
     const files: File[] = Array.from(fileList);
     this.addFiles(files);
 

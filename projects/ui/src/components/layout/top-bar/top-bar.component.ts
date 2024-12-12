@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'sk-top-bar',
   templateUrl: 'top-bar.component.html',
   styleUrls: ['top-bar.component.scss'],
+  standalone: false,
 })
 export class SkTopBarComponent {
   @Input() public name?: string;

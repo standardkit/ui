@@ -5,6 +5,7 @@ import { STYLE, StyleType, IconSetType } from '@standardkit/core';
   selector: 'sk-button',
   templateUrl: 'button.component.html',
   styleUrls: ['button.component.scss'],
+  standalone: false,
 })
 export class SkButtonComponent {
   @Input() public type: StyleType = STYLE.Primary;

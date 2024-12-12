@@ -7,6 +7,7 @@ import { InputComponent, InputInterface } from '../input';
   templateUrl: 'text-input.component.html',
   styleUrls: ['text-input.component.scss'],
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkTextInputComponent), multi: true }],
+  standalone: false,
 })
 export class SkTextInputComponent implements ControlValueAccessor, InputInterface {
   @Input() public placeholder: string = '';

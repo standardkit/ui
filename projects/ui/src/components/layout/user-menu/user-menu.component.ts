@@ -5,6 +5,7 @@ import { UserMenuItemInterface } from './user-menu-item.interface';
   selector: 'sk-user-menu',
   templateUrl: 'user-menu.component.html',
   styleUrls: ['user-menu.component.scss'],
+  standalone: false,
 })
 export class SkUserMenuComponent {
   @HostListener('document:click')

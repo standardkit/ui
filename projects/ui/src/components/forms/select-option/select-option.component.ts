@@ -4,6 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   selector: 'sk-select-option[value][label]',
   templateUrl: 'select-option.component.html',
   styleUrls: ['select-option.component.scss'],
+  standalone: false,
 })
 export class SkSelectOptionComponent {
   @Input() public value!: string | number;

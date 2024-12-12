@@ -7,6 +7,7 @@ import { InputComponent, InputInterface } from '../input';
   templateUrl: 'password-input.component.html',
   styleUrls: ['password-input.component.scss'],
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkPasswordInputComponent), multi: true }],
+  standalone: false,
 })
 export class SkPasswordInputComponent implements ControlValueAccessor, InputInterface {
   @Input() public placeholder?: string;

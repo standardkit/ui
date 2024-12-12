@@ -6,6 +6,7 @@ import { LayoutService } from '../layout.service';
   selector: 'sk-bottom-bar',
   templateUrl: 'bottom-bar.component.html',
   styleUrls: ['bottom-bar.component.scss'],
+  standalone: false,
 })
 export class SkBottomBarComponent implements OnInit, OnDestroy {
   public isCollapsed$!: Observable<boolean>;

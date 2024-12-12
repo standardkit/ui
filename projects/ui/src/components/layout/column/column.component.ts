@@ -4,6 +4,7 @@ import { Component, HostBinding, Input } from '@angular/core';
   selector: 'sk-column',
   templateUrl: 'column.component.html',
   styleUrls: ['column.component.scss'],
+  standalone: false,
 })
 export class SkColumnComponent {
   @HostBinding('class') public class: string = 'column';

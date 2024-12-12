@@ -7,6 +7,7 @@ import { InputComponent, InputInterface } from '../input';
   templateUrl: 'textarea-input.component.html',
   styleUrls: ['textarea-input.component.scss'],
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkTextareaInputComponent), multi: true }],
+  standalone: false,
 })
 export class SkTextareaInputComponent implements ControlValueAccessor, InputInterface {
   @Input() public placeholder: string = '';
@@ -41,7 +42,7 @@ export class SkTextareaInputComponent implements ControlValueAccessor, InputInte
   }
 
   public onValueChange(event: Event): void {
-    const value: string = (<HTMLTextAreaElement>event.target).value;
+    const value: string = (event.target as HTMLTextAreaElement).value;
     this.writeValue(value);
     this.onChange(value);
   }

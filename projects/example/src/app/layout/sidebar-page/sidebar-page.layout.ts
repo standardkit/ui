@@ -2,14 +2,18 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavigationItemInterface, UserMenuItemInterface } from '@standardkit/ui';
 
-@Component({ selector: 'example-page-layout', templateUrl: 'sidebar-page.layout.html' })
+@Component({
+  selector: 'example-page-layout',
+  templateUrl: 'sidebar-page.layout.html',
+  standalone: false,
+})
 export class SidebarPageLayout {
   public navigationItems: NavigationItemInterface[] = [
     { icon: 'house', name: 'Homepage', route: '', isExact: true },
     {
       icon: 'box-archive',
       name: 'Common',
-      route: 'common', // TODO : Make as prefix for child routes
+      route: 'common',
       children: [
         { name: 'Accordion', route: 'common/accordion' },
         { name: 'Alert', route: 'common/alert' },
@@ -68,6 +72,6 @@ export class SidebarPageLayout {
   constructor(private router: Router) {}
 
   public onLogout(): void {
-    this.router.navigate(['authentication', 'login']).then((): void => {});
+    this.router.navigate(['authentication', 'login']);
   }
 }

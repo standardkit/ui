@@ -7,6 +7,7 @@ import { InputComponent, InputInterface } from '../input';
   templateUrl: 'checkbox-input.component.html',
   styleUrls: ['checkbox-input.component.scss'],
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkCheckboxInputComponent), multi: true }],
+  standalone: false,
 })
 export class SkCheckboxInputComponent implements ControlValueAccessor, InputInterface {
   public value: boolean = false;

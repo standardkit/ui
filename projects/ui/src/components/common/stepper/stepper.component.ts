@@ -5,6 +5,7 @@ import { SkStepperItemComponent } from '../stepper-item';
   selector: 'sk-stepper',
   templateUrl: 'stepper.component.html',
   styleUrls: ['stepper.component.scss'],
+  standalone: false,
 })
 export class SkStepperComponent implements AfterContentInit {
   @ContentChildren(SkStepperItemComponent) public items!: QueryList<SkStepperItemComponent>;

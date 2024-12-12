@@ -4,13 +4,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   selector: 'sk-tag',
   templateUrl: 'tag.component.html',
   styleUrls: ['tag.component.scss'],
+  standalone: false,
 })
 export class SkTagComponent {
   @Input() public icon?: string;
   // TODO : Add style input for different styles
   @Input() public alignIcon: 'left' | 'right' = 'right';
 
-  @Output() public selectTag: EventEmitter<Event> = new EventEmitter();
+  @Output() public selectTag: EventEmitter<Event> = new EventEmitter<Event>();
 
   public onSelectTag(event: Event): void {
     if (!this.selectTag.observed) {

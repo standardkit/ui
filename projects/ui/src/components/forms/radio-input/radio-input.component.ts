@@ -20,6 +20,7 @@ import { SkRadioOptionComponent } from '../radio-option';
   templateUrl: 'radio-input.component.html',
   styleUrls: ['radio-input.component.scss'],
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkRadioInputComponent), multi: true }],
+  standalone: false,
 })
 export class SkRadioInputComponent implements ControlValueAccessor, InputInterface, AfterContentInit, OnDestroy {
   @ContentChildren(SkRadioOptionComponent) public options!: QueryList<SkRadioOptionComponent>;

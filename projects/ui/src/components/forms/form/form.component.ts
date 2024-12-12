@@ -5,12 +5,13 @@ import { FormGroup } from '@angular/forms';
   selector: 'sk-form[formGroup]',
   templateUrl: 'form.component.html',
   styleUrls: ['form.component.scss'],
+  standalone: false,
 })
 export class SkFormComponent {
   @Input() public formGroup!: FormGroup;
   @Input() public hasAutocomplete: boolean = false;
 
-  @Output() public submitForm: EventEmitter<void> = new EventEmitter();
+  @Output() public submitForm: EventEmitter<void> = new EventEmitter<void>();
 
   public onSubmit(): void {
     this.formGroup.markAllAsTouched();

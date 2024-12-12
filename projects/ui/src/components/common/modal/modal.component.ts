@@ -4,6 +4,7 @@ import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewC
   selector: 'sk-modal',
   templateUrl: 'modal.component.html',
   styleUrls: ['modal.component.scss'],
+  standalone: false,
 })
 export class SkModalComponent {
   @HostListener('document:keydown.escape') public escape = (): void => this.closeModal.emit();
@@ -18,7 +19,7 @@ export class SkModalComponent {
   @Input() public containsOverflow: boolean = false;
   @Input() public hasBodyBackground: boolean = false;
 
-  @Output() public closeModal: EventEmitter<void> = new EventEmitter();
+  @Output() public closeModal: EventEmitter<void> = new EventEmitter<void>();
 
   public isScrollable: boolean = false;
 

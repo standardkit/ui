@@ -5,6 +5,7 @@ import { StyleType } from '@standardkit/core';
   selector: 'sk-advanced-radio-option[label][value]',
   templateUrl: 'advanced-radio-option.component.html',
   styleUrls: ['advanced-radio-option.component.scss'],
+  standalone: false,
 })
 export class SkAdvancedRadioOptionComponent {
   @Input() public name!: string;

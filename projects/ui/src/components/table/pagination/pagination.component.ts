@@ -6,12 +6,13 @@ import { PaginationInterface, PaginationStateInterface } from '@standardkit/core
 @Component({
   selector: 'sk-pagination[state]',
   templateUrl: 'pagination.component.html',
-  styleUrls: ['pagination.component.scss'],
+  styleUrl: 'pagination.component.scss',
+  standalone: false,
 })
 export class SkPaginationComponent {
   @Input() public state!: PaginationStateInterface;
 
-  @Output() public request: EventEmitter<PaginationInterface> = new EventEmitter();
+  @Output() public request: EventEmitter<PaginationInterface> = new EventEmitter<PaginationInterface>();
 
   public limitOptions: number[] = [10, 25, 50, 100]; // TODO : Make configurable
 

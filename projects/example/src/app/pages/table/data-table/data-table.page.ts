@@ -7,12 +7,15 @@ import {
   SegmentConfigurationInterface,
   TableToggleActionInterface,
 } from '@standardkit/core';
+import { BreadcrumbInterface } from '@standardkit/ui';
 import { Observable, of } from 'rxjs';
 import { FakeDataInterface } from './fake-data.interface';
 import { FakeDataService } from './fake-data.service';
-import { BreadcrumbInterface } from '@standardkit/ui';
 
-@Component({ templateUrl: 'data-table.page.html' })
+@Component({
+  templateUrl: 'data-table.page.html',
+  standalone: false,
+})
 export class DataTablePage {
   public breadcrumbs: BreadcrumbInterface[] = [{ name: 'Table' }, { name: 'Data Table' }];
   public response?: DataResponse<FakeDataInterface>;

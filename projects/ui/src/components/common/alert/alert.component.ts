@@ -5,6 +5,7 @@ import { StyleType, STYLE } from '@standardkit/core';
   selector: 'sk-alert',
   templateUrl: 'alert.component.html',
   styleUrls: ['alert.component.scss'],
+  standalone: false,
 })
 export class SkAlertComponent {
   @Input() public type: StyleType = STYLE.Error;
