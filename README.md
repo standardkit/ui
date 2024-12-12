@@ -74,6 +74,4 @@ npm run release:major
 
 ## Running unit tests
 
-Unit tests are ran using `Jest`.
-
 > To Be Implemented

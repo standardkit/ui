@@ -1,5 +1,5 @@
 module.exports = {
-  extends: "../../.eslintrc.js",
+  extends: "../../eslint.config.js",
   root: true,
   ignorePatterns: ["!**/*"],
   overrides: [
@@ -10,8 +10,11 @@ module.exports = {
         tsconfigRootDir: __dirname,
       },
       rules: {
-        "@angular-eslint/directive-selector": ["error", { type: "attribute", prefix: "sk", style: "camelCase" }],
-        "@angular-eslint/component-selector": ["error", { type: "element", prefix: "sk", style: "kebab-case" }],
+        "@angular-eslint/directive-selector": [
+          "error",
+          { type: "attribute", prefix: ["sk", "ui"], style: "camelCase" },
+        ],
+        "@angular-eslint/component-selector": ["error", { type: "element", prefix: ["sk", "ui"], style: "kebab-case" }],
         "@angular-eslint/component-class-suffix": ["error", { suffixes: ["Component"] }],
         "@angular-eslint/component-max-inline-declarations": ["error", { template: 1 }],
       },
