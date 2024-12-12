@@ -7,7 +7,7 @@
 To install StandardKit UI Components through npm, use:
 
 ```bash
-npm install --save @standardkit/ui @standardkit/core
+npm install --save @standardkit/ui
 ```
 
 ### Styles
