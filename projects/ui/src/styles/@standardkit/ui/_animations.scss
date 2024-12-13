@@ -1,31 +1,31 @@
 @mixin slide-up() {
   animation: slide-up ease-out 0.4s;
+}
 
-  @keyframes slide-up {
+@keyframes slide-up {
 
-    0% {
-      transform: translateY(50%);
-      opacity: 0;
-    }
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
 
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @mixin fade-out($delay: 0) {
   animation: fade-out ease-out 0.5s $delay;
+}
 
-  @keyframes fade-out {
+@keyframes fade-out {
 
-    0% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
 
-    100% {
-      opacity: 0;
-    }
+  100% {
+    opacity: 0;
   }
 }
