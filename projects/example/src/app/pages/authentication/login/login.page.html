@@ -1,5 +1,5 @@
 <sk-card name="Authentication">
-  <sk-form [formGroup]="form" (submitForm)="onSubmit()">
+  <ui-form (submitForm)="onSubmit()" [formGroup]="form">
     <sk-field name="username">
       <sk-label>Username</sk-label>
       <sk-text-input formControlName="username"></sk-text-input>
@@ -10,10 +10,10 @@
       <sk-password-input formControlName="password"></sk-password-input>
     </sk-field>
 
-    <sk-button [isSubmit]="true" [fullWidth]="true">Login</sk-button>
-  </sk-form>
+    <sk-button [fullWidth]="true" [isSubmit]="true">Login</sk-button>
+  </ui-form>
 
-  <sk-bar slot="footer" align="center" [isVertical]="true">
+  <sk-bar [isVertical]="true" align="center" slot="footer">
     <sk-link>Forgot your password</sk-link>
     <sk-link>Forgot my email address</sk-link>
   </sk-bar>

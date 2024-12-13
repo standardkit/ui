@@ -1,18 +1,18 @@
 <div class="filter__buttons">
-  <sk-button type="light" (click)="showModal = true" [disabled]="showModal || isLoading" icon="filter">
+  <sk-button (click)="showModal = true" [disabled]="showModal || isLoading" icon="filter" type="light">
     Filter
   </sk-button>
-  <sk-button *ngIf="filters.length > 0" type="light" icon="xmark" [disabled]="isLoading" (click)="onTagClear()">
+  <sk-button (click)="onTagClear()" *ngIf="filters.length > 0" [disabled]="isLoading" icon="xmark" type="light">
     {{ filters.length }}
   </sk-button>
 </div>
 <sk-modal
-  *ngIf="showModal"
   (closeModal)="onCancel()"
+  *ngIf="showModal"
   [containsOverflow]="true"
   [name]="'Filter in \'' + dataName + '\''"
 >
-  <sk-form [formGroup]="form">
+  <ui-form [formGroup]="form">
     <sk-field *ngFor="let item of filterItems" [name]="'filter-' + item.key">
       <sk-label>{{ item.label }}</sk-label>
 
@@ -23,7 +23,7 @@
         [placeholder]="'Selecteer ' + item.label.toLowerCase()"
       >
         <ng-container *ngFor="let option of item.values">
-          <sk-select-option *ngIf="option.value" [value]="option.value" [label]="option.label"></sk-select-option>
+          <sk-select-option *ngIf="option.value" [label]="option.label" [value]="option.value"></sk-select-option>
         </ng-container>
       </sk-select-input>
 
@@ -36,8 +36,8 @@
         <ng-container *ngFor="let filterValue of item.values">
           <sk-select-option
             *ngIf="filterValue.value"
-            [value]="filterValue.value"
             [label]="filterValue.label"
+            [value]="filterValue.value"
           ></sk-select-option>
         </ng-container>
       </sk-multi-select-input>
@@ -45,13 +45,13 @@
       <!--TODO : Field group for pseudo range filters (from, to date) configurable in filterConfiguration-->
       <sk-date-input *ngIf="item.type === 'date'" [formControlName]="item.key"></sk-date-input>
     </sk-field>
-  </sk-form>
+  </ui-form>
 
-  <sk-bar slot="footer" align="space-between">
-    <sk-button type="light" (click)="onCancel()" icon="xmark" alignIcon="left">Cancel</sk-button>
+  <sk-bar align="space-between" slot="footer">
+    <sk-button (click)="onCancel()" alignIcon="left" icon="xmark" type="light">Cancel</sk-button>
     <sk-bar>
-      <sk-button type="light" icon="rotate" (click)="onReset()">Reset</sk-button>
-      <sk-button icon="filter" (click)="onApplyFilters()">Apply</sk-button>
+      <sk-button (click)="onReset()" icon="rotate" type="light">Reset</sk-button>
+      <sk-button (click)="onApplyFilters()" icon="filter">Apply</sk-button>
     </sk-bar>
   </sk-bar>
 </sk-modal>

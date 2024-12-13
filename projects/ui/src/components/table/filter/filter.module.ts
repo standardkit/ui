@@ -6,11 +6,11 @@ import { SkBarModule, SkButtonModule, SkPillModule } from '../../core';
 import {
   SkDateInputModule,
   SkFieldModule,
-  SkFormModule,
   SkLabelModule,
   SkMultiSelectInputModule,
   SkSelectInputModule,
   SkSelectOptionModule,
+  UiForm,
 } from '../../forms';
 import { SkFilterComponent } from './filter.component';
 
@@ -23,13 +23,13 @@ import { SkFilterComponent } from './filter.component';
     SkButtonModule,
     SkDateInputModule,
     SkFieldModule,
-    SkFormModule,
     SkLabelModule,
     SkModalModule,
     SkMultiSelectInputModule,
     SkPillModule,
     SkSelectInputModule,
     SkSelectOptionModule,
+    UiForm,
   ],
   declarations: [SkFilterComponent],
   exports: [SkFilterComponent],

@@ -1,37 +1,37 @@
 import { NgForOf } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CheckboxInputPage } from './checkbox-input';
-import { FormPage } from './form';
 import {
-  SkCheckboxInputModule,
-  SkButtonModule,
-  SkTopBarModule,
-  SkColumnModule,
-  SkRowModule,
-  SkBreadcrumbsModule,
-  SkFormModule,
-  SkFormSectionTitleModule,
-  SkCardModule,
-  SkFieldGroupModule,
-  SkFieldModule,
-  SkLabelModule,
-  SkTextInputModule,
-  SkInputDescriptionModule,
-  SkRadioInputModule,
-  SkRadioOptionModule,
   SkAdvancedRadioOptionModule,
   SkBottomBarModule,
-  SkNumberInputModule,
+  SkBreadcrumbsModule,
+  SkButtonModule,
+  SkCardModule,
+  SkCheckboxInputModule,
+  SkColumnModule,
   SkDateInputModule,
+  SkFieldGroupModule,
+  SkFieldModule,
   SkFileInputModule,
+  SkFormSectionTitleModule,
+  SkInputDescriptionModule,
+  SkLabelModule,
+  SkMultiSelectInputModule,
+  SkNumberInputModule,
+  SkPasswordInputModule,
+  SkRadioInputModule,
+  SkRadioOptionModule,
+  SkRowModule,
   SkSelectInputModule,
   SkSelectOptionModule,
-  SkMultiSelectInputModule,
-  SkPasswordInputModule,
   SkTextareaInputModule,
+  SkTextInputModule,
   SkTimeInputModule,
+  SkTopBarModule,
+  UiForm,
 } from '@standardkit/ui';
+import { CheckboxInputPage } from './checkbox-input';
+import { FormPage } from './form';
 
 const PAGES: any[] = [CheckboxInputPage, FormPage];
 
@@ -50,7 +50,6 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     SkFieldGroupModule,
     SkFieldModule,
     SkFileInputModule,
-    SkFormModule,
     SkFormSectionTitleModule,
     SkInputDescriptionModule,
     SkLabelModule,
@@ -66,6 +65,7 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     SkTextareaInputModule,
     SkTopBarModule,
     SkTimeInputModule,
+    UiForm,
   ],
   declarations: PAGES,
   exports: PAGES,

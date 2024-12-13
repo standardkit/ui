@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'sk-form[formGroup]',
+  selector: 'ui-form',
   templateUrl: 'form.component.html',
-  styleUrls: ['form.component.scss'],
-  standalone: false,
+  styleUrl: 'form.component.scss',
+  imports: [ReactiveFormsModule],
 })
-export class SkFormComponent {
-  @Input() public formGroup!: FormGroup;
+export class UiForm {
+  @Input({ required: true }) public formGroup!: FormGroup;
   @Input() public hasAutocomplete: boolean = false;
 
   @Output() public submitForm: EventEmitter<void> = new EventEmitter<void>();

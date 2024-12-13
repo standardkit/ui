@@ -5,7 +5,7 @@
 <sk-row>
   <sk-column>
     <sk-card name="Form Card">
-      <sk-form [formGroup]="form" (submitForm)="onSubmit()">
+      <ui-form (submitForm)="onSubmit()" [formGroup]="form">
         <sk-form-section-title>Personal Information</sk-form-section-title>
         <sk-field-group>
           <sk-field name="test-field-1">
@@ -17,7 +17,7 @@
           <sk-field name="test-field-2">
             <sk-label>Second field</sk-label>
             <sk-input-description>Put in some text below, it's pretty simple</sk-input-description>
-            <sk-text-input placeholder="Example placeholder" formControlName="text2"></sk-text-input>
+            <sk-text-input formControlName="text2" placeholder="Example placeholder"></sk-text-input>
           </sk-field>
         </sk-field-group>
 
@@ -50,15 +50,15 @@
           <sk-field name="select">
             <sk-label>Select</sk-label>
             <sk-select-input formControlName="select">
-              <sk-select-option *ngFor="let city of cities" [value]="city" [label]="city"></sk-select-option>
+              <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
             </sk-select-input>
           </sk-field>
           <sk-field name="select2">
             <sk-label>Select</sk-label>
             <sk-select-input formControlName="select2" placeholder="Select one city">
-              <sk-select-option value="abc123" label="ABC123"></sk-select-option>
-              <sk-select-option value="def456" label="DEF456"></sk-select-option>
-              <sk-select-option value="ghi789" label="GHI789"></sk-select-option>
+              <sk-select-option label="ABC123" value="abc123"></sk-select-option>
+              <sk-select-option label="DEF456" value="def456"></sk-select-option>
+              <sk-select-option label="GHI789" value="ghi789"></sk-select-option>
             </sk-select-input>
           </sk-field>
         </sk-field-group>
@@ -67,19 +67,19 @@
           <sk-field name="multi-select">
             <sk-label>Multiselect</sk-label>
             <sk-multi-select-input formControlName="multiSelect">
-              <sk-select-option *ngFor="let city of cities" [value]="city" [label]="city"></sk-select-option>
+              <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
             </sk-multi-select-input>
           </sk-field>
           <sk-field name="multi-select2">
             <sk-label>Multiselect</sk-label>
             <sk-multi-select-input formControlName="multiSelect2">
-              <sk-select-option *ngFor="let city of cities" [value]="city" [label]="city"></sk-select-option>
+              <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
             </sk-multi-select-input>
           </sk-field>
           <sk-field name="multi-select3">
             <sk-label>Multiselect</sk-label>
             <sk-multi-select-input formControlName="multiSelect3" placeholder="Select cities">
-              <sk-select-option *ngFor="let city of cities" [value]="city" [label]="city"></sk-select-option>
+              <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
             </sk-multi-select-input>
           </sk-field>
         </sk-field-group>
@@ -117,7 +117,7 @@
 
         <sk-field name="radio2">
           <sk-label>Choose from radio (vertical)</sk-label>
-          <sk-radio-input formControlName="radio2" [isVertical]="true">
+          <sk-radio-input [isVertical]="true" formControlName="radio2">
             <sk-radio-option value="abc123">Option 1</sk-radio-option>
             <sk-radio-option value="def456">Option 2</sk-radio-option>
             <sk-radio-option value="ghi789">Option 3</sk-radio-option>
@@ -128,13 +128,13 @@
           <sk-label>Choose from advanced radio</sk-label>
           <sk-radio-input formControlName="radio3">
             <sk-advanced-radio-option label="Option 1" value="abc123">Body of Option 1</sk-advanced-radio-option>
-            <sk-advanced-radio-option label="Option 2" value="def456" type="success"
+            <sk-advanced-radio-option label="Option 2" type="success" value="def456"
               >Lorem Ipsum Dolor bla bla bla bla
             </sk-advanced-radio-option>
-            <sk-advanced-radio-option label="Option 3" value="ghi789" type="error">
+            <sk-advanced-radio-option label="Option 3" type="error" value="ghi789">
               Body of Option 1
             </sk-advanced-radio-option>
-            <sk-advanced-radio-option label="Option 4" value="jkl123" type="warning">
+            <sk-advanced-radio-option label="Option 4" type="warning" value="jkl123">
               Body of Option 1
             </sk-advanced-radio-option>
           </sk-radio-input>
@@ -142,20 +142,20 @@
 
         <sk-field name="radio4">
           <sk-label>Choose from advanced radio (vertical)</sk-label>
-          <sk-radio-input formControlName="radio4" [isVertical]="true">
+          <sk-radio-input [isVertical]="true" formControlName="radio4">
             <sk-advanced-radio-option label="Option 1" value="abc123">Body of Option 1</sk-advanced-radio-option>
-            <sk-advanced-radio-option label="Option 2" value="def456" type="success"
+            <sk-advanced-radio-option label="Option 2" type="success" value="def456"
               >Lorem Ipsum Dolor bla bla bla bla
             </sk-advanced-radio-option>
-            <sk-advanced-radio-option label="Option 3" value="ghi789" type="error">
+            <sk-advanced-radio-option label="Option 3" type="error" value="ghi789">
               Body of Option 1
             </sk-advanced-radio-option>
-            <sk-advanced-radio-option label="Option 4" value="jkl123" type="warning">
+            <sk-advanced-radio-option label="Option 4" type="warning" value="jkl123">
               Body of Option 1
             </sk-advanced-radio-option>
           </sk-radio-input>
         </sk-field>
-      </sk-form>
+      </ui-form>
     </sk-card>
   </sk-column>
 </sk-row>
