@@ -3,23 +3,22 @@
     <div class="search__icon">
       <sk-icon icon="search"></sk-icon>
     </div>
-    <div class="search__icon search__icon--clear" *ngIf="query" (click)="onClear()">
+    <div (click)="onClear()" *ngIf="query" class="search__icon search__icon--clear">
       <sk-icon icon="close"></sk-icon>
     </div>
     <!--TODO : Make the text configurable-->
     <input
-      class="search__input"
       #input
-      autofocus="autofocus"
+      (keydown.enter)="onSearch()"
       [(ngModel)]="query"
       [disabled]="isDisabled"
-      type="text"
       [placeholder]="
         field ? 'Search for ' + field.toLowerCase() + '...' : 'Search in ' + dataName?.toLowerCase() + '...'
       "
-      (keydown.enter)="onSearch()"
+      class="search__input"
+      type="text"
     />
   </div>
   <!--TODO : Button text configurable-->
-  <sk-button icon="search" type="light" [disabled]="isDisabled" (click)="onSearch()">Search</sk-button>
+  <ui-button (click)="onSearch()" [disabled]="isDisabled" icon="search" type="light">Search</ui-button>
 </div>

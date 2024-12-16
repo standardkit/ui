@@ -27,7 +27,7 @@ module.exports = tseslint.config(
     rules: {
       "@angular-eslint/component-class-suffix": [
         "error",
-        { suffixes: ["Component", "Layout", "Modal", "Page", "Card", "Form", "Tab"] },
+        { suffixes: ["Component", "Layout", "Modal", "Page", "Card", "Form", "Tab", ""] },
       ],
       "@angular-eslint/component-max-inline-declarations": ["error", { template: 1 }],
       "@angular-eslint/prefer-standalone": "off",

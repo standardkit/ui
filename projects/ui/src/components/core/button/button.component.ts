@@ -1,14 +1,16 @@
+import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { IconSetType, StyleType } from '@standardkit/core';
 import { Style } from '../../../constants';
+import { IconSetType, StyleType } from '../../../types';
+import { SkIconModule } from '../icon';
 
 @Component({
-  selector: 'sk-button',
+  selector: 'ui-button',
+  imports: [SkIconModule, NgIf],
   templateUrl: 'button.component.html',
-  styleUrls: ['button.component.scss'],
-  standalone: false,
+  styleUrl: 'button.component.scss',
 })
-export class SkButtonComponent {
+export class UiButton {
   @Input() public type: StyleType = Style.Primary;
   @Input() public disabled: boolean = false;
   @Input() public fullWidth: boolean = false;

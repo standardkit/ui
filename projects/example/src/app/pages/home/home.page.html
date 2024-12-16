@@ -1,18 +1,18 @@
 <sk-top-bar name="Homepage">
   <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
-  <sk-button type="neutral" icon="search">Button</sk-button>
-  <sk-button icon="add">Action slot button</sk-button>
+  <ui-button icon="search" type="neutral">Button</ui-button>
+  <ui-button icon="add">Action slot button</ui-button>
 </sk-top-bar>
 
 <!--TODO  : Split in homepage/dashboard with jumbotron and statistics and layout page with bars-->
 <sk-row>
   <sk-column>
-    <sk-jumbotron name="Jumbotron" description="This is the subtitle of the jumbotron"></sk-jumbotron>
+    <sk-jumbotron description="This is the subtitle of the jumbotron" name="Jumbotron"></sk-jumbotron>
   </sk-column>
 </sk-row>
 
 <sk-bottom-bar>
-  <sk-button icon="angle-left" slot="left" alignIcon="left" type="light">Left button</sk-button>
-  <sk-button type="error" icon="close">Cancel</sk-button>
-  <sk-button type="success" icon="angle-right">Continue</sk-button>
+  <ui-button alignIcon="left" icon="angle-left" slot="left" type="light">Left button</ui-button>
+  <ui-button icon="close" type="error">Cancel</ui-button>
+  <ui-button icon="angle-right" type="success">Continue</ui-button>
 </sk-bottom-bar>

@@ -1,10 +1,10 @@
-<div class="data-table" [class.data-table--no-margin]="hasNoMargin">
-  <div class="data-table__segments" *ngIf="segments && searchKey">
+<div [class.data-table--no-margin]="hasNoMargin" class="data-table">
+  <div *ngIf="segments && searchKey" class="data-table__segments">
     <sk-segment-group [initialSegmentValue]="initialSegmentValue">
       <sk-segment
+        (selectSegment)="onSelectSegment(segment)"
         *ngFor="let segment of segments.segments"
         [value]="segment.value"
-        (selectSegment)="onSelectSegment(segment)"
       >
         {{ segment.label }}
       </sk-segment>
@@ -12,69 +12,69 @@
   </div>
 
   <div class="data-table__header">
-    <span class="data-table__search" *ngIf="searchKey || segments">
+    <span *ngIf="searchKey || segments" class="data-table__search">
       <sk-segment-group *ngIf="!searchKey && segments" [initialSegmentValue]="initialSegmentValue">
         <sk-segment
+          (selectSegment)="onSelectSegment(segment)"
           *ngFor="let segment of segments.segments"
           [value]="segment.value"
-          (selectSegment)="onSelectSegment(segment)"
         >
           {{ segment.label }}
         </sk-segment>
       </sk-segment-group>
       <sk-search
-        *ngIf="searchKey"
-        [isDisabled]="!response"
-        [field]="searchField"
-        [dataName]="dataName"
-        (search)="onSearch($event)"
         (clear)="onClearSearch()"
+        (search)="onSearch($event)"
+        *ngIf="searchKey"
+        [dataName]="dataName"
+        [field]="searchField"
+        [isDisabled]="!response"
       ></sk-search>
     </span>
     <sk-filter
-      *ngIf="(response?.filterable?.length ?? 0 > 0) && filters.length > 0"
-      [isLoading]="state.isPending"
-      [filterConfigurations]="filters"
-      [options]="response?.filterable ?? []"
-      [filters]="filterSegments(response?.filters ?? [])"
-      [dataName]="dataName"
       (filter)="onFilter($event)"
+      *ngIf="(response?.filterable?.length ?? 0 > 0) && filters.length > 0"
+      [dataName]="dataName"
+      [filterConfigurations]="filters"
+      [filters]="filterSegments(response?.filters ?? [])"
+      [isLoading]="state.isPending"
+      [options]="response?.filterable ?? []"
     ></sk-filter>
-    <sk-button
+    <ui-button
       *ngIf="(filters?.length ?? 0 > 0) && !(response?.filterable?.length ?? 0 > 0)"
       [disabled]="true"
-      type="light"
       icon="filter"
+      type="light"
     >
       Filter
-    </sk-button>
-    <sk-button
+    </ui-button>
+    <ui-button
+      (click)="onBatchAction(action)"
       *ngFor="let action of batchActions"
       [disabled]="checkedRows.length === 0"
       [icon]="action.icon"
       type="light"
-      (click)="onBatchAction(action)"
     >
       {{ action.label }}
-    </sk-button>
+    </ui-button>
   </div>
 
   <sk-table
-    [isStriped]="isStriped"
-    [rows]="response?.items ?? []"
+    (selectRow)="onRowClick($event)"
+    (sortColumn)="onSort($event)"
+    [(checkedRows)]="checkedRows"
+    [actions]="rowActions"
+    [canCheckRow]="batchActions.length > 0"
+    [canSelectRow]="rowClick.observed"
     [columns]="columns"
     [dataName]="dataName"
-    [sortableColumns]="response?.sortable ?? []"
-    [canSelectRow]="rowClick.observed"
-    [canCheckRow]="batchActions.length > 0"
-    [actions]="rowActions"
-    [toggleAction]="toggleAction"
-    [(checkedRows)]="checkedRows"
-    (selectRow)="onRowClick($event)"
-    [sortedColumn]="response?.sort"
-    (sortColumn)="onSort($event)"
     [isLoading]="state.isPending"
+    [isStriped]="isStriped"
+    [rows]="response?.items ?? []"
+    [sortableColumns]="response?.sortable ?? []"
+    [sortedColumn]="response?.sort"
+    [toggleAction]="toggleAction"
   ></sk-table>
 
-  <sk-pagination *ngIf="response" [state]="response.pagination" (request)="onPagination($event)"></sk-pagination>
+  <sk-pagination (request)="onPagination($event)" *ngIf="response" [state]="response.pagination"></sk-pagination>
 </div>

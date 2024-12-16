@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { StyleType } from '@standardkit/core';
+import { StyleType } from '../../../types';
 
 @Component({
   selector: 'sk-advanced-radio-option[label][value]',

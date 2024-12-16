@@ -4,11 +4,11 @@
       <span class="statistics-card__amount">{{ statistic }}</span>
       <span *ngIf="description" class="statistics-card__description">{{ description }}</span>
     </div>
-    <span class="statistics-card__icon" *ngIf="icon">
+    <span *ngIf="icon" class="statistics-card__icon">
       <sk-icon [icon]="icon"></sk-icon>
     </span>
   </div>
-  <sk-button (click)="onClick()" type="info" [fullWidth]="true" icon="angle-right">
+  <ui-button (click)="onClick()" [fullWidth]="true" icon="angle-right" type="info">
     {{ buttonText }}
-  </sk-button>
+  </ui-button>
 </div>

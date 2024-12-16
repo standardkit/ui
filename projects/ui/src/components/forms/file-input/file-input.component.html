@@ -1,36 +1,36 @@
 <input
-  type="file"
-  class="password-input"
-  [attr.multiple]="canSelectMultiple ? 'multiple' : undefined"
-  [id]="name"
-  [disabled]="isDisabled"
-  (change)="onValueChange($event)"
   #input
+  (change)="onValueChange($event)"
+  [attr.multiple]="canSelectMultiple ? 'multiple' : undefined"
+  [disabled]="isDisabled"
+  [id]="name"
+  class="password-input"
+  type="file"
 />
 
-<div class="file-input" [class.file-input--error]="control.touched && control.invalid">
+<div [class.file-input--error]="control.touched && control.invalid" class="file-input">
   <div
-    class="file-input__upload"
-    [class.file-input__upload--drag-over]="hasDragOver"
-    (dragover)="onDragOver($event)"
     (dragleave)="onDragLeave()"
+    (dragover)="onDragOver($event)"
     (drop)="onDrop($event)"
+    [class.file-input__upload--drag-over]="hasDragOver"
+    class="file-input__upload"
   >
     <!--TODO : Make configurable-->
     <span class="file-input__description">Drag & drop one or multiple files or browse...</span>
 
-    <sk-button icon="search" (click)="input.click()">Browse</sk-button>
+    <ui-button (click)="input.click()" icon="search">Browse</ui-button>
   </div>
 
-  <div class="file-input__files" *ngIf="value.length > 0">
-    <div class="file-input__file" *ngFor="let file of value; index as index">
+  <div *ngIf="value.length > 0" class="file-input__files">
+    <div *ngFor="let file of value; index as index" class="file-input__file">
       <span class="file-input__file-icon">
         <sk-icon icon="description"></sk-icon>
       </span>
       <span class="file-input__file-name">
         {{ file.name }}
       </span>
-      <span class="file-input__file-icon file-input__file-icon--delete" (click)="onDeleteFile(index)">
+      <span (click)="onDeleteFile(index)" class="file-input__file-icon file-input__file-icon--delete">
         <sk-icon icon="trash"></sk-icon>
       </span>
     </div>

@@ -1,31 +1,31 @@
 <div
-  class="multi-select-input"
-  [class.multi-select-input--error]="hasError && !showOptions"
-  [class.multi-select-input--collapsed]="!showOptions"
   (click)="onTouched()"
+  [class.multi-select-input--collapsed]="!showOptions"
+  [class.multi-select-input--error]="hasError && !showOptions"
+  class="multi-select-input"
 >
   <div
-    class="multi-select-input__select"
-    [class.multi-select-input__select--error]="hasError"
-    [class.multi-select-input__select--expanded]="showOptions"
-    [class.multi-select-input__select--disabled]="isDisabled"
-    tabindex="0"
+    #selectBox
     (click)="onToggleShowOptions()"
     (keydown.enter)="onToggleShowOptions()"
-    #selectBox
+    [class.multi-select-input__select--disabled]="isDisabled"
+    [class.multi-select-input__select--error]="hasError"
+    [class.multi-select-input__select--expanded]="showOptions"
+    class="multi-select-input__select"
+    tabindex="0"
   >
     <div class="multi-select-input__select-label">
-      <span class="multi-select-input__placeholder" *ngIf="value.length === 0">{{ placeholder }}</span>
+      <span *ngIf="value.length === 0" class="multi-select-input__placeholder">{{ placeholder }}</span>
       <sk-tag
+        (selectTag)="onClickTag($event, selectedOption)"
         *ngFor="let selectedOption of selectedOptions"
         icon="close"
-        (selectTag)="onClickTag($event, selectedOption)"
       >
         {{ selectedOption.label }}
       </sk-tag>
     </div>
 
-    <div class="multi-select-input__clear-icon" (click)="onClear($event)" *ngIf="!showOptions && value.length > 0">
+    <div (click)="onClear($event)" *ngIf="!showOptions && value.length > 0" class="multi-select-input__clear-icon">
       <sk-icon icon="close"></sk-icon>
     </div>
 
@@ -35,47 +35,47 @@
     </div>
   </div>
 
-  <div class="multi-select-input__options" *ngIf="showOptions">
-    <div class="multi-select-input__options-search" *ngIf="contentOptions.length > 4">
-      <sk-select-search (search)="onSearch($event)" (clear)="onSearchClear()"></sk-select-search>
+  <div *ngIf="showOptions" class="multi-select-input__options">
+    <div *ngIf="contentOptions.length > 4" class="multi-select-input__options-search">
+      <sk-select-search (clear)="onSearchClear()" (search)="onSearch($event)"></sk-select-search>
     </div>
-    <div class="multi-select-input__options-body" #scrollBody>
+    <div #scrollBody class="multi-select-input__options-body">
       <sk-select-option
+        (deselectOption)="onDeselectOption(option)"
+        (selectOption)="onSelectOption(option)"
         *ngFor="let option of renderedOptions"
-        [value]="option.value"
-        [label]="option.label"
         [description]="option.description"
         [isMulti]="true"
         [isSelected]="option.isSelected"
-        (selectOption)="onSelectOption(option)"
-        (deselectOption)="onDeselectOption(option)"
+        [label]="option.label"
+        [value]="option.value"
       ></sk-select-option>
 
-      <div class="multi-select-input__empty-body" *ngIf="renderedOptions.length === 0">No results...</div>
+      <div *ngIf="renderedOptions.length === 0" class="multi-select-input__empty-body">No results...</div>
     </div>
     <div class="multi-select-input__options-footer">
       <sk-bar [growChildren]="true" [noGap]="true">
-        <sk-button
-          [isSharp]="true"
-          [fullWidth]="true"
-          type="light"
-          icon="rotate-right"
-          [flipIcon]="true"
+        <ui-button
           (click)="onCancel()"
+          [flipIcon]="true"
+          [fullWidth]="true"
+          [isSharp]="true"
+          icon="rotate-right"
+          type="light"
         >
           Undo
-        </sk-button>
-        <sk-button
-          [isSharp]="true"
-          [fullWidth]="true"
-          [disabled]="backupValue.length === 0"
-          type="light"
-          icon="close"
+        </ui-button>
+        <ui-button
           (click)="onReset()"
+          [disabled]="backupValue.length === 0"
+          [fullWidth]="true"
+          [isSharp]="true"
+          icon="close"
+          type="light"
         >
           Clear
-        </sk-button>
-        <sk-button [isSharp]="true" [fullWidth]="true" (click)="onApply()" icon="check">Apply</sk-button>
+        </ui-button>
+        <ui-button (click)="onApply()" [fullWidth]="true" [isSharp]="true" icon="check">Apply</ui-button>
       </sk-bar>
     </div>
   </div>

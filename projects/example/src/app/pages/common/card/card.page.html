@@ -5,16 +5,16 @@
 <sk-row>
   <sk-column>
     <sk-card name="A Card">
-      <sk-pill type="info" slot="title" label="slot:">title</sk-pill>
-      <sk-button type="info" icon="angle-right" slot="actions">Action slot</sk-button>
+      <sk-pill label="slot:" slot="title" type="info">title</sk-pill>
+      <ui-button icon="angle-right" slot="actions" type="info">Action slot</ui-button>
       <sk-accordion>
         <sk-accordion-item name="Accordion">Content</sk-accordion-item>
         <sk-accordion-item name="Inside the">Content</sk-accordion-item>
         <sk-accordion-item name="Card Body">Content</sk-accordion-item>
       </sk-accordion>
-      <sk-bar slot="footer" align="space-between">
+      <sk-bar align="space-between" slot="footer">
         <sk-link url="/common/alert">Back to alert</sk-link>
-        <sk-button type="success" icon="save">Save</sk-button>
+        <ui-button icon="save" type="success">Save</ui-button>
       </sk-bar>
     </sk-card>
   </sk-column>

@@ -1,10 +1,10 @@
 <div class="filter__buttons">
-  <sk-button (click)="showModal = true" [disabled]="showModal || isLoading" icon="filter" type="light">
+  <ui-button (click)="showModal = true" [disabled]="showModal || isLoading" icon="filter" type="light">
     Filter
-  </sk-button>
-  <sk-button (click)="onTagClear()" *ngIf="filters.length > 0" [disabled]="isLoading" icon="xmark" type="light">
+  </ui-button>
+  <ui-button (click)="onTagClear()" *ngIf="filters.length > 0" [disabled]="isLoading" icon="xmark" type="light">
     {{ filters.length }}
-  </sk-button>
+  </ui-button>
 </div>
 <sk-modal
   (closeModal)="onCancel()"
@@ -48,10 +48,10 @@
   </ui-form>
 
   <sk-bar align="space-between" slot="footer">
-    <sk-button (click)="onCancel()" alignIcon="left" icon="xmark" type="light">Cancel</sk-button>
+    <ui-button (click)="onCancel()" alignIcon="left" icon="xmark" type="light">Cancel</ui-button>
     <sk-bar>
-      <sk-button (click)="onReset()" icon="rotate" type="light">Reset</sk-button>
-      <sk-button (click)="onApplyFilters()" icon="filter">Apply</sk-button>
+      <ui-button (click)="onReset()" icon="rotate" type="light">Reset</ui-button>
+      <ui-button (click)="onApplyFilters()" icon="filter">Apply</ui-button>
     </sk-bar>
   </sk-bar>
 </sk-modal>

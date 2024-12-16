@@ -1,24 +1,24 @@
-<sk-top-bar name="Table" [isFullWidth]="true">
+<sk-top-bar [isFullWidth]="true" name="Table">
   <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
-  <sk-button (click)="onToggleClickable()" type="primary">Toggle Selectable</sk-button>
-  <sk-button (click)="onToggleCheckable()" type="dark">Toggle Checkable</sk-button>
-  <sk-button (click)="onToggleStriped()" type="info">Toggle Striped</sk-button>
-  <sk-button (click)="onToggleEmpty()" type="neutral">Toggle Empty</sk-button>
+  <ui-button (click)="onToggleClickable()" type="primary">Toggle Selectable</ui-button>
+  <ui-button (click)="onToggleCheckable()" type="dark">Toggle Checkable</ui-button>
+  <ui-button (click)="onToggleStriped()" type="info">Toggle Striped</ui-button>
+  <ui-button (click)="onToggleEmpty()" type="neutral">Toggle Empty</ui-button>
 </sk-top-bar>
 
 <sk-table
-  dataName="Test Items"
-  [columns]="columns"
-  [rows]="isEmpty ? [] : rows"
-  [sortableColumns]="sortableColumns"
-  [sortedColumn]="sortedColumn"
-  [isStriped]="isStriped"
-  [canSelectRow]="canSelectRow"
-  [canCheckRow]="canCheckRow"
-  [actions]="actions"
-  [toggleAction]="toggleAction"
+  (checkedRowsChange)="onCheckedRowsChange()"
   (selectRow)="onSelectRow($event)"
   (sortColumn)="onSortColumn($event)"
   [(checkedRows)]="checkedRows"
-  (checkedRowsChange)="onCheckedRowsChange()"
+  [actions]="actions"
+  [canCheckRow]="canCheckRow"
+  [canSelectRow]="canSelectRow"
+  [columns]="columns"
+  [isStriped]="isStriped"
+  [rows]="isEmpty ? [] : rows"
+  [sortableColumns]="sortableColumns"
+  [sortedColumn]="sortedColumn"
+  [toggleAction]="toggleAction"
+  dataName="Test Items"
 ></sk-table>

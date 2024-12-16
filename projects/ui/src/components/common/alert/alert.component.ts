@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { StyleType } from '@standardkit/core';
 import { Style } from '../../../constants';
+import { StyleType } from '../../../types';
 
 @Component({
   selector: 'sk-alert',
