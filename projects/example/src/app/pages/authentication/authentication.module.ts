@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
   SkBarModule,
-  SkButtonModule,
   SkCardModule,
   SkFieldModule,
   SkLabelModule,
   SkLinkModule,
   SkPasswordInputModule,
   SkTextInputModule,
+  UiButton,
   UiForm,
 } from '@standardkit/ui';
 import { LoginPage } from './login';
@@ -21,7 +21,7 @@ import { LoginPage } from './login';
     ReactiveFormsModule,
     SkPasswordInputModule,
     SkCardModule,
-    SkButtonModule,
+    UiButton,
     SkLinkModule,
     SkBarModule,
     UiForm,

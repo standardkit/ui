@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
-import { HomePage } from './home.page';
 import {
   SkBottomBarModule,
   SkBreadcrumbsModule,
-  SkButtonModule,
   SkColumnModule,
   SkJumbotronModule,
   SkRowModule,
   SkTopBarModule,
+  UiButton,
 } from '@standardkit/ui';
+import { HomePage } from './home.page';
 
 @NgModule({
   imports: [
     SkBottomBarModule,
     SkBreadcrumbsModule,
-    SkButtonModule,
+    UiButton,
     SkColumnModule,
     SkJumbotronModule,
     SkRowModule,

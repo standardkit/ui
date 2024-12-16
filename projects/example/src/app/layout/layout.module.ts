@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CardPageLayout } from './card-page';
-import { SidebarPageLayout } from './sidebar-page';
 import {
-  SkButtonModule,
   SkCardPageModule,
   SkHeaderModule,
   SkSidebarModule,
   SkSidebarPageModule,
   SkUserMenuModule,
+  UiButton,
 } from '@standardkit/ui';
+import { CardPageLayout } from './card-page';
+import { SidebarPageLayout } from './sidebar-page';
 
 @NgModule({
   imports: [
@@ -18,7 +18,7 @@ import {
     SkSidebarModule,
     SkHeaderModule,
     SkCardPageModule,
-    SkButtonModule,
+    UiButton,
     SkUserMenuModule,
   ],
   declarations: [SidebarPageLayout, CardPageLayout],

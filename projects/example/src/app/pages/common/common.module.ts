@@ -1,5 +1,30 @@
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 import { NgModule } from '@angular/core';
+import {
+  SkAccordionModule,
+  SkAlertModule,
+  SkBarModule,
+  SkBreadcrumbsModule,
+  SkCardModule,
+  SkColumnModule,
+  SkIconModule,
+  SkJumbotronModule,
+  SkLinkModule,
+  SkListModule,
+  SkModalModule,
+  SkPillModule,
+  SkRichTextModule,
+  SkRowModule,
+  SkSegmentGroupModule,
+  SkSegmentModule,
+  SkStatisticsCardModule,
+  SkStepperModule,
+  SkTabGroupModule,
+  SkTabModule,
+  SkTagModule,
+  SkTopBarModule,
+  UiButton,
+} from '@standardkit/ui';
 import { AccordionPage } from './accordion';
 import { AlertPage } from './alert';
 import { CardPage } from './card';
@@ -10,31 +35,6 @@ import { SegmentPage } from './segment';
 import { StatisticsCardPage } from './statistics-card';
 import { StepperPage } from './stepper';
 import { TabPage } from './tab';
-import {
-  SkModalModule,
-  SkRowModule,
-  SkAccordionModule,
-  SkAlertModule,
-  SkBarModule,
-  SkColumnModule,
-  SkIconModule,
-  SkTopBarModule,
-  SkBreadcrumbsModule,
-  SkCardModule,
-  SkTagModule,
-  SkPillModule,
-  SkButtonModule,
-  SkLinkModule,
-  SkRichTextModule,
-  SkSegmentGroupModule,
-  SkSegmentModule,
-  SkStatisticsCardModule,
-  SkJumbotronModule,
-  SkStepperModule,
-  SkTabGroupModule,
-  SkTabModule,
-  SkListModule,
-} from '@standardkit/ui';
 
 const PAGES: any[] = [
   AccordionPage,
@@ -57,7 +57,7 @@ const PAGES: any[] = [
     SkAlertModule,
     SkBarModule,
     SkBreadcrumbsModule,
-    SkButtonModule,
+    UiButton,
     SkCardModule,
     SkColumnModule,
     SkIconModule,
