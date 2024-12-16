@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { STYLE, StyleType, IconSetType } from '@standardkit/core';
+import { IconSetType, StyleType } from '@standardkit/core';
+import { Style } from '../../../constants';
 
 @Component({
   selector: 'sk-button',
@@ -8,7 +9,7 @@ import { STYLE, StyleType, IconSetType } from '@standardkit/core';
   standalone: false,
 })
 export class SkButtonComponent {
-  @Input() public type: StyleType = STYLE.Primary;
+  @Input() public type: StyleType = Style.Primary;
   @Input() public disabled: boolean = false;
   @Input() public fullWidth: boolean = false;
   @Input() public compact: boolean = false; // TODO : Introduce sizes

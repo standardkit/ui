@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { STYLE, StyleType } from '@standardkit/core';
+import { StyleType } from '@standardkit/core';
+import { Style } from '../../../constants';
 
 @Component({
   selector: 'sk-pill',
@@ -8,7 +9,7 @@ import { STYLE, StyleType } from '@standardkit/core';
   standalone: false,
 })
 export class SkPillComponent {
-  @Input() public type?: StyleType = STYLE.Primary;
+  @Input() public type?: StyleType = Style.Primary;
   @Input() public label?: string;
   @Input() public icon?: string;
   @Input() public alignIcon: 'left' | 'right' = 'left';

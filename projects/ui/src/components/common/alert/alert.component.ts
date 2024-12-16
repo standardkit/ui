@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { StyleType, STYLE } from '@standardkit/core';
+import { StyleType } from '@standardkit/core';
+import { Style } from '../../../constants';
 
 @Component({
   selector: 'sk-alert',
@@ -8,6 +9,6 @@ import { StyleType, STYLE } from '@standardkit/core';
   standalone: false,
 })
 export class SkAlertComponent {
-  @Input() public type: StyleType = STYLE.Error;
+  @Input() public type: StyleType = Style.Error;
   @Input() public hasNoShadow: boolean = false;
 }
