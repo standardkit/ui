@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {
-  ColumnInterface,
   SortableType,
   SortDirectionEnum,
   SortInterface,
@@ -8,7 +7,7 @@ import {
   TableRowActionInterface,
   TableToggleActionInterface,
 } from '@standardkit/core';
-import { BreadcrumbInterface } from '@standardkit/ui';
+import { BreadcrumbInterface, ColumnInterface } from '@standardkit/ui';
 import { delay, Observable, of, tap } from 'rxjs';
 
 export interface TestInterface {

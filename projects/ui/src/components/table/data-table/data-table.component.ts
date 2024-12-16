@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import {
-  ColumnInterface,
   DataRequest,
   DataResponse,
   FilterConfigurationInterface,
@@ -16,6 +15,7 @@ import {
   TableRowActionInterface,
   TableToggleActionInterface,
 } from '@standardkit/core';
+import { ColumnInterface } from '@standardkit/ui';
 
 @Component({
   selector: 'sk-data-table',
@@ -42,10 +42,10 @@ export class SkDataTableComponent<T> implements OnInit, OnChanges {
   @Output() public rowClick: EventEmitter<T> = new EventEmitter<T>();
 
   public searchField?: string;
-  private _request: DataRequest<T> = { pagination: { offset: 0, limit: 10 } };
   public checkedRows: T[] = [];
   public initialSegmentValue?: string;
   public state: State = new State();
+  private _request: DataRequest<T> = { pagination: { offset: 0, limit: 10 } };
 
   public ngOnInit(): void {
     if (this.searchKey && this.searchKey !== SearchEnum.MultiField) {
@@ -102,12 +102,6 @@ export class SkDataTableComponent<T> implements OnInit, OnChanges {
     this.sendRequest();
   }
 
-  private sendRequest(): void {
-    this.response = undefined;
-    this.state.onPending();
-    this.request.emit(this._request);
-  }
-
   public onRowClick(row: T): void {
     this.rowClick.emit(row);
   }
@@ -138,6 +132,12 @@ export class SkDataTableComponent<T> implements OnInit, OnChanges {
 
   public filterSegments(filters: FilterInterface<T>[]): FilterInterface<T>[] {
     return filters.filter((filter: FilterInterface<T>) => !this.segments || filter.key !== this.segments.key);
+  }
+
+  private sendRequest(): void {
+    this.response = undefined;
+    this.state.onPending();
+    this.request.emit(this._request);
   }
 
   private loadSegments(): void {

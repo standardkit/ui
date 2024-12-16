@@ -55,6 +55,16 @@ npm install --save @fortawesome/fontawesome-free
 
 Add it to your angular.json as well.
 
+## Version Compatability
+
+| Angular                   | StandardKit         |
+| ------------------------- | ------------------- |
+| Angular `16`              | Standardkit `0.1.0` |
+| Angular `17`              | `not supported`     |
+| Angular `18`              | StandardKit `0.2.0` |
+| Angular `19`              | StandardKit `0.3.0` |
+| Angular `19` - standalone | StandardKit `0.4.x` |
+
 ## Development Server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you

@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
-  ColumnInterface,
   SortDirectionEnum,
   SortInterface,
   TableRowActionInterface,
   TableToggleActionInterface,
 } from '@standardkit/core';
+import { ColumnInterface } from '@standardkit/ui';
 import { take } from 'rxjs';
 
 @Component({
