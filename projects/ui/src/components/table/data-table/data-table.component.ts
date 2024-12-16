@@ -15,7 +15,7 @@ import {
   TableRowActionInterface,
   TableToggleActionInterface,
 } from '@standardkit/core';
-import { ColumnInterface } from '@standardkit/ui';
+import { ColumnInterface } from '../../../interfaces';
 
 @Component({
   selector: 'sk-data-table',
