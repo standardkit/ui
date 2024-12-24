@@ -1,6 +1,5 @@
 import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
-import {} from '@standardkit/core';
 import { InputComponent, InputInterface } from '../input';
 
 @Component({

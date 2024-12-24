@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
+import { KeyOf, SortDirectionEnum, SortInterface } from '@standardkit/core';
 import {
-  SortableType,
-  SortDirectionEnum,
-  SortInterface,
+  BreadcrumbInterface,
+  ColumnInterface,
   StyleType,
   TableRowActionInterface,
   TableToggleActionInterface,
-} from '@standardkit/core';
-import { BreadcrumbInterface, ColumnInterface } from '@standardkit/ui';
+} from '@standardkit/ui';
 import { delay, Observable, of, tap } from 'rxjs';
 
 export interface TestInterface {
@@ -56,7 +55,7 @@ export class TablePage {
   ];
 
   public sortedColumn: SortInterface<TestInterface> = { key: 'description', direction: SortDirectionEnum.Ascending };
-  public sortableColumns: SortableType<TestInterface>[] = ['name', 'description'];
+  public sortableColumns: KeyOf<TestInterface>[] = ['name', 'description'];
   public checkedRows: TestInterface[] = [];
   public toggleAction: TableToggleActionInterface<TestInterface> = {
     label: 'Active',

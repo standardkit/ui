@@ -37,7 +37,7 @@
       [dataName]="dataName"
       [filterConfigurations]="filters"
       [filters]="filterSegments(response?.filters ?? [])"
-      [isLoading]="state.isPending"
+      [isLoading]="isPending"
       [options]="response?.filterable ?? []"
     ></sk-filter>
     <ui-button
@@ -68,7 +68,7 @@
     [canSelectRow]="rowClick.observed"
     [columns]="columns"
     [dataName]="dataName"
-    [isLoading]="state.isPending"
+    [isLoading]="isPending"
     [isStriped]="isStriped"
     [rows]="response?.items ?? []"
     [sortableColumns]="response?.sortable ?? []"

@@ -10,7 +10,6 @@ import {
   QueryList,
   SimpleChanges,
 } from '@angular/core';
-import { State } from '@standardkit/core';
 import { SkTabComponent } from '../tab';
 
 @Component({
@@ -20,15 +19,15 @@ import { SkTabComponent } from '../tab';
   standalone: false,
 })
 export class SkTabGroupComponent implements AfterContentInit, OnChanges {
-  @HostListener('window:resize') public resize = (): void => this.onScroll();
-
   @ContentChildren(SkTabComponent) public tabs!: QueryList<SkTabComponent>;
 
   @Input() public activeTab?: string;
 
   @Output() public activeTabChange: EventEmitter<string> = new EventEmitter<string>();
 
-  public state: State = new State();
+  public isLoaded: boolean = false;
+
+  @HostListener('window:resize') public resize = (): void => this.onScroll();
 
   public ngAfterContentInit(): void {
     this.tabs.forEach((tab: SkTabComponent) => {
@@ -37,7 +36,7 @@ export class SkTabGroupComponent implements AfterContentInit, OnChanges {
         next: () => this.onSelectTab(tab),
       });
     });
-    setTimeout(() => this.state.onSuccess(), 0);
+    setTimeout(() => (this.isLoaded = true), 0);
   }
 
   public ngOnChanges(changes: SimpleChanges): void {
@@ -48,6 +47,10 @@ export class SkTabGroupComponent implements AfterContentInit, OnChanges {
     }
   }
 
+  public onScroll(): void {
+    // triggers reload
+  }
+
   private onSelectTab(selectedTab: SkTabComponent): void {
     this.tabs.forEach((tab: SkTabComponent) => {
       tab.isActive = tab === selectedTab;
@@ -55,9 +58,5 @@ export class SkTabGroupComponent implements AfterContentInit, OnChanges {
         this.activeTabChange.emit(tab.name);
       }
     });
-  }
-
-  public onScroll(): void {
-    // triggers reload
   }
 }

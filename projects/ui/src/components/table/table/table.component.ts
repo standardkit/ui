@@ -1,12 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import {
-  SortDirectionEnum,
-  SortInterface,
-  TableRowActionInterface,
-  TableToggleActionInterface,
-} from '@standardkit/core';
+import { ColumnInterface, TableRowActionInterface, TableToggleActionInterface } from '@lib/interfaces';
+import { SortDirectionEnum, SortInterface } from '@standardkit/core';
 import { take } from 'rxjs';
-import { ColumnInterface } from '../../../interfaces';
 
 @Component({
   selector: 'sk-table',

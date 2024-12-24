@@ -1,6 +1,5 @@
 import { IconSetType, StyleType } from '../types';
 
-/** @deprecated requires update */
 export interface ColumnInterface<T> {
   key: Extract<keyof T, string>;
   label: string;

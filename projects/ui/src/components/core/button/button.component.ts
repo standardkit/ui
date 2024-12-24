@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Style } from '../../../constants';
-import { IconSetType, StyleType } from '../../../types';
+import { Style } from '@lib/constants';
+import { IconSetType, StyleType } from '@lib/types';
 import { SkIconModule } from '../icon';
 
 @Component({

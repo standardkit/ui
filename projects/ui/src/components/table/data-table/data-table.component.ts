@@ -1,21 +1,21 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import {
-  DataRequest,
-  DataResponse,
+  ColumnInterface,
   FilterConfigurationInterface,
-  FilterInterface,
-  PaginationInterface,
-  SearchableKeyType,
-  SearchEnum,
   SegmentConfigurationInterface,
   SegmentInterface,
-  SortInterface,
-  State,
   TableBatchActionInterface,
   TableRowActionInterface,
   TableToggleActionInterface,
+} from '@lib/interfaces';
+import {
+  DataRequest,
+  DataResponse,
+  FilterInterface,
+  PaginationInterface,
+  SearchableKeyType,
+  SortInterface,
 } from '@standardkit/core';
-import { ColumnInterface } from '../../../interfaces';
 
 @Component({
   selector: 'sk-data-table',
@@ -34,6 +34,7 @@ export class SkDataTableComponent<T> implements OnInit, OnChanges {
   @Input() public rowActions: TableRowActionInterface<T>[] = [];
   @Input() public toggleAction?: TableToggleActionInterface<T>;
   @Input() public searchKey?: SearchableKeyType<T>;
+  @Input() public multiSearch: boolean = false;
   @Input() public dataName?: string;
   @Input() public isStriped: boolean = false;
   @Input() public hasNoMargin: boolean = false;
@@ -44,11 +45,12 @@ export class SkDataTableComponent<T> implements OnInit, OnChanges {
   public searchField?: string;
   public checkedRows: T[] = [];
   public initialSegmentValue?: string;
-  public state: State = new State();
+  public isPending: boolean = false;
+
   private _request: DataRequest<T> = { pagination: { offset: 0, limit: 10 } };
 
   public ngOnInit(): void {
-    if (this.searchKey && this.searchKey !== SearchEnum.MultiField) {
+    if (this.searchKey && !this.multiSearch) {
       const searchColumn: ColumnInterface<T> | undefined = this.columns.find(
         (row: ColumnInterface<T>): boolean => row.key === this.searchKey,
       );
@@ -62,7 +64,7 @@ export class SkDataTableComponent<T> implements OnInit, OnChanges {
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes['response'] && this.response) {
-      this.state.onSuccess();
+      this.isPending = false;
       this._request.sort = this.response.sort;
     }
   }
@@ -136,7 +138,7 @@ export class SkDataTableComponent<T> implements OnInit, OnChanges {
 
   private sendRequest(): void {
     this.response = undefined;
-    this.state.onPending();
+    this.isPending = true;
     this.request.emit(this._request);
   }
 

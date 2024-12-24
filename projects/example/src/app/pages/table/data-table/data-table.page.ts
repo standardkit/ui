@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { DataRequest, DataResponse } from '@standardkit/core';
 import {
-  DataRequest,
-  DataResponse,
+  BreadcrumbInterface,
+  ColumnInterface,
   FilterConfigurationInterface,
   SegmentConfigurationInterface,
   TableToggleActionInterface,
-} from '@standardkit/core';
-import { BreadcrumbInterface, ColumnInterface } from '@standardkit/ui';
+} from '@standardkit/ui';
 import { Observable, of } from 'rxjs';
 import { FakeDataInterface } from './fake-data.interface';
 import { FakeDataService } from './fake-data.service';

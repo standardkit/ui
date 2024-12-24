@@ -1,10 +1,10 @@
 <div
   #div
-  class="tab-group"
-  [class.tab-group--scrolled]="state.isSuccess && div.scrollWidth > div.clientWidth"
-  [class.tab-group--scrolled-max]="state.isSuccess && div.scrollLeft + div.clientWidth >= div.scrollWidth - 1"
-  [class.tab-group--scrolled-min]="div.scrollLeft === 0"
   (scroll)="onScroll()"
+  [class.tab-group--scrolled-max]="isLoaded && div.scrollLeft + div.clientWidth >= div.scrollWidth - 1"
+  [class.tab-group--scrolled-min]="div.scrollLeft === 0"
+  [class.tab-group--scrolled]="isLoaded && div.scrollWidth > div.clientWidth"
+  class="tab-group"
 >
   <ng-content></ng-content>
 </div>

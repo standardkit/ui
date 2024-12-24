@@ -18,7 +18,7 @@
 
       <!--TODO : Add input skeleton while loading-->
       <sk-select-input
-        *ngIf="(item.type === 'single-select' || item.type === 'checkbox') && item.state.isSuccess"
+        *ngIf="(item.type === 'single-select' || item.type === 'checkbox') && !item.isPending"
         [formControlName]="item.key"
         [placeholder]="'Selecteer ' + item.label.toLowerCase()"
       >
@@ -29,7 +29,7 @@
 
       <!--TODO : Add input skeleton while loading-->
       <sk-multi-select-input
-        *ngIf="item.type === 'multi-select' && item.state.isSuccess"
+        *ngIf="item.type === 'multi-select' && !item.isPending"
         [formControlName]="item.key"
         [placeholder]="'Select ' + item.label.toLowerCase()"
       >
