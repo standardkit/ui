@@ -1,27 +1,30 @@
 <button
-  [disabled]="disabled"
-  class="button"
-  [class.button--light]="type === 'light'"
+  (click)="onClick()"
+  (keydown.enter)="onClick()"
+  [class.button--compact]="compact"
   [class.button--dark]="type === 'dark'"
-  [class.button--neutral]="type === 'neutral'"
-  [class.button--success]="type === 'success'"
-  [class.button--info]="type === 'info'"
-  [class.button--warning]="type === 'warning'"
   [class.button--error]="type === 'error'"
-  [class.button--special]="type === 'special'"
+  [class.button--full-width]="fullWidth"
+  [class.button--info]="type === 'info'"
+  [class.button--light]="type === 'light'"
+  [class.button--neutral]="type === 'neutral'"
+  [class.button--no-shadow]="noShadow"
   [class.button--primary]="type === 'primary'"
   [class.button--secondary]="type === 'secondary'"
-  [class.button--full-width]="fullWidth"
-  [class.button--compact]="compact"
   [class.button--sharp-borders]="isSharp"
-  [class.button--no-shadow]="noShadow"
+  [class.button--special]="type === 'special'"
+  [class.button--success]="type === 'success'"
+  [class.button--warning]="type === 'warning'"
+  [disabled]="disabled"
   [type]="isSubmit ? 'submit' : 'button'"
+  class="button"
+  tabindex="0"
 >
-  <span class="button__icon" *ngIf="icon && alignIcon === 'left'">
-    <sk-icon [icon]="icon" [iconSet]="iconSet" [flipX]="flipIcon"></sk-icon>
+  <span *ngIf="icon && alignIcon === 'left'" class="button__icon">
+    <sk-icon [flipX]="flipIcon" [iconSet]="iconSet" [icon]="icon"></sk-icon>
   </span>
   <ng-content></ng-content>
-  <span class="button__icon" *ngIf="icon && alignIcon === 'right'">
-    <sk-icon [icon]="icon" [iconSet]="iconSet" [flipX]="flipIcon"></sk-icon>
+  <span *ngIf="icon && alignIcon === 'right'" class="button__icon">
+    <sk-icon [flipX]="flipIcon" [iconSet]="iconSet" [icon]="icon"></sk-icon>
   </span>
 </button>

@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Style } from '@lib/constants';
 import { IconSetType, StyleType } from '@lib/types';
 import { SkIconModule } from '../icon';
@@ -22,4 +22,14 @@ export class UiButton {
   @Input() public flipIcon: boolean = false;
   @Input() public isSubmit: boolean = false;
   @Input() public noShadow: boolean = false;
+
+  @Output() public buttonClick: EventEmitter<void> = new EventEmitter<void>();
+
+  public onClick(): void {
+    if (this.disabled) {
+      return;
+    }
+
+    this.buttonClick.emit();
+  }
 }
