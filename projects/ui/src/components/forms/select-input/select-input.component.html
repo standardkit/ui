@@ -1,27 +1,27 @@
 <div
-  class="select-input"
-  [class.select-input--error]="hasError && !showOptions"
-  [class.select-input--no-error]="hasNoError"
+  (click)="onTouched()"
   [class.select-input--collapsed]="!showOptions"
   [class.select-input--disabled]="isDisabled"
-  (click)="onTouched()"
+  [class.select-input--error]="hasError && !showOptions"
+  [class.select-input--no-error]="hasNoError"
+  class="select-input"
 >
   <div
-    class="select-input__select"
-    [class.select-input__select--error]="hasError"
-    [class.select-input__select--expanded]="showOptions"
-    [class.select-input__select--disabled]="isDisabled"
-    tabindex="0"
+    #selectBox
     (click)="onToggleShowOptions()"
     (keydown.enter)="onToggleShowOptions()"
-    #selectBox
+    [class.select-input__select--disabled]="isDisabled"
+    [class.select-input__select--error]="hasError"
+    [class.select-input__select--expanded]="showOptions"
+    class="select-input__select"
+    tabindex="0"
   >
-    <div class="select-input__select-label" [class.select-input__select-label--wide]="isNotClearable">
-      <span class="select-input__placeholder" *ngIf="!value">{{ placeholder }}</span>
+    <div [class.select-input__select-label--wide]="isNotClearable" class="select-input__select-label">
+      <span *ngIf="!value" class="select-input__placeholder">{{ placeholder }}</span>
       <ng-container *ngIf="!!selectedOption && !!value">{{ selectedOption.label }}</ng-container>
     </div>
 
-    <div class="select-input__clear-icon" (click)="onClear($event)" *ngIf="value && !isNotClearable && !isDisabled">
+    <div (click)="onClear($event)" *ngIf="value && !isNotClearable && !isDisabled" class="select-input__clear-icon">
       <sk-icon icon="close"></sk-icon>
     </div>
 
@@ -31,25 +31,25 @@
     </div>
   </div>
 
-  <div class="select-input__options" *ngIf="showOptions">
-    <div class="select-input__options-search" *ngIf="contentOptions.length > scrollThreshold">
-      <sk-select-search (search)="onSearch($event)" (clear)="onSearchClear()"></sk-select-search>
+  <div *ngIf="showOptions" class="select-input__options">
+    <div *ngIf="contentOptions.length > scrollThreshold" class="select-input__options-search">
+      <sk-select-search (clear)="onSearchClear()" (search)="onSearch($event)"></sk-select-search>
     </div>
-    <div class="select-input__options-body" #scrollBody>
+    <div #scrollBody class="select-input__options-body">
       <sk-select-option
+        (selectOption)="onSelectOption(option)"
         *ngFor="let option of renderedOptions"
-        [value]="option.value"
-        [label]="option.label"
         [description]="option.description"
         [isSelected]="option.value === value"
-        (selectOption)="onSelectOption(option)"
+        [label]="option.label"
+        [value]="option.value"
       ></sk-select-option>
 
-      <div class="select-input__empty-body" *ngIf="noResults">Geen resultaten gevonden...</div>
+      <div *ngIf="noResults" class="select-input__empty-body">Geen resultaten gevonden...</div>
     </div>
   </div>
 </div>
 
 <sk-input-error *ngIf="hasError && !showOptions">
-  <ng-content select="[slot=footer]"></ng-content>
+  <ng-content select="[slot=error]"></ng-content>
 </sk-input-error>
