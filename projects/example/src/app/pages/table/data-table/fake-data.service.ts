@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { DataRequest, DataResponse, FilterEnum, FilterInterface, mapPagination } from '@standardkit/core';
+import {
+  FilterEnum,
+  FilterInterface,
+  LegacyDataRequest as DataRequest,
+  LegacyDataResponse as DataResponse,
+  mapPagination,
+} from '@standardkit/core';
 import { delay, Observable, of, take } from 'rxjs';
 import { FakeDataInterface } from './fake-data.interface';
 

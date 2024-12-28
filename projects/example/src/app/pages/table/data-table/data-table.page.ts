@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataRequest, DataResponse } from '@standardkit/core';
+import { LegacyDataRequest as DataRequest, LegacyDataResponse as DataResponse } from '@standardkit/core';
 import {
   BreadcrumbInterface,
   ColumnInterface,
