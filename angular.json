@@ -59,7 +59,6 @@
               "projects/example/src/styles.scss"
             ],
             "stylePreprocessorOptions": { "includePaths": ["projects/ui/src/styles"] },
-            "scripts": [],
             "browser": "projects/example/src/main.ts"
           },
           "configurations": {

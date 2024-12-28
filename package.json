@@ -25,7 +25,7 @@
     "release:minor": "npm run build && npm test && npm run version:minor && npm run publish:ui",
     "release:major": "npm run build && npm test && npm run version:major && npm run publish:ui",
 
-    "publish:ui": " npm run build:ui && cd dist/ui && npm publish --dry-run",
+    "publish:ui": " npm run build:ui && cd dist/ui && npm publish && git push && git push --tags",
 
     "hooks:pre-commit": "npm run lint:staged",
     "hooks:pre-push": "npm run test"
