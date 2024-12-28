@@ -9,9 +9,9 @@ import {
   TableToggleActionInterface,
 } from '@lib/interfaces';
 import {
-  DataRequest,
-  DataResponse,
   FilterInterface,
+  LegacyDataRequest as DataRequest,
+  LegacyDataResponse as DataResponse,
   PaginationInterface,
   SearchableKeyType,
   SortInterface,
