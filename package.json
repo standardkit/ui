@@ -1,6 +1,6 @@
 {
   "name": "standardkit-ui",
-  "version": "0.4.4",
+  "version": "0.0.0",
   "license": "Unlicense",
   "scripts": {
     "ng": "ng",
@@ -24,12 +24,17 @@
 
     "prerelease": "npm run build && npm run test",
 
-    "release:patch": "npm run prerelease && npm run version:patch && npm run publish:ui && npm version patch && npm run push-with-tags",
-    "release:minor": "npm run prerelease && npm run version:minor && npm run publish:ui && npm version minor && npm run push-with-tags",
-    "release:major": "npm run prerelease && npm run version:major && npm run publish:ui && npm version major && npm run push-with-tags",
+    "release:patch": "npm run prerelease && npm run version:patch && npm run commit-tag-push && npm run publish:ui",
+    "release:minor": "npm run prerelease && npm run version:minor && npm run commit-tag-push && npm run publish:ui",
+    "release:major": "npm run prerelease && npm run version:major && npm run commit-tag-push && npm run publish:ui",
 
     "publish:ui": "npm run build:prepublish && cd dist/ui && npm publish && cd ../../ npm run postpublish:ui",
-    "push-with-tags": "git push && git push --tags",
+
+    "add-package-json": "git add projects/ui/package.json",
+    "commit": "version=$(node -p \"require('./projects/ui/package.json').version\") && git commit -m \"Release v$version\"",
+    "tag": "version=$(node -p \"require('./projects/ui/package.json').version\") && git tag -a \"v$version\" -m \"Version $version\"",
+    "push": "git push && git push --tags",
+    "commit-tag-push": "npm run add-package-json && npm run commit && npm run tag && npm run push",
 
     "hooks:pre-commit": "npm run lint:staged",
     "hooks:pre-push": "npm run test"
