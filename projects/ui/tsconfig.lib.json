@@ -5,13 +5,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": [],
-    "baseUrl": ".",
-    "paths": {
-      "@lib/interfaces": ["./src/interfaces"],
-      "@lib/constants": ["./src/constants"],
-      "@lib/types": ["./src/types"]
-    }
+    "types": []
   },
   "exclude": ["**/*.spec.ts"]
 }

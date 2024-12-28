@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Style } from '@lib/constants';
-import { StyleType } from '@lib/types';
+import { Style } from '../../../constants';
+import { StyleType } from '../../../types';
 
 @Component({
   selector: 'sk-pill',

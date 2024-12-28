@@ -1,14 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import {
-  ColumnInterface,
-  FilterConfigurationInterface,
-  SegmentConfigurationInterface,
-  SegmentInterface,
-  TableBatchActionInterface,
-  TableRowActionInterface,
-  TableToggleActionInterface,
-} from '@lib/interfaces';
-import {
   FilterInterface,
   LegacyDataRequest as DataRequest,
   LegacyDataResponse as DataResponse,
@@ -16,6 +7,15 @@ import {
   SearchableKeyType,
   SortInterface,
 } from '@standardkit/core';
+import {
+  ColumnInterface,
+  FilterConfigurationInterface,
+  SegmentConfigurationInterface,
+  SegmentInterface,
+  TableBatchActionInterface,
+  TableRowActionInterface,
+  TableToggleActionInterface,
+} from '../../../interfaces';
 
 @Component({
   selector: 'sk-data-table',

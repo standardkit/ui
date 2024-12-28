@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { FilterConfigurationInterface } from '@lib/interfaces';
 import { FilterableInterface, FilterInterface } from '@standardkit/core';
+import { FilterConfigurationInterface } from '../../../interfaces';
 import { FilterItemInterface } from './filter-item.interface';
 
 @Component({
