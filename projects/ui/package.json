@@ -1,7 +1,7 @@
 {
   "name": "@standardkit/ui",
   "private": false,
-  "version": "0.4.7",
+  "version": "0.4.8",
   "license": "Unlicense",
   "peerDependencies": {
     "@angular/common": "^19.0.0",
