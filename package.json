@@ -1,11 +1,12 @@
 {
   "name": "standardkit-ui",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "license": "Unlicense",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build:ui": "ng build ui",
+    "build:example": "ng build example",
     "test": "ng test",
     "test:ci": "ng test",
     "lint": "npm run lint:prettier && npm run lint:stylelint && ng lint",
@@ -18,7 +19,7 @@
     "release:patch": "npm run version:patch && npm run build:ui && npm run publish:ui",
     "release:minor": "npm run version:minor && npm run build:ui && npm run publish:ui",
     "release:major": "npm run version:major && npm run build:ui && npm run publish:ui",
-    "publish:ui": "cd dist/ui && npm publish --access=public"
+    "publish:ui": "cd dist/ui && npm publish --dry-run"
   },
   "private": true,
   "dependencies": {
