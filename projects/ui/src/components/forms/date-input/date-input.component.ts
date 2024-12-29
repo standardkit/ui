@@ -1,15 +1,18 @@
+import { DatePipe, NgIf } from '@angular/common';
 import { Component, forwardRef, Optional, Self } from '@angular/core';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
+import { UiIcon } from '../../core';
 import { InputComponent, InputInterface } from '../input';
+import { SkInputErrorModule } from '../input-error';
 
 @Component({
-  selector: 'sk-date-input',
+  selector: 'ui-date-input',
   templateUrl: 'date-input.component.html',
-  styleUrls: ['date-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkDateInputComponent), multi: true }],
-  standalone: false,
+  styleUrl: 'date-input.component.scss',
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiDateInput), multi: true }],
+  imports: [FormsModule, NgIf, SkInputErrorModule, DatePipe, UiIcon],
 })
-export class SkDateInputComponent implements ControlValueAccessor, InputInterface {
+export class UiDateInput implements ControlValueAccessor, InputInterface {
   public value?: Date | null;
   public name?: string;
   public isDisabled: boolean = false;

@@ -9,7 +9,7 @@
     class="date-input"
     type="date"
   />
-  <div (click)="onClear()" *ngIf="!!value" class="date-input__clear">
+  <div (click)="onClear()" (keydown.enter)="onClear()" *ngIf="!!value" class="date-input__clear" tabindex="0">
     <ui-icon icon="close"></ui-icon>
   </div>
 </div>

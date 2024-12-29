@@ -43,15 +43,15 @@
       </sk-multi-select-input>
 
       <!--TODO : Field group for pseudo range filters (from, to date) configurable in filterConfiguration-->
-      <sk-date-input *ngIf="item.type === 'date'" [formControlName]="item.key"></sk-date-input>
+      <ui-date-input *ngIf="item.type === 'date'" [formControlName]="item.key"></ui-date-input>
     </sk-field>
   </ui-form>
 
   <ui-bar align="space-between" slot="footer">
-    <ui-button (click)="onCancel()" alignIcon="left" icon="xmark" type="light">Cancel</ui-button>
+    <ui-button (buttonClick)="onCancel()" alignIcon="left" icon="xmark" type="light">Cancel</ui-button>
     <ui-bar>
-      <ui-button (click)="onReset()" icon="rotate" type="light">Reset</ui-button>
-      <ui-button (click)="onApplyFilters()" icon="filter">Apply</ui-button>
+      <ui-button (buttonClick)="onReset()" icon="rotate" type="light">Reset</ui-button>
+      <ui-button (buttonClick)="onApplyFilters()" icon="filter">Apply</ui-button>
     </ui-bar>
   </ui-bar>
 </ui-modal>
