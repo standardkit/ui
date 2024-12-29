@@ -3,13 +3,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {
   SkFieldModule,
   SkLabelModule,
-  SkLinkModule,
   SkPasswordInputModule,
   SkTextInputModule,
   UiBar,
   UiButton,
   UiCard,
   UiForm,
+  UiLink,
 } from '@standardkit/ui';
 import { LoginPage } from './login';
 
@@ -21,10 +21,10 @@ import { LoginPage } from './login';
     ReactiveFormsModule,
     SkPasswordInputModule,
     UiButton,
-    SkLinkModule,
     UiForm,
     UiCard,
     UiBar,
+    UiLink,
   ],
   declarations: [LoginPage],
   exports: [LoginPage],
