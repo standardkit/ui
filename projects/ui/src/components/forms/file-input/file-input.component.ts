@@ -1,15 +1,18 @@
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { UiButton, UiIcon } from '../../core';
 import { InputComponent, InputInterface } from '../input';
+import { SkInputErrorModule } from '../input-error';
 
 @Component({
-  selector: 'sk-file-input',
+  selector: 'ui-file-input',
   templateUrl: 'file-input.component.html',
-  styleUrls: ['file-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkFileInputComponent), multi: true }],
-  standalone: false,
+  styleUrl: 'file-input.component.scss',
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiFileInput), multi: true }],
+  imports: [UiIcon, UiButton, NgIf, NgForOf, SkInputErrorModule],
 })
-export class SkFileInputComponent implements ControlValueAccessor, InputInterface {
+export class UiFileInput implements ControlValueAccessor, InputInterface {
   @Input() public placeholder: string = '';
   @Input() public canSelectMultiple: boolean = false;
   @Input() public allowedMimeTypes?: string[];
@@ -54,12 +57,12 @@ export class SkFileInputComponent implements ControlValueAccessor, InputInterfac
         const allowedFiles = files.filter((file: File) => this.allowedMimeTypes?.includes(file.type));
         if (allowedFiles.length === 0) {
           // TODO : Push event, add output
-          // this.notificationService.notify({ type: StatusEnum.Error, message: 'Bestandstypes niet toegestaan!' });
+          // this.notificationService.notify({ type: Status.Error, message: 'file type not permitted!' });
         } else if (allowedFiles.length < files.length) {
           // TODO : Push event, add output
           // this.notificationService.notify({
-          //   type: StatusEnum.Warning,
-          //   message: 'Let op: Niet alle bestandstypen worden ondersteund',
+          //   type: Status.Warning,
+          //   message: 'too much files'
           // });
           this.value.push(...allowedFiles);
         }

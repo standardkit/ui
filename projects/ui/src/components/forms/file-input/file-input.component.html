@@ -19,7 +19,7 @@
     <!--TODO : Make configurable-->
     <span class="file-input__description">Drag & drop one or multiple files or browse...</span>
 
-    <ui-button (click)="input.click()" icon="search">Browse</ui-button>
+    <ui-button (buttonClick)="input.click()" icon="search">Browse</ui-button>
   </div>
 
   <div *ngIf="value.length > 0" class="file-input__files">
@@ -30,7 +30,12 @@
       <span class="file-input__file-name">
         {{ file.name }}
       </span>
-      <span (click)="onDeleteFile(index)" class="file-input__file-icon file-input__file-icon--delete">
+      <span
+        (click)="onDeleteFile(index)"
+        (keydown.enter)="onDeleteFile(index)"
+        class="file-input__file-icon file-input__file-icon--delete"
+        tabindex="0"
+      >
         <ui-icon icon="trash"></ui-icon>
       </span>
     </div>
