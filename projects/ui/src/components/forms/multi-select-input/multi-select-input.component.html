@@ -18,13 +18,13 @@
   >
     <div class="multi-select-input__select-label">
       <span *ngIf="value.length === 0" class="multi-select-input__placeholder">{{ placeholder }}</span>
-      <sk-tag
+      <ui-tag
         (selectTag)="onClickTag($event, selectedOption)"
         *ngFor="let selectedOption of selectedOptions"
         icon="close"
       >
         {{ selectedOption.label }}
-      </sk-tag>
+      </ui-tag>
     </div>
 
     <div
