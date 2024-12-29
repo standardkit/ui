@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'sk-form-section-title',
+  selector: 'ui-form-section-title',
   templateUrl: 'form-section-title.component.html',
-  styleUrls: ['form-section-title.component.scss'],
-  standalone: false,
+  styleUrl: 'form-section-title.component.scss',
 })
-export class SkFormSectionTitleComponent {}
+export class UiFormSectionTitle {}
