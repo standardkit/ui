@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'sk-input-description',
+  selector: 'ui-input-description',
   templateUrl: 'input-description.component.html',
-  styleUrls: ['input-description.component.scss'],
-  standalone: false,
+  styleUrl: 'input-description.component.scss',
 })
-export class SkInputDescriptionComponent {}
+export class UiInputDescription {}
