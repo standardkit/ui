@@ -48,7 +48,7 @@
       <sk-select-search (clear)="onSearchClear()" (search)="onSearch($event)"></sk-select-search>
     </div>
     <div #scrollBody class="multi-select-input__options-body">
-      <sk-select-option
+      <ui-select-option
         (deselectOption)="onDeselectOption(option)"
         (selectOption)="onSelectOption(option)"
         *ngFor="let option of renderedOptions"
@@ -57,7 +57,7 @@
         [isSelected]="option.isSelected"
         [label]="option.label"
         [value]="option.value"
-      ></sk-select-option>
+      ></ui-select-option>
 
       <div *ngIf="renderedOptions.length === 0" class="multi-select-input__empty-body">No results...</div>
     </div>

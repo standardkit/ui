@@ -23,7 +23,7 @@
         [placeholder]="'Selecteer ' + item.label.toLowerCase()"
       >
         <ng-container *ngFor="let option of item.values">
-          <sk-select-option *ngIf="option.value" [label]="option.label" [value]="option.value"></sk-select-option>
+          <ui-select-option *ngIf="option.value" [label]="option.label" [value]="option.value"></ui-select-option>
         </ng-container>
       </ui-select-input>
 
@@ -34,11 +34,11 @@
         [placeholder]="'Select ' + item.label.toLowerCase()"
       >
         <ng-container *ngFor="let filterValue of item.values">
-          <sk-select-option
+          <ui-select-option
             *ngIf="filterValue.value"
             [label]="filterValue.label"
             [value]="filterValue.value"
-          ></sk-select-option>
+          ></ui-select-option>
         </ng-container>
       </ui-multi-select-input>
 

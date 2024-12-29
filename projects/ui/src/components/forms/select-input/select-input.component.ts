@@ -17,7 +17,7 @@ import Fuse, { FuseResult } from 'fuse.js';
 import { UiIcon } from '../../core';
 import { InputComponent, InputInterface } from '../input';
 import { UiInputError } from '../input-error';
-import { SkSelectOptionComponent, SkSelectOptionModule } from '../select-option';
+import { UiSelectOption } from '../select-option';
 import { SkSelectSearchModule } from '../select-search';
 
 const FUSE_OPTIONS = {
@@ -33,13 +33,13 @@ const FUSE_OPTIONS = {
   templateUrl: 'select-input.component.html',
   styleUrl: 'select-input.component.scss',
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiSelectInput), multi: true }],
-  imports: [FormsModule, NgIf, UiInputError, SkSelectOptionModule, UiIcon, SkSelectSearchModule, NgForOf],
+  imports: [FormsModule, NgIf, UiInputError, UiIcon, SkSelectSearchModule, NgForOf, UiSelectOption],
 })
 export class UiSelectInput implements ControlValueAccessor, InputInterface, AfterContentInit {
   @ViewChild('selectBox') public select!: ElementRef<HTMLElement>;
   @ViewChild('scrollBody') public scrollBody!: ElementRef<HTMLElement>;
 
-  @ContentChildren(SkSelectOptionComponent) public contentOptions!: QueryList<SkSelectOptionComponent>;
+  @ContentChildren(UiSelectOption) public contentOptions!: QueryList<UiSelectOption>;
 
   @Input() public placeholder: string = '';
   @Input() public isNotClearable: boolean = false;
@@ -55,11 +55,11 @@ export class UiSelectInput implements ControlValueAccessor, InputInterface, Afte
   public onChange!: (value: string | number | null) => void;
   public onTouched!: () => void;
   public showOptions: boolean = false;
-  public selectedOption?: SkSelectOptionComponent;
+  public selectedOption?: UiSelectOption;
   public skipClickDetection: boolean = false;
   public noResults: boolean = false;
-  public renderedOptions: SkSelectOptionComponent[] = [];
-  private fuse: Fuse<SkSelectOptionComponent> = new Fuse([], FUSE_OPTIONS);
+  public renderedOptions: UiSelectOption[] = [];
+  private fuse: Fuse<UiSelectOption> = new Fuse([], FUSE_OPTIONS);
 
   constructor(@Optional() @Self() public control: NgControl) {
     if (control) {
@@ -136,7 +136,7 @@ export class UiSelectInput implements ControlValueAccessor, InputInterface, Afte
     }
   }
 
-  public onSelectOption(selectedOption: SkSelectOptionComponent): void {
+  public onSelectOption(selectedOption: UiSelectOption): void {
     this.writeValue(selectedOption.value);
     this.onChange(selectedOption.value);
     this.showOptions = false;
@@ -147,7 +147,7 @@ export class UiSelectInput implements ControlValueAccessor, InputInterface, Afte
     if (query === '') {
       return this.onSearchClear();
     }
-    this.renderedOptions = this.fuse.search(query).map((result: FuseResult<SkSelectOptionComponent>) => result.item);
+    this.renderedOptions = this.fuse.search(query).map((result: FuseResult<UiSelectOption>) => result.item);
     this.scrollBody.nativeElement.scrollTop = 0;
   }
 
@@ -163,7 +163,7 @@ export class UiSelectInput implements ControlValueAccessor, InputInterface, Afte
   }
 
   private checkOptions(): void {
-    this.contentOptions?.forEach((option: SkSelectOptionComponent): void => {
+    this.contentOptions?.forEach((option: UiSelectOption): void => {
       if (option.value === this.value) {
         this.selectedOption = option;
       }

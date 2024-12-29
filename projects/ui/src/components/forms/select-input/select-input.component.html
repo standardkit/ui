@@ -44,14 +44,14 @@
       <sk-select-search (clear)="onSearchClear()" (search)="onSearch($event)"></sk-select-search>
     </div>
     <div #scrollBody class="select-input__options-body">
-      <sk-select-option
+      <ui-select-option
         (selectOption)="onSelectOption(option)"
         *ngFor="let option of renderedOptions"
         [description]="option.description"
         [isSelected]="option.value === value"
         [label]="option.label"
         [value]="option.value"
-      ></sk-select-option>
+      ></ui-select-option>
 
       <div *ngIf="noResults" class="select-input__empty-body">Geen resultaten gevonden...</div>
     </div>

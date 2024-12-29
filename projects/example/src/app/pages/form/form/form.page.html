@@ -50,15 +50,15 @@
           <ui-field name="select">
             <ui-label>Select</ui-label>
             <ui-select-input formControlName="select">
-              <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
+              <ui-select-option *ngFor="let city of cities" [label]="city" [value]="city"></ui-select-option>
             </ui-select-input>
           </ui-field>
           <ui-field name="select2">
             <ui-label>Select</ui-label>
             <ui-select-input formControlName="select2" placeholder="Select one city">
-              <sk-select-option label="ABC123" value="abc123"></sk-select-option>
-              <sk-select-option label="DEF456" value="def456"></sk-select-option>
-              <sk-select-option label="GHI789" value="ghi789"></sk-select-option>
+              <ui-select-option label="ABC123" value="abc123"></ui-select-option>
+              <ui-select-option label="DEF456" value="def456"></ui-select-option>
+              <ui-select-option label="GHI789" value="ghi789"></ui-select-option>
             </ui-select-input>
           </ui-field>
         </ui-field-group>
@@ -67,19 +67,19 @@
           <ui-field name="multi-select">
             <ui-label>Multiselect</ui-label>
             <ui-multi-select-input formControlName="multiSelect">
-              <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
+              <ui-select-option *ngFor="let city of cities" [label]="city" [value]="city"></ui-select-option>
             </ui-multi-select-input>
           </ui-field>
           <ui-field name="multi-select2">
             <ui-label>Multiselect</ui-label>
             <ui-multi-select-input formControlName="multiSelect2">
-              <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
+              <ui-select-option *ngFor="let city of cities" [label]="city" [value]="city"></ui-select-option>
             </ui-multi-select-input>
           </ui-field>
           <ui-field name="multi-select3">
             <ui-label>Multiselect</ui-label>
             <ui-multi-select-input formControlName="multiSelect3" placeholder="Select cities">
-              <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
+              <ui-select-option *ngFor="let city of cities" [label]="city" [value]="city"></ui-select-option>
             </ui-multi-select-input>
           </ui-field>
         </ui-field-group>

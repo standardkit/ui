@@ -1,14 +1,16 @@
+import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { UiIcon } from '../../core';
 
 @Component({
-  selector: 'sk-select-option[value][label]',
+  selector: 'ui-select-option',
   templateUrl: 'select-option.component.html',
-  styleUrls: ['select-option.component.scss'],
-  standalone: false,
+  styleUrl: 'select-option.component.scss',
+  imports: [UiIcon, NgIf],
 })
-export class SkSelectOptionComponent {
-  @Input() public value!: string | number;
-  @Input() public label!: string;
+export class UiSelectOption {
+  @Input({ required: true }) public value!: string | number;
+  @Input({ required: true }) public label!: string;
   @Input() public description?: string;
   @Input() public isMulti: boolean = false;
   @Input() public isSelected: boolean = false;

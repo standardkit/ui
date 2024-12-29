@@ -17,7 +17,7 @@ import Fuse, { FuseResult } from 'fuse.js';
 import { UiBar, UiButton, UiIcon, UiTag } from '../../core';
 import { InputComponent, InputInterface } from '../input';
 import { UiInputError } from '../input-error';
-import { SkSelectOptionComponent, SkSelectOptionModule } from '../select-option';
+import { UiSelectOption } from '../select-option';
 import { SkSelectSearchComponent, SkSelectSearchModule } from '../select-search';
 
 const FUSE_OPTIONS = {
@@ -37,13 +37,13 @@ const FUSE_OPTIONS = {
     FormsModule,
     NgIf,
     UiInputError,
-    SkSelectOptionModule,
     NgForOf,
     UiButton,
     SkSelectSearchModule,
     UiBar,
     UiIcon,
     UiTag,
+    UiSelectOption,
   ],
 })
 export class UiMultiSelectInput implements ControlValueAccessor, InputInterface, AfterContentInit {
@@ -51,7 +51,7 @@ export class UiMultiSelectInput implements ControlValueAccessor, InputInterface,
   @ViewChild('scrollBody') public scrollBody!: ElementRef<HTMLElement>;
   @ViewChild(SkSelectSearchComponent) public search?: SkSelectSearchComponent;
 
-  @ContentChildren(SkSelectOptionComponent) public contentOptions!: QueryList<SkSelectOptionComponent>;
+  @ContentChildren(UiSelectOption) public contentOptions!: QueryList<UiSelectOption>;
 
   @Input() public placeholder: string = '';
 
@@ -62,10 +62,10 @@ export class UiMultiSelectInput implements ControlValueAccessor, InputInterface,
   public onChange!: (value: (string | number)[]) => void;
   public onTouched!: () => void;
   public showOptions: boolean = false;
-  public selectedOptions: SkSelectOptionComponent[] = [];
+  public selectedOptions: UiSelectOption[] = [];
   public skipClickDetection: boolean = false;
-  public renderedOptions: SkSelectOptionComponent[] = [];
-  private fuse: Fuse<SkSelectOptionComponent> = new Fuse([], FUSE_OPTIONS);
+  public renderedOptions: UiSelectOption[] = [];
+  private fuse: Fuse<UiSelectOption> = new Fuse([], FUSE_OPTIONS);
 
   constructor(@Optional() @Self() public control: NgControl) {
     if (control) {
@@ -101,7 +101,7 @@ export class UiMultiSelectInput implements ControlValueAccessor, InputInterface,
     this.renderedOptions = this.contentOptions.toArray();
 
     setTimeout(() => {
-      this.renderedOptions.forEach((option: SkSelectOptionComponent) => {
+      this.renderedOptions.forEach((option: UiSelectOption) => {
         option.isSelected = this.value.includes(option.value);
         if (option.isSelected) {
           this.selectedOptions.push(option);
@@ -124,8 +124,8 @@ export class UiMultiSelectInput implements ControlValueAccessor, InputInterface,
 
   public writeValue(value: (string | number)[] | null): void {
     this.value = value ?? [];
-    const selectedOptions: SkSelectOptionComponent[] = [];
-    this.contentOptions?.forEach((option: SkSelectOptionComponent): void => {
+    const selectedOptions: UiSelectOption[] = [];
+    this.contentOptions?.forEach((option: UiSelectOption): void => {
       option.isSelected = this.value.includes(option.value);
       if (option.isSelected) {
         selectedOptions.push(option);
@@ -149,7 +149,7 @@ export class UiMultiSelectInput implements ControlValueAccessor, InputInterface,
     }
   }
 
-  public onSelectOption(option: SkSelectOptionComponent): void {
+  public onSelectOption(option: UiSelectOption): void {
     const newValue: (string | number)[] = [...this.value, option.value];
     this.writeValue(newValue);
     this.skipClickDetection = true;
@@ -157,7 +157,7 @@ export class UiMultiSelectInput implements ControlValueAccessor, InputInterface,
     this.search?.input.nativeElement.focus();
   }
 
-  public onDeselectOption(selectedOption: SkSelectOptionComponent): void {
+  public onDeselectOption(selectedOption: UiSelectOption): void {
     const newValue: (string | number)[] = this.value.filter(
       (value: string | number): boolean => value !== selectedOption.value,
     );
@@ -171,7 +171,7 @@ export class UiMultiSelectInput implements ControlValueAccessor, InputInterface,
     }
   }
 
-  public onClickTag(event: Event, option: SkSelectOptionComponent): void {
+  public onClickTag(event: Event, option: UiSelectOption): void {
     event.stopPropagation();
     this.onDeselectOption(option);
   }
@@ -199,7 +199,7 @@ export class UiMultiSelectInput implements ControlValueAccessor, InputInterface,
     if (query === '') {
       return this.onSearchClear();
     }
-    this.renderedOptions = this.fuse.search(query).map((result: FuseResult<SkSelectOptionComponent>) => result.item);
+    this.renderedOptions = this.fuse.search(query).map((result: FuseResult<UiSelectOption>) => result.item);
     this.scrollBody.nativeElement.scrollTop = 0;
   }
 
