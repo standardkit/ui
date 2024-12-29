@@ -1,9 +1,9 @@
 <sk-top-bar name="Tab">
-  <sk-tab-group slot="tabs" [(activeTab)]="activeTab" (activeTabChange)="onActiveTabChange($event)">
-    <sk-tab name="tab-1">Information</sk-tab>
-    <sk-tab name="tab-2">Personal</sk-tab>
-    <sk-tab name="tab-3">Financial Records</sk-tab>
-    <sk-tab name="tab-4">Another Tab</sk-tab>
-    <sk-tab name="tab-5">Tab 5</sk-tab>
-  </sk-tab-group>
+  <ui-tab-group (activeTabChange)="onActiveTabChange($event)" [(activeTab)]="activeTab" slot="tabs">
+    <ui-tab name="tab-1">Information</ui-tab>
+    <ui-tab name="tab-2">Personal</ui-tab>
+    <ui-tab name="tab-3">Financial Records</ui-tab>
+    <ui-tab name="tab-4">Another Tab</ui-tab>
+    <ui-tab name="tab-5">Tab 5</ui-tab>
+  </ui-tab-group>
 </sk-top-bar>

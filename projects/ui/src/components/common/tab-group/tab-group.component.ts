@@ -10,16 +10,15 @@ import {
   QueryList,
   SimpleChanges,
 } from '@angular/core';
-import { SkTabComponent } from '../tab';
+import { UiTab } from '../tab';
 
 @Component({
-  selector: 'sk-tab-group',
+  selector: 'ui-tab-group',
   templateUrl: 'tab-group.component.html',
-  styleUrls: ['tab-group.component.scss'],
-  standalone: false,
+  styleUrl: 'tab-group.component.scss',
 })
-export class SkTabGroupComponent implements AfterContentInit, OnChanges {
-  @ContentChildren(SkTabComponent) public tabs!: QueryList<SkTabComponent>;
+export class UiTabGroup implements AfterContentInit, OnChanges {
+  @ContentChildren(UiTab) public tabs!: QueryList<UiTab>;
 
   @Input() public activeTab?: string;
 
@@ -30,7 +29,7 @@ export class SkTabGroupComponent implements AfterContentInit, OnChanges {
   @HostListener('window:resize') public resize = (): void => this.onScroll();
 
   public ngAfterContentInit(): void {
-    this.tabs.forEach((tab: SkTabComponent) => {
+    this.tabs.forEach((tab: UiTab) => {
       tab.isActive = tab.name === this.activeTab;
       tab.selectTab.subscribe({
         next: () => this.onSelectTab(tab),
@@ -41,7 +40,7 @@ export class SkTabGroupComponent implements AfterContentInit, OnChanges {
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes['activeTab']) {
-      this.tabs?.forEach((tab: SkTabComponent) => {
+      this.tabs?.forEach((tab: UiTab) => {
         tab.isActive = tab.name === this.activeTab;
       });
     }
@@ -51,8 +50,8 @@ export class SkTabGroupComponent implements AfterContentInit, OnChanges {
     // triggers reload
   }
 
-  private onSelectTab(selectedTab: SkTabComponent): void {
-    this.tabs.forEach((tab: SkTabComponent) => {
+  private onSelectTab(selectedTab: UiTab): void {
+    this.tabs.forEach((tab: UiTab) => {
       tab.isActive = tab === selectedTab;
       if (tab.isActive) {
         this.activeTabChange.emit(tab.name);

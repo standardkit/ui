@@ -1,14 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'sk-tab[name]',
+  selector: 'ui-tab',
   templateUrl: 'tab.component.html',
-  styleUrls: ['tab.component.scss'],
-  standalone: false,
+  styleUrl: 'tab.component.scss',
 })
-export class SkTabComponent {
+export class UiTab {
   @Input() public isActive: boolean = false;
-  @Input() public name!: string;
+  @Input({ required: true }) public name!: string;
 
   @Output() public selectTab: EventEmitter<void> = new EventEmitter<void>();
 
