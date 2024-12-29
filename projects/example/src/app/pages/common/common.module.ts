@@ -6,7 +6,6 @@ import {
   SkIconModule,
   SkJumbotronModule,
   SkLinkModule,
-  SkListModule,
   SkModalModule,
   SkPillModule,
   SkRichTextModule,
@@ -25,6 +24,7 @@ import {
   UiBreadcrumbs,
   UiButton,
   UiCard,
+  UiList,
 } from '@standardkit/ui';
 import { AccordionPage } from './accordion';
 import { AlertPage } from './alert';
@@ -60,7 +60,6 @@ const PAGES: any[] = [
     SkIconModule,
     SkJumbotronModule,
     SkLinkModule,
-    SkListModule,
     SkModalModule,
     SkPillModule,
     SkRichTextModule,
@@ -78,6 +77,7 @@ const PAGES: any[] = [
     UiAccordionItem,
     UiBreadcrumbs,
     UiCard,
+    UiList,
   ],
   declarations: PAGES,
   exports: PAGES,
