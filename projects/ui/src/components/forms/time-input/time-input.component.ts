@@ -1,15 +1,18 @@
+import { NgIf } from '@angular/common';
 import { Component, forwardRef, Optional, Self } from '@angular/core';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
+import { UiIcon } from '../../core';
 import { InputComponent, InputInterface } from '../input';
+import { UiInputError } from '../input-error';
 
 @Component({
-  selector: 'sk-time-input',
+  selector: 'ui-time-input',
   templateUrl: 'time-input.component.html',
-  styleUrls: ['time-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkTimeInputComponent), multi: true }],
-  standalone: false,
+  styleUrl: 'time-input.component.scss',
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiTimeInput), multi: true }],
+  imports: [FormsModule, NgIf, UiInputError, UiIcon],
 })
-export class SkTimeInputComponent implements ControlValueAccessor, InputInterface {
+export class UiTimeInput implements ControlValueAccessor, InputInterface {
   public value?: string | null;
   public name?: string;
   public isDisabled: boolean = false;
