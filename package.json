@@ -5,37 +5,28 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-
     "lint": "npm run lint:prettier && npm run lint:stylelint && ng lint",
     "lint:prettier": "prettier '**/*.{js,html,css,scss,md,yml,yaml,json}' --write",
     "lint:stylelint": "stylelint '**/*.{css,scss}' --fix",
     "lint:staged": "lint-staged",
-
     "build": "npm run build:ui && npm run build:example",
     "build:ui": "ng build ui",
     "build:example": "ng build example",
     "build:prepublish": "npm run build:ui && cp ./README.md dist/ui",
-
     "test": "ng test",
-
     "version:patch": "cd projects/ui && npm version patch",
     "version:minor": "cd projects/ui && npm version minor",
     "version:major": "cd projects/ui && npm version major",
-
     "prerelease": "npm run build && npm run test",
-
     "release:patch": "npm run prerelease && npm run version:patch && npm run commit-tag-push && npm run publish:ui",
     "release:minor": "npm run prerelease && npm run version:minor && npm run commit-tag-push && npm run publish:ui",
     "release:major": "npm run prerelease && npm run version:major && npm run commit-tag-push && npm run publish:ui",
-
     "publish:ui": "npm run build:prepublish && cd dist/ui && npm publish && cd ../../ npm run postpublish:ui",
-
     "add-package-json": "git add projects/ui/package.json",
     "commit": "version=$(node -p \"require('./projects/ui/package.json').version\") && git commit -m \"Release v$version\"",
     "tag": "version=$(node -p \"require('./projects/ui/package.json').version\") && git tag -a \"v$version\" -m \"Version $version\"",
     "push": "git push && git push --tags",
     "commit-tag-push": "npm run add-package-json && npm run commit && npm run tag && npm run push",
-
     "hooks:pre-commit": "npm run lint:staged",
     "hooks:pre-push": "npm run test"
   },
@@ -71,6 +62,7 @@
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
     "angular-eslint": "^19.0.2",
+    "auto-changelog": "^2.5.0",
     "eslint": "~9.16.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.7.0",

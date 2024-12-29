@@ -3,6 +3,9 @@
   "private": false,
   "version": "0.4.10",
   "license": "Unlicense",
+  "scripts": {
+    "version": "auto-changelog -p -l 99 -b 99 && git add CHANGELOG.md"
+  },
   "peerDependencies": {
     "@angular/common": "^19.0.0",
     "@angular/core": "^19.0.0"
