@@ -1,15 +1,15 @@
 <input
-  class="number-input"
-  [class.number-input--error]="control.touched && control.invalid"
-  type="number"
-  [id]="name"
-  [placeholder]="placeholder"
-  [ngModel]="value"
-  [disabled]="isDisabled"
   (blur)="onTouched()"
   (ngModelChange)="onValueChange($event)"
+  [class.number-input--error]="control.touched && control.invalid"
+  [disabled]="isDisabled"
+  [id]="name"
+  [ngModel]="value"
+  [placeholder]="placeholder"
+  class="number-input"
+  type="number"
 />
 
-<sk-input-error *ngIf="control.touched && control.invalid">
+<ui-input-error *ngIf="control.touched && control.invalid">
   <ng-content select="[slot=error]"></ng-content>
-</sk-input-error>
+</ui-input-error>

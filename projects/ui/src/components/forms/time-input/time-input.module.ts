@@ -2,11 +2,11 @@ import { NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UiIcon } from '../../core';
-import { SkInputErrorModule } from '../input-error';
+import { UiInputError } from '../input-error';
 import { SkTimeInputComponent } from './time-input.component';
 
 @NgModule({
-  imports: [FormsModule, NgIf, SkInputErrorModule, UiIcon],
+  imports: [FormsModule, NgIf, UiInputError, UiIcon],
   declarations: [SkTimeInputComponent],
   exports: [SkTimeInputComponent],
 })

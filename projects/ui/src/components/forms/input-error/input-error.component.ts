@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'sk-input-error',
+  selector: 'ui-input-error',
   templateUrl: 'input-error.component.html',
-  styleUrls: ['input-error.component.scss'],
-  standalone: false,
+  styleUrl: 'input-error.component.scss',
 })
-export class SkInputErrorComponent {}
+export class UiInputError {}

@@ -9,11 +9,11 @@
     class="time-input"
     type="time"
   />
-  <div (click)="onClear()" *ngIf="!!value" class="time-input__clear">
+  <div (click)="onClear()" (keydown.enter)="onClear()" *ngIf="!!value" class="time-input__clear" tabindex="0">
     <ui-icon icon="close"></ui-icon>
   </div>
 </div>
 
-<sk-input-error *ngIf="control.touched && control.invalid">
+<ui-input-error *ngIf="control.touched && control.invalid">
   <ng-content select="[slot=error]"></ng-content>
-</sk-input-error>
+</ui-input-error>

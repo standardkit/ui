@@ -3,14 +3,14 @@ import { Component, forwardRef, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
 import { UiIcon } from '../../core';
 import { InputComponent, InputInterface } from '../input';
-import { SkInputErrorModule } from '../input-error';
+import { UiInputError } from '../input-error';
 
 @Component({
   selector: 'ui-date-input',
   templateUrl: 'date-input.component.html',
   styleUrl: 'date-input.component.scss',
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiDateInput), multi: true }],
-  imports: [FormsModule, NgIf, SkInputErrorModule, DatePipe, UiIcon],
+  imports: [FormsModule, NgIf, UiInputError, DatePipe, UiIcon],
 })
 export class UiDateInput implements ControlValueAccessor, InputInterface {
   public value?: Date | null;

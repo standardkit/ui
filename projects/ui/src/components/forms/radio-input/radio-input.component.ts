@@ -14,7 +14,7 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { UiAdvancedRadioOption } from '../advanced-radio-option';
 import { InputComponent, InputInterface } from '../input';
-import { SkInputErrorModule } from '../input-error';
+import { UiInputError } from '../input-error';
 import { UiRadioOption } from '../radio-option';
 
 @Component({
@@ -22,7 +22,7 @@ import { UiRadioOption } from '../radio-option';
   templateUrl: 'radio-input.component.html',
   styleUrl: 'radio-input.component.scss',
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiRadioInput), multi: true }],
-  imports: [SkInputErrorModule, NgIf],
+  imports: [UiInputError, NgIf],
 })
 export class UiRadioInput implements ControlValueAccessor, InputInterface, AfterContentInit, OnDestroy {
   @ContentChildren(UiRadioOption) public options!: QueryList<UiRadioOption>;

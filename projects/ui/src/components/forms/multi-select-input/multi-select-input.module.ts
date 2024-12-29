@@ -2,7 +2,7 @@ import { NgForOf, NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UiBar, UiButton, UiIcon, UiTag } from '../../core';
-import { SkInputErrorModule } from '../input-error';
+import { UiInputError } from '../input-error';
 import { SkSelectOptionModule } from '../select-option';
 import { SkSelectSearchModule } from '../select-search';
 import { SkMultiSelectInputComponent } from './multi-select-input.component';
@@ -11,7 +11,7 @@ import { SkMultiSelectInputComponent } from './multi-select-input.component';
   imports: [
     FormsModule,
     NgIf,
-    SkInputErrorModule,
+    UiInputError,
     SkSelectOptionModule,
     NgForOf,
     UiButton,

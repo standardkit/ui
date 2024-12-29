@@ -3,14 +3,14 @@ import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { UiButton, UiIcon } from '../../core';
 import { InputComponent, InputInterface } from '../input';
-import { SkInputErrorModule } from '../input-error';
+import { UiInputError } from '../input-error';
 
 @Component({
   selector: 'ui-file-input',
   templateUrl: 'file-input.component.html',
   styleUrl: 'file-input.component.scss',
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiFileInput), multi: true }],
-  imports: [UiIcon, UiButton, NgIf, NgForOf, SkInputErrorModule],
+  imports: [UiIcon, UiButton, NgIf, NgForOf, UiInputError],
 })
 export class UiFileInput implements ControlValueAccessor, InputInterface {
   @Input() public placeholder: string = '';

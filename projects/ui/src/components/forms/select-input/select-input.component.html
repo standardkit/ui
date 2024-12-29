@@ -1,10 +1,12 @@
 <div
   (click)="onTouched()"
+  (keydown.enter)="onTouched()"
   [class.select-input--collapsed]="!showOptions"
   [class.select-input--disabled]="isDisabled"
   [class.select-input--error]="hasError && !showOptions"
   [class.select-input--no-error]="hasNoError"
   class="select-input"
+  tabindex="0"
 >
   <div
     #selectBox
@@ -21,7 +23,13 @@
       <ng-container *ngIf="!!selectedOption && !!value">{{ selectedOption.label }}</ng-container>
     </div>
 
-    <div (click)="onClear($event)" *ngIf="value && !isNotClearable && !isDisabled" class="select-input__clear-icon">
+    <div
+      (click)="onClear($event)"
+      (keydown.enter)="onClear($event)"
+      *ngIf="value && !isNotClearable && !isDisabled"
+      class="select-input__clear-icon"
+      tabindex="0"
+    >
       <ui-icon icon="close"></ui-icon>
     </div>
 
@@ -50,6 +58,6 @@
   </div>
 </div>
 
-<sk-input-error *ngIf="hasError && !showOptions">
+<ui-input-error *ngIf="hasError && !showOptions">
   <ng-content select="[slot=error]"></ng-content>
-</sk-input-error>
+</ui-input-error>

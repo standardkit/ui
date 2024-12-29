@@ -3,14 +3,14 @@ import { Component, forwardRef, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
 import { UiIcon } from '../../core';
 import { InputComponent, InputInterface } from '../input';
-import { SkInputErrorModule } from '../input-error';
+import { UiInputError } from '../input-error';
 
 @Component({
   selector: 'ui-checkbox-input',
   templateUrl: 'checkbox-input.component.html',
   styleUrl: 'checkbox-input.component.scss',
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiCheckboxInput), multi: true }],
-  imports: [FormsModule, NgIf, UiIcon, SkInputErrorModule],
+  imports: [FormsModule, NgIf, UiIcon, UiInputError],
 })
 export class UiCheckboxInput implements ControlValueAccessor, InputInterface {
   public value: boolean = false;
