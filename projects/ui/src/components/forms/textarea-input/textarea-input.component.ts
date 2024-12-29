@@ -1,15 +1,17 @@
+import { NgIf } from '@angular/common';
 import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { InputComponent, InputInterface } from '../input';
+import { UiInputError } from '../input-error';
 
 @Component({
-  selector: 'sk-textarea-input',
+  selector: 'ui-textarea-input',
   templateUrl: 'textarea-input.component.html',
-  styleUrls: ['textarea-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkTextareaInputComponent), multi: true }],
-  standalone: false,
+  styleUrl: 'textarea-input.component.scss',
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiTextareaInput), multi: true }],
+  imports: [UiInputError, NgIf],
 })
-export class SkTextareaInputComponent implements ControlValueAccessor, InputInterface {
+export class UiTextareaInput implements ControlValueAccessor, InputInterface {
   @Input() public placeholder: string = '';
   @Input() public numberOfRows: number = 3;
 

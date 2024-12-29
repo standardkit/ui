@@ -5,7 +5,6 @@ import {
   SkBottomBarModule,
   SkColumnModule,
   SkRowModule,
-  SkTextareaInputModule,
   SkTimeInputModule,
   SkTopBarModule,
   UiAdvancedRadioOption,
@@ -28,6 +27,7 @@ import {
   UiRadioOption,
   UiSelectInput,
   UiSelectOption,
+  UiTextareaInput,
   UiTextInput,
 } from '@standardkit/ui';
 import { CheckboxInputPage } from './checkbox-input';
@@ -43,7 +43,6 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     UiButton,
     SkColumnModule,
     SkRowModule,
-    SkTextareaInputModule,
     SkTopBarModule,
     SkTimeInputModule,
     UiForm,
@@ -66,6 +65,7 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     UiSelectInput,
     UiSelectOption,
     UiTextInput,
+    UiTextareaInput,
   ],
   declarations: PAGES,
   exports: PAGES,
