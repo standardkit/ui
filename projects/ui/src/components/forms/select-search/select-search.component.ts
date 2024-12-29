@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { UiIcon } from '@standardkit/ui';
+import { UiIcon } from '../../core';
 
 @Component({
   selector: 'ui-select-search',
