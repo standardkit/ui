@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'sk-stepper-item',
+  selector: 'ui-stepper-item',
   templateUrl: 'stepper-item.component.html',
-  styleUrls: ['stepper-item.component.scss'],
-  standalone: false,
+  styleUrl: 'stepper-item.component.scss',
+  imports: [RouterLink],
 })
-export class SkStepperItemComponent {
+export class UiStepperItem {
   @Input() public name: string = '';
   @Input() public route?: string;
   @Input() public isActive: boolean = false;
