@@ -94,7 +94,7 @@ Add the icon path to your angular.json as well.
 
 ### Layout
 
-```angular181html
+```html
 <!--sidebar.layout.html-->
 <sk-sidebar-page>
   <sk-header brand="Admin Portal">
@@ -104,32 +104,26 @@ Add the icon path to your angular.json as well.
   <sk-sidebar [navigationItems]="navigationItems"></sk-sidebar>
 
   <router-outlet></router-outlet>
-
 </sk-sidebar-page>
 ```
 
 ### Page with Data Table
 
-```angular181html
+```html
 <!--data-table.page.html-->
 <sk-top-bar [isFullWidth]="true" name="Data Table">
   <ui-breadcrumbs [breadcrumbs]="breadcrumbs"></ui-breadcrumbs>
   <ui-button (buttonClick)="onAddItem()" icon="plus">Add Item</ui-button>
 </sk-top-bar>
 
-<sk-data-table
-  (request)="onRequest($event)"
-  [columns]="columns"
-  [response]="response"
-></sk-data-table>
+<sk-data-table (request)="onRequest($event)" [columns]="columns" [response]="response"></sk-data-table>
 ```
 
 ### Simple Form
 
-```angular181html
+```html
 <!--name.form.html-->
 <ui-form [formGroup]="form">
-
   <ui-field name="name">
     <ui-label>Name</ui-label>
     <ui-text-input formControlName="name">
@@ -162,10 +156,13 @@ Add the icon path to your angular.json as well.
 
 #### Component updates
 
-- `ui-select-input` error slot now becomes `slot="error"` (new) instead of `slot="footer"` (deprecated)
+- `ui-select-input` error slot now becomes `slot="error"` (new) instead of `slot="footer"` (old)
 - `ui-button` now has a `buttonClick` event that handles `keydown`/`tabindex` and takes into account `disabled` status
 
 ### 16 to 19 - legacy
+
+- Rich text input has been removed along with the quill dependency. If you want to continue using it, copy the component
+  from old source code.
 
 Just upgrade angular itself, nothing is changed only version bumps. Create an issue if you need help migrating through
 v17.
