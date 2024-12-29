@@ -1,33 +1,33 @@
 <sk-top-bar name="Toggle Component">
-  <ui-button (click)="isDisabled = !isDisabled">{{ isDisabled ? 'Enable' : 'Disable' }}</ui-button>
+  <ui-button (buttonClick)="isDisabled = !isDisabled">{{ isDisabled ? 'Enable' : 'Disable' }}</ui-button>
 </sk-top-bar>
 
 <sk-row>
   <sk-column>
     Working Toggle
-    <sk-toggle
+    <ui-toggle
       (toggleClick)="onToggle()"
       [isActive]="isActive"
       [isDisabled]="isDisabled"
       [isPending]="isPending"
-    ></sk-toggle>
+    ></ui-toggle>
 
     Active
     <ui-bar>
-      <sk-toggle [isActive]="false"></sk-toggle>
-      <sk-toggle [isActive]="true"></sk-toggle>
+      <ui-toggle [isActive]="false"></ui-toggle>
+      <ui-toggle [isActive]="true"></ui-toggle>
     </ui-bar>
 
     Disabled
     <ui-bar>
-      <sk-toggle [isActive]="false" [isDisabled]="true"></sk-toggle>
-      <sk-toggle [isActive]="true" [isDisabled]="true"></sk-toggle>
+      <ui-toggle [isActive]="false" [isDisabled]="true"></ui-toggle>
+      <ui-toggle [isActive]="true" [isDisabled]="true"></ui-toggle>
     </ui-bar>
 
     Pending
     <ui-bar>
-      <sk-toggle [isActive]="false" [isPending]="true"></sk-toggle>
-      <sk-toggle [isActive]="true" [isPending]="true"></sk-toggle>
+      <ui-toggle [isActive]="false" [isPending]="true"></ui-toggle>
+      <ui-toggle [isActive]="true" [isPending]="true"></ui-toggle>
     </ui-bar>
   </sk-column>
 </sk-row>

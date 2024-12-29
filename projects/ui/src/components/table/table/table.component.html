@@ -114,11 +114,11 @@
           </div>
         </td>
         <td *ngIf="!!toggleAction" class="table__action-cell">
-          <sk-toggle
+          <ui-toggle
             (toggleClick)="onToggle(row, index)"
             [isActive]="toggleAction.isActive(row)"
             [isPending]="isPending(index)"
-          ></sk-toggle>
+          ></ui-toggle>
         </td>
       </tr>
     </tbody>

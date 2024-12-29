@@ -1,12 +1,14 @@
+import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { UiIcon } from '../icon';
 
 @Component({
-  selector: 'sk-toggle',
+  selector: 'ui-toggle',
   templateUrl: 'toggle.component.html',
-  styleUrls: ['toggle.component.scss'],
-  standalone: false,
+  styleUrl: 'toggle.component.scss',
+  imports: [UiIcon, NgIf],
 })
-export class SkToggleComponent {
+export class UiToggle {
   @Input() public isActive: boolean = false;
   @Input() public isPending: boolean = false;
   @Input() public isDisabled: boolean = false;

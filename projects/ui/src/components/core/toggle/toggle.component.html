@@ -1,9 +1,11 @@
 <div
   (click)="onToggle()"
+  (keydown.enter)="onToggle()"
   [class.toggle--active]="(isActive && !isPending) || (!isActive && isPending)"
   [class.toggle--disabled]="isDisabled"
   [class.toggle--pending]="isPending"
   class="toggle"
+  tabindex="0"
 >
   <span
     [class.toggle__switch--active]="(isActive && !isPending) || (!isActive && isPending)"
