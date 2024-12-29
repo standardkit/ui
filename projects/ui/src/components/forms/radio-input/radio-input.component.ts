@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import {
   AfterContentInit,
   Component,
@@ -11,20 +12,21 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { SkAdvancedRadioOptionComponent } from '../advanced-radio-option';
+import { UiAdvancedRadioOption } from '../advanced-radio-option';
 import { InputComponent, InputInterface } from '../input';
-import { SkRadioOptionComponent } from '../radio-option';
+import { SkInputErrorModule } from '../input-error';
+import { UiRadioOption } from '../radio-option';
 
 @Component({
-  selector: 'sk-radio-input',
+  selector: 'ui-radio-input',
   templateUrl: 'radio-input.component.html',
-  styleUrls: ['radio-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkRadioInputComponent), multi: true }],
-  standalone: false,
+  styleUrl: 'radio-input.component.scss',
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiRadioInput), multi: true }],
+  imports: [SkInputErrorModule, NgIf],
 })
-export class SkRadioInputComponent implements ControlValueAccessor, InputInterface, AfterContentInit, OnDestroy {
-  @ContentChildren(SkRadioOptionComponent) public options!: QueryList<SkRadioOptionComponent>;
-  @ContentChildren(SkAdvancedRadioOptionComponent) public advancedOptions!: QueryList<SkRadioOptionComponent>;
+export class UiRadioInput implements ControlValueAccessor, InputInterface, AfterContentInit, OnDestroy {
+  @ContentChildren(UiRadioOption) public options!: QueryList<UiRadioOption>;
+  @ContentChildren(UiAdvancedRadioOption) public advancedOptions!: QueryList<UiAdvancedRadioOption>;
 
   @Input() public isVertical: boolean = false;
 
@@ -42,11 +44,11 @@ export class SkRadioInputComponent implements ControlValueAccessor, InputInterfa
   }
 
   public ngAfterContentInit(): void {
-    this.options.forEach((option) => this.handleOption(option));
-    this.advancedOptions.forEach((option) => this.handleOption(option));
+    this.options.forEach((option: UiRadioOption) => this.handleOption(option));
+    this.advancedOptions.forEach((option: UiAdvancedRadioOption) => this.handleOption(option));
     setTimeout(() => {
-      this.options.forEach((option) => this.checkIsActive(option));
-      this.advancedOptions.forEach((option) => this.checkIsActive(option));
+      this.options.forEach((option: UiRadioOption) => this.checkIsActive(option));
+      this.advancedOptions.forEach((option: UiAdvancedRadioOption) => this.checkIsActive(option));
     }, 0);
   }
 
@@ -80,22 +82,22 @@ export class SkRadioInputComponent implements ControlValueAccessor, InputInterfa
     this.name = name;
   }
 
-  private handleOption(option: SkRadioOptionComponent): void {
+  private handleOption(option: UiRadioOption | UiAdvancedRadioOption): void {
     const subscription: Subscription = option.selectOption.subscribe({
       next: () => this.handleSelectOption(option),
     });
     this.subscriptions.add(subscription);
   }
 
-  private handleSelectOption(selectedOption: SkRadioOptionComponent): void {
-    this.options.forEach((option: SkRadioOptionComponent): boolean => (option.isSelected = option === selectedOption));
+  private handleSelectOption(selectedOption: UiRadioOption | UiAdvancedRadioOption): void {
+    this.options.forEach((option: UiRadioOption): boolean => (option.isSelected = option === selectedOption));
     this.advancedOptions.forEach(
-      (option: SkRadioOptionComponent): boolean => (option.isSelected = option === selectedOption),
+      (option: UiAdvancedRadioOption): boolean => (option.isSelected = option === selectedOption),
     );
     this.onValueChange(selectedOption.value);
   }
 
-  private checkIsActive(option: SkRadioOptionComponent): void {
+  private checkIsActive(option: UiRadioOption): void {
     option.isSelected = option.value === this.value;
   }
 }

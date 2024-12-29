@@ -1,5 +1,6 @@
 <div
   (click)="onSelect()"
+  (keydown.enter)="onSelect()"
   [class.advanced-radio-option--error]="type === 'error'"
   [class.advanced-radio-option--info]="type === 'info'"
   [class.advanced-radio-option--neutral]="type === 'neutral'"
@@ -8,6 +9,7 @@
   [class.advanced-radio-option--success]="type === 'success'"
   [class.advanced-radio-option--warning]="type === 'warning'"
   class="advanced-radio-option"
+  tabindex="0"
 >
   <div class="advanced-radio-option__header">
     <input class="advanced-radio-option__input" type="radio" />

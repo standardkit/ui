@@ -2,7 +2,6 @@ import { NgForOf } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
-  SkAdvancedRadioOptionModule,
   SkBottomBarModule,
   SkCheckboxInputModule,
   SkColumnModule,
@@ -16,8 +15,6 @@ import {
   SkMultiSelectInputModule,
   SkNumberInputModule,
   SkPasswordInputModule,
-  SkRadioInputModule,
-  SkRadioOptionModule,
   SkRowModule,
   SkSelectInputModule,
   SkSelectOptionModule,
@@ -25,10 +22,13 @@ import {
   SkTextInputModule,
   SkTimeInputModule,
   SkTopBarModule,
+  UiAdvancedRadioOption,
   UiBreadcrumbs,
   UiButton,
   UiCard,
   UiForm,
+  UiRadioInput,
+  UiRadioOption,
 } from '@standardkit/ui';
 import { CheckboxInputPage } from './checkbox-input';
 import { FormPage } from './form';
@@ -39,7 +39,6 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
   imports: [
     NgForOf,
     ReactiveFormsModule,
-    SkAdvancedRadioOptionModule,
     SkBottomBarModule,
     UiButton,
     SkCheckboxInputModule,
@@ -54,8 +53,6 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     SkMultiSelectInputModule,
     SkNumberInputModule,
     SkPasswordInputModule,
-    SkRadioInputModule,
-    SkRadioOptionModule,
     SkRowModule,
     SkSelectInputModule,
     SkSelectOptionModule,
@@ -66,6 +63,9 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     UiForm,
     UiBreadcrumbs,
     UiCard,
+    UiAdvancedRadioOption,
+    UiRadioInput,
+    UiRadioOption,
   ],
   declarations: PAGES,
   exports: PAGES,

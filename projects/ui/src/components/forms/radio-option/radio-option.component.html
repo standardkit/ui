@@ -1,4 +1,10 @@
-<div (click)="onSelect()" [class.radio-option--selected]="isSelected" class="radio-option">
+<div
+  (click)="onSelect()"
+  (keydown.enter)="onSelect()"
+  [class.radio-option--selected]="isSelected"
+  class="radio-option"
+  tabindex="0"
+>
   <div class="radio-option__header">
     <input class="radio-option__input" type="radio" />
     <span class="radio-option__icon">

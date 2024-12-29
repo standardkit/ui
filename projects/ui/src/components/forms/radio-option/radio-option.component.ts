@@ -1,14 +1,16 @@
+import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { UiIcon } from '../../core';
 
 @Component({
-  selector: 'sk-radio-option[value]',
+  selector: 'ui-radio-option',
   templateUrl: 'radio-option.component.html',
-  styleUrls: ['radio-option.component.scss'],
-  standalone: false,
+  styleUrl: 'radio-option.component.scss',
+  imports: [UiIcon, NgIf],
 })
-export class SkRadioOptionComponent {
-  @Input() public name!: string;
-  @Input() public value!: string;
+export class UiRadioOption {
+  @Input() public name?: string;
+  @Input({ required: true }) public value!: string;
 
   @Output() public selectOption: EventEmitter<void> = new EventEmitter<void>();
 
