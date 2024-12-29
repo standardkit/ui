@@ -1,15 +1,17 @@
+import { NgIf } from '@angular/common';
 import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
 import { InputComponent, InputInterface } from '../input';
+import { UiInputError } from '../input-error';
 
 @Component({
-  selector: 'sk-text-input',
+  selector: 'ui-text-input',
   templateUrl: 'text-input.component.html',
-  styleUrls: ['text-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkTextInputComponent), multi: true }],
-  standalone: false,
+  styleUrl: 'text-input.component.scss',
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiTextInput), multi: true }],
+  imports: [FormsModule, NgIf, UiInputError],
 })
-export class SkTextInputComponent implements ControlValueAccessor, InputInterface {
+export class UiTextInput implements ControlValueAccessor, InputInterface {
   @Input() public placeholder: string = '';
 
   public value?: string | null;
