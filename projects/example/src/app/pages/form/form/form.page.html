@@ -7,124 +7,124 @@
     <ui-card name="Form Card">
       <ui-form (submitForm)="onSubmit()" [formGroup]="form">
         <sk-form-section-title>Personal Information</sk-form-section-title>
-        <sk-field-group>
-          <sk-field name="test-field-1">
+        <ui-field-group>
+          <ui-field name="test-field-1">
             <sk-label>Test field 1</sk-label>
             <sk-input-description>Put in some text below, it's pretty simple</sk-input-description>
             <sk-text-input formControlName="text"></sk-text-input>
-          </sk-field>
+          </ui-field>
 
-          <sk-field name="test-field-2">
+          <ui-field name="test-field-2">
             <sk-label>Second field</sk-label>
             <sk-input-description>Put in some text below, it's pretty simple</sk-input-description>
             <sk-text-input formControlName="text2" placeholder="Example placeholder"></sk-text-input>
-          </sk-field>
-        </sk-field-group>
+          </ui-field>
+        </ui-field-group>
 
-        <sk-field name="test-field-3">
+        <ui-field name="test-field-3">
           <sk-label>Third field</sk-label>
           <sk-input-description>We exited the field group</sk-input-description>
           <sk-text-input formControlName="text3"></sk-text-input>
-        </sk-field>
+        </ui-field>
 
-        <sk-field name="password">
+        <ui-field name="password">
           <sk-label>Password</sk-label>
           <sk-password-input formControlName="password"></sk-password-input>
-        </sk-field>
+        </ui-field>
 
-        <sk-field name="number">
+        <ui-field name="number">
           <sk-label>Number field</sk-label>
           <sk-number-input formControlName="number"></sk-number-input>
-        </sk-field>
+        </ui-field>
 
-        <sk-field name="textarea">
+        <ui-field name="textarea">
           <sk-label>Textarea</sk-label>
           <sk-textarea-input formControlName="textarea"></sk-textarea-input>
-        </sk-field>
+        </ui-field>
 
-        <sk-field-group>
-          <sk-field name="text-select">
+        <ui-field-group>
+          <ui-field name="text-select">
             <sk-label>Text input for reference</sk-label>
             <sk-text-input formControlName="text5"></sk-text-input>
-          </sk-field>
-          <sk-field name="select">
+          </ui-field>
+          <ui-field name="select">
             <sk-label>Select</sk-label>
             <sk-select-input formControlName="select">
               <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
             </sk-select-input>
-          </sk-field>
-          <sk-field name="select2">
+          </ui-field>
+          <ui-field name="select2">
             <sk-label>Select</sk-label>
             <sk-select-input formControlName="select2" placeholder="Select one city">
               <sk-select-option label="ABC123" value="abc123"></sk-select-option>
               <sk-select-option label="DEF456" value="def456"></sk-select-option>
               <sk-select-option label="GHI789" value="ghi789"></sk-select-option>
             </sk-select-input>
-          </sk-field>
-        </sk-field-group>
+          </ui-field>
+        </ui-field-group>
 
-        <sk-field-group>
-          <sk-field name="multi-select">
+        <ui-field-group>
+          <ui-field name="multi-select">
             <sk-label>Multiselect</sk-label>
             <sk-multi-select-input formControlName="multiSelect">
               <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
             </sk-multi-select-input>
-          </sk-field>
-          <sk-field name="multi-select2">
+          </ui-field>
+          <ui-field name="multi-select2">
             <sk-label>Multiselect</sk-label>
             <sk-multi-select-input formControlName="multiSelect2">
               <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
             </sk-multi-select-input>
-          </sk-field>
-          <sk-field name="multi-select3">
+          </ui-field>
+          <ui-field name="multi-select3">
             <sk-label>Multiselect</sk-label>
             <sk-multi-select-input formControlName="multiSelect3" placeholder="Select cities">
               <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
             </sk-multi-select-input>
-          </sk-field>
-        </sk-field-group>
+          </ui-field>
+        </ui-field-group>
 
-        <sk-field-group>
-          <sk-field name="text4">
+        <ui-field-group>
+          <ui-field name="text4">
             <sk-label>Text field to check height</sk-label>
             <sk-text-input formControlName="text4"></sk-text-input>
-          </sk-field>
+          </ui-field>
 
-          <sk-field name="date">
+          <ui-field name="date">
             <sk-label>Date field</sk-label>
             <ui-date-input formControlName="date"></ui-date-input>
-          </sk-field>
+          </ui-field>
 
-          <sk-field name="time">
+          <ui-field name="time">
             <sk-label>Time</sk-label>
             <sk-time-input formControlName="time"></sk-time-input>
-          </sk-field>
-        </sk-field-group>
+          </ui-field>
+        </ui-field-group>
 
-        <sk-field name="file">
+        <ui-field name="file">
           <sk-label>File input</sk-label>
           <sk-file-input formControlName="files"></sk-file-input>
-        </sk-field>
+        </ui-field>
 
-        <sk-field name="radio">
+        <ui-field name="radio">
           <sk-label>Choose from radio</sk-label>
           <ui-radio-input formControlName="radio">
             <ui-radio-option value="abc123">Option 1</ui-radio-option>
             <ui-radio-option value="def456">Option 2</ui-radio-option>
             <ui-radio-option value="ghi789">Option 3</ui-radio-option>
           </ui-radio-input>
-        </sk-field>
+        </ui-field>
 
-        <sk-field name="radio2">
+        <ui-field name="radio2">
           <sk-label>Choose from radio (vertical)</sk-label>
           <ui-radio-input [isVertical]="true" formControlName="radio2">
             <ui-radio-option value="abc123">Option 1</ui-radio-option>
             <ui-radio-option value="def456">Option 2</ui-radio-option>
             <ui-radio-option value="ghi789">Option 3</ui-radio-option>
           </ui-radio-input>
-        </sk-field>
+        </ui-field>
 
-        <sk-field name="radio3">
+        <ui-field name="radio3">
           <sk-label>Choose from advanced radio</sk-label>
           <ui-radio-input formControlName="radio3">
             <ui-advanced-radio-option label="Option 1" value="abc123">Body of Option 1</ui-advanced-radio-option>
@@ -138,9 +138,9 @@
               Body of Option 1
             </ui-advanced-radio-option>
           </ui-radio-input>
-        </sk-field>
+        </ui-field>
 
-        <sk-field name="radio4">
+        <ui-field name="radio4">
           <sk-label>Choose from advanced radio (vertical)</sk-label>
           <ui-radio-input [isVertical]="true" formControlName="radio4">
             <ui-advanced-radio-option label="Option 1" value="abc123">Body of Option 1</ui-advanced-radio-option>
@@ -154,7 +154,7 @@
               Body of Option 1
             </ui-advanced-radio-option>
           </ui-radio-input>
-        </sk-field>
+        </ui-field>
       </ui-form>
     </ui-card>
   </sk-column>

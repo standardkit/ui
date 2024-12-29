@@ -130,12 +130,12 @@ Add the icon path to your angular.json as well.
 <!--name.form.html-->
 <ui-form [formGroup]="form">
 
-  <sk-field name="name">
+  <ui-field name="name">
     <sk-label>Name</sk-label>
     <sk-text-input formControlName="name">
       <ng-container slot="error">Name is required</ng-container>
     </sk-text-input>
-  </sk-field>
+  </ui-field>
 
   <ui-button [isSubmit]="true" (click)="onSubmit()" icon="save">Submit</ui-button>
 </ui-form>

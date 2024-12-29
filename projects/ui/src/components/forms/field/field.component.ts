@@ -11,13 +11,19 @@ import { InputComponent, InputInterface } from '../input';
 import { SkLabelComponent } from '../label';
 
 @Component({
-  selector: 'sk-field[name]',
+  selector: 'ui-field',
   templateUrl: 'field.component.html',
-  styleUrls: ['field.component.scss'],
-  standalone: false,
+  styleUrl: 'field.component.scss',
 })
-export class SkFieldComponent implements AfterContentInit {
+export class UiField implements AfterContentInit {
   @HostBinding('class') public class: string = 'field';
+
+  @ContentChildren(InputComponent) public inputs!: QueryList<InputInterface>;
+
+  @ContentChild(SkLabelComponent) public label?: SkLabelComponent;
+
+  @Input({ required: true }) public name!: string;
+  @Input() public width?: 'narrow' | 'medium' | 'wide';
 
   @HostBinding('class.field--wide')
   public get wideClass(): boolean {
@@ -33,13 +39,6 @@ export class SkFieldComponent implements AfterContentInit {
   public get mediumClass(): boolean {
     return this.width === 'medium';
   }
-
-  @ContentChildren(InputComponent) public inputs!: QueryList<InputInterface>;
-
-  @ContentChild(SkLabelComponent) public label?: SkLabelComponent;
-
-  @Input() public name!: string;
-  @Input() public width?: 'narrow' | 'medium' | 'wide';
 
   public ngAfterContentInit(): void {
     if (this.label) {

@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'sk-field-group',
+  selector: 'ui-field-group',
   templateUrl: 'field-group.component.html',
-  styleUrls: ['field-group.component.scss'],
-  standalone: false,
+  styleUrl: 'field-group.component.scss',
 })
-export class SkFieldGroupComponent {}
+export class UiFieldGroup {}

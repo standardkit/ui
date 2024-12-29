@@ -13,7 +13,7 @@
   [name]="'Filter in \'' + dataName + '\''"
 >
   <ui-form [formGroup]="form">
-    <sk-field *ngFor="let item of filterItems" [name]="'filter-' + item.key">
+    <ui-field *ngFor="let item of filterItems" [name]="'filter-' + item.key">
       <sk-label>{{ item.label }}</sk-label>
 
       <!--TODO : Add input skeleton while loading-->
@@ -44,7 +44,7 @@
 
       <!--TODO : Field group for pseudo range filters (from, to date) configurable in filterConfiguration-->
       <ui-date-input *ngIf="item.type === 'date'" [formControlName]="item.key"></ui-date-input>
-    </sk-field>
+    </ui-field>
   </ui-form>
 
   <ui-bar align="space-between" slot="footer">

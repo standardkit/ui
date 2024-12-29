@@ -1,14 +1,14 @@
 <ui-card name="Authentication">
   <ui-form (submitForm)="onSubmit()" [formGroup]="form">
-    <sk-field name="username">
+    <ui-field name="username">
       <sk-label>Username</sk-label>
       <sk-text-input formControlName="username"></sk-text-input>
-    </sk-field>
+    </ui-field>
 
-    <sk-field name="password">
+    <ui-field name="password">
       <sk-label>Password</sk-label>
       <sk-password-input formControlName="password"></sk-password-input>
-    </sk-field>
+    </ui-field>
 
     <ui-button [fullWidth]="true" [isSubmit]="true">Login</ui-button>
   </ui-form>
