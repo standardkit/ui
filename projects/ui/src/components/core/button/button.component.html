@@ -21,10 +21,10 @@
   tabindex="0"
 >
   <span *ngIf="icon && alignIcon === 'left'" class="button__icon">
-    <sk-icon [flipX]="flipIcon" [iconSet]="iconSet" [icon]="icon"></sk-icon>
+    <ui-icon [flipX]="flipIcon" [iconSet]="iconSet" [icon]="icon"></ui-icon>
   </span>
   <ng-content></ng-content>
   <span *ngIf="icon && alignIcon === 'right'" class="button__icon">
-    <sk-icon [flipX]="flipIcon" [iconSet]="iconSet" [icon]="icon"></sk-icon>
+    <ui-icon [flipX]="flipIcon" [iconSet]="iconSet" [icon]="icon"></ui-icon>
   </span>
 </button>

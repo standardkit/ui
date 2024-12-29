@@ -4,8 +4,8 @@
     <thead>
       <tr>
         <th (click)="onCheckAll()" *ngIf="canCheckRow" class="table__check-all">
-          <sk-icon *ngIf="!allChecked" icon="square" iconSet="regular"></sk-icon>
-          <sk-icon *ngIf="allChecked" icon="square-check" iconSet="regular"></sk-icon>
+          <ui-icon *ngIf="!allChecked" icon="square" iconSet="regular"></ui-icon>
+          <ui-icon *ngIf="allChecked" icon="square-check" iconSet="regular"></ui-icon>
         </th>
         <ng-container *ngFor="let column of columns">
           <th>
@@ -22,21 +22,21 @@
                 [class.table__sort-icon]="sortedColumn?.key === column.key && sortedColumn?.direction !== 'None'"
                 class="table__sort-icon"
               >
-                <sk-icon
+                <ui-icon
                   *ngIf="sortedColumn?.key === column.key && sortedColumn?.direction === 'ASC'"
                   icon="arrow-down"
-                ></sk-icon>
-                <sk-icon
+                ></ui-icon>
+                <ui-icon
                   *ngIf="sortedColumn?.key === column.key && sortedColumn?.direction === 'DESC'"
                   icon="arrow-up"
-                ></sk-icon>
-                <sk-icon
+                ></ui-icon>
+                <ui-icon
                   *ngIf="
                     (sortableColumns?.includes(column.key) && sortedColumn?.key !== column.key) ||
                     (sortableColumns?.includes(column.key) && sortedColumn?.direction === 'None')
                   "
                   icon="sort"
-                ></sk-icon>
+                ></ui-icon>
               </span>
             </span>
           </th>
@@ -61,8 +61,8 @@
           [class.table__checkbox-cell--checked]="checkedRows.includes(row)"
           class="table__checkbox-cell"
         >
-          <sk-icon *ngIf="!checkedRows.includes(row)" icon="square" iconSet="regular"></sk-icon>
-          <sk-icon *ngIf="checkedRows.includes(row)" icon="square-check" iconSet="regular"></sk-icon>
+          <ui-icon *ngIf="!checkedRows.includes(row)" icon="square" iconSet="regular"></ui-icon>
+          <ui-icon *ngIf="checkedRows.includes(row)" icon="square-check" iconSet="regular"></ui-icon>
         </td>
         <td
           *ngFor="let column of columns"
@@ -71,7 +71,7 @@
           [class.table__cell--status]="!!column.status"
           class="table__cell"
         >
-          <sk-icon *ngIf="column.icon" [icon]="column.icon(row)"></sk-icon>
+          <ui-icon *ngIf="column.icon" [icon]="column.icon(row)"></ui-icon>
           <sk-pill
             *ngIf="!!column.status && column.status(row)"
             [icon]="!!column.statusIcon ? column.statusIcon(row) : undefined"

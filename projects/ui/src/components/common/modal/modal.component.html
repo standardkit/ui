@@ -12,7 +12,7 @@
         {{ name }}
       </h3>
       <span (click)="onClose()" (keydown.enter)="onClose()" class="modal__close" tabindex="0">
-        <sk-icon icon="close"></sk-icon>
+        <ui-icon icon="close"></ui-icon>
       </span>
     </div>
     <div #body (scroll)="onScroll()" [class.modal__body--overflow]="containsOverflow" class="modal__body">

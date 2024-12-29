@@ -1,16 +1,16 @@
 <div class="date-input__container">
   <input
-    class="date-input"
-    [class.date-input--error]="control.touched && control.invalid"
-    type="date"
-    [id]="name"
-    [ngModel]="value ? (value | date: 'yyyy-MM-dd') : null"
-    [disabled]="isDisabled"
     (blur)="onTouched()"
     (ngModelChange)="onValueChange($event)"
+    [class.date-input--error]="control.touched && control.invalid"
+    [disabled]="isDisabled"
+    [id]="name"
+    [ngModel]="value ? (value | date: 'yyyy-MM-dd') : null"
+    class="date-input"
+    type="date"
   />
-  <div class="date-input__clear" (click)="onClear()" *ngIf="!!value">
-    <sk-icon icon="close"></sk-icon>
+  <div (click)="onClear()" *ngIf="!!value" class="date-input__clear">
+    <ui-icon icon="close"></ui-icon>
   </div>
 </div>
 

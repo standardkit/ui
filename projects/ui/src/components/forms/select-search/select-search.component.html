@@ -1,16 +1,16 @@
-<div class="select-search" (click)="onClick($event)">
+<div (click)="onClick($event)" class="select-search">
   <div class="select-search__search-icon">
-    <sk-icon icon="search"></sk-icon>
+    <ui-icon icon="search"></ui-icon>
   </div>
   <input
     #input
-    class="select-search__input"
-    type="text"
-    placeholder="Filter items..."
-    [ngModel]="query"
     (ngModelChange)="onChange($event)"
+    [ngModel]="query"
+    class="select-search__input"
+    placeholder="Filter items..."
+    type="text"
   />
-  <div class="select-search__clear-icon" *ngIf="query" (click)="onClear()">
-    <sk-icon icon="close"></sk-icon>
+  <div (click)="onClear()" *ngIf="query" class="select-search__clear-icon">
+    <ui-icon icon="close"></ui-icon>
   </div>
 </div>

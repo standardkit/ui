@@ -1,11 +1,11 @@
 import { NgForOf, NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { SkIconModule } from '../../core';
+import { UiIcon } from '../../core';
 import { SkPaginationComponent } from './pagination.component';
 
 @NgModule({
-  imports: [FormsModule, SkIconModule, NgIf, NgForOf],
+  imports: [FormsModule, UiIcon, NgIf, NgForOf],
   declarations: [SkPaginationComponent],
   exports: [SkPaginationComponent],
 })

@@ -5,7 +5,7 @@
       <span *ngIf="description" class="statistics-card__description">{{ description }}</span>
     </div>
     <span *ngIf="icon" class="statistics-card__icon">
-      <sk-icon [icon]="icon"></sk-icon>
+      <ui-icon [icon]="icon"></ui-icon>
     </span>
   </div>
   <ui-button (buttonClick)="onClick()" [fullWidth]="true" icon="angle-right" type="info">

@@ -1,11 +1,11 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from '@angular/core';
-import { SkIconModule } from '../../core';
+import { UiIcon } from '../../core';
 
 @Component({
   selector: 'ui-modal',
   templateUrl: 'modal.component.html',
   styleUrl: 'modal.component.scss',
-  imports: [SkIconModule],
+  imports: [UiIcon],
 })
 export class UiModal {
   @ViewChild('body') public body!: ElementRef;

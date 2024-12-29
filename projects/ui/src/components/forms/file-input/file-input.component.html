@@ -25,13 +25,13 @@
   <div *ngIf="value.length > 0" class="file-input__files">
     <div *ngFor="let file of value; index as index" class="file-input__file">
       <span class="file-input__file-icon">
-        <sk-icon icon="description"></sk-icon>
+        <ui-icon icon="description"></ui-icon>
       </span>
       <span class="file-input__file-name">
         {{ file.name }}
       </span>
       <span (click)="onDeleteFile(index)" class="file-input__file-icon file-input__file-icon--delete">
-        <sk-icon icon="trash"></sk-icon>
+        <ui-icon icon="trash"></ui-icon>
       </span>
     </div>
   </div>

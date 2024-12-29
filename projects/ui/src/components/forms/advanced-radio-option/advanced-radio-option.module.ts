@@ -1,10 +1,10 @@
 import { NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SkIconModule } from '../../core';
+import { UiIcon } from '../../core';
 import { SkAdvancedRadioOptionComponent } from './advanced-radio-option.component';
 
 @NgModule({
-  imports: [SkIconModule, NgIf],
+  imports: [UiIcon, NgIf],
   declarations: [SkAdvancedRadioOptionComponent],
   exports: [SkAdvancedRadioOptionComponent],
 })

@@ -1,10 +1,10 @@
 import { NgForOf, NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SkIconModule } from '../../core';
+import { UiIcon } from '../../core';
 import { SkUserMenuComponent } from './user-menu.component';
 
 @NgModule({
-  imports: [SkIconModule, NgIf, NgForOf],
+  imports: [UiIcon, NgIf, NgForOf],
   declarations: [SkUserMenuComponent],
   exports: [SkUserMenuComponent],
 })

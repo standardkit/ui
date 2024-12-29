@@ -1,17 +1,17 @@
 <div
-  class="toggle"
-  [class.toggle--active]="(isActive && !isPending) || (!isActive && isPending)"
-  [class.toggle--pending]="isPending"
-  [class.toggle--disabled]="isDisabled"
   (click)="onToggle()"
+  [class.toggle--active]="(isActive && !isPending) || (!isActive && isPending)"
+  [class.toggle--disabled]="isDisabled"
+  [class.toggle--pending]="isPending"
+  class="toggle"
 >
   <span
-    class="toggle__switch"
-    [class.toggle__switch--disabled]="isDisabled"
     [class.toggle__switch--active]="(isActive && !isPending) || (!isActive && isPending)"
+    [class.toggle__switch--disabled]="isDisabled"
+    class="toggle__switch"
   >
-    <sk-icon *ngIf="isActive && !isPending" icon="check"></sk-icon>
-    <sk-icon *ngIf="!isActive && !isPending" icon="remove"></sk-icon>
-    <sk-icon *ngIf="isPending" [isReverse]="isActive && isPending" [isSpinning]="true" icon="spinner"></sk-icon>
+    <ui-icon *ngIf="isActive && !isPending" icon="check"></ui-icon>
+    <ui-icon *ngIf="!isActive && !isPending" icon="remove"></ui-icon>
+    <ui-icon *ngIf="isPending" [isReverse]="isActive && isPending" [isSpinning]="true" icon="spinner"></ui-icon>
   </span>
 </div>

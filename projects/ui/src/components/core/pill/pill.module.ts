@@ -1,10 +1,10 @@
 import { NgClass, NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SkIconModule } from '../icon';
+import { UiIcon } from '../icon';
 import { SkPillComponent } from './pill.component';
 
 @NgModule({
-  imports: [NgClass, NgIf, SkIconModule],
+  imports: [NgClass, NgIf, UiIcon],
   declarations: [SkPillComponent],
   exports: [SkPillComponent],
 })

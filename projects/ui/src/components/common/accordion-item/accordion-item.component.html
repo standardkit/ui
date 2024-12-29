@@ -1,12 +1,12 @@
 <div class="accordion-item">
-  <button class="accordion-item__header" (click)="isOpen = !isOpen">
+  <button (click)="isOpen = !isOpen" class="accordion-item__header">
     {{ name }}
     <span class="accordion-item__icon">
-      <sk-icon icon="angle-down" *ngIf="!isOpen"></sk-icon>
-      <sk-icon icon="angle-up" *ngIf="isOpen"></sk-icon>
+      <ui-icon *ngIf="!isOpen" icon="angle-down"></ui-icon>
+      <ui-icon *ngIf="isOpen" icon="angle-up"></ui-icon>
     </span>
   </button>
-  <div class="accordion-item__content" [class.accordion-item__content--no-padding]="hasNoPadding" *ngIf="isOpen">
+  <div *ngIf="isOpen" [class.accordion-item__content--no-padding]="hasNoPadding" class="accordion-item__content">
     <ng-content></ng-content>
   </div>
 </div>

@@ -1,23 +1,23 @@
 <div
-  class="checkbox-input"
   (click)="input.click()"
   [class.checkbox-input--disabled]="isDisabled"
   [class.checkbox-input--error]="control.touched && control.invalid"
+  class="checkbox-input"
 >
   <input
-    class="checkbox-input__input"
-    type="checkbox"
-    [checked]="value"
-    [id]="name"
-    [ngModel]="value"
-    [disabled]="isDisabled"
+    #input
     (blur)="onTouched()"
     (ngModelChange)="onValueChange($event)"
-    #input
+    [checked]="value"
+    [disabled]="isDisabled"
+    [id]="name"
+    [ngModel]="value"
+    class="checkbox-input__input"
+    type="checkbox"
   />
-  <span class="checkbox-input__icon" [class.checkbox-input__icon--checked]="value">
-    <sk-icon *ngIf="value" iconSet="regular" icon="square-check"></sk-icon>
-    <sk-icon *ngIf="!value" iconSet="regular" icon="square"></sk-icon>
+  <span [class.checkbox-input__icon--checked]="value" class="checkbox-input__icon">
+    <ui-icon *ngIf="value" icon="square-check" iconSet="regular"></ui-icon>
+    <ui-icon *ngIf="!value" icon="square" iconSet="regular"></ui-icon>
   </span>
   <span class="checkbox-input__label">
     <!--    TODO : Fix label with <label for="id"></label>-->

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import {
   SkColumnModule,
-  SkIconModule,
   SkLinkModule,
   SkPillModule,
   SkRowModule,
@@ -12,6 +11,7 @@ import {
   UiBreadcrumbs,
   UiButton,
   UiCard,
+  UiIcon,
 } from '@standardkit/ui';
 import { BarPage } from './bar';
 import { ButtonPage } from './button';
@@ -27,7 +27,6 @@ const PAGES: any[] = [BarPage, ButtonPage, IconPage, LinkPage, PillPage, TagPage
   imports: [
     UiButton,
     SkColumnModule,
-    SkIconModule,
     SkLinkModule,
     SkPillModule,
     SkRowModule,
@@ -37,6 +36,7 @@ const PAGES: any[] = [BarPage, ButtonPage, IconPage, LinkPage, PillPage, TagPage
     UiBreadcrumbs,
     UiCard,
     UiBar,
+    UiIcon,
   ],
   declarations: PAGES,
   exports: PAGES,

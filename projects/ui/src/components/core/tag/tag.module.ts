@@ -1,10 +1,10 @@
 import { NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SkIconModule } from '../icon';
+import { UiIcon } from '../icon';
 import { SkTagComponent } from './tag.component';
 
 @NgModule({
-  imports: [SkIconModule, NgIf],
+  imports: [NgIf, UiIcon],
   declarations: [SkTagComponent],
   exports: [SkTagComponent],
 })

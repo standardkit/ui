@@ -1,23 +1,23 @@
-<div class="navigation-item" [attr.title]="isCollapsed ? name : undefined">
+<div [attr.title]="isCollapsed ? name : undefined" class="navigation-item">
   <div
-    class="navigation-item__item"
-    tabindex="0"
-    [class.navigation-item__item--active]="isActive"
-    [class.navigation-item__item--expanded]="isExpanded"
-    [class.navigation-item__item--collapsed]="isCollapsed"
-    [class.navigation-item__item--parent]="!!children"
     (click)="onSelectItem()"
     (keydown.enter)="onSelectItem()"
+    [class.navigation-item__item--active]="isActive"
+    [class.navigation-item__item--collapsed]="isCollapsed"
+    [class.navigation-item__item--expanded]="isExpanded"
+    [class.navigation-item__item--parent]="!!children"
+    class="navigation-item__item"
+    tabindex="0"
   >
-    <span class="navigation-item__item-icon" [class.navigation-item__item-icon--collapsed]="isCollapsed">
-      <sk-icon [icon]="icon"></sk-icon>
+    <span [class.navigation-item__item-icon--collapsed]="isCollapsed" class="navigation-item__item-icon">
+      <ui-icon [icon]="icon"></ui-icon>
     </span>
 
     <span *ngIf="!isCollapsed" class="navigation-item__item-name">{{ name }}</span>
 
-    <span class="navigation-item__expand-icon" *ngIf="!!children && !isCollapsed">
-      <sk-icon *ngIf="!isExpanded" icon="angle-down"></sk-icon>
-      <sk-icon *ngIf="isExpanded" icon="angle-up"></sk-icon>
+    <span *ngIf="!!children && !isCollapsed" class="navigation-item__expand-icon">
+      <ui-icon *ngIf="!isExpanded" icon="angle-down"></ui-icon>
+      <ui-icon *ngIf="isExpanded" icon="angle-up"></ui-icon>
     </span>
   </div>
 

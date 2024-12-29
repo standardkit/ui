@@ -1,9 +1,9 @@
-<div class="radio-option" [class.radio-option--selected]="isSelected" (click)="onSelect()">
+<div (click)="onSelect()" [class.radio-option--selected]="isSelected" class="radio-option">
   <div class="radio-option__header">
     <input class="radio-option__input" type="radio" />
     <span class="radio-option__icon">
-      <sk-icon *ngIf="!isSelected" iconSet="regular" icon="circle"></sk-icon>
-      <sk-icon *ngIf="isSelected" iconSet="regular" icon="circle-dot"></sk-icon>
+      <ui-icon *ngIf="!isSelected" icon="circle" iconSet="regular"></ui-icon>
+      <ui-icon *ngIf="isSelected" icon="circle-dot" iconSet="regular"></ui-icon>
     </span>
     <h4 class="radio-option__label"><ng-content></ng-content></h4>
   </div>

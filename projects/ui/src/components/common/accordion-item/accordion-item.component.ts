@@ -1,12 +1,12 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { SkIconModule } from '../../core';
+import { UiIcon } from '../../core';
 
 @Component({
   selector: 'ui-accordion-item',
   templateUrl: 'accordion-item.component.html',
   styleUrl: 'accordion-item.component.scss',
-  imports: [NgIf, SkIconModule],
+  imports: [NgIf, UiIcon],
 })
 export class UiAccordionItem {
   @Input({ required: true }) public name!: string;

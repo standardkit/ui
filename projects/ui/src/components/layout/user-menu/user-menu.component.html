@@ -1,26 +1,26 @@
 <div class="user-menu">
   <span class="user-menu__username">{{ username }}</span>
   <div
-    tabindex="0"
-    class="user-menu__avatar"
     (click)="onToggleActions($event)"
     (keydown.enter)="onToggleActions($event)"
+    class="user-menu__avatar"
+    tabindex="0"
   >
     <img *ngIf="avatar" [alt]="username + '\'s avatar'" [src]="avatar" class="user-menu__avatar-image" />
     <div *ngIf="!avatar" class="user-menu__avatar-icon">
-      <sk-icon icon="user"></sk-icon>
+      <ui-icon icon="user"></ui-icon>
     </div>
   </div>
   <div (click)="onInsideClick($event)" *ngIf="isExpanded" class="user-menu__items">
     <span
-      *ngFor="let item of items"
-      tabindex="0"
-      class="user-menu__item"
       (click)="onSelectItem($event, item)"
       (keydown.enter)="onSelectItem($event, item)"
+      *ngFor="let item of items"
+      class="user-menu__item"
+      tabindex="0"
     >
       <span class="user-menu__item-icon">
-        <sk-icon [icon]="item.icon"></sk-icon>
+        <ui-icon [icon]="item.icon"></ui-icon>
       </span>
       {{ item.name }}
     </span>

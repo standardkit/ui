@@ -2,11 +2,11 @@ import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Style } from '../../../constants';
 import { IconSetType, StyleType } from '../../../types';
-import { SkIconModule } from '../icon';
+import { UiIcon } from '../icon';
 
 @Component({
   selector: 'ui-button',
-  imports: [SkIconModule, NgIf],
+  imports: [UiIcon, NgIf],
   templateUrl: 'button.component.html',
   styleUrl: 'button.component.scss',
 })

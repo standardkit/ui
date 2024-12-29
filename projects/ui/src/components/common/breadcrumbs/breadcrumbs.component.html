@@ -1,8 +1,8 @@
 <span class="breadcrumbs">
-  <span class="breadcrumbs__item" *ngFor="let breadcrumb of breadcrumbs">
-    <a class="breadcrumbs__link" *ngIf="breadcrumb.route" [routerLink]="breadcrumb.route">{{ breadcrumb.name }}</a>
-    <span class="breadcrumbs__name" *ngIf="!breadcrumb.route">{{ breadcrumb.name }}</span>
-    <span class="breadcrumbs__icon"><sk-icon icon="angle-right"></sk-icon></span>
+  <span *ngFor="let breadcrumb of breadcrumbs" class="breadcrumbs__item">
+    <a *ngIf="breadcrumb.route" [routerLink]="breadcrumb.route" class="breadcrumbs__link">{{ breadcrumb.name }}</a>
+    <span *ngIf="!breadcrumb.route" class="breadcrumbs__name">{{ breadcrumb.name }}</span>
+    <span class="breadcrumbs__icon"><ui-icon icon="angle-right"></ui-icon></span>
     <!--TODO : Make icon configurable and add string separator possible as alternative-->
   </span>
 </span>

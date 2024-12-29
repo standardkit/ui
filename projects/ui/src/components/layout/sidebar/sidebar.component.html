@@ -1,19 +1,19 @@
-<div class="sidebar" [class.sidebar--collapsed]="isCollapsed">
-  <div class="sidebar__scroll" [class.sidebar__scroll--collapsed]="isCollapsed">
+<div [class.sidebar--collapsed]="isCollapsed" class="sidebar">
+  <div [class.sidebar__scroll--collapsed]="isCollapsed" class="sidebar__scroll">
     <sk-navigation-item
       *ngFor="let navigationItem of navigationItems"
-      [isCollapsed]="isCollapsed"
+      [children]="navigationItem.children"
       [icon]="navigationItem.icon"
+      [isCollapsed]="isCollapsed"
+      [isExact]="!!navigationItem.isExact"
       [name]="navigationItem.name"
       [route]="navigationItem.route"
-      [isExact]="!!navigationItem.isExact"
-      [children]="navigationItem.children"
     ></sk-navigation-item>
   </div>
-  <div class="sidebar__footer" [class.sidebar__footer--collapsed]="isCollapsed">
-    <button class="sidebar__collapse" [class.sidebar__collapse--collapsed]="isCollapsed" (click)="onToggleCollapsed()">
-      <sk-icon *ngIf="!isCollapsed" icon="angles-left"></sk-icon>
-      <sk-icon *ngIf="isCollapsed" icon="angles-right"></sk-icon>
+  <div [class.sidebar__footer--collapsed]="isCollapsed" class="sidebar__footer">
+    <button (click)="onToggleCollapsed()" [class.sidebar__collapse--collapsed]="isCollapsed" class="sidebar__collapse">
+      <ui-icon *ngIf="!isCollapsed" icon="angles-left"></ui-icon>
+      <ui-icon *ngIf="isCollapsed" icon="angles-right"></ui-icon>
     </button>
   </div>
 </div>

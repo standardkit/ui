@@ -1,22 +1,22 @@
 <div
-  class="select-option"
-  tabindex="0"
-  [id]="value"
-  [class.select-option--selected]="isSelected"
-  [class.select-option--multi]="isMulti"
   (click)="onSelectOption()"
   (keydown.enter)="onSelectOption()"
+  [class.select-option--multi]="isMulti"
+  [class.select-option--selected]="isSelected"
+  [id]="value"
+  class="select-option"
+  tabindex="0"
 >
-  <span class="select-option__checkbox" *ngIf="isMulti">
-    <sk-icon *ngIf="isSelected" iconSet="regular" icon="square-check"></sk-icon>
-    <sk-icon *ngIf="!isSelected" iconSet="regular" icon="square"></sk-icon>
+  <span *ngIf="isMulti" class="select-option__checkbox">
+    <ui-icon *ngIf="isSelected" icon="square-check" iconSet="regular"></ui-icon>
+    <ui-icon *ngIf="!isSelected" icon="square" iconSet="regular"></ui-icon>
   </span>
   <div class="select-option__content">
     <span>{{ label }}</span>
     <span
       *ngIf="description"
-      class="select-option__description"
       [class.select-option__description--selected]="isSelected"
+      class="select-option__description"
     >
       {{ description }}
     </span>

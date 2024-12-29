@@ -1,13 +1,13 @@
 import { NgForOf } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { SkIconModule } from '../../core';
+import { UiIcon } from '../../core';
 import { ListItemInterface } from './list-item.interface';
 
 @Component({
   selector: 'ui-list',
   templateUrl: 'list.component.html',
   styleUrl: 'list.component.scss',
-  imports: [SkIconModule, NgForOf],
+  imports: [UiIcon, NgForOf],
 })
 export class UiList {
   @Input() public items: ListItemInterface[] = [];

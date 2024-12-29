@@ -2,13 +2,13 @@
   <span class="pagination__limit">
     <span class="pagination__limit-text">
       <span>Items per page:</span>
-      <select class="pagination__limit-select" [ngModel]="state.limit" (ngModelChange)="onLimitChange($event)">
+      <select (ngModelChange)="onLimitChange($event)" [ngModel]="state.limit" class="pagination__limit-select">
         <option *ngFor="let option of limitOptions" [value]="option">
           {{ option }}
         </option>
       </select>
     </span>
-    <span class="pagination__limit-summary" *ngIf="state.numberOfRows > 0">
+    <span *ngIf="state.numberOfRows > 0" class="pagination__limit-summary">
       {{ state.offset + 1 }}-{{ state.offset + state.numberOfRows }}
       <ng-container *ngIf="state.totalNumberOfRows !== -1">
         of {{ state.totalNumberOfRows }} item{{ state.totalNumberOfRows > 1 ? "s" : "" }}
@@ -27,16 +27,16 @@
   <span class="pagination__pages">
     <span class="pagination__pages-prefix">page</span>
     <input
-      type="number"
       [(ngModel)]="currentPage"
+      [max]="state.totalNumberOfPages"
       class="pagination__pages-input"
       min="1"
-      [max]="state.totalNumberOfPages"
+      type="number"
     />
-    <span class="pagination__pages-total" *ngIf="state.totalNumberOfPages !== -1">
+    <span *ngIf="state.totalNumberOfPages !== -1" class="pagination__pages-total">
       of {{ state.totalNumberOfPages }} page{{ state.totalNumberOfPages ? "s" : "" }}
     </span>
-    <span class="pagination__pages-total" *ngIf="state.totalNumberOfPages === -1">
+    <span *ngIf="state.totalNumberOfPages === -1" class="pagination__pages-total">
       of
       <ng-container *ngIf="state.numberOfRows < state.limit">{{ state.currentPage }}</ng-container>
       <ng-container *ngIf="state.numberOfRows >= state.limit">unknown number of</ng-container>
@@ -44,18 +44,18 @@
     </span>
     <span class="pagination__pages-navigation">
       <button
-        class="pagination__button pagination__button--previous"
         (click)="onPreviousPage()"
         [disabled]="state.offset === 0"
+        class="pagination__button pagination__button--previous"
       >
-        <sk-icon icon="angle-left"></sk-icon>
+        <ui-icon icon="angle-left"></ui-icon>
       </button>
       <button
-        class="pagination__button pagination__button--next"
-        [disabled]="isNextPageDisabled()"
         (click)="onNextPage()"
+        [disabled]="isNextPageDisabled()"
+        class="pagination__button pagination__button--next"
       >
-        <sk-icon icon="angle-right"></sk-icon>
+        <ui-icon icon="angle-right"></ui-icon>
       </button>
     </span>
   </span>

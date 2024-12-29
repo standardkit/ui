@@ -1,17 +1,17 @@
 <span
-  class="tag"
-  [class.tag--selectable]="selectTag.observed"
-  [attr.tabindex]="selectTag.observed ? 0 : undefined"
   (click)="onSelectTag($event)"
   (keydown.enter)="onSelectTag($event)"
+  [attr.tabindex]="selectTag.observed ? 0 : undefined"
+  [class.tag--selectable]="selectTag.observed"
+  class="tag"
 >
-  <span class="tag__icon tag__icon--left" *ngIf="icon && alignIcon === 'left'">
-    <sk-icon [icon]="icon"></sk-icon>
+  <span *ngIf="icon && alignIcon === 'left'" class="tag__icon tag__icon--left">
+    <ui-icon [icon]="icon"></ui-icon>
   </span>
   <span class="tag__content">
     <ng-content></ng-content>
   </span>
-  <span class="tag__icon tag__icon--right" *ngIf="icon && alignIcon === 'right'">
-    <sk-icon [icon]="icon"></sk-icon>
+  <span *ngIf="icon && alignIcon === 'right'" class="tag__icon tag__icon--right">
+    <ui-icon [icon]="icon"></ui-icon>
   </span>
 </span>

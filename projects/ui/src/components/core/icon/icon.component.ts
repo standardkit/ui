@@ -1,13 +1,14 @@
+import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { IconSetType } from '../../../types';
 
 @Component({
-  selector: 'sk-icon',
+  selector: 'ui-icon',
   templateUrl: 'icon.component.html',
-  styleUrls: ['icon.component.scss'],
-  standalone: false,
+  styleUrl: 'icon.component.scss',
+  imports: [NgClass],
 })
-export class SkIconComponent {
+export class UiIcon {
   @Input() public icon?: string = 'icons';
   @Input() public iconSet: IconSetType = 'solid';
   @Input() public isSpinning: boolean = false;

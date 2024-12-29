@@ -2,7 +2,6 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
   SkColumnModule,
-  SkIconModule,
   SkJumbotronModule,
   SkLinkModule,
   SkPillModule,
@@ -16,6 +15,7 @@ import {
   UiBreadcrumbs,
   UiButton,
   UiCard,
+  UiIcon,
   UiList,
   UiModal,
   UiRichText,
@@ -57,7 +57,6 @@ const PAGES: any[] = [
     NgTemplateOutlet,
     UiButton,
     SkColumnModule,
-    SkIconModule,
     SkJumbotronModule,
     SkLinkModule,
     SkPillModule,
@@ -79,6 +78,7 @@ const PAGES: any[] = [
     UiStepperItem,
     UiTabGroup,
     UiTab,
+    UiIcon,
     UiBar,
   ],
   declarations: PAGES,

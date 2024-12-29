@@ -1,15 +1,15 @@
 <div class="list">
   <div
+    (click)="item.action()"
+    (keydown.enter)="item.action()"
     *ngFor="let item of items"
     class="list__item"
     tabindex="0"
-    (click)="item.action()"
-    (keydown.enter)="item.action()"
   >
-    <sk-icon [icon]="item.icon"></sk-icon>
+    <ui-icon [icon]="item.icon"></ui-icon>
     <span class="list__name">{{ item.name }}</span>
     <div class="list__arrow-icon">
-      <sk-icon [icon]="item.actionIcon ?? actionIcon"></sk-icon>
+      <ui-icon [icon]="item.actionIcon ?? actionIcon"></ui-icon>
     </div>
   </div>
 </div>
