@@ -1,15 +1,17 @@
+import { NgIf } from '@angular/common';
 import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
 import { InputComponent, InputInterface } from '../input';
+import { UiInputError } from '../input-error';
 
 @Component({
-  selector: 'sk-number-input',
+  selector: 'ui-number-input',
   templateUrl: 'number-input.component.html',
-  styleUrls: ['number-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkNumberInputComponent), multi: true }],
-  standalone: false,
+  styleUrl: 'number-input.component.scss',
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiNumberInput), multi: true }],
+  imports: [FormsModule, NgIf, UiInputError],
 })
-export class SkNumberInputComponent implements ControlValueAccessor, InputInterface {
+export class UiNumberInput implements ControlValueAccessor, InputInterface {
   @Input() public placeholder: string = '';
 
   public value?: number | null;
