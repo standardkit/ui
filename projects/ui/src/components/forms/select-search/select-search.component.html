@@ -1,4 +1,4 @@
-<div (click)="onClick($event)" class="select-search">
+<div (click)="onClick($event)" (keydown.enter)="onClick($event)" class="select-search" tabindex="-1">
   <div class="select-search__search-icon">
     <ui-icon icon="search"></ui-icon>
   </div>
@@ -10,7 +10,7 @@
     placeholder="Filter items..."
     type="text"
   />
-  <div (click)="onClear()" *ngIf="query" class="select-search__clear-icon">
+  <div (click)="onClear()" (keydown.enter)="onClear()" *ngIf="query" class="select-search__clear-icon" tabindex="0">
     <ui-icon icon="close"></ui-icon>
   </div>
 </div>

@@ -18,7 +18,7 @@ import { UiIcon } from '../../core';
 import { InputComponent, InputInterface } from '../input';
 import { UiInputError } from '../input-error';
 import { UiSelectOption } from '../select-option';
-import { SkSelectSearchModule } from '../select-search';
+import { UiSelectSearch } from '../select-search';
 
 const FUSE_OPTIONS = {
   keys: ['label'],
@@ -33,7 +33,7 @@ const FUSE_OPTIONS = {
   templateUrl: 'select-input.component.html',
   styleUrl: 'select-input.component.scss',
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiSelectInput), multi: true }],
-  imports: [FormsModule, NgIf, UiInputError, UiIcon, SkSelectSearchModule, NgForOf, UiSelectOption],
+  imports: [FormsModule, NgIf, UiInputError, UiIcon, NgForOf, UiSelectOption, UiSelectSearch],
 })
 export class UiSelectInput implements ControlValueAccessor, InputInterface, AfterContentInit {
   @ViewChild('selectBox') public select!: ElementRef<HTMLElement>;

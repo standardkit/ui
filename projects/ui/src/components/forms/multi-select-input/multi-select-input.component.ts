@@ -18,7 +18,7 @@ import { UiBar, UiButton, UiIcon, UiTag } from '../../core';
 import { InputComponent, InputInterface } from '../input';
 import { UiInputError } from '../input-error';
 import { UiSelectOption } from '../select-option';
-import { SkSelectSearchComponent, SkSelectSearchModule } from '../select-search';
+import { UiSelectSearch } from '../select-search';
 
 const FUSE_OPTIONS = {
   keys: ['label'],
@@ -33,23 +33,12 @@ const FUSE_OPTIONS = {
   templateUrl: 'multi-select-input.component.html',
   styleUrl: 'multi-select-input.component.scss',
   providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiMultiSelectInput), multi: true }],
-  imports: [
-    FormsModule,
-    NgIf,
-    UiInputError,
-    NgForOf,
-    UiButton,
-    SkSelectSearchModule,
-    UiBar,
-    UiIcon,
-    UiTag,
-    UiSelectOption,
-  ],
+  imports: [FormsModule, NgIf, UiInputError, NgForOf, UiButton, UiBar, UiIcon, UiTag, UiSelectOption, UiSelectSearch],
 })
 export class UiMultiSelectInput implements ControlValueAccessor, InputInterface, AfterContentInit {
   @ViewChild('selectBox') public select!: ElementRef<HTMLElement>;
   @ViewChild('scrollBody') public scrollBody!: ElementRef<HTMLElement>;
-  @ViewChild(SkSelectSearchComponent) public search?: SkSelectSearchComponent;
+  @ViewChild(UiSelectSearch) public search?: UiSelectSearch;
 
   @ContentChildren(UiSelectOption) public contentOptions!: QueryList<UiSelectOption>;
 

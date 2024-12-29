@@ -45,7 +45,7 @@
 
   <div *ngIf="showOptions" class="multi-select-input__options">
     <div *ngIf="contentOptions.length > 4" class="multi-select-input__options-search">
-      <sk-select-search (clear)="onSearchClear()" (search)="onSearch($event)"></sk-select-search>
+      <ui-select-search (clear)="onSearchClear()" (search)="onSearch($event)"></ui-select-search>
     </div>
     <div #scrollBody class="multi-select-input__options-body">
       <ui-select-option

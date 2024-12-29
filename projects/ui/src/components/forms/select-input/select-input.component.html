@@ -41,7 +41,7 @@
 
   <div *ngIf="showOptions" class="select-input__options">
     <div *ngIf="contentOptions.length > scrollThreshold" class="select-input__options-search">
-      <sk-select-search (clear)="onSearchClear()" (search)="onSearch($event)"></sk-select-search>
+      <ui-select-search (clear)="onSearchClear()" (search)="onSearch($event)"></ui-select-search>
     </div>
     <div #scrollBody class="select-input__options-body">
       <ui-select-option

@@ -1,12 +1,15 @@
+import { NgIf } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { UiIcon } from '@standardkit/ui';
 
 @Component({
-  selector: 'sk-select-search',
+  selector: 'ui-select-search',
   templateUrl: 'select-search.component.html',
-  styleUrls: ['select-search.component.scss'],
-  standalone: false,
+  styleUrl: 'select-search.component.scss',
+  imports: [UiIcon, FormsModule, NgIf],
 })
-export class SkSelectSearchComponent implements AfterViewInit {
+export class UiSelectSearch implements AfterViewInit {
   @ViewChild('input') public input!: ElementRef<HTMLInputElement>;
 
   @Output() public search: EventEmitter<string> = new EventEmitter<string>();
