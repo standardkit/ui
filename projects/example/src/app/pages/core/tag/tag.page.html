@@ -1,5 +1,5 @@
 <sk-top-bar name="Tag">
-  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
+  <ui-breadcrumbs [breadcrumbs]="breadcrumbs"></ui-breadcrumbs>
 </sk-top-bar>
 
 <sk-row>
@@ -8,10 +8,10 @@
       <sk-bar>
         <sk-tag>Some tag</sk-tag>
         <sk-tag icon="skull">Tag with icon</sk-tag>
-        <sk-tag icon="skull" alignIcon="left">Tag with icon left</sk-tag>
+        <sk-tag alignIcon="left" icon="skull">Tag with icon left</sk-tag>
         <sk-tag (selectTag)="onSelectTag()">Tag with select</sk-tag>
-        <sk-tag icon="angle-right" (selectTag)="onSelectTag()">Tag with select and icon right</sk-tag>
-        <sk-tag icon="search" (selectTag)="onSelectTag()" alignIcon="left">Tag with select and icon left</sk-tag>
+        <sk-tag (selectTag)="onSelectTag()" icon="angle-right">Tag with select and icon right</sk-tag>
+        <sk-tag (selectTag)="onSelectTag()" alignIcon="left" icon="search">Tag with select and icon left</sk-tag>
       </sk-bar>
     </sk-card>
   </sk-column>

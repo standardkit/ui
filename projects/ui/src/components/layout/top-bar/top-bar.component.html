@@ -1,8 +1,8 @@
 <div class="top-bar">
-  <div class="top-bar__container" [class.top-bar__container--full-width]="isFullWidth">
+  <div [class.top-bar__container--full-width]="isFullWidth" class="top-bar__container">
     <div class="top-bar__title">
-      <ng-content select="sk-breadcrumbs"></ng-content>
-      <h1 class="top-bar__name" *ngIf="name">{{ name }}</h1>
+      <ng-content select="ui-breadcrumbs"></ng-content>
+      <h1 *ngIf="name" class="top-bar__name">{{ name }}</h1>
     </div>
 
     <span class="top-bar__actions">

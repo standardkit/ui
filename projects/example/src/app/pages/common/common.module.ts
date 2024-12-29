@@ -2,7 +2,6 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
   SkBarModule,
-  SkBreadcrumbsModule,
   SkCardModule,
   SkColumnModule,
   SkIconModule,
@@ -24,6 +23,7 @@ import {
   UiAccordion,
   UiAccordionItem,
   UiAlert,
+  UiBreadcrumbs,
   UiButton,
 } from '@standardkit/ui';
 import { AccordionPage } from './accordion';
@@ -55,7 +55,6 @@ const PAGES: any[] = [
     NgIf,
     NgTemplateOutlet,
     SkBarModule,
-    SkBreadcrumbsModule,
     UiButton,
     SkCardModule,
     SkColumnModule,
@@ -78,6 +77,7 @@ const PAGES: any[] = [
     UiAlert,
     UiAccordion,
     UiAccordionItem,
+    UiBreadcrumbs,
   ],
   declarations: PAGES,
   exports: PAGES,

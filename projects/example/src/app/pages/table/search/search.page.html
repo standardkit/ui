@@ -1,7 +1,7 @@
 <sk-top-bar name="Search">
-  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
-  <ui-button (click)="onToggleField()" type="info">Toggle Field</ui-button>
-  <ui-button (click)="onToggleDisabled()" type="error">Toggle Disabled</ui-button>
+  <ui-breadcrumbs [breadcrumbs]="breadcrumbs"></ui-breadcrumbs>
+  <ui-button (buttonClick)="onToggleField()" type="info">Toggle Field</ui-button>
+  <ui-button (buttonClick)="onToggleDisabled()" type="error">Toggle Disabled</ui-button>
 </sk-top-bar>
 
 <sk-search

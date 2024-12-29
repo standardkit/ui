@@ -1,9 +1,9 @@
 <sk-top-bar [isFullWidth]="true" name="Table">
-  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
-  <ui-button (click)="onToggleClickable()" type="primary">Toggle Selectable</ui-button>
-  <ui-button (click)="onToggleCheckable()" type="dark">Toggle Checkable</ui-button>
-  <ui-button (click)="onToggleStriped()" type="info">Toggle Striped</ui-button>
-  <ui-button (click)="onToggleEmpty()" type="neutral">Toggle Empty</ui-button>
+  <ui-breadcrumbs [breadcrumbs]="breadcrumbs"></ui-breadcrumbs>
+  <ui-button (buttonClick)="onToggleClickable()" type="primary">Toggle Selectable</ui-button>
+  <ui-button (buttonClick)="onToggleCheckable()" type="dark">Toggle Checkable</ui-button>
+  <ui-button (buttonClick)="onToggleStriped()" type="info">Toggle Striped</ui-button>
+  <ui-button (buttonClick)="onToggleEmpty()" type="neutral">Toggle Empty</ui-button>
 </sk-top-bar>
 
 <sk-table

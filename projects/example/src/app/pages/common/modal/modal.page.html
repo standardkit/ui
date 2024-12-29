@@ -1,6 +1,6 @@
 <sk-top-bar name="Modal">
-  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
-  <ui-button (click)="onToggleModal()" type="info">Open Modal</ui-button>
+  <ui-breadcrumbs [breadcrumbs]="breadcrumbs"></ui-breadcrumbs>
+  <ui-button (buttonClick)="onToggleModal()" type="info">Open Modal</ui-button>
 </sk-top-bar>
 
 <sk-modal (closeModal)="onToggleModal()" *ngIf="isOpen" name="A modal">

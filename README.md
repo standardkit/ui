@@ -113,7 +113,7 @@ Add the icon path to your angular.json as well.
 ```angular181html
 <!--data-table.page.html-->
 <sk-top-bar [isFullWidth]="true" name="Data Table">
-  <sk-breadcrumbs [breadcrumbs]="breadcrumbs"></sk-breadcrumbs>
+  <ui-breadcrumbs [breadcrumbs]="breadcrumbs"></ui-breadcrumbs>
   <ui-button (buttonClick)="onAddItem()" icon="plus">Add Item</ui-button>
 </sk-top-bar>
 

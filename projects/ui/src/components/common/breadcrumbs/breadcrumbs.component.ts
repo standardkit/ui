@@ -1,12 +1,15 @@
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RouterLinkWithHref } from '@angular/router';
+import { SkIconModule } from '../../core';
 import { BreadcrumbInterface } from './breadcrumb.interface';
 
 @Component({
-  selector: 'sk-breadcrumbs',
+  selector: 'ui-breadcrumbs',
   templateUrl: 'breadcrumbs.component.html',
-  styleUrls: ['breadcrumbs.component.scss'],
-  standalone: false,
+  styleUrl: 'breadcrumbs.component.scss',
+  imports: [NgForOf, NgIf, RouterLinkWithHref, SkIconModule],
 })
-export class SkBreadcrumbsComponent {
+export class UiBreadcrumbs {
   @Input() public breadcrumbs: BreadcrumbInterface[] = [];
 }
