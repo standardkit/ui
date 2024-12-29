@@ -5,7 +5,6 @@ import { UiAccordionItem } from '../accordion-item';
   selector: 'ui-accordion',
   templateUrl: 'accordion.component.html',
   styleUrl: 'accordion.component.scss',
-  imports: [UiAccordionItem],
 })
 export class UiAccordion implements AfterContentInit, AfterContentChecked {
   @ContentChildren(UiAccordionItem) public items!: QueryList<UiAccordionItem>;
