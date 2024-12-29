@@ -2,7 +2,7 @@ import { NgForOf, NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UiModal } from '../../common';
-import { SkPillModule, UiBar, UiButton } from '../../core';
+import { UiBar, UiButton } from '../../core';
 import {
   SkDateInputModule,
   SkFieldModule,
@@ -24,7 +24,6 @@ import { SkFilterComponent } from './filter.component';
     SkFieldModule,
     SkLabelModule,
     SkMultiSelectInputModule,
-    SkPillModule,
     SkSelectInputModule,
     SkSelectOptionModule,
     UiForm,

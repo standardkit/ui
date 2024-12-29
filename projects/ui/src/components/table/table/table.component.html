@@ -3,7 +3,13 @@
     <!--TODO : Add caption / aria description to table-->
     <thead>
       <tr>
-        <th (click)="onCheckAll()" *ngIf="canCheckRow" class="table__check-all">
+        <th
+          (click)="onCheckAll()"
+          (keydown.enter)="onCheckAll()"
+          *ngIf="canCheckRow"
+          class="table__check-all"
+          tabindex="0"
+        >
           <ui-icon *ngIf="!allChecked" icon="square" iconSet="regular"></ui-icon>
           <ui-icon *ngIf="allChecked" icon="square-check" iconSet="regular"></ui-icon>
         </th>
@@ -11,10 +17,12 @@
           <th>
             <span
               (click)="onSortColumn(column.key)"
+              (keydown.enter)="onSortColumn(column.key)"
               [class.table__column--active]="sortedColumn?.key === column.key"
               [class.table__column--sortable]="sortableColumns.includes(column.key)"
               [class.table__column--status]="!!column.status"
               class="table__column"
+              tabindex="0"
             >
               {{ column.label }}
               <span
@@ -51,15 +59,19 @@
       </tr>
       <tr
         (click)="onRowClick(row)"
+        (keydown.enter)="onRowClick(row)"
         *ngFor="let row of rows; index as index"
         [class.table__row--clickable]="canSelectRow"
         class="table__row"
+        tabindex="0"
       >
         <td
           (click)="onCheckRow($event, row)"
+          (keydown.enter)="onCheckRow($event, row)"
           *ngIf="canCheckRow"
           [class.table__checkbox-cell--checked]="checkedRows.includes(row)"
           class="table__checkbox-cell"
+          tabindex="0"
         >
           <ui-icon *ngIf="!checkedRows.includes(row)" icon="square" iconSet="regular"></ui-icon>
           <ui-icon *ngIf="checkedRows.includes(row)" icon="square-check" iconSet="regular"></ui-icon>
@@ -72,14 +84,14 @@
           class="table__cell"
         >
           <ui-icon *ngIf="column.icon" [icon]="column.icon(row)"></ui-icon>
-          <sk-pill
+          <ui-pill
             *ngIf="!!column.status && column.status(row)"
             [icon]="!!column.statusIcon ? column.statusIcon(row) : undefined"
             [type]="column.status(row)"
           >
             <ng-container *ngIf="!column.format">{{ row[column.key] }}</ng-container>
             <ng-container *ngIf="column.format">{{ column.format(row) }}</ng-container>
-          </sk-pill>
+          </ui-pill>
           <ng-container *ngIf="!column.status && !column.format && !column.icon">{{ row[column.key] }}</ng-container>
           <ng-container *ngIf="!column.status && column.format">{{ column.format(row) }}</ng-container>
         </td>
@@ -88,12 +100,14 @@
             <ng-container *ngFor="let action of actions">
               <ui-button
                 (click)="onAction($event, action, row)"
+                (keydown.enter)="onAction($event, action, row)"
                 *ngIf="!(action.isDisabled && action.isDisabled(row))"
                 [attr.iconSet]="action.iconSet"
                 [compact]="true"
                 [icon]="action.icon"
                 [noShadow]="true"
                 [title]="action.label"
+                tabindex="-1"
                 type="light"
               ></ui-button>
             </ng-container>

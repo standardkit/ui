@@ -1,11 +1,11 @@
 import { NgForOf, NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SkPillModule, SkToggleModule, UiButton, UiIcon } from '../../core';
+import { SkToggleModule, UiButton, UiIcon, UiPill } from '../../core';
 import { SkCheckboxInputModule } from '../../forms';
 import { SkTableComponent } from './table.component';
 
 @NgModule({
-  imports: [NgForOf, NgIf, UiIcon, SkPillModule, UiButton, SkCheckboxInputModule, SkToggleModule],
+  imports: [NgForOf, NgIf, UiIcon, UiButton, SkCheckboxInputModule, SkToggleModule, UiPill],
   declarations: [SkTableComponent],
   exports: [SkTableComponent],
 })
