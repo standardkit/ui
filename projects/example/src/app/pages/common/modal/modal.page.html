@@ -3,7 +3,7 @@
   <ui-button (buttonClick)="onToggleModal()" type="info">Open Modal</ui-button>
 </sk-top-bar>
 
-<sk-modal (closeModal)="onToggleModal()" *ngIf="isOpen" name="A modal">
+<ui-modal (closeModal)="onToggleModal()" *ngIf="isOpen" name="A modal">
   <ng-container *ngTemplateOutlet="loremIpsum"></ng-container>
   <ng-container *ngTemplateOutlet="loremIpsum"></ng-container>
   <ng-container *ngTemplateOutlet="loremIpsum"></ng-container>
@@ -16,7 +16,7 @@
       <ui-button icon="save" type="success">Save</ui-button>
     </sk-bar>
   </sk-bar>
-</sk-modal>
+</ui-modal>
 
 <ng-template #loremIpsum>
   <p>

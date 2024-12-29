@@ -1,12 +1,12 @@
 <div class="filter__buttons">
-  <ui-button (click)="showModal = true" [disabled]="showModal || isLoading" icon="filter" type="light">
+  <ui-button (buttonClick)="showModal = true" [disabled]="showModal || isLoading" icon="filter" type="light">
     Filter
   </ui-button>
-  <ui-button (click)="onTagClear()" *ngIf="filters.length > 0" [disabled]="isLoading" icon="xmark" type="light">
+  <ui-button (buttonClick)="onTagClear()" *ngIf="filters.length > 0" [disabled]="isLoading" icon="xmark" type="light">
     {{ filters.length }}
   </ui-button>
 </div>
-<sk-modal
+<ui-modal
   (closeModal)="onCancel()"
   *ngIf="showModal"
   [containsOverflow]="true"
@@ -54,4 +54,4 @@
       <ui-button (click)="onApplyFilters()" icon="filter">Apply</ui-button>
     </sk-bar>
   </sk-bar>
-</sk-modal>
+</ui-modal>
