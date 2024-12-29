@@ -1,8 +1,10 @@
 <div
   (click)="input.click()"
+  (keydown.enter)="input.click()"
   [class.checkbox-input--disabled]="isDisabled"
   [class.checkbox-input--error]="control.touched && control.invalid"
   class="checkbox-input"
+  tabindex="0"
 >
   <input
     #input

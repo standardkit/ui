@@ -1,15 +1,18 @@
+import { NgIf } from '@angular/common';
 import { Component, forwardRef, Optional, Self } from '@angular/core';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
+import { UiIcon } from '../../core';
 import { InputComponent, InputInterface } from '../input';
+import { SkInputErrorModule } from '../input-error';
 
 @Component({
-  selector: 'sk-checkbox-input',
+  selector: 'ui-checkbox-input',
   templateUrl: 'checkbox-input.component.html',
-  styleUrls: ['checkbox-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkCheckboxInputComponent), multi: true }],
-  standalone: false,
+  styleUrl: 'checkbox-input.component.scss',
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiCheckboxInput), multi: true }],
+  imports: [FormsModule, NgIf, UiIcon, SkInputErrorModule],
 })
-export class SkCheckboxInputComponent implements ControlValueAccessor, InputInterface {
+export class UiCheckboxInput implements ControlValueAccessor, InputInterface {
   public value: boolean = false;
   public name?: string;
   public isDisabled: boolean = false;
