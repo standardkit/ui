@@ -3,7 +3,7 @@
 <sk-row>
   <sk-column>
     Styles
-    <sk-bar>
+    <ui-bar>
       <ui-button>Click me</ui-button>
       <ui-button type="info">Click me</ui-button>
       <ui-button type="success">Click me</ui-button>
@@ -14,16 +14,16 @@
       <ui-button type="special">Click me</ui-button>
       <ui-button type="neutral">Click me</ui-button>
       <ui-button type="secondary">Click me</ui-button>
-    </sk-bar>
+    </ui-bar>
     Icons
-    <sk-bar>
+    <ui-bar>
       <ui-button icon="skull">Icon default</ui-button>
       <ui-button alignIcon="right" icon="skull">Icon right</ui-button>
       <ui-button alignIcon="left" icon="skull">Icon right</ui-button>
-    </sk-bar>
+    </ui-bar>
 
     Disabled
-    <sk-bar>
+    <ui-bar>
       <ui-button [disabled]="true">Click me</ui-button>
       <ui-button [disabled]="true" type="info">Click me</ui-button>
       <ui-button [disabled]="true" type="success">Click me</ui-button>
@@ -34,20 +34,20 @@
       <ui-button [disabled]="true" type="special">Click me</ui-button>
       <ui-button [disabled]="true" type="neutral">Click me</ui-button>
       <ui-button [disabled]="true" type="secondary">Click me</ui-button>
-    </sk-bar>
+    </ui-bar>
 
     Size
-    <sk-bar [isVertical]="true">
+    <ui-bar [isVertical]="true">
       <ui-button [compact]="true">I am compact</ui-button>
       <ui-button [fullWidth]="true">Full width button</ui-button>
       <ui-button [compact]="true" [fullWidth]="true">Full width compact button</ui-button>
-    </sk-bar>
+    </ui-bar>
 
     Shape
-    <sk-bar>
+    <ui-bar>
       <ui-button [isSharp]="true">I am edgy</ui-button>
       <ui-button [isSharp]="true" type="light">I am edgy</ui-button>
       <ui-button [disabled]="true" [isSharp]="true" type="light">I am edgy and disabled</ui-button>
-    </sk-bar>
+    </ui-bar>
   </sk-column>
 </sk-row>

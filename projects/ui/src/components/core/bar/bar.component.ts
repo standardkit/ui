@@ -1,14 +1,13 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'sk-bar',
+  selector: 'ui-bar',
   templateUrl: 'bar.component.html',
-  styleUrls: ['bar.component.scss'],
+  styleUrl: 'bar.component.scss',
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
 })
-export class SkBarComponent {
-  // TODO : Create enumType
+export class UiBar {
+  // TODO : Create horizontal align type
   @Input() public align: 'left' | 'center' | 'right' | 'space-between' = 'left';
   @Input() public growChildren: boolean = false;
   @Input() public noGap: boolean = false;

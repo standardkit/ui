@@ -1,8 +1,10 @@
 <div
   (click)="onTouched()"
+  (keydown.enter)="onTouched()"
   [class.multi-select-input--collapsed]="!showOptions"
   [class.multi-select-input--error]="hasError && !showOptions"
   class="multi-select-input"
+  tabindex="0"
 >
   <div
     #selectBox
@@ -25,7 +27,13 @@
       </sk-tag>
     </div>
 
-    <div (click)="onClear($event)" *ngIf="!showOptions && value.length > 0" class="multi-select-input__clear-icon">
+    <div
+      (click)="onClear($event)"
+      (keydown.enter)="onClear($event)"
+      *ngIf="!showOptions && value.length > 0"
+      class="multi-select-input__clear-icon"
+      tabindex="0"
+    >
       <sk-icon icon="close"></sk-icon>
     </div>
 
@@ -54,9 +62,9 @@
       <div *ngIf="renderedOptions.length === 0" class="multi-select-input__empty-body">No results...</div>
     </div>
     <div class="multi-select-input__options-footer">
-      <sk-bar [growChildren]="true" [noGap]="true">
+      <ui-bar [growChildren]="true" [noGap]="true">
         <ui-button
-          (click)="onCancel()"
+          (buttonClick)="onCancel()"
           [flipIcon]="true"
           [fullWidth]="true"
           [isSharp]="true"
@@ -66,7 +74,7 @@
           Undo
         </ui-button>
         <ui-button
-          (click)="onReset()"
+          (buttonClick)="onReset()"
           [disabled]="backupValue.length === 0"
           [fullWidth]="true"
           [isSharp]="true"
@@ -75,8 +83,8 @@
         >
           Clear
         </ui-button>
-        <ui-button (click)="onApply()" [fullWidth]="true" [isSharp]="true" icon="check">Apply</ui-button>
-      </sk-bar>
+        <ui-button (buttonClick)="onApply()" [fullWidth]="true" [isSharp]="true" icon="check">Apply</ui-button>
+      </ui-bar>
     </div>
   </div>
 </div>
