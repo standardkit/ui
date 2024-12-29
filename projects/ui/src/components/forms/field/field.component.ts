@@ -8,7 +8,7 @@ import {
   QueryList,
 } from '@angular/core';
 import { InputComponent, InputInterface } from '../input';
-import { SkLabelComponent } from '../label';
+import { UiLabel } from '../label';
 
 @Component({
   selector: 'ui-field',
@@ -20,7 +20,7 @@ export class UiField implements AfterContentInit {
 
   @ContentChildren(InputComponent) public inputs!: QueryList<InputInterface>;
 
-  @ContentChild(SkLabelComponent) public label?: SkLabelComponent;
+  @ContentChild(UiLabel) public label?: UiLabel;
 
   @Input({ required: true }) public name!: string;
   @Input() public width?: 'narrow' | 'medium' | 'wide';

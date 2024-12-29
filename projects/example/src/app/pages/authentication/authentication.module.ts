@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
-  SkLabelModule,
   SkPasswordInputModule,
   SkTextInputModule,
   UiBar,
@@ -9,13 +8,13 @@ import {
   UiCard,
   UiField,
   UiForm,
+  UiLabel,
   UiLink,
 } from '@standardkit/ui';
 import { LoginPage } from './login';
 
 @NgModule({
   imports: [
-    SkLabelModule,
     SkTextInputModule,
     ReactiveFormsModule,
     SkPasswordInputModule,
@@ -25,6 +24,7 @@ import { LoginPage } from './login';
     UiBar,
     UiLink,
     UiField,
+    UiLabel,
   ],
   declarations: [LoginPage],
   exports: [LoginPage],

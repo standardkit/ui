@@ -1,12 +1,12 @@
 <ui-card name="Authentication">
   <ui-form (submitForm)="onSubmit()" [formGroup]="form">
     <ui-field name="username">
-      <sk-label>Username</sk-label>
+      <ui-label>Username</ui-label>
       <sk-text-input formControlName="username"></sk-text-input>
     </ui-field>
 
     <ui-field name="password">
-      <sk-label>Password</sk-label>
+      <ui-label>Password</ui-label>
       <sk-password-input formControlName="password"></sk-password-input>
     </ui-field>
 

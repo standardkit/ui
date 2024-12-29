@@ -1,4 +1,5 @@
-<label class="label" [for]="for">
+<label [for]="for" class="label">
   <ng-content></ng-content>
-  <span class="label__optional" *ngIf="isOptional">(Optioneel)</span>
+  <!--TODO : Use input (preferably globally i18n compatible configurable)-->
+  <span *ngIf="isOptional" class="label__optional">(Optional)</span>
 </label>

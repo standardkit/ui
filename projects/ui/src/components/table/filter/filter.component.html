@@ -14,7 +14,7 @@
 >
   <ui-form [formGroup]="form">
     <ui-field *ngFor="let item of filterItems" [name]="'filter-' + item.key">
-      <sk-label>{{ item.label }}</sk-label>
+      <ui-label>{{ item.label }}</ui-label>
 
       <!--TODO : Add input skeleton while loading-->
       <sk-select-input

@@ -131,7 +131,7 @@ Add the icon path to your angular.json as well.
 <ui-form [formGroup]="form">
 
   <ui-field name="name">
-    <sk-label>Name</sk-label>
+    <ui-label>Name</ui-label>
     <sk-text-input formControlName="name">
       <ng-container slot="error">Name is required</ng-container>
     </sk-text-input>

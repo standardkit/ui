@@ -1,12 +1,13 @@
+import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'sk-label',
+  selector: 'ui-label',
   templateUrl: 'label.component.html',
-  styleUrls: ['label.component.scss'],
-  standalone: false,
+  styleUrl: 'label.component.scss',
+  imports: [NgIf],
 })
-export class SkLabelComponent {
+export class UiLabel {
   @Input() public for: string = '';
   @Input() public isOptional: boolean = false;
 }
