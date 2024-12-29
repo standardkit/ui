@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {
   SkBottomBarModule,
   SkColumnModule,
-  SkMultiSelectInputModule,
   SkNumberInputModule,
   SkPasswordInputModule,
   SkRowModule,
@@ -27,6 +26,7 @@ import {
   UiFormSectionTitle,
   UiInputDescription,
   UiLabel,
+  UiMultiSelectInput,
   UiRadioInput,
   UiRadioOption,
 } from '@standardkit/ui';
@@ -42,7 +42,6 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     SkBottomBarModule,
     UiButton,
     SkColumnModule,
-    SkMultiSelectInputModule,
     SkNumberInputModule,
     SkPasswordInputModule,
     SkRowModule,
@@ -66,6 +65,7 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     UiFormSectionTitle,
     UiInputDescription,
     UiLabel,
+    UiMultiSelectInput,
   ],
   declarations: PAGES,
   exports: PAGES,

@@ -4,13 +4,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UiModal } from '../../common';
 import { UiBar, UiButton } from '../../core';
 import {
-  SkMultiSelectInputModule,
   SkSelectInputModule,
   SkSelectOptionModule,
   UiDateInput,
   UiField,
   UiForm,
   UiLabel,
+  UiMultiSelectInput,
 } from '../../forms';
 import { SkFilterComponent } from './filter.component';
 
@@ -20,7 +20,6 @@ import { SkFilterComponent } from './filter.component';
     NgIf,
     ReactiveFormsModule,
     UiButton,
-    SkMultiSelectInputModule,
     SkSelectInputModule,
     SkSelectOptionModule,
     UiForm,
@@ -29,6 +28,7 @@ import { SkFilterComponent } from './filter.component';
     UiDateInput,
     UiField,
     UiLabel,
+    UiMultiSelectInput,
   ],
   declarations: [SkFilterComponent],
   exports: [SkFilterComponent],

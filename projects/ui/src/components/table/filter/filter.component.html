@@ -28,7 +28,7 @@
       </sk-select-input>
 
       <!--TODO : Add input skeleton while loading-->
-      <sk-multi-select-input
+      <ui-multi-select-input
         *ngIf="item.type === 'multi-select' && !item.isPending"
         [formControlName]="item.key"
         [placeholder]="'Select ' + item.label.toLowerCase()"
@@ -40,7 +40,7 @@
             [value]="filterValue.value"
           ></sk-select-option>
         </ng-container>
-      </sk-multi-select-input>
+      </ui-multi-select-input>
 
       <!--TODO : Field group for pseudo range filters (from, to date) configurable in filterConfiguration-->
       <ui-date-input *ngIf="item.type === 'date'" [formControlName]="item.key"></ui-date-input>

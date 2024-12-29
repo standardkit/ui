@@ -1,3 +1,4 @@
+import { NgForOf, NgIf } from '@angular/common';
 import {
   AfterContentInit,
   Component,
@@ -11,11 +12,13 @@ import {
   Self,
   ViewChild,
 } from '@angular/core';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
 import Fuse, { FuseResult } from 'fuse.js';
+import { UiBar, UiButton, UiIcon, UiTag } from '../../core';
 import { InputComponent, InputInterface } from '../input';
-import { SkSelectOptionComponent } from '../select-option';
-import { SkSelectSearchComponent } from '../select-search';
+import { UiInputError } from '../input-error';
+import { SkSelectOptionComponent, SkSelectOptionModule } from '../select-option';
+import { SkSelectSearchComponent, SkSelectSearchModule } from '../select-search';
 
 const FUSE_OPTIONS = {
   keys: ['label'],
@@ -26,16 +29,53 @@ const FUSE_OPTIONS = {
 };
 
 @Component({
-  selector: 'sk-multi-select-input',
+  selector: 'ui-multi-select-input',
   templateUrl: 'multi-select-input.component.html',
-  styleUrls: ['multi-select-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkMultiSelectInputComponent), multi: true }],
-  standalone: false,
+  styleUrl: 'multi-select-input.component.scss',
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiMultiSelectInput), multi: true }],
+  imports: [
+    FormsModule,
+    NgIf,
+    UiInputError,
+    SkSelectOptionModule,
+    NgForOf,
+    UiButton,
+    SkSelectSearchModule,
+    UiBar,
+    UiIcon,
+    UiTag,
+  ],
 })
-export class SkMultiSelectInputComponent implements ControlValueAccessor, InputInterface, AfterContentInit {
+export class UiMultiSelectInput implements ControlValueAccessor, InputInterface, AfterContentInit {
   @ViewChild('selectBox') public select!: ElementRef<HTMLElement>;
   @ViewChild('scrollBody') public scrollBody!: ElementRef<HTMLElement>;
   @ViewChild(SkSelectSearchComponent) public search?: SkSelectSearchComponent;
+
+  @ContentChildren(SkSelectOptionComponent) public contentOptions!: QueryList<SkSelectOptionComponent>;
+
+  @Input() public placeholder: string = '';
+
+  public value: (string | number)[] = [];
+  public backupValue: (string | number)[] = [];
+  public name?: string;
+  public isDisabled: boolean = false;
+  public onChange!: (value: (string | number)[]) => void;
+  public onTouched!: () => void;
+  public showOptions: boolean = false;
+  public selectedOptions: SkSelectOptionComponent[] = [];
+  public skipClickDetection: boolean = false;
+  public renderedOptions: SkSelectOptionComponent[] = [];
+  private fuse: Fuse<SkSelectOptionComponent> = new Fuse([], FUSE_OPTIONS);
+
+  constructor(@Optional() @Self() public control: NgControl) {
+    if (control) {
+      control.valueAccessor = this;
+    }
+  }
+
+  public get hasError(): boolean {
+    return !!this.control.touched && !!this.control.invalid;
+  }
 
   @HostListener('document:click', ['$event']) public onOutsideClick = (event: Event): void => {
     if (
@@ -56,29 +96,6 @@ export class SkMultiSelectInputComponent implements ControlValueAccessor, InputI
     }
   };
 
-  @ContentChildren(SkSelectOptionComponent) public contentOptions!: QueryList<SkSelectOptionComponent>;
-
-  @Input() public placeholder: string = '';
-
-  public value: (string | number)[] = [];
-  public backupValue: (string | number)[] = [];
-  public name?: string;
-  public isDisabled: boolean = false;
-  public onChange!: (value: (string | number)[]) => void;
-  public onTouched!: () => void;
-  public showOptions: boolean = false;
-  public selectedOptions: SkSelectOptionComponent[] = [];
-  public skipClickDetection: boolean = false;
-  public renderedOptions: SkSelectOptionComponent[] = [];
-
-  private fuse: Fuse<SkSelectOptionComponent> = new Fuse([], FUSE_OPTIONS);
-
-  constructor(@Optional() @Self() public control: NgControl) {
-    if (control) {
-      control.valueAccessor = this;
-    }
-  }
-
   public ngAfterContentInit(): void {
     this.fuse.setCollection([...this.contentOptions.toArray()]);
     this.renderedOptions = this.contentOptions.toArray();
@@ -91,10 +108,6 @@ export class SkMultiSelectInputComponent implements ControlValueAccessor, InputI
         }
       });
     }, 0);
-  }
-
-  public get hasError(): boolean {
-    return !!this.control.touched && !!this.control.invalid;
   }
 
   public registerOnChange(onChange: (value: (string | number)[]) => void): void {
