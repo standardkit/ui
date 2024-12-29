@@ -1,14 +1,14 @@
 import { AfterContentChecked, AfterContentInit, Component, ContentChildren, Input, QueryList } from '@angular/core';
-import { SkAccordionItemComponent } from '../accordion-item';
+import { UiAccordionItem } from '../accordion-item';
 
 @Component({
-  selector: 'sk-accordion',
+  selector: 'ui-accordion',
   templateUrl: 'accordion.component.html',
-  styleUrls: ['accordion.component.scss'],
-  standalone: false,
+  styleUrl: 'accordion.component.scss',
+  imports: [UiAccordionItem],
 })
-export class SkAccordionComponent implements AfterContentInit, AfterContentChecked {
-  @ContentChildren(SkAccordionItemComponent) public items!: QueryList<SkAccordionItemComponent>;
+export class UiAccordion implements AfterContentInit, AfterContentChecked {
+  @ContentChildren(UiAccordionItem) public items!: QueryList<UiAccordionItem>;
 
   @Input() public hasNoPadding: boolean = false;
   @Input() public openFirstTab: boolean = false;
@@ -23,7 +23,7 @@ export class SkAccordionComponent implements AfterContentInit, AfterContentCheck
     if (!this.hasNoPadding) {
       return;
     }
-    this.items.forEach((item: SkAccordionItemComponent): void => {
+    this.items.forEach((item: UiAccordionItem): void => {
       item.hasNoPadding = true;
     });
   }
