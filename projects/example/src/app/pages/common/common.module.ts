@@ -8,8 +8,6 @@ import {
   SkLinkModule,
   SkPillModule,
   SkRowModule,
-  SkSegmentGroupModule,
-  SkSegmentModule,
   SkStatisticsCardModule,
   SkStepperModule,
   SkTabGroupModule,
@@ -25,6 +23,8 @@ import {
   UiList,
   UiModal,
   UiRichText,
+  UiSegment,
+  UiSegmentGroup,
 } from '@standardkit/ui';
 import { AccordionPage } from './accordion';
 import { AlertPage } from './alert';
@@ -62,8 +62,6 @@ const PAGES: any[] = [
     SkLinkModule,
     SkPillModule,
     SkRowModule,
-    SkSegmentGroupModule,
-    SkSegmentModule,
     SkStatisticsCardModule,
     SkStepperModule,
     SkTabGroupModule,
@@ -78,6 +76,8 @@ const PAGES: any[] = [
     UiList,
     UiModal,
     UiRichText,
+    UiSegmentGroup,
+    UiSegment,
   ],
   declarations: PAGES,
   exports: PAGES,

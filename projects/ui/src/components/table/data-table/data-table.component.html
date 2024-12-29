@@ -1,27 +1,27 @@
 <div [class.data-table--no-margin]="hasNoMargin" class="data-table">
   <div *ngIf="segments && searchKey" class="data-table__segments">
-    <sk-segment-group [initialSegmentValue]="initialSegmentValue">
-      <sk-segment
+    <ui-segment-group [initialSegmentValue]="initialSegmentValue">
+      <ui-segment
         (selectSegment)="onSelectSegment(segment)"
         *ngFor="let segment of segments.segments"
         [value]="segment.value"
       >
         {{ segment.label }}
-      </sk-segment>
-    </sk-segment-group>
+      </ui-segment>
+    </ui-segment-group>
   </div>
 
   <div class="data-table__header">
     <span *ngIf="searchKey || segments" class="data-table__search">
-      <sk-segment-group *ngIf="!searchKey && segments" [initialSegmentValue]="initialSegmentValue">
-        <sk-segment
+      <ui-segment-group *ngIf="!searchKey && segments" [initialSegmentValue]="initialSegmentValue">
+        <ui-segment
           (selectSegment)="onSelectSegment(segment)"
           *ngFor="let segment of segments.segments"
           [value]="segment.value"
         >
           {{ segment.label }}
-        </sk-segment>
-      </sk-segment-group>
+        </ui-segment>
+      </ui-segment-group>
       <sk-search
         (clear)="onClearSearch()"
         (search)="onSearch($event)"
@@ -49,7 +49,7 @@
       Filter
     </ui-button>
     <ui-button
-      (click)="onBatchAction(action)"
+      (buttonClick)="onBatchAction(action)"
       *ngFor="let action of batchActions"
       [disabled]="checkedRows.length === 0"
       [icon]="action.icon"

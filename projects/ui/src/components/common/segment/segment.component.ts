@@ -1,12 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'sk-segment',
+  selector: 'ui-segment',
   templateUrl: 'segment.component.html',
-  styleUrls: ['segment.component.scss'],
-  standalone: false,
+  styleUrl: 'segment.component.scss',
 })
-export class SkSegmentComponent {
+export class UiSegment {
   @Input() public value?: any;
 
   @Output() public selectSegment: EventEmitter<void> = new EventEmitter<void>();

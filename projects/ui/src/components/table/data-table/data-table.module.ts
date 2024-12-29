@@ -1,6 +1,6 @@
 import { NgForOf, NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SkSegmentGroupModule, SkSegmentModule } from '../../common';
+import { UiSegment, UiSegmentGroup } from '../../common';
 import { UiButton } from '../../core';
 import { SkFilterModule } from '../filter';
 import { SkPaginationModule } from '../pagination';
@@ -16,9 +16,9 @@ import { SkDataTableComponent } from './data-table.component';
     SkFilterModule,
     SkPaginationModule,
     SkSearchModule,
-    SkSegmentGroupModule,
-    SkSegmentModule,
     SkTableModule,
+    UiSegmentGroup,
+    UiSegment,
   ],
   declarations: [SkDataTableComponent],
   exports: [SkDataTableComponent],

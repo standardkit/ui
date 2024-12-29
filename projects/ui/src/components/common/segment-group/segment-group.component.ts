@@ -1,14 +1,13 @@
 import { AfterViewInit, Component, ContentChildren, Input, QueryList } from '@angular/core';
-import { SkSegmentComponent } from '../segment';
+import { UiSegment } from '../segment';
 
 @Component({
-  selector: 'sk-segment-group',
+  selector: 'ui-segment-group',
   templateUrl: 'segment-group.component.html',
-  styleUrls: ['segment-group.component.scss'],
-  standalone: false,
+  styleUrl: 'segment-group.component.scss',
 })
-export class SkSegmentGroupComponent implements AfterViewInit {
-  @ContentChildren(SkSegmentComponent) public segments!: QueryList<SkSegmentComponent>;
+export class UiSegmentGroup implements AfterViewInit {
+  @ContentChildren(UiSegment) public segments!: QueryList<UiSegment>;
 
   @Input() public initialSegmentValue?: string;
 
@@ -17,7 +16,7 @@ export class SkSegmentGroupComponent implements AfterViewInit {
       throw new Error('Not enough segments');
     }
 
-    this.segments.forEach((segment: SkSegmentComponent) => {
+    this.segments.forEach((segment: UiSegment) => {
       segment.selectSegment.subscribe({ next: () => this.onSelectSegment(segment) });
     });
 
@@ -25,7 +24,7 @@ export class SkSegmentGroupComponent implements AfterViewInit {
       this.segments.first.position = 'start';
       this.segments.last.position = 'end';
       if (this.initialSegmentValue) {
-        this.segments.forEach((segment: SkSegmentComponent) => {
+        this.segments.forEach((segment: UiSegment) => {
           if (segment.value === this.initialSegmentValue) {
             segment.isActive = true;
           }
@@ -36,8 +35,8 @@ export class SkSegmentGroupComponent implements AfterViewInit {
     }, 0);
   }
 
-  private onSelectSegment(selectedSegment: SkSegmentComponent): void {
-    this.segments.forEach((segment: SkSegmentComponent) => {
+  private onSelectSegment(selectedSegment: UiSegment): void {
+    this.segments.forEach((segment: UiSegment) => {
       segment.isActive = segment === selectedSegment;
     });
   }
