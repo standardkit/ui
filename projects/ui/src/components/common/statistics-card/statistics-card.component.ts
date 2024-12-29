@@ -1,12 +1,14 @@
+import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { SkIconModule, UiButton } from '../../core';
 
 @Component({
-  selector: 'sk-statistics-card',
+  selector: 'ui-statistics-card',
   templateUrl: 'statistics-card.component.html',
-  styleUrls: ['statistics-card.component.scss'],
-  standalone: false,
+  styleUrl: 'statistics-card.component.scss',
+  imports: [SkIconModule, UiButton, NgIf],
 })
-export class SkStatisticsCardComponent {
+export class UiStatisticsCard {
   @Input() public icon: string = 'star';
   @Input() public statistic: number | string = '';
   @Input() public description?: string;
