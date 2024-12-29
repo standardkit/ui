@@ -49,17 +49,17 @@
           </ui-field>
           <ui-field name="select">
             <ui-label>Select</ui-label>
-            <sk-select-input formControlName="select">
+            <ui-select-input formControlName="select">
               <sk-select-option *ngFor="let city of cities" [label]="city" [value]="city"></sk-select-option>
-            </sk-select-input>
+            </ui-select-input>
           </ui-field>
           <ui-field name="select2">
             <ui-label>Select</ui-label>
-            <sk-select-input formControlName="select2" placeholder="Select one city">
+            <ui-select-input formControlName="select2" placeholder="Select one city">
               <sk-select-option label="ABC123" value="abc123"></sk-select-option>
               <sk-select-option label="DEF456" value="def456"></sk-select-option>
               <sk-select-option label="GHI789" value="ghi789"></sk-select-option>
-            </sk-select-input>
+            </ui-select-input>
           </ui-field>
         </ui-field-group>
 

@@ -17,7 +17,7 @@
       <ui-label>{{ item.label }}</ui-label>
 
       <!--TODO : Add input skeleton while loading-->
-      <sk-select-input
+      <ui-select-input
         *ngIf="(item.type === 'single-select' || item.type === 'checkbox') && !item.isPending"
         [formControlName]="item.key"
         [placeholder]="'Selecteer ' + item.label.toLowerCase()"
@@ -25,7 +25,7 @@
         <ng-container *ngFor="let option of item.values">
           <sk-select-option *ngIf="option.value" [label]="option.label" [value]="option.value"></sk-select-option>
         </ng-container>
-      </sk-select-input>
+      </ui-select-input>
 
       <!--TODO : Add input skeleton while loading-->
       <ui-multi-select-input

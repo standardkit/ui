@@ -1,3 +1,4 @@
+import { NgForOf, NgIf } from '@angular/common';
 import {
   AfterContentInit,
   Component,
@@ -11,10 +12,13 @@ import {
   Self,
   ViewChild,
 } from '@angular/core';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
 import Fuse, { FuseResult } from 'fuse.js';
+import { UiIcon } from '../../core';
 import { InputComponent, InputInterface } from '../input';
-import { SkSelectOptionComponent } from '../select-option';
+import { UiInputError } from '../input-error';
+import { SkSelectOptionComponent, SkSelectOptionModule } from '../select-option';
+import { SkSelectSearchModule } from '../select-search';
 
 const FUSE_OPTIONS = {
   keys: ['label'],
@@ -25,15 +29,47 @@ const FUSE_OPTIONS = {
 };
 
 @Component({
-  selector: 'sk-select-input',
+  selector: 'ui-select-input',
   templateUrl: 'select-input.component.html',
-  styleUrls: ['select-input.component.scss'],
-  providers: [{ provide: InputComponent, useExisting: forwardRef(() => SkSelectInputComponent), multi: true }],
-  standalone: false,
+  styleUrl: 'select-input.component.scss',
+  providers: [{ provide: InputComponent, useExisting: forwardRef(() => UiSelectInput), multi: true }],
+  imports: [FormsModule, NgIf, UiInputError, SkSelectOptionModule, UiIcon, SkSelectSearchModule, NgForOf],
 })
-export class SkSelectInputComponent implements ControlValueAccessor, InputInterface, AfterContentInit {
+export class UiSelectInput implements ControlValueAccessor, InputInterface, AfterContentInit {
   @ViewChild('selectBox') public select!: ElementRef<HTMLElement>;
   @ViewChild('scrollBody') public scrollBody!: ElementRef<HTMLElement>;
+
+  @ContentChildren(SkSelectOptionComponent) public contentOptions!: QueryList<SkSelectOptionComponent>;
+
+  @Input() public placeholder: string = '';
+  @Input() public isNotClearable: boolean = false;
+  @Input() public hasNoError: boolean = false;
+
+  public value?: string | number | null;
+  // TODO : Adjust height based on this
+  public scrollThreshold: number = 4; // If more than this, results will be scrolled
+
+  // TODO : Make configurable?
+  public name?: string;
+  public isDisabled: boolean = false;
+  public onChange!: (value: string | number | null) => void;
+  public onTouched!: () => void;
+  public showOptions: boolean = false;
+  public selectedOption?: SkSelectOptionComponent;
+  public skipClickDetection: boolean = false;
+  public noResults: boolean = false;
+  public renderedOptions: SkSelectOptionComponent[] = [];
+  private fuse: Fuse<SkSelectOptionComponent> = new Fuse([], FUSE_OPTIONS);
+
+  constructor(@Optional() @Self() public control: NgControl) {
+    if (control) {
+      control.valueAccessor = this;
+    }
+  }
+
+  public get hasError(): boolean {
+    return !!this.control.touched && !!this.control.invalid;
+  }
 
   @HostListener('document:click', ['$event']) public onOutsideClick = (event: Event): void => {
     if (
@@ -55,42 +91,9 @@ export class SkSelectInputComponent implements ControlValueAccessor, InputInterf
     }
   };
 
-  @ContentChildren(SkSelectOptionComponent) public contentOptions!: QueryList<SkSelectOptionComponent>;
-
-  @Input() public placeholder: string = '';
-  @Input() public isNotClearable: boolean = false;
-  @Input() public hasNoError: boolean = false;
-
-  public value?: string | number | null;
-
-  // TODO : Make configurable?
-  // TODO : Adjust height based on this
-  public scrollThreshold: number = 4; // If more than this, results will be scrolled
-  public name?: string;
-  public isDisabled: boolean = false;
-  public onChange!: (value: string | number | null) => void;
-  public onTouched!: () => void;
-  public showOptions: boolean = false;
-  public selectedOption?: SkSelectOptionComponent;
-  public skipClickDetection: boolean = false;
-  public noResults: boolean = false;
-  public renderedOptions: SkSelectOptionComponent[] = [];
-
-  private fuse: Fuse<SkSelectOptionComponent> = new Fuse([], FUSE_OPTIONS);
-
-  constructor(@Optional() @Self() public control: NgControl) {
-    if (control) {
-      control.valueAccessor = this;
-    }
-  }
-
   public ngAfterContentInit(): void {
     this.fuse.setCollection([...this.contentOptions.toArray()]);
     this.checkOptions();
-  }
-
-  public get hasError(): boolean {
-    return !!this.control.touched && !!this.control.invalid;
   }
 
   public registerOnChange(onChange: (value: string | number | null) => void): void {
