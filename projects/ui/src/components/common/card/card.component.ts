@@ -1,11 +1,12 @@
+import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'sk-card',
+  selector: 'ui-card',
   templateUrl: 'card.component.html',
-  styleUrls: ['card.component.scss'],
-  standalone: false,
+  styleUrl: 'card.component.scss',
+  imports: [NgIf],
 })
-export class SkCardComponent {
+export class UiCard {
   @Input() public name?: string;
 }
