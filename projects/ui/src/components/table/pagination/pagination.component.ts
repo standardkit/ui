@@ -1,16 +1,19 @@
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { PaginationInterface, PaginationStateInterface } from '@standardkit/core';
+import { UiIcon } from '../../core';
 
 // TODO : Make the text configurable (through a service?)
 
 @Component({
-  selector: 'sk-pagination[state]',
+  selector: 'ui-pagination',
   templateUrl: 'pagination.component.html',
   styleUrl: 'pagination.component.scss',
-  standalone: false,
+  imports: [FormsModule, UiIcon, NgIf, NgForOf],
 })
-export class SkPaginationComponent {
-  @Input() public state!: PaginationStateInterface;
+export class UiPagination {
+  @Input({ required: true }) public state!: PaginationStateInterface;
 
   @Output() public request: EventEmitter<PaginationInterface> = new EventEmitter<PaginationInterface>();
 

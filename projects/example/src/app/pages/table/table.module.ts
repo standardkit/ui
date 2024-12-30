@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import {
-  SkPaginationModule,
   SkSearchModule,
   SkTableModule,
   UiBreadcrumbs,
   UiButton,
   UiColumn,
   UiDataTable,
+  UiPagination,
   UiRow,
   UiTab,
   UiTabGroup,
@@ -23,7 +23,6 @@ const PAGES: any[] = [DataTablePage, PaginationPage, SearchPage, TablePage];
   imports: [
     UiButton,
     UiRow,
-    SkPaginationModule,
     SkSearchModule,
     SkTableModule,
     UiTopBar,
@@ -32,6 +31,7 @@ const PAGES: any[] = [DataTablePage, PaginationPage, SearchPage, TablePage];
     UiTab,
     UiColumn,
     UiDataTable,
+    UiPagination,
   ],
   declarations: PAGES,
   exports: PAGES,
