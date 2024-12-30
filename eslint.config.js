@@ -1,4 +1,3 @@
-// @ts-check
 const eslint = require("@eslint/js");
 const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
@@ -30,7 +29,7 @@ module.exports = tseslint.config(
         { suffixes: ["Component", "Layout", "Modal", "Page", "Card", "Form", "Tab", ""] },
       ],
       "@angular-eslint/component-max-inline-declarations": ["error", { template: 1 }],
-      "@angular-eslint/prefer-standalone": "warn",
+      "@angular-eslint/prefer-standalone": "error",
       "@angular-eslint/consistent-component-styles": ["error"],
       "@typescript-eslint/explicit-function-return-type": ["error"],
       "@typescript-eslint/explicit-member-accessibility": ["error", { overrides: { constructors: "off" } }],
