@@ -1,12 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'sk-jumbotron',
+  selector: 'ui-jumbotron',
   templateUrl: 'jumbotron.component.html',
-  styleUrls: ['jumbotron.component.scss'],
-  standalone: false,
+  styleUrl: 'jumbotron.component.scss',
 })
-export class SkJumbotronComponent {
+export class UiJumbotron {
   @Input() public name: string = '';
   @Input() public description: string = '';
 }
