@@ -4,13 +4,13 @@ import {
   SkPaginationModule,
   SkSearchModule,
   SkTableModule,
-  SkTopBarModule,
   UiBreadcrumbs,
   UiButton,
   UiColumn,
   UiRow,
   UiTab,
   UiTabGroup,
+  UiTopBar,
 } from '@standardkit/ui';
 import { DataTablePage } from './data-table';
 import { PaginationPage } from './pagination';
@@ -26,7 +26,7 @@ const PAGES: any[] = [DataTablePage, PaginationPage, SearchPage, TablePage];
     SkPaginationModule,
     SkSearchModule,
     SkTableModule,
-    SkTopBarModule,
+    UiTopBar,
     SkDataTableModule,
     UiBreadcrumbs,
     UiTabGroup,

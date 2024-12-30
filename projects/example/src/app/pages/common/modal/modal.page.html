@@ -1,7 +1,7 @@
-<sk-top-bar name="Modal">
+<ui-top-bar name="Modal">
   <ui-breadcrumbs [breadcrumbs]="breadcrumbs"></ui-breadcrumbs>
   <ui-button (buttonClick)="onToggleModal()" type="info">Open Modal</ui-button>
-</sk-top-bar>
+</ui-top-bar>
 
 <ui-modal (closeModal)="onToggleModal()" *ngIf="isOpen" name="A modal">
   <ng-container *ngTemplateOutlet="loremIpsum"></ng-container>

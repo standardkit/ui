@@ -1,12 +1,13 @@
+import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'sk-top-bar',
+  selector: 'ui-top-bar',
   templateUrl: 'top-bar.component.html',
-  styleUrls: ['top-bar.component.scss'],
-  standalone: false,
+  styleUrl: 'top-bar.component.scss',
+  imports: [NgIf],
 })
-export class SkTopBarComponent {
+export class UiTopBar {
   @Input() public name?: string;
   @Input() public isFullWidth: boolean = false;
 }

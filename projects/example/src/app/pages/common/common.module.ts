@@ -1,7 +1,6 @@
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
-  SkTopBarModule,
   UiAccordion,
   UiAccordionItem,
   UiAlert,
@@ -25,6 +24,7 @@ import {
   UiStepperItem,
   UiTab,
   UiTabGroup,
+  UiTopBar,
 } from '@standardkit/ui';
 import { AccordionPage } from './accordion';
 import { AlertPage } from './alert';
@@ -55,7 +55,7 @@ const PAGES: any[] = [
     NgIf,
     NgTemplateOutlet,
     UiButton,
-    SkTopBarModule,
+    UiTopBar,
     UiAlert,
     UiAccordion,
     UiAccordionItem,

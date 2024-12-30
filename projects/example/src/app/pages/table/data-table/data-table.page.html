@@ -1,11 +1,11 @@
-<sk-top-bar name="Data Table">
+<ui-top-bar name="Data Table">
   <ui-breadcrumbs [breadcrumbs]="breadcrumbs"></ui-breadcrumbs>
   <ui-tab-group activeTab="superheroes" slot="tabs">
     <ui-tab name="superheroes">Superheroes</ui-tab>
     <ui-tab name="normal">Normal humans</ui-tab>
     <ui-tab name="settings">Settings</ui-tab>
   </ui-tab-group>
-</sk-top-bar>
+</ui-top-bar>
 
 <sk-data-table
   (request)="onRequest($event)"
