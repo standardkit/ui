@@ -14,7 +14,7 @@
     "fuse.js": "^7.0.0",
     "normalize.css": "^8.0.1",
     "tslib": "^2.3.0",
-    "@standardkit/core": "~0.2.1"
+    "@standardkit/core": "~0.2.4"
   },
   "sideEffects": false
 }
