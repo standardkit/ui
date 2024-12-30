@@ -1,13 +1,13 @@
 <div class="sidebar-page">
   <div class="sidebar-page__header">
-    <ng-content select="sk-header"></ng-content>
+    <ng-content select="ui-header"></ng-content>
   </div>
 
   <main class="sidebar-page__body">
     <ng-content select="sk-sidebar"></ng-content>
 
-    <div class="sidebar-page__content" [class.sidebar-page__content--bottom-bar]="hasBottomBar$ | async">
-      <div class="sidebar-page__scrollable-content" #scroll>
+    <div [class.sidebar-page__content--bottom-bar]="hasBottomBar$ | async" class="sidebar-page__content">
+      <div #scroll class="sidebar-page__scrollable-content">
         <ng-content></ng-content>
       </div>
     </div>

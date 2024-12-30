@@ -1,7 +1,7 @@
 <sk-sidebar-page>
-  <sk-header brand="StandardKit">
-    <sk-user-menu username="John Doe" [items]="userMenuItems"></sk-user-menu>
-  </sk-header>
+  <ui-header brand="StandardKit">
+    <sk-user-menu [items]="userMenuItems" username="John Doe"></sk-user-menu>
+  </ui-header>
 
   <sk-sidebar [navigationItems]="navigationItems"></sk-sidebar>
   <router-outlet></router-outlet>
