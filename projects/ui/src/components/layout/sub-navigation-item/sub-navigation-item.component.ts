@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'sk-sub-navigation-item[name][route]',
+  selector: 'ui-sub-navigation-item',
   templateUrl: 'sub-navigation-item.component.html',
-  styleUrls: ['sub-navigation-item.component.scss'],
-  standalone: false,
+  styleUrl: 'sub-navigation-item.component.scss',
+  imports: [RouterLink, RouterLinkActive],
 })
-export class SkSubNavigationItemComponent {
-  @Input() public name!: string;
-  @Input() public route!: string;
+export class UiSubNavigationItem {
+  @Input({ required: true }) public name!: string;
+  @Input({ required: true }) public route!: string;
 }

@@ -22,10 +22,10 @@
   </div>
 
   <div *ngIf="!!children && isExpanded && !isCollapsed" class="navigation-item__sub-items">
-    <sk-sub-navigation-item
+    <ui-sub-navigation-item
       *ngFor="let subItem of children"
       [name]="subItem.name"
       [route]="subItem.route"
-    ></sk-sub-navigation-item>
+    ></ui-sub-navigation-item>
   </div>
 </div>

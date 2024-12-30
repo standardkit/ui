@@ -5,13 +5,13 @@ import { filter } from 'rxjs';
 import { SubNavigationItemInterface } from '../../../interfaces';
 import { UiIcon } from '../../core';
 import { LayoutService } from '../layout.service';
-import { SkSubNavigationItemModule } from '../sub-navigation-item';
+import { UiSubNavigationItem } from '../sub-navigation-item';
 
 @Component({
   selector: 'ui-navigation-item',
   templateUrl: 'navigation-item.component.html',
   styleUrl: 'navigation-item.component.scss',
-  imports: [UiIcon, NgIf, SkSubNavigationItemModule, NgForOf],
+  imports: [UiIcon, NgIf, NgForOf, UiSubNavigationItem],
 })
 export class UiNavigationItem implements OnInit, OnChanges {
   @Input({ required: true }) public icon!: string;
