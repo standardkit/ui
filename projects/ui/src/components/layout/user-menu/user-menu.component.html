@@ -11,7 +11,13 @@
       <ui-icon icon="user"></ui-icon>
     </div>
   </div>
-  <div (click)="onInsideClick($event)" *ngIf="isExpanded" class="user-menu__items">
+  <div
+    (click)="onInsideClick($event)"
+    (keydown.enter)="onInsideClick($event)"
+    *ngIf="isExpanded"
+    class="user-menu__items"
+    tabindex="-1"
+  >
     <span
       (click)="onSelectItem($event, item)"
       (keydown.enter)="onSelectItem($event, item)"

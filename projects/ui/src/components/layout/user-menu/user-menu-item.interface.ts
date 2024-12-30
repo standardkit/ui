@@ -1,5 +1,4 @@
-// TODO : Make generic action interface in core, use for table too.
-//  This looks a lot like list-item interface, check with 'core' lib.
+// TODO : Make generic action interface in root, use for table too.
 export interface UserMenuItemInterface {
   icon: string;
   name: string;

@@ -98,7 +98,7 @@ Add the icon path to your angular.json as well.
 <!--sidebar.layout.html-->
 <ui-sidebar-page>
   <ui-header brand="Admin Portal">
-    <sk-user-menu [items]="menuItems"></sk-user-menu>
+    <ui-user-menu [items]="menuItems"></ui-user-menu>
   </ui-header>
 
   <ui-sidebar [navigationItems]="navigationItems"></ui-sidebar>

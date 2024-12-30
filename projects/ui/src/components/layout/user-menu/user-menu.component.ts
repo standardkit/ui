@@ -1,25 +1,27 @@
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, HostListener, Input } from '@angular/core';
+import { UiIcon } from '../../core';
 import { UserMenuItemInterface } from './user-menu-item.interface';
 
 @Component({
-  selector: 'sk-user-menu',
+  selector: 'ui-user-menu',
   templateUrl: 'user-menu.component.html',
-  styleUrls: ['user-menu.component.scss'],
-  standalone: false,
+  styleUrl: 'user-menu.component.scss',
+  imports: [UiIcon, NgForOf, NgIf],
 })
-export class SkUserMenuComponent {
+export class UiUserMenu {
+  @Input() public username: string = '';
+  @Input() public avatar?: string;
+  @Input() public items: UserMenuItemInterface[] = [];
+
+  public isExpanded: boolean = false;
+
   @HostListener('document:click')
   public outsideClick(): void {
     if (this.isExpanded) {
       this.isExpanded = false;
     }
   }
-
-  @Input() public username: string = '';
-  @Input() public avatar?: string;
-  @Input() public items: UserMenuItemInterface[] = [];
-
-  public isExpanded: boolean = false;
 
   public onToggleActions(event: Event): void {
     this.isExpanded = !this.isExpanded;
