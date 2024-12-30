@@ -2,11 +2,11 @@ import { NgForOf } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
-  SkBottomBarModule,
   SkColumnModule,
   SkRowModule,
   SkTopBarModule,
   UiAdvancedRadioOption,
+  UiBottomBar,
   UiBreadcrumbs,
   UiButton,
   UiCard,
@@ -39,7 +39,6 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
   imports: [
     NgForOf,
     ReactiveFormsModule,
-    SkBottomBarModule,
     UiButton,
     SkColumnModule,
     SkRowModule,
@@ -66,6 +65,7 @@ const PAGES: any[] = [CheckboxInputPage, FormPage];
     UiTextInput,
     UiTextareaInput,
     UiTimeInput,
+    UiBottomBar,
   ],
   declarations: PAGES,
   exports: PAGES,
