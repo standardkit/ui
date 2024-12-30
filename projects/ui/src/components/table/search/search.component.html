@@ -3,7 +3,13 @@
     <div class="search__icon">
       <ui-icon icon="search"></ui-icon>
     </div>
-    <div (click)="onClear()" *ngIf="query" class="search__icon search__icon--clear">
+    <div
+      (click)="onClear()"
+      (keydown.enter)="onClear()"
+      *ngIf="query"
+      class="search__icon search__icon--clear"
+      tabindex="0"
+    >
       <ui-icon icon="close"></ui-icon>
     </div>
     <!--TODO : Make the text configurable-->
@@ -20,5 +26,5 @@
     />
   </div>
   <!--TODO : Button text configurable-->
-  <ui-button (click)="onSearch()" [disabled]="isDisabled" icon="search" type="light">Search</ui-button>
+  <ui-button (buttonClick)="onSearch()" [disabled]="isDisabled" icon="search" type="light">Search</ui-button>
 </div>

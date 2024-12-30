@@ -4,10 +4,10 @@
   <ui-button (buttonClick)="onToggleDisabled()" type="error">Toggle Disabled</ui-button>
 </ui-top-bar>
 
-<sk-search
+<ui-search
   (clear)="onClear()"
   (search)="onSearch($event)"
   [field]="isField ? 'city' : undefined"
   [isDisabled]="isDisabled"
   dataName="Places"
-></sk-search>
+></ui-search>

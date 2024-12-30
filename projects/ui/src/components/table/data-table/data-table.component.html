@@ -22,14 +22,14 @@
           {{ segment.label }}
         </ui-segment>
       </ui-segment-group>
-      <sk-search
+      <ui-search
         (clear)="onClearSearch()"
         (search)="onSearch($event)"
         *ngIf="searchKey"
         [dataName]="dataName"
         [field]="searchField"
         [isDisabled]="!response"
-      ></sk-search>
+      ></ui-search>
     </span>
     <ui-filter
       (filter)="onFilter($event)"
