@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { UiTab, UiTabGroup, UiTopBar } from '@standardkit/ui';
 
 @Component({
+  imports: [UiTopBar, UiTabGroup, UiTab],
   templateUrl: 'tab.page.html',
-  standalone: false,
 })
 export class TabPage {
   public activeTab: string = 'tab-1';

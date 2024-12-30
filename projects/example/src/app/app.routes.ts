@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CardPageLayout, LayoutModule, SidebarPageLayout } from '../layout';
+import { Routes } from '@angular/router';
+import { CardPageLayout, SidebarPageLayout } from './layout';
 import {
   AccordionPage,
   AlertPage,
@@ -16,7 +15,6 @@ import {
   ListPage,
   LoginPage,
   ModalPage,
-  PagesModule,
   PaginationPage,
   PillPage,
   RichTextPage,
@@ -28,9 +26,9 @@ import {
   TabPage,
   TagPage,
   TogglePage,
-} from '../pages';
+} from './pages';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'authentication', component: CardPageLayout, children: [{ path: 'login', component: LoginPage }] },
   {
     path: '',
@@ -83,9 +81,3 @@ const routes: Routes = [
     ],
   },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes), LayoutModule, PagesModule],
-  exports: [RouterModule],
-})
-export class RoutingModule {}

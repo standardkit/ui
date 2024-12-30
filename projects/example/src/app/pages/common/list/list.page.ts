@@ -1,9 +1,18 @@
 import { Component } from '@angular/core';
-import { BreadcrumbInterface, ListItemInterface } from '@standardkit/ui';
+import {
+  BreadcrumbInterface,
+  ListItemInterface,
+  UiBreadcrumbs,
+  UiCard,
+  UiColumn,
+  UiList,
+  UiRow,
+  UiTopBar,
+} from '@standardkit/ui';
 
 @Component({
+  imports: [UiRow, UiColumn, UiCard, UiList, UiBreadcrumbs, UiTopBar],
   templateUrl: 'list.page.html',
-  standalone: false,
 })
 export class ListPage {
   public listItems: ListItemInterface[] = [

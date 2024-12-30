@@ -1,9 +1,34 @@
 import { Component } from '@angular/core';
-import { BreadcrumbInterface } from '@standardkit/ui';
+import {
+  BreadcrumbInterface,
+  UiAccordion,
+  UiAccordionItem,
+  UiBar,
+  UiBreadcrumbs,
+  UiButton,
+  UiCard,
+  UiColumn,
+  UiLink,
+  UiPill,
+  UiRow,
+  UiTopBar,
+} from '@standardkit/ui';
 
 @Component({
+  imports: [
+    UiTopBar,
+    UiBreadcrumbs,
+    UiRow,
+    UiColumn,
+    UiCard,
+    UiPill,
+    UiButton,
+    UiAccordion,
+    UiAccordionItem,
+    UiBar,
+    UiLink,
+  ],
   templateUrl: 'card.page.html',
-  standalone: false,
 })
 export class CardPage {
   public breadcrumbs: BreadcrumbInterface[] = [{ name: 'Common' }, { name: 'Card' }];

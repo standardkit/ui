@@ -1,9 +1,17 @@
 import { Component } from '@angular/core';
-import { BreadcrumbInterface } from '@standardkit/ui';
+import {
+  BreadcrumbInterface,
+  UiBreadcrumbs,
+  UiColumn,
+  UiRow,
+  UiStepper,
+  UiStepperItem,
+  UiTopBar,
+} from '@standardkit/ui';
 
 @Component({
+  imports: [UiTopBar, UiBreadcrumbs, UiRow, UiColumn, UiStepper, UiStepperItem],
   templateUrl: 'stepper.page.html',
-  standalone: false,
 })
 export class StepperPage {
   public breadcrumbs: BreadcrumbInterface[] = [{ name: 'Common' }, { name: 'Stepper' }];

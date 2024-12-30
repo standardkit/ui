@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { NavigationItemInterface, UserMenuItemInterface } from '@standardkit/ui';
+import { Router, RouterOutlet } from '@angular/router';
+import {
+  NavigationItemInterface,
+  UiHeader,
+  UiSidebar,
+  UiSidebarPage,
+  UiUserMenu,
+  UserMenuItemInterface,
+} from '@standardkit/ui';
 
 @Component({
   selector: 'example-page-layout',
   templateUrl: 'sidebar-page.layout.html',
-  standalone: false,
+  imports: [UiSidebar, UiUserMenu, UiHeader, UiSidebarPage, RouterOutlet],
 })
 export class SidebarPageLayout {
   public navigationItems: NavigationItemInterface[] = [
@@ -72,6 +79,6 @@ export class SidebarPageLayout {
   constructor(private router: Router) {}
 
   public onLogout(): void {
-    this.router.navigate(['authentication', 'login']);
+    void this.router.navigate(['authentication', 'login']);
   }
 }
