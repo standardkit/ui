@@ -2,7 +2,7 @@
   <ui-breadcrumbs [breadcrumbs]="breadcrumbs"></ui-breadcrumbs>
 </sk-top-bar>
 
-<sk-row>
+<ui-row>
   <ui-column>
     <ui-card name="Form Card">
       <ui-form (submitForm)="onSubmit()" [formGroup]="form">
@@ -158,7 +158,7 @@
       </ui-form>
     </ui-card>
   </ui-column>
-</sk-row>
+</ui-row>
 
 <ui-bottom-bar>
   <ui-button (buttonClick)="onSubmit()">Submit Form</ui-button>

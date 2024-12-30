@@ -1,11 +1,10 @@
 import { Component, HostBinding } from '@angular/core';
 
 @Component({
-  selector: 'sk-row',
+  selector: 'ui-row',
   templateUrl: 'row.component.html',
-  styleUrls: ['row.component.scss'],
-  standalone: false,
+  styleUrl: 'row.component.scss',
 })
-export class SkRowComponent {
+export class UiRow {
   @HostBinding('class') public class: string = 'row';
 }
