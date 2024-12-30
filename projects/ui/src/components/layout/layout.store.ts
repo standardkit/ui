@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 // TODO : Make it work with multiple tabs (store per page?)
-const COLLAPSE_KEY: string = 'sk_sidebar_collapse';
+const COLLAPSE_KEY: string = 'ui_sidebar_collapse';
 
 @Injectable({ providedIn: 'root' })
 export class LayoutStore {

@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LayoutStore } from './layout.store';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class LayoutService {
   private _hasBottomBar$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private _isCollapsed$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
