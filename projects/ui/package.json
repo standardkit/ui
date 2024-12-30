@@ -1,7 +1,7 @@
 {
   "name": "@standardkit/ui",
   "private": false,
-  "version": "0.4.12",
+  "version": "0.4.13",
   "license": "Unlicense",
   "scripts": {
     "version": "auto-changelog -p -l 99 -b 99 && git add CHANGELOG.md"
