@@ -116,7 +116,7 @@ Add the icon path to your angular.json as well.
   <ui-button (buttonClick)="onAddItem()" icon="plus">Add Item</ui-button>
 </ui-top-bar>
 
-<sk-data-table (request)="onRequest($event)" [columns]="columns" [response]="response"></sk-data-table>
+<ui-data-table (request)="onRequest($event)" [columns]="columns" [response]="response"></ui-data-table>
 ```
 
 ### Simple Form

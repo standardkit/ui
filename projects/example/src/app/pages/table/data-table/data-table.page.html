@@ -7,7 +7,7 @@
   </ui-tab-group>
 </ui-top-bar>
 
-<sk-data-table
+<ui-data-table
   (request)="onRequest($event)"
   [columns]="columns"
   [filters]="filterConfiguration"
@@ -16,4 +16,4 @@
   [toggleAction]="toggleAction"
   dataName="Heroes"
   searchKey="name"
-></sk-data-table>
+></ui-data-table>

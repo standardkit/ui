@@ -1,3 +1,4 @@
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import {
   FilterInterface,
@@ -16,14 +17,30 @@ import {
   TableRowActionInterface,
   TableToggleActionInterface,
 } from '../../../interfaces';
+import { UiSegment, UiSegmentGroup } from '../../common';
+import { UiButton } from '../../core';
+import { SkFilterModule } from '../filter';
+import { SkPaginationModule } from '../pagination';
+import { SkSearchModule } from '../search';
+import { SkTableModule } from '../table';
 
 @Component({
-  selector: 'sk-data-table',
+  selector: 'ui-data-table',
   templateUrl: 'data-table.component.html',
-  styleUrls: ['data-table.component.scss'],
-  standalone: false,
+  styleUrl: 'data-table.component.scss',
+  imports: [
+    NgForOf,
+    NgIf,
+    UiButton,
+    SkFilterModule,
+    SkPaginationModule,
+    SkSearchModule,
+    SkTableModule,
+    UiSegmentGroup,
+    UiSegment,
+  ],
 })
-export class SkDataTableComponent<T> implements OnInit, OnChanges {
+export class UiDataTable<T> implements OnInit, OnChanges {
   @Input() public response?: DataResponse<T>;
   @Input() public columns: ColumnInterface<T>[] = [];
   @Input() public filters: FilterConfigurationInterface<T>[] = [];
