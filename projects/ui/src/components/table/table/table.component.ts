@@ -1,15 +1,17 @@
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SortDirectionEnum, SortInterface } from '@standardkit/core';
 import { take } from 'rxjs';
 import { ColumnInterface, TableRowActionInterface, TableToggleActionInterface } from '../../../interfaces';
+import { UiButton, UiIcon, UiPill, UiToggle } from '../../core';
 
 @Component({
-  selector: 'sk-table',
+  selector: 'ui-table',
   templateUrl: 'table.component.html',
-  styleUrls: ['table.component.scss'],
-  standalone: false,
+  styleUrl: 'table.component.scss',
+  imports: [NgForOf, NgIf, UiIcon, UiButton, UiPill, UiToggle],
 })
-export class SkTableComponent<T> {
+export class UiTable<T> {
   @Input() public rows: T[] = [];
   @Input() public columns: ColumnInterface<T>[] = [];
   @Input() public sortableColumns: Extract<keyof T, string>[] = [];

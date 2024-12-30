@@ -6,7 +6,7 @@
   <ui-button (buttonClick)="onToggleEmpty()" type="neutral">Toggle Empty</ui-button>
 </ui-top-bar>
 
-<sk-table
+<ui-table
   (checkedRowsChange)="onCheckedRowsChange()"
   (selectRow)="onSelectRow($event)"
   (sortColumn)="onSortColumn($event)"
@@ -21,4 +21,4 @@
   [sortedColumn]="sortedColumn"
   [toggleAction]="toggleAction"
   dataName="Test Items"
-></sk-table>
+></ui-table>

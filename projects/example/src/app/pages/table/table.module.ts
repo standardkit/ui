@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import {
-  SkTableModule,
   UiBreadcrumbs,
   UiButton,
   UiColumn,
@@ -10,6 +9,7 @@ import {
   UiSearch,
   UiTab,
   UiTabGroup,
+  UiTable,
   UiTopBar,
 } from '@standardkit/ui';
 import { DataTablePage } from './data-table';
@@ -23,13 +23,13 @@ const PAGES: any[] = [DataTablePage, PaginationPage, SearchPage, TablePage];
   imports: [
     UiButton,
     UiRow,
-    SkTableModule,
     UiTopBar,
     UiBreadcrumbs,
     UiTabGroup,
     UiTab,
     UiColumn,
     UiDataTable,
+    UiTable,
     UiPagination,
     UiSearch,
   ],

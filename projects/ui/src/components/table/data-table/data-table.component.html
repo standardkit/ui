@@ -59,7 +59,7 @@
     </ui-button>
   </div>
 
-  <sk-table
+  <ui-table
     (selectRow)="onRowClick($event)"
     (sortColumn)="onSort($event)"
     [(checkedRows)]="checkedRows"
@@ -74,7 +74,7 @@
     [sortableColumns]="response?.sortable ?? []"
     [sortedColumn]="response?.sort"
     [toggleAction]="toggleAction"
-  ></sk-table>
+  ></ui-table>
 
   <ui-pagination (request)="onPagination($event)" *ngIf="response" [state]="response.pagination"></ui-pagination>
 </div>

@@ -22,13 +22,13 @@ import { UiButton } from '../../core';
 import { UiFilter } from '../filter';
 import { UiPagination } from '../pagination';
 import { UiSearch } from '../search';
-import { SkTableModule } from '../table';
+import { UiTable } from '../table';
 
 @Component({
   selector: 'ui-data-table',
   templateUrl: 'data-table.component.html',
   styleUrl: 'data-table.component.scss',
-  imports: [NgForOf, NgIf, UiButton, UiPagination, UiSearch, SkTableModule, UiSegmentGroup, UiSegment, UiFilter],
+  imports: [NgForOf, NgIf, UiButton, UiPagination, UiSearch, UiTable, UiSegmentGroup, UiSegment, UiFilter],
 })
 export class UiDataTable<T> implements OnInit, OnChanges {
   @Input() public response?: DataResponse<T>;
