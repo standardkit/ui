@@ -1,13 +1,14 @@
 import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: 'sk-column',
+  selector: 'ui-column',
   templateUrl: 'column.component.html',
-  styleUrls: ['column.component.scss'],
-  standalone: false,
+  styleUrl: 'column.component.scss',
 })
-export class SkColumnComponent {
+export class UiColumn {
   @HostBinding('class') public class: string = 'column';
+
+  @Input() public width: 'narrow' | 'default' | 'wide' = 'default';
 
   @HostBinding('class.column--wide')
   public get wideClass(): boolean {
@@ -18,6 +19,4 @@ export class SkColumnComponent {
   public get narrowClass(): boolean {
     return this.width === 'narrow';
   }
-
-  @Input() public width: 'narrow' | 'default' | 'wide' = 'default';
 }
