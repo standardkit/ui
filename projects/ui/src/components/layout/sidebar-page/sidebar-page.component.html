@@ -4,7 +4,7 @@
   </div>
 
   <main class="sidebar-page__body">
-    <ng-content select="sk-sidebar"></ng-content>
+    <ng-content select="ui-sidebar"></ng-content>
 
     <div [class.sidebar-page__content--bottom-bar]="hasBottomBar$ | async" class="sidebar-page__content">
       <div #scroll class="sidebar-page__scrollable-content">
@@ -13,6 +13,3 @@
     </div>
   </main>
 </div>
-
-<!--TODO : Enable later-->
-<!--<sk-notification-bar></sk-notification-bar>-->

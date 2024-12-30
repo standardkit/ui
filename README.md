@@ -96,7 +96,7 @@ Add the icon path to your angular.json as well.
 
 ```html
 <!--sidebar.layout.html-->
-<sk-sidebar-page>
+<ui-sidebar-page>
   <ui-header brand="Admin Portal">
     <sk-user-menu [items]="menuItems"></sk-user-menu>
   </ui-header>
@@ -104,7 +104,7 @@ Add the icon path to your angular.json as well.
   <ui-sidebar [navigationItems]="navigationItems"></ui-sidebar>
 
   <router-outlet></router-outlet>
-</sk-sidebar-page>
+</ui-sidebar-page>
 ```
 
 ### Page with Data Table

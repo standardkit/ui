@@ -1,15 +1,16 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, Observable } from 'rxjs';
 import { LayoutService } from '../layout.service';
 
 @Component({
-  selector: 'sk-sidebar-page',
+  selector: 'ui-sidebar-page',
   templateUrl: 'sidebar-page.component.html',
-  styleUrls: ['sidebar-page.component.scss'],
-  standalone: false,
+  styleUrl: 'sidebar-page.component.scss',
+  imports: [AsyncPipe],
 })
-export class SkSidebarPageComponent implements OnInit {
+export class UiSidebarPage implements OnInit {
   @ViewChild('scroll') public scrollContainer!: ElementRef;
 
   public hasBottomBar$!: Observable<boolean>;
