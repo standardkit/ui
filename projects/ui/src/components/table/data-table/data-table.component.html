@@ -31,7 +31,7 @@
         [isDisabled]="!response"
       ></sk-search>
     </span>
-    <sk-filter
+    <ui-filter
       (filter)="onFilter($event)"
       *ngIf="(response?.filterable?.length ?? 0 > 0) && filters.length > 0"
       [dataName]="dataName"
@@ -39,7 +39,7 @@
       [filters]="filterSegments(response?.filters ?? [])"
       [isLoading]="isPending"
       [options]="response?.filterable ?? []"
-    ></sk-filter>
+    ></ui-filter>
     <ui-button
       *ngIf="(filters?.length ?? 0 > 0) && !(response?.filterable?.length ?? 0 > 0)"
       [disabled]="true"

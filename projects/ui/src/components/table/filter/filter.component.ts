@@ -1,16 +1,34 @@
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FilterableInterface, FilterInterface } from '@standardkit/core';
 import { FilterConfigurationInterface } from '../../../interfaces';
+import { UiModal } from '../../common';
+import { UiBar, UiButton } from '../../core';
+import { UiDateInput, UiField, UiForm, UiLabel, UiMultiSelectInput, UiSelectInput, UiSelectOption } from '../../forms';
 import { FilterItemInterface } from './filter-item.interface';
 
 @Component({
-  selector: 'sk-filter',
+  selector: 'ui-filter',
   templateUrl: 'filter.component.html',
-  styleUrls: ['filter.component.scss'],
-  standalone: false,
+  styleUrl: 'filter.component.scss',
+  imports: [
+    NgForOf,
+    NgIf,
+    ReactiveFormsModule,
+    UiButton,
+    UiForm,
+    UiModal,
+    UiBar,
+    UiDateInput,
+    UiField,
+    UiLabel,
+    UiMultiSelectInput,
+    UiSelectInput,
+    UiSelectOption,
+  ],
 })
-export class SkFilterComponent<T> implements OnInit {
+export class UiFilter<T> implements OnInit {
   @Input() public filterConfigurations: FilterConfigurationInterface<T>[] = [];
   @Input() public options: FilterableInterface<T>[] = [];
   @Input() public filters: FilterInterface<T>[] = [];

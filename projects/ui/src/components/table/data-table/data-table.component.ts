@@ -19,7 +19,7 @@ import {
 } from '../../../interfaces';
 import { UiSegment, UiSegmentGroup } from '../../common';
 import { UiButton } from '../../core';
-import { SkFilterModule } from '../filter';
+import { UiFilter } from '../filter';
 import { SkPaginationModule } from '../pagination';
 import { SkSearchModule } from '../search';
 import { SkTableModule } from '../table';
@@ -32,12 +32,12 @@ import { SkTableModule } from '../table';
     NgForOf,
     NgIf,
     UiButton,
-    SkFilterModule,
     SkPaginationModule,
     SkSearchModule,
     SkTableModule,
     UiSegmentGroup,
     UiSegment,
+    UiFilter,
   ],
 })
 export class UiDataTable<T> implements OnInit, OnChanges {
