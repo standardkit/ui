@@ -101,7 +101,7 @@ Add the icon path to your angular.json as well.
     <sk-user-menu [items]="menuItems"></sk-user-menu>
   </ui-header>
 
-  <sk-sidebar [navigationItems]="navigationItems"></sk-sidebar>
+  <ui-sidebar [navigationItems]="navigationItems"></ui-sidebar>
 
   <router-outlet></router-outlet>
 </sk-sidebar-page>

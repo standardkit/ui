@@ -1,14 +1,17 @@
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { NavigationItemInterface } from '../../../interfaces';
+import { UiIcon } from '../../core';
 import { LayoutService } from '../layout.service';
+import { UiNavigationItem } from '../navigation-item';
 
 @Component({
-  selector: 'sk-sidebar',
+  selector: 'ui-sidebar',
   templateUrl: 'sidebar.component.html',
-  styleUrls: ['sidebar.component.scss'],
-  standalone: false,
+  styleUrl: 'sidebar.component.scss',
+  imports: [NgForOf, UiIcon, NgIf, UiNavigationItem],
 })
-export class SkSidebarComponent implements OnInit {
+export class UiSidebar implements OnInit {
   @Input() public navigationItems: NavigationItemInterface[] = [];
 
   public isCollapsed: boolean = false;
