@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { UiButton, UiCheckboxInput, UiColumn, UiRow, UiTopBar } from '@standardkit/ui';
 
 @Component({
+  imports: [UiTopBar, UiButton, UiColumn, UiRow, UiCheckboxInput, ReactiveFormsModule],
   templateUrl: 'checkbox-input.page.html',
-  standalone: false,
 })
 export class CheckboxInputPage {
   public formControl: FormControl = new FormControl<boolean>(false, { validators: [Validators.requiredTrue] });

@@ -1,9 +1,18 @@
 import { Component } from '@angular/core';
-import { BreadcrumbInterface } from '@standardkit/ui';
+import {
+  BreadcrumbInterface,
+  UiBottomBar,
+  UiBreadcrumbs,
+  UiButton,
+  UiColumn,
+  UiJumbotron,
+  UiRow,
+  UiTopBar,
+} from '@standardkit/ui';
 
 @Component({
+  imports: [UiTopBar, UiBreadcrumbs, UiButton, UiRow, UiColumn, UiJumbotron, UiBottomBar],
   templateUrl: './home.page.html',
-  standalone: false,
 })
 export class HomePage {
   public breadcrumbs: BreadcrumbInterface[] = [

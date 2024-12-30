@@ -6,6 +6,10 @@ import {
   StyleType,
   TableRowActionInterface,
   TableToggleActionInterface,
+  UiBreadcrumbs,
+  UiButton,
+  UiTable,
+  UiTopBar,
 } from '@standardkit/ui';
 import { delay, Observable, of, tap } from 'rxjs';
 
@@ -17,8 +21,8 @@ export interface TestInterface {
 }
 
 @Component({
+  imports: [UiTopBar, UiBreadcrumbs, UiButton, UiTable],
   templateUrl: 'table.page.html',
-  standalone: false,
 })
 export class TablePage {
   public breadcrumbs: BreadcrumbInterface[] = [{ name: 'Table' }, { name: 'Pagination' }];

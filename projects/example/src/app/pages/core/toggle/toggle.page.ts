@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { UiBar, UiButton, UiColumn, UiRow, UiToggle, UiTopBar } from '@standardkit/ui';
 
 @Component({
+  imports: [UiTopBar, UiButton, UiRow, UiColumn, UiToggle, UiBar],
   templateUrl: 'toggle.page.html',
-  standalone: false,
 })
 export class TogglePage {
   public isActive: boolean = false;

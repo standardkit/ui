@@ -6,14 +6,19 @@ import {
   FilterConfigurationInterface,
   SegmentConfigurationInterface,
   TableToggleActionInterface,
+  UiBreadcrumbs,
+  UiDataTable,
+  UiTab,
+  UiTabGroup,
+  UiTopBar,
 } from '@standardkit/ui';
 import { Observable, of } from 'rxjs';
 import { FakeDataInterface } from './fake-data.interface';
 import { FakeDataService } from './fake-data.service';
 
 @Component({
+  imports: [UiTopBar, UiTabGroup, UiTab, UiBreadcrumbs, UiDataTable],
   templateUrl: 'data-table.page.html',
-  standalone: false,
 })
 export class DataTablePage {
   public breadcrumbs: BreadcrumbInterface[] = [{ name: 'Table' }, { name: 'Data Table' }];

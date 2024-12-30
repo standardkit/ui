@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { BreadcrumbInterface } from '@standardkit/ui';
+import { BreadcrumbInterface, UiBreadcrumbs, UiButton, UiSearch, UiTopBar } from '@standardkit/ui';
 
 @Component({
+  imports: [UiTopBar, UiBreadcrumbs, UiButton, UiSearch],
   templateUrl: 'search.page.html',
-  standalone: false,
 })
 export class SearchPage {
   public breadcrumbs: BreadcrumbInterface[] = [{ name: 'Table' }, { name: 'Search' }];

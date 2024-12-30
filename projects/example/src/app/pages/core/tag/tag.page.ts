@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { BreadcrumbInterface } from '@standardkit/ui';
+import { BreadcrumbInterface, UiBar, UiBreadcrumbs, UiCard, UiColumn, UiRow, UiTag, UiTopBar } from '@standardkit/ui';
 
 @Component({
+  imports: [UiTopBar, UiBreadcrumbs, UiRow, UiColumn, UiCard, UiBar, UiTag],
   templateUrl: 'tag.page.html',
-  standalone: false,
 })
 export class TagPage {
   public breadcrumbs: BreadcrumbInterface[] = [{ name: 'Core' }, { name: 'Tag' }];
