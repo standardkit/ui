@@ -1,6 +1,6 @@
 <div [class.sidebar--collapsed]="isCollapsed" class="sidebar">
   <div [class.sidebar__scroll--collapsed]="isCollapsed" class="sidebar__scroll">
-    <sk-navigation-item
+    <ui-navigation-item
       *ngFor="let navigationItem of navigationItems"
       [children]="navigationItem.children"
       [icon]="navigationItem.icon"
@@ -8,7 +8,7 @@
       [isExact]="!!navigationItem.isExact"
       [name]="navigationItem.name"
       [route]="navigationItem.route"
-    ></sk-navigation-item>
+    ></ui-navigation-item>
   </div>
   <div [class.sidebar__footer--collapsed]="isCollapsed" class="sidebar__footer">
     <button (click)="onToggleCollapsed()" [class.sidebar__collapse--collapsed]="isCollapsed" class="sidebar__collapse">

@@ -2,11 +2,11 @@ import { NgForOf, NgIf } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 import { UiIcon } from '../../core';
-import { SkNavigationItemModule } from '../navigation-item';
+import { UiNavigationItem } from '../navigation-item';
 import { SkSidebarComponent } from './sidebar.component';
 
 @NgModule({
-  imports: [NgForOf, UiIcon, RouterLinkWithHref, RouterLinkActive, NgIf, SkNavigationItemModule],
+  imports: [NgForOf, UiIcon, RouterLinkWithHref, RouterLinkActive, NgIf, UiNavigationItem],
   declarations: [SkSidebarComponent],
   exports: [SkSidebarComponent],
 })
